@@ -10,24 +10,24 @@ class UsersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        $role = Roles::where('name','Trainer')->first();
-        $user = new User();
-        $user->firstName='user';
-        $user->secondName='username';
-        $user->email='user@example@gmail.com';
-        $user->city='city';
-        $user->password=bcrypt('user');
-        $user->roles()->attach($role);
-
-        $user = new User();
-        $user->firstName='user';
-        $user->secondName='username';
-        $user->email='user@example@gmail.com';
-        $user->city='city';
-        $user->password=bcrypt('user');
-        $user->roles()->attach(2);
-
-    }
+//    public function run()
+//    {
+//        $role = Roles::where('name','Trainer')->first();
+//        $user = new User();
+//        $user->firstName='user';
+//        $user->secondName='username';
+//        $user->email='userexample@gmail.com';
+//        $user->city='city';
+//        $user->password=bcrypt('user');
+//        $user->roles()->attach($role);
+//
+//        $user = new User();
+//        $user->firstName='user';
+//        $user->secondName='username';
+//        $user->email='user@example@gmail.com';
+//        $user->city='city';
+//        $user->password=bcrypt('user');
+//        $user->roles()->attach(2);
+//
+//    }
 }
