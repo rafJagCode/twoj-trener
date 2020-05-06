@@ -8,6 +8,7 @@
 .div-square {
   padding: 5px;
   padding-bottom: 3px;
+  color: #F17105;
   border: 3px double #F17105;
   border-radius: 8px;
   margin: 5px;
@@ -22,13 +23,11 @@ h4 {
   line-height: 3rem;
 }
 
-.div-square a {
+a.no-underline {
   text-decoration: none;
-  color: #F17105;
 }
 
-.div-square a:hover {
+a.no-underline:hover {
   text-decoration: none;
-  color: #F17105;
 }
 

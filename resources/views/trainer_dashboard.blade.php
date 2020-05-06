@@ -3,7 +3,7 @@
 @section('title', 'trainer_dashboard')
 
 @section('trainer-dashboard-css')
-    <link href="{{ asset('/css/trainer_dashboard.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/trainer_dashboard.css') }}" rel="stylesheet">
 @endsection
 
 @section('trainer-dashboard')
@@ -18,54 +18,53 @@
     <div class="row text-center">
 
         <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="#" class="no-underline">
                 <div class="div-square py-3">
-                  <a href="#">
                     <i class="fas fa-user fa-5x"></i>
                     <h4>Twoja Wizytówka</h4>
                 </div>
             </a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="div-square py-3">
-                <a href="#">
-                  <i class="fas fa-pen fa-5x"></i>
+            <a href="#" class="no-underline">
+                <div class="div-square py-3">
+                    <i class="fas fa-pen fa-5x"></i>
                     <h4>Twój Opis</h4>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="div-square py-3">
-                <a href="#">
-                  <i class="fas fa-file-alt fa-5x"></i>
+            <a href="#" class="no-underline">
+                <div class="div-square py-3">
+                    <i class="fas fa-file-alt fa-5x"></i>
                     <h4>Certyfikaty</h4>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="div-square py-3">
-                <a href="#">
-                  <i class="fas fa-image fa-5x"></i>
+            <a href="#" class="no-underline">
+                <div class="div-square py-3">
+                    <i class="fas fa-image fa-5x"></i>
                     <h4>Galeria</h4>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="div-square py-3">
-                <a href="#">
-                  <i class="far fa-calendar-times fa-5x"></i>
+            <a href="#" class="no-underline">
+                <div class="div-square py-3">
+                    <i class="far fa-calendar-times fa-5x"></i>
                     <h4>Kalendarz</h4>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="div-square py-3">
-                <a href="#">
-                  <i class="fas fa-comments fa-5x"></i>
+            <a href="#" class="no-underline">
+                <div class="div-square py-3">
+                    <i class="fas fa-comments fa-5x"></i>
                     <h4>Wiadmomości</h4>
-                </a>
-            </div>
+                </div>
+            </a>
         </div>
     </div>
 </div>
 @endsection
-

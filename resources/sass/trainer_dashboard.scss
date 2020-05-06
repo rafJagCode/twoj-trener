@@ -9,6 +9,7 @@ $dark-orange-border: #F17105;
 .div-square {
     padding:5px;
     padding-bottom:3px;
+    color:$dark-orange-border;
     border:3px double $dark-orange-border;
     -webkit-border-radius:8px;
    -moz-border-radius:8px;
@@ -22,12 +23,10 @@ $dark-orange-border: #F17105;
 h4{
     line-height: 3rem;
 }
-.div-square a{
+a.no-underline{
     text-decoration: none;
-    color:$dark-orange-border;
     &:hover{
         text-decoration: none;
-        color:$dark-orange-border;
     }
 }
 
