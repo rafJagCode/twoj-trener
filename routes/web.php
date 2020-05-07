@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/trainer_dashboard', function () {
     $userName = 'John';
     $cities = [
@@ -41,3 +42,9 @@ Route::get('/trainer_dashboard', function () {
         'disciplines' => $disciplines
     ]);
 });
+
+
+Route::get('/registration', function () {
+    return view('registration');
+});
+>>>>>>> 145905
