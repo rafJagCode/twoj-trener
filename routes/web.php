@@ -18,7 +18,26 @@ Route::get('/', function () {
 });
 Route::get('/trainer_dashboard', function () {
     $userName = 'John';
+    $cities = [
+        'Warszawa',
+        'Olsztyn',
+        'Kraków',
+        'Poznań'
+    ];
+    $disciplines = [
+        'Bodybuilding',
+        'Kalistenika',
+        'Crossfit',
+        'Kettlebel',
+        'Cardio',
+        'Streetching',
+        'Fitnes',
+        'Interwały',
+        'Fbw'
+    ];
     return view('trainer_dashboard',[
-        'userName' => $userName
+        'userName' => $userName,
+        'cities' => $cities,
+        'disciplines' => $disciplines
     ]);
 });

@@ -18,5 +18,10 @@
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
         "vue-template-compiler": "^2.6.11"
+    },
+    "dependencies": {
+        "bootstrap": "^4.4.1",
+        "bootstrap-select": "^1.13.16",
+        "jquery": "^3.5.1"
     }
 }

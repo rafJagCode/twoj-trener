@@ -1,0 +1,72 @@
+$granite: #32373b;
+$light-orange:#FFB300;
+$dark-orange-border: #F17105;
+$very-light-orange: #fff3cd;
+.form-control{
+    background-color: $granite;
+    border:1px solid $light-orange;
+    color: $light-orange;
+    &::placeholder{
+        color:$light-orange;
+    }
+}  
+.form-control:focus {
+    background-color: $granite;
+    color: $light-orange;
+    outline: none !important;
+    border:1px solid $light-orange;
+    box-shadow: 0 0 10px $light-orange;
+}
+.city-choice{
+  color: $light-orange !important;
+  background: $granite !important;
+}
+.btn-selection{
+    color: $light-orange;
+    background-color: $granite;
+    border: 1px solid $light-orange;
+    &:focus{
+        outline: none !important;
+        border:1px solid $light-orange;
+        box-shadow: 0 0 10px $light-orange;
+      }
+      &:hover{
+          color: $light-orange;
+      }
+}
+.disciplines{
+    color:$light-orange;
+}
+.center{
+    margin: 0 auto;
+}
+  .custom-checkbox .custom-control-input.my-checkbox~.custom-control-label::before{
+    background-color: $light-orange;
+    outline: none !important;
+    box-shadow: none;
+    border: none;
+  }
+  .modal-title{
+      color: $light-orange;
+  }
+  .modal-content{
+      background-color: $granite;
+  }
+  .dropdown-menu.show{
+      max-height: 100px;
+      background-color: $granite;
+      border: 1px solid $light-orange;
+  }
+  .bs-searchbox{
+      background-color: $granite;
+      &:focus{
+        background-color: $granite;
+      }
+  }
+ .dark-bg{
+     background-color: $granite;
+     color:$light-orange;
+ }
+ .my-label{
+     color:$light-orange;
+ }
