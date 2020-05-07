@@ -17,5 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/trainer_dashboard', function () {
-    return view('trainer_dashboard');
+    $userName = 'John';
+    return view('trainer_dashboard',[
+        'userName' => $userName
+    ]);
 });
