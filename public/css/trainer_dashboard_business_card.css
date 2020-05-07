@@ -58,10 +58,15 @@
 }
 
 .custom-checkbox .custom-control-input.my-checkbox ~ .custom-control-label::before {
-  border: 10px solid #FFB300;
-  background-color: #FFB300;
+  top: 0.5rem;
+  border: 2px solid #FFB300;
+  background-color: #32373b;
   outline: none !important;
   box-shadow: none;
+}
+
+.custom-checkbox .custom-control-input.my-checkbox ~ .custom-control-label::after {
+  top: 0.5rem;
 }
 
 .modal-title {

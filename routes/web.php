@@ -47,4 +47,4 @@ Route::get('/trainer_dashboard', function () {
 Route::get('/registration', function () {
     return view('registration');
 });
->>>>>>> 145905
+

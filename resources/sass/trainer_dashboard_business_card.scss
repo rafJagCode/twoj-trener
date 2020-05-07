@@ -39,11 +39,17 @@ $very-light-orange: #fff3cd;
     margin: 0 auto;
 }
   .custom-checkbox .custom-control-input.my-checkbox~.custom-control-label::before{
-    border: 10px solid $light-orange;
-    background-color: $light-orange;
+    top:0.5rem;
+    border: 2px solid $light-orange;
+    background-color: $granite;
     outline: none !important;
     box-shadow: none;
   }
+  .custom-checkbox .custom-control-input.my-checkbox~.custom-control-label::after{
+    top:0.5rem;
+}
+
+
   .modal-title{
       color: $light-orange;
   }
