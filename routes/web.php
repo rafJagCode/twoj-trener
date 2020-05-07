@@ -16,11 +16,30 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
+
 Route::get('/trainer_dashboard', function () {
     $userName = 'John';
+    $cities = [
+        'Warszawa',
+        'Olsztyn',
+        'Kraków',
+        'Poznań'
+    ];
+    $disciplines = [
+        'Bodybuilding',
+        'Kalistenika',
+        'Crossfit',
+        'Kettlebel',
+        'Cardio',
+        'Streetching',
+        'Fitnes',
+        'Interwały',
+        'Fbw'
+    ];
     return view('trainer_dashboard',[
-        'userName' => $userName
+        'userName' => $userName,
+        'cities' => $cities,
+        'disciplines' => $disciplines
     ]);
 });
 
@@ -28,3 +47,6 @@ Route::get('/trainer_dashboard', function () {
 Route::get('/registration', function () {
     return view('registration');
 });
+
+
+>>>>>>> 145987
