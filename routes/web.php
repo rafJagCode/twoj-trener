@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/trainer_dashboard', function () {
+    $userName = 'John';
+    return view('trainer_dashboard',[
+        'userName' => $userName
+    ]);
+});
