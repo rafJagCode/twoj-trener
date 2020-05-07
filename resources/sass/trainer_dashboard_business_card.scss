@@ -34,17 +34,15 @@ $very-light-orange: #fff3cd;
           color: $light-orange;
       }
 }
-.disciplines{
-    color:$light-orange;
-}
+
 .center{
     margin: 0 auto;
 }
   .custom-checkbox .custom-control-input.my-checkbox~.custom-control-label::before{
+    border: 10px solid $light-orange;
     background-color: $light-orange;
     outline: none !important;
     box-shadow: none;
-    border: none;
   }
   .modal-title{
       color: $light-orange;
@@ -69,4 +67,15 @@ $very-light-orange: #fff3cd;
  }
  .my-label{
      color:$light-orange;
+     font-size: 20px;
+ }
+ .my-label p{
+     display: inline;
+     margin-bottom: 0;
+ }
+ .discipline-icon{
+     width: 20px;
+     height: 20px;
+     margin-left: 10px;
+     margin-bottom:5px;
  }

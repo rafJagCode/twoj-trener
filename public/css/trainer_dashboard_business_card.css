@@ -53,19 +53,15 @@
   color: #FFB300;
 }
 
-.disciplines {
-  color: #FFB300;
-}
-
 .center {
   margin: 0 auto;
 }
 
 .custom-checkbox .custom-control-input.my-checkbox ~ .custom-control-label::before {
+  border: 10px solid #FFB300;
   background-color: #FFB300;
   outline: none !important;
   box-shadow: none;
-  border: none;
 }
 
 .modal-title {
@@ -97,5 +93,18 @@
 
 .my-label {
   color: #FFB300;
+  font-size: 20px;
+}
+
+.my-label p {
+  display: inline;
+  margin-bottom: 0;
+}
+
+.discipline-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
 
