@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,9 +25,9 @@ Route::get('/', function () {
     ]);
 }); */
 
-Route::get('trainer_dashboard', [
-    'uses' => 'TrainersController@show',
-    'as' => 'trainers.show'
+Route::get('/trainer_dashboard', [
+    'uses' => 'UsersController@show',
+    'as' => 'users.show'
 ]);
 
 Route::get('/registration', function () {
