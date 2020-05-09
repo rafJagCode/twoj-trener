@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +18,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/trainer_dashboard', function () {
+/* Route::get('/trainer_dashboard', function () {
     $userName = 'John';
     return view('trainer_dashboard',[
         'userName' => $userName
     ]);
-});
+}); */
 
+Route::get('trainer_dashboard', [
+    'uses' => 'TrainersController@show',
+    'as' => 'trainers.show'
+]);
 
 Route::get('/registration', function () {
     return view('registration');
