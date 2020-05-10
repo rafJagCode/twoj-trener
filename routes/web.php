@@ -49,4 +49,8 @@ Route::get('/registration', function () {
 });
 
 
->>>>>>> 145987
+Route::get('/login', function () {
+    return view('login');
+});
+
+
