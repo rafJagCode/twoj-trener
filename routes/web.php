@@ -25,10 +25,19 @@ Route::get('/', function () {
     ]);
 }); */
 
-Route::get('/trainer_dashboard', [
-    'uses' => 'UsersController@show',
-    'as' => 'users.show'
-]);
+
+Route::group([
+    'middleware' => 'roles',
+    'roles' => 'Trainer'
+], function () {
+
+    Route::get('/trainer_dashboard', [
+        'uses' => 'UsersController@show',
+        'as' => 'users.show'
+    ]);
+});
+
+
 
 Route::get('/registration', function () {
     return view('registration');
