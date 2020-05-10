@@ -2,7 +2,6 @@
 
 use App\Diets;
 use Illuminate\Database\Seeder;
-use App\Diets;
 
 class DietsTableSeeder extends Seeder
 {
