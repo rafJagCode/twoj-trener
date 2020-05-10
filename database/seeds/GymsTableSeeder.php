@@ -27,7 +27,7 @@ class GymsTableSeeder extends Seeder
         $gyms= new Gyms();
         $gyms->name='Kinetic Fitness Club';
         $gyms->city='Olsztyn';
-        $gyms->street='Marszałka Juzefa Piłdsudzkiego 44a';
+        $gyms->street='Marszałka Józefa Piłdsudzkiego 44a';
         $gyms->save();
 
         $gyms= new Gyms();
