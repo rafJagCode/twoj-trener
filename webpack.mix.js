@@ -18,3 +18,4 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/top_navbar.scss', 'public/css')
     .sass('resources/sass/footer.scss', 'public/css')
     .sass('resources/sass/trainer_dashboard_business_card.scss', 'public/css')
+
