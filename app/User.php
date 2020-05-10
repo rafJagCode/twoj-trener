@@ -37,10 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function roles()
-    {
-        return $this->belongsToMany(Roles::class, 'roles_has_users', 'users_id', 'roles_id')->withTimestamps();
-    }
+  
+
 
     public function hasAnyRole($role)
     {
@@ -64,5 +62,25 @@ class User extends Authenticatable
             return true;
         }
         return false;
+
+  public function roles()
+    {
+        return $this->belongsToMany(Roles::class, 'roles_has_users', 'users_id', 'roles_id')->withTimestamps();
+    }
+
+    public function diets()
+    {
+        return $this->belongsToMany(Diets::class, 'diets_has_users', 'users_id', 'diets_id')->withTimestamps();
+    }
+
+    public function ratings()
+    {
+        return $this->belongsToMany(Ratings::class, 'ratings_has_users', 'users_id', 'ratings_id')->withTimestamps();
+    }
+
+    public function gyms()
+    {
+        return $this->belongsToMany(Gyms::class, 'gyms_has_users', 'users_id', 'gyms_id')->withTimestamps();
+
     }
 }

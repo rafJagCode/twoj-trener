@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="{{ asset('/css/registration.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link href="{{ asset('/css/login.css') }}" rel="stylesheet">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -15,19 +14,9 @@ body {margin-top: 100px;}
 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card bg-dark text-white">
-                            <div class="card-header ">Zarejestruj się</div>
+                            <div class="card-header ">Logowanie</div>
                             <div class="card-body">
                                 <form class="form-horizontal" method="post" action="#">
-
-                                    <div class="form-group">
-                                        <label for="name" class="cols-sm-2 control-label">Imię</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control" name="name" id="name" placeholder="Wpisz swoje imię" />
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="form-group">
                                         <label for="email" class="cols-sm-2 control-label">Adres e-mail</label>
                                         <div class="cols-sm-10">
@@ -47,21 +36,12 @@ body {margin-top: 100px;}
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="confirm" class="cols-sm-2 control-label">Powtórz hasło</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                                                <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Powtórz swoje hasło" />
-                                            </div>
-                                        </div>
-                                    </div>
                                     <div class="form-group ">
-                                        <button type="button" class="btn btn-warning btn-lg btn-block login-button">Zarejestruj</button>
+                                        <button type="button" class="btn btn-warning btn-lg btn-block login-button">Zaloguj</button>
                                     </div>
                                     <div class="login-register">
                                     
-                                    <a class="btn btn-warning" href="#" role="button">Zaloguj</a>
+                                    <a class="btn btn-warning" href="#" role="button">Zarejestruj się!</a>
                                     </div>
                                 </form>
                             </div>

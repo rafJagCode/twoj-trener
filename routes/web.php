@@ -18,10 +18,33 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 /* Route::get('/trainer_dashboard', function () {
+=======
+Route::get('/trainer_dashboard', function () {
+>>>>>>> develop
     $userName = 'John';
+    $cities = [
+        'Warszawa',
+        'Olsztyn',
+        'Kraków',
+        'Poznań'
+    ];
+    $disciplines = [
+        'Bodybuilding',
+        'Kalistenika',
+        'Crossfit',
+        'Kettlebel',
+        'Cardio',
+        'Streetching',
+        'Fitnes',
+        'Interwały',
+        'Fbw'
+    ];
     return view('trainer_dashboard',[
-        'userName' => $userName
+        'userName' => $userName,
+        'cities' => $cities,
+        'disciplines' => $disciplines
     ]);
 }); */
 
@@ -43,6 +66,15 @@ Route::get('/registration', function () {
     return view('registration');
 });
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+=======
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+
+

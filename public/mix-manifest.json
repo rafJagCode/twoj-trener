@@ -1,4 +1,9 @@
 {
+    "/js/apend_icons_to_disciplines.js": "/js/apend_icons_to_disciplines.js",
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/css/trainer_dashboard.css": "/css/trainer_dashboard.css",
+    "/css/top_navbar.css": "/css/top_navbar.css",
+    "/css/footer.css": "/css/footer.css",
+    "/css/trainer_dashboard_business_card.css": "/css/trainer_dashboard_business_card.css"
 }
