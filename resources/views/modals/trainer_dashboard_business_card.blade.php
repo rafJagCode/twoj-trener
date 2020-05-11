@@ -43,16 +43,16 @@
                     </div>
 
                     <div class="row text-center disciplines">
-                        @foreach($disciplines as $discipline)
+                        @foreach($disciplines ?? '' as $discipline)
 
                             <div class="discipline col-md-6 col-sm-12 text-left">
                                 <div class="custom-control custom-checkbox ">
                                     <input type="checkbox" class="custom-control-input my-checkbox"
                                         id="{{ $discipline }}">
-                                    <label class="custom-control-label my-label" for="{{ $discipline }}"> <p>{{ $discipline }}</p> <img
+                                    <label class="custom-control-label my-label" for="{{ $discipline->name }}"> <p>{{ $discipline->name }}</p> <img
                                             class="discipline-icon"
                                             src=""
-                                            alt="{{ $discipline }}"></label>
+                                            alt="{{ $discipline->name }}"></label>
                                 </div>
                             </div>
 

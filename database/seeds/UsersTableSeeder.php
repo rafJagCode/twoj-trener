@@ -24,6 +24,7 @@ class UsersTableSeeder extends Seeder
         $user->secondName = 'Kowalski';
         $user->email = 'Kowalski@gmail.com';
         $user->city = 'Olsztyn';
+        $user->phoneNumber = '787123644';
         $user->password = bcrypt('user');
         $user->save();
         $user->password = bcrypt('user');
@@ -35,6 +36,7 @@ class UsersTableSeeder extends Seeder
         $user->secondName = 'Kowalska';
         $user->email = 'kowalska@gmail.com';
         $user->city = 'Warszawa';
+        $user->phoneNumber = '787123642';
         $user->password = bcrypt('user1');
         $user->save();
         $user->roles()->attach(2);
@@ -42,13 +44,14 @@ class UsersTableSeeder extends Seeder
         $trainerRole = Roles::where('name', 'Trainer')->first();
         $userRole = Roles::where('name', 'User')->first();
         $justGym = Gyms::where('name', 'Just Gym')->first();
-        $dietaWege= Diets::where('name','Wegetariańska')->first();
+        $dietaWege = Diets::where('name', 'Wegetariańska')->first();
 
         $user = new User();
         $user->firstName = 'user1';
         $user->secondName = 'username';
         $user->email = 'user1@gmail.com';
         $user->city = 'city';
+        $user->phoneNumber = '787173642';
         $user->password = bcrypt('user');
         $user->save();
         $user->roles()->attach($trainerRole);
@@ -61,6 +64,7 @@ class UsersTableSeeder extends Seeder
         $user->secondName = 'username';
         $user->email = 'user2@example@gmail.com';
         $user->city = 'city';
+        $user->phoneNumber = '787123649';
         $user->password = bcrypt('user');
         $user->save();
         $user->roles()->attach($userRole);
@@ -72,11 +76,11 @@ class UsersTableSeeder extends Seeder
         $user->secondName = 'username';
         $user->email = 'user3@example@gmail.com';
         $user->city = 'city';
+        $user->phoneNumber = '787123645';
         $user->password = bcrypt('user');
         $user->save();
         $user->roles()->attach($userRole);
         $user->gyms()->attach($justGym);
         $user->diets()->attach($dietaWege);
-
     }
 }

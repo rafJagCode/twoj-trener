@@ -49,7 +49,7 @@ Route::get('/trainer_dashboard', function () {
 }); */
 
 
-Route::group([
+/* Route::group([
     'middleware' => 'roles',
     'roles' => 'Trainer'
 ], function () {
@@ -59,12 +59,17 @@ Route::group([
         'as' => 'users.show'
     ]);
 });
+ */
 
-
+Route::get('/trainer_dashboard', [
+    'uses' => 'UsersController@show',
+    'as' => 'users.show'
+]);
 
 Route::get('/registration', function () {
     return view('registration');
 });
+
 
 
 Auth::routes();
@@ -82,6 +87,3 @@ Auth::routes();
 //Route::post('register', 'Auth\RegisterController@register');
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-
