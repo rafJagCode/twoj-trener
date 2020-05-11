@@ -12,9 +12,9 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
 
-class Controller extends BaseController
-{
-    public function index(){
-        return view('trainer_dashboard');
-    } 
-}
+//class Controller extends BaseController
+//{
+//    public function index(){
+//        return view('trainer_dashboard');
+//    } 
+//}

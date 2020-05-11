@@ -16,7 +16,8 @@ body {margin-top: 100px;}
                         <div class="card bg-dark text-white">
                             <div class="card-header ">Logowanie</div>
                             <div class="card-body">
-                                <form class="form-horizontal" method="post" action="#">
+                                <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                                    @csrf
                                     <div class="form-group">
                                         <label for="email" class="cols-sm-2 control-label">Adres e-mail</label>
                                         <div class="cols-sm-10">
@@ -26,7 +27,7 @@ body {margin-top: 100px;}
                                             </div>
                                         </div>
                                     </div>
-                            
+
                                     <div class="form-group">
                                         <label for="password" class="cols-sm-2 control-label">Hasło</label>
                                         <div class="cols-sm-10">
@@ -37,11 +38,11 @@ body {margin-top: 100px;}
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <button type="button" class="btn btn-warning btn-lg btn-block login-button">Zaloguj</button>
+                                        <button type="submit" class="btn btn-warning btn-lg btn-block login-button">Zaloguj</button>
                                     </div>
                                     <div class="login-register">
-                                    
-                                    <a class="btn btn-warning" href="#" role="button">Zarejestruj się!</a>
+
+                                    <a class="btn btn-warning" href="/register" role="button">Zarejestruj się!</a>
                                     </div>
                                 </form>
                             </div>
