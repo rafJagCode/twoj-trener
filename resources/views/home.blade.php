@@ -13,12 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-<<<<<<< HEAD
                     You are logged in! {{$firstname}}
-=======
-                    You are logged in!
->>>>>>> develop
                 </div>
             </div>
         </div>
