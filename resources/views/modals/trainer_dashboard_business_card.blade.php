@@ -30,7 +30,7 @@
                             <select id="citySelector" class="form-control selectpicker" data-live-search="true"
                                 data-style="btn-selection">
 
-                                @foreach($cities as $city)
+                                @foreach($cities ?? '' as $city)
                                     <option class="city-choice" data-tokens="{{ $city }}">{{ $city }}</option>
                                 @endforeach
                             </select>

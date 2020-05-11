@@ -32,8 +32,4 @@
     <div class="footer-copyright text-center py-3">
       © 2020 Copyright: BrygadaRR
     </div>
-<<<<<<< HEAD
   </footer>
-=======
-  </footer>
->>>>>>> 4b172bce0a7bde55786961f9e243eb2932535721
