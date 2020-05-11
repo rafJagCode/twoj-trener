@@ -38,6 +38,7 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     public function showLoginForm()
     {
@@ -45,4 +46,6 @@ class LoginController extends Controller
     }
 =======
 >>>>>>> ff7a9d383427404e59788aeb11c038ea9fbf016f
+=======
+>>>>>>> develop
 }

@@ -2,6 +2,7 @@
 
 @section('content')
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -75,6 +76,8 @@
                         </form>
                     </div>
 =======
+=======
+>>>>>>> develop
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -139,13 +142,20 @@
                             </div>
                         </div>
                     </form>
+<<<<<<< HEAD
 >>>>>>> ff7a9d383427404e59788aeb11c038ea9fbf016f
+=======
+>>>>>>> develop
                 </div>
             </div>
         </div>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 </div>
 >>>>>>> ff7a9d383427404e59788aeb11c038ea9fbf016f
+=======
+</div>
+>>>>>>> develop
 @endsection
