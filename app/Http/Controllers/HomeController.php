@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-=======
 use http\Client\Curl\User;
 
->>>>>>> develop
+
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,9 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $user= auth()->user();
         return view('home',['firstname'=>$user->firstName]);
-
     }
 }
