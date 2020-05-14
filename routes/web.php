@@ -17,33 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/trainer_dashboard', function () {
-    $userName = 'John';
-    $cities = [
-        'Warszawa',
-        'Olsztyn',
-        'Kraków',
-        'Poznań'
-    ];
-    $disciplines = [
-        'Bodybuilding',
-        'Kalistenika',
-        'Crossfit',
-        'Kettlebel',
-        'Cardio',
-        'Streetching',
-        'Fitnes',
-        'Interwały',
-        'Fbw'
-    ];
-    return view('trainer_dashboard',[
-        'userName' => $userName,
-        'cities' => $cities,
-        'disciplines' => $disciplines
-    ]);
-});
-
-
 Route::get('/registration', function () {
     return view('registration');
 });
@@ -54,10 +27,11 @@ Route::get('/login', function () {
 });
 
 Auth::routes();
-//Registration Routes...
-//Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-//Route::post('register', 'Auth\RegisterController@register');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/trainer-dashboard', 'DashboardController@index')->name('trainer-dashboard.show');
+Route::patch('/trainer-dashboard', 'DashboardController@update')->name('trainer-dashboard.update');
+//Route::resource('trainer-dashboard', 'Trainer.DashboardController');
 
 

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="615a82d2-6371-4ce8-8058-ec21fc65f79b" name="Default Changelist" comment="" />
+    <list default="true" id="615a82d2-6371-4ce8-8058-ec21fc65f79b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,6 +147,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Projekt zespołowy\twoj-trener" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Projekt zespołowy\twoj-trener\app\Http\Controllers" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -181,6 +188,10 @@
       <workItem from="1589135067362" duration="1709000" />
       <workItem from="1589137662157" duration="5038000" />
       <workItem from="1589207025797" duration="359000" />
+      <workItem from="1589214284392" duration="1875000" />
+      <workItem from="1589394104256" duration="2307000" />
+      <workItem from="1589447404421" duration="12958000" />
+      <workItem from="1589490491652" duration="1080000" />
     </task>
     <servers />
   </component>
@@ -220,18 +231,33 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="681" y="261" width="540" height="524" key="StructurePopup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1587995418413" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1589214387891">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1589490492362">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1589214387891" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588923252191" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1589447404635" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589490492362" />
     <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588923776357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1588923776357" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1589456306365">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1589456306365" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1589142215020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1589142215020" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/database/migrations/2020_05_14_212018_cities_table.php</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
