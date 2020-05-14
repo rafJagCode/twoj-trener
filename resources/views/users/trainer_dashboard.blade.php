@@ -18,7 +18,7 @@
     <div class="row text-center">
 
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <a href="#" class="no-underline" data-toggle="modal" data-target="#business-card-modal">
+            <a href="{{-- {{ route('user.store') }} --}}" class="no-underline" data-toggle="modal" data-target="#business-card-modal">
                 <div class="div-square py-3">
                     <i class="fas fa-user fa-5x"></i>
                     <h4>Twoja Wizytówka</h4>

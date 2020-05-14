@@ -66,6 +66,12 @@ Route::get('/trainer_dashboard', [
     'as' => 'users.show'
 ]);
 
+Route::get('/trainer_dashboard_store', [
+    'uses' => 'UsersController@store',
+    'as' => 'users.store'
+]);
+
+
 Route::get('/registration', function () {
     return view('registration');
 });

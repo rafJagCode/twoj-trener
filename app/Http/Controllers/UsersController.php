@@ -37,13 +37,14 @@ class UsersController extends Controller
 
     
     }
-
+ 
     public function store (Request $request)
     {
         $user = new User();
         $user->firstName = $request->input('firstName');
         $user->secondName = $request->input('secondName');
-        $user->city = $request->input('city');
+       /*  $user->city = $request->input('city'); */
         $user->phoneNumber=$request->input('phoneNumber');
+        $user->save();
     }
 }

@@ -13,15 +13,15 @@
             </div>
             <div class="modal-body">
 
-                <form>
+                <form action="{{ route('users.store')}}" method="POST">
                     <div class="form-row mb-3">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Imię">
+                            <input type="text" name="firstName" class="form-control" placeholder="Imię">
                         </div>
                     </div>
                     <div class="form-row mb-3">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Nazwisko">
+                            <input type="text" name="secondName" class="form-control" placeholder="Nazwisko">
                         </div>
                     </div>
 
@@ -38,7 +38,7 @@
                     </div>
                     <div class="form-row mb-3">
                         <div class="col">
-                            <input type="tel" class="form-control" placeholder="Numer telefonu">
+                            <input type="tel" name="phoneNumber" class="form-control" placeholder="Numer telefonu">
                         </div>
                     </div>
 
@@ -60,13 +60,13 @@
                     </div>
 
 
+                    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                        <button type="button" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
+                    </div>
                 </form>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                <button type="button" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
-            </div>
-        </div>
     </div>
 </div>
