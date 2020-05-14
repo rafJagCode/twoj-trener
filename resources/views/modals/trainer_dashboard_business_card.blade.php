@@ -13,7 +13,8 @@
             </div>
             <div class="modal-body">
 
-                <form>
+                <form method="POST" action="{{ route('trainer-dashboard.update') }}">
+                    @method('PATCH')
                     <div class="form-row mb-3">
                         <div class="col">
                             <input type="text" class="form-control" placeholder="Imię">

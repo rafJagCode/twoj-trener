@@ -13,7 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    You are logged in! {{$firstname}}
+                    You are logged in! {{$user->firstName}} {{$user->email}}
+
+                   <a href="{{route('trainer-dashboard.show')}}">dashboard</a>
                 </div>
             </div>
         </div>

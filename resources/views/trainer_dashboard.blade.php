@@ -11,7 +11,7 @@
     <div class="row text-center">
         <div class="col-lg-12 ">
             <div class="alert alert-warning">
-                <strong>Witaj {{$userName}} ! </strong> Nie masz nowych wiadomości.
+                <strong>Witaj {{$user->firstName}} ! </strong> Nie masz nowych wiadomości.
             </div>
         </div>
     </div>
