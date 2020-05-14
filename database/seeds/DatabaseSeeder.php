@@ -7,6 +7,7 @@ use App\Ratings;
 use App\Roles;
 use App\Gyms;
 use App\Dysciplines;
+use app\Cities;
 
 
 class DatabaseSeeder extends Seeder
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(DietsTableSeeder::class);
+        $this->call(CitiesTableSeeder::class);
         $this->call(RatingsTableSeeder::class);
         $this->call(DysciplinesTableSeeder::class);
         $this->call(GymsTableSeeder::class);

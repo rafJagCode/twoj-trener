@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cities;
 use App\Diets;
 use App\Dysciplines;
 use App\Gyms;
@@ -21,13 +22,8 @@ class UsersController extends Controller
     {
 
         $loggedUser = auth()->user();
-        $disciplines = Dysciplines::all();
-        $cities = [
-            'Warszawa',
-            'Olsztyn',
-            'Kraków',
-            'Poznań'
-        ];
+        $disciplines = Dysciplines::pluck('name');
+        $cities = Cities::pluck('name');
 
         return view('users.trainer_dashboard', compact('loggedUser', 'disciplines', 'cities'));
     }

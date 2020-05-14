@@ -49,10 +49,10 @@
                                 <div class="custom-control custom-checkbox ">
                                     <input type="checkbox" class="custom-control-input my-checkbox"
                                         id="{{ $discipline }}">
-                                    <label class="custom-control-label my-label" for="{{ $discipline->name }}"> <p>{{ $discipline->name }}</p> <img
+                                    <label class="custom-control-label my-label" for="{{ $discipline }}"> <p>{{ $discipline }}</p> <img
                                             class="discipline-icon"
                                             src=""
-                                            alt="{{ $discipline->name }}"></label>
+                                            alt="{{ $discipline }}"></label>
                                 </div>
                             </div>
 
