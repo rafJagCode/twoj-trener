@@ -1,0 +1,88 @@
+footer {
+<<<<<<< HEAD
+  padding: 20px 20px 0 20px;
+  background-color: #32373B;
+}
+
+footer ul {
+  margin-bottom: 0;
+}
+
+.footer-icon {
+  margin: 0 15px;
+  width: 50px;
+  height: 50px;
+}
+
+.footer-links .list-inline-item {
+  margin: 0;
+}
+
+.footer-links li {
+  padding: 0 10px 0 10px;
+}
+
+.footer-links li:nth-of-type(2) {
+  border-left: solid 1px #FFB300;
+  border-right: solid 1px #FFB300;
+}
+
+.footer-link {
+  font-size: 1rem;
+  color: #FFB300;
+}
+
+.footer-link:hover {
+  color: #F17105;
+}
+
+.footer-copyright {
+  color: #FFB300;
+  font-size: 0.5rem;
+}
+
+=======
+    padding: 20px 20px 0 20px;
+    background-color: #32373B;
+  }
+  
+  footer ul {
+    margin-bottom: 0;
+  }
+  
+  .footer-icon {
+    margin: 0 15px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .footer-links .list-inline-item {
+    margin: 0;
+  }
+  
+  .footer-links li {
+    padding: 0 10px 0 10px;
+  }
+  
+  .footer-links li:nth-of-type(2) {
+    border-left: solid 1px #FFB300;
+    border-right: solid 1px #FFB300;
+  }
+  
+  .footer-link {
+    font-size: 1rem;
+    color: #FFB300;
+  }
+  
+  .footer-link:hover {
+    color: #F17105;
+  }
+  
+  .footer-copyright {
+    color: #FFB300;
+    font-size: 0.5rem;
+  }
+
+  
+  
+>>>>>>> 4b172bce0a7bde55786961f9e243eb2932535721
