@@ -1,6 +1,6 @@
 <?php
 
-use App\Diets;
+use App\Models\Diets;
 use Illuminate\Database\Seeder;
 
 class DietsTableSeeder extends Seeder

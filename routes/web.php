@@ -66,9 +66,9 @@ Route::get('/trainer_dashboard', [
     'as' => 'users.show'
 ]);
 
-Route::get('/trainer_dashboard_store', [
+Route::post('/trainer_dashboard', [
     'uses' => 'UsersController@store',
-    'as' => 'users.store'
+    'as' => 'users.update'
 ]);
 
 

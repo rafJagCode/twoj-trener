@@ -18,7 +18,8 @@
     <div class="row text-center">
 
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <a href="{{-- {{ route('user.store') }} --}}" class="no-underline" data-toggle="modal" data-target="#business-card-modal">
+            <a href="{{ route('users.show') }}" class="no-underline"  data-toggle="modal" data-myfirstName="{{$loggedUser->firstName}}" 
+            data-mysecondName="{{$loggedUser->secondName}}" data-myCity="{{$cities}}" data-myDisciplines="{{$disciplines}}" data-target="#business-card-modal-edit">
                 <div class="div-square py-3">
                     <i class="fas fa-user fa-5x"></i>
                     <h4>Twoja Wizytówka</h4>
@@ -68,6 +69,8 @@
     </div>
 </div>
 
+
 @include("modals.trainer_dashboard_business_card")
+
 
 @endsection

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,9 +16,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstName','secondName', 'email','city', 'password',
+        'firstName','secondName','email','cities_id', 'password',
     ];
 
+
+
+
+    
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -84,4 +88,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Gyms::class, 'gyms_has_users', 'users_id', 'gyms_id')->withTimestamps();
 
     }
+
+  
 }

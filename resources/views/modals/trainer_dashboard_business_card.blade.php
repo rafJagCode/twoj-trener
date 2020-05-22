@@ -4,7 +4,7 @@
 @section('business-card-js')
 <script src="{{ asset('/js/apend_icons_to_disciplines.js') }}"></script>
 @endsection
-<div class="modal fade" id="business-card-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="business-card-modal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -13,17 +13,26 @@
             </div>
             <div class="modal-body">
 
-                <form action="{{ route('users.store')}}" method="POST">
+                <form action="{{ route('users.update','testowanie')}}" method="POST">
+
+                @csrf
                     <div class="form-row mb-3">
                         <div class="col">
-                            <input type="text" name="firstName" class="form-control" placeholder="Imię">
+                            <input type="text" name="firstName" id="firstName" class="form-control" {{-- placeholder="Imię" --}}>
                         </div>
                     </div>
                     <div class="form-row mb-3">
                         <div class="col">
-                            <input type="text" name="secondName" class="form-control" placeholder="Nazwisko">
+                            <input type="text" name="secondName" id="secondName" class="form-control" {{-- placeholder="Nazwisko" --}}>
                         </div>
                     </div>
+
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <input type="text" name="secondName" id="city" class="form-control" {{-- placeholder="Nazwisko" --}}>
+                        </div>
+                    </div>
+
 
                     <div class="form-row mb-3">
                         <div class="col">
@@ -64,7 +73,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                        <button type="button" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
+                        <button type="submit" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
                     </div>
                 </form>
 

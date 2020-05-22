@@ -1,6 +1,6 @@
 <?php
 
-use App\Dysciplines;
+use App\Models\Dysciplines;
 use Illuminate\Database\Seeder;
 
 class DysciplinesTableSeeder extends Seeder

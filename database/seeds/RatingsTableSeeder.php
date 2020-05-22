@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Ratings;
+use App\Models\Ratings;
 
 class RatingsTableSeeder extends Seeder
 {
