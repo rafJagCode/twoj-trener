@@ -30,8 +30,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/trainer-dashboard', 'DashboardController@index')->name('trainer-dashboard.show');
-Route::patch('/trainer-dashboard', 'DashboardController@update')->name('trainer-dashboard.update');
-//Route::resource('trainer-dashboard', 'Trainer.DashboardController');
+
+Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('trainer-dashboard.index');
+Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
+
 
 

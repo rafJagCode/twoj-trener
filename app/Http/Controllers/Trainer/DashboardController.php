@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Trainer;
 
+use App\Http\Controllers\Controller;
 use App\Cities;
 use App\Dysciplines;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -20,15 +23,15 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $user= auth()->user();
-        $cities = Cities::pluck('name');
-
-        $disciplines = Dysciplines::pluck('name');
-
-
-        return view('trainer_dashboard',['user'=>$user,'cities'=>$cities,
-            'disciplines'=>$disciplines]);
-
+        if(auth()->check()) {
+            $user = auth()->user();
+            $cities = Cities::pluck('name');
+            $disciplines = Dysciplines::pluck('name');
+            return view('trainer_dashboard', ['user' => $user, 'cities' => $cities,
+                'disciplines' => $disciplines]);
+        }
+        else
+            return view('login');
     }
 
     /**
@@ -81,9 +84,15 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $user= auth()->user();
+
+        $user->firstName= $request->input('firstName');
+        $user->secondName= $request->input('secondName');
+        $user->city= $request->input('city');
+        $user->save();
+        return redirect('/trainer-dashboard');
     }
 
     /**

@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="615a82d2-6371-4ce8-8058-ec21fc65f79b" name="Default Changelist" comment="">
+    <list default="true" id="2f5da725-914a-4ae6-b2fb-65e11d549b47" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Trainer/DashboardControllerSession.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_02_213444_create_dysciplines_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_02_213444_create_dysciplines_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/top_navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/top_navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/modals/trainer_dashboard_business_card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/trainer_dashboard_business_card.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/top_navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/top_navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,11 +152,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Projekt zespołowy\twoj-trener\app\Http\Controllers\Trainer" />
+      <recent name="F:\Projekt zespołowy\twoj-trener\app\Http\Controllers" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Projekt zespołowy\twoj-trener" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Projekt zespołowy\twoj-trener\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -174,7 +183,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="615a82d2-6371-4ce8-8058-ec21fc65f79b" name="Default Changelist" comment="" />
+      <changelist id="2f5da725-914a-4ae6-b2fb-65e11d549b47" name="Default Changelist" comment="" />
       <created>1587985809573</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -192,6 +201,10 @@
       <workItem from="1589394104256" duration="2307000" />
       <workItem from="1589447404421" duration="12958000" />
       <workItem from="1589490491652" duration="1080000" />
+      <workItem from="1589492898688" duration="68000" />
+      <workItem from="1589538839423" duration="7479000" />
+      <workItem from="1589575727582" duration="2330000" />
+      <workItem from="1590145619393" duration="1655000" />
     </task>
     <servers />
   </component>
@@ -203,10 +216,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="704" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1587991858122" />
+    <state x="714" y="112" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1589539951812">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="714" y="112" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1589539951812" />
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589141104399">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1589141104399" />
+    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589541075304">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1589541075304" />
     <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1589206749627">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -231,15 +252,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="681" y="261" width="540" height="524" key="StructurePopup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1587995418413" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1589490492362">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1590145619254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1589447404635" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589490492362" />
-    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588923776357">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1590145619254" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589575727609" />
+    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589545089447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1588923776357" />
+    <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1589545089447" />
     <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1589456306365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

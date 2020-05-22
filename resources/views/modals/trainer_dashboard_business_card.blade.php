@@ -13,23 +13,24 @@
             </div>
             <div class="modal-body">
 
-                <form method="POST" action="{{ route('trainer-dashboard.update') }}">
+                <form method="POST" action="{{ route('trainer-dashboard.update') }}" enctype="multipart/form-data">
+                    @csrf
                     @method('PATCH')
                     <div class="form-row mb-3">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Imię">
+                            <input type="text" class="form-control" placeholder="Imię" name="firstName" id="firstName" value="{{$user->firstName}}">
                         </div>
                     </div>
                     <div class="form-row mb-3">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Nazwisko">
+                            <input type="text" class="form-control" placeholder="Nazwisko" name="secondName" id="secondName" value="{{$user->secondName}}">
                         </div>
                     </div>
 
                     <div class="form-row mb-3">
                         <div class="col">
                             <select id="citySelector" class="form-control selectpicker" data-live-search="true"
-                                data-style="btn-selection">
+                                data-style="btn-selection"  name="city" id="city" value="{{$user->city}}">
 
                                 @foreach($cities ?? '' as $city)
                                     <option class="city-choice" data-tokens="{{ $city }}">{{ $city }}</option>
@@ -48,8 +49,7 @@
 
                             <div class="discipline col-md-6 col-sm-12 text-left">
                                 <div class="custom-control custom-checkbox ">
-                                    <input type="checkbox" class="custom-control-input my-checkbox"
-                                        id="{{ $discipline }}">
+                                    <input type="checkbox" class="custom-control-input my-checkbox" name="discipline" id="{{ $discipline }}">
                                     <label class="custom-control-label my-label" for="{{ $discipline }}"> <p>{{ $discipline }}</p> <img
                                             class="discipline-icon"
                                             src=""
@@ -59,15 +59,14 @@
 
                         @endforeach
                     </div>
-
-
+                    <div class="modal-footer">
+                        <button type="button" role="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                        <button type="submit" role="button" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
+                    </div>
                 </form>
 
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                <button type="button" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
-            </div>
+
         </div>
     </div>
 </div>
