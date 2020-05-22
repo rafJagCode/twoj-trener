@@ -43,12 +43,15 @@ class UsersController extends Controller
 
     public function show()
     {
-
+        
         $loggedUser = auth()->user();
+       /*  $disciplines = Dysciplines::pluck('name'); */
         $disciplines = Dysciplines::pluck('name');
+        $diets = $loggedUser->diets()->get();
+
         $cities = User::all('city');
 
-        return view('users.trainer_dashboard', compact('loggedUser', 'disciplines', 'cities'));
+        return view('users.trainer_dashboard', compact('loggedUser', 'disciplines', 'cities','diets'));
     }
 
     public function edit(user $user)

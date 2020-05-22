@@ -89,5 +89,11 @@ class User extends Authenticatable
 
     }
 
+    
+    public function dysciplines()
+    {
+        return $this->belongsToMany(Gyms::class, 'dysciplines_has_users', 'users_id', 'dysciplines_id')->withTimestamps();
+
+    }
   
 }

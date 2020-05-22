@@ -12,6 +12,7 @@
         <div class="col-lg-12 ">
             <div class="alert alert-warning">
                 <strong>Witaj {{$loggedUser->firstName}} ! </strong> Nie masz nowych wiadomości.
+               
             </div>
         </div>
     </div>
@@ -23,6 +24,10 @@
                 <div class="div-square py-3">
                     <i class="fas fa-user fa-5x"></i>
                     <h4>Twoja Wizytówka</h4>
+                    @foreach ($diets as $diet)
+                    <h1> {{ $diet->name }}</h1>
+                        
+                    @endforeach
                 </div>
             </a>
         </div>
