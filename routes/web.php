@@ -67,7 +67,7 @@ Route::get('/trainer_dashboard', [
 ]);
 
 Route::post('/trainer_dashboard', [
-    'uses' => 'UsersController@store',
+    'uses' => 'UsersController@update',
     'as' => 'users.update'
 ]);
 

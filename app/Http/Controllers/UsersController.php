@@ -45,7 +45,6 @@ class UsersController extends Controller
     {
         
         $loggedUser = auth()->user();
-       /*  $disciplines = Dysciplines::pluck('name'); */
         $disciplines = Dysciplines::pluck('name');
         $diets = $loggedUser->diets()->get();
 
@@ -59,19 +58,17 @@ class UsersController extends Controller
      
     }
 
-    public function update(Request $request, $user )
+    public function update(Request $request)
     {
-        error_log($request('firstName'));
-        error_log($request('secondName'));
-        error_log($request('phoneNumber'));
-        error_log($request('city'));
-        error_log($request('discipline'));
+      $user= auth()->user();
 
-        redirect('/trainer_dashboard#');
-     /*    
-      $user-> User::findOrFail($request->user_id);
+      $user->firtName= $request-> input('firstName');
+      $user->secondName= $request -> input('secondName');
+      $user->city = $request_> input('city');
+      
 
-      $user->update($request->all()); */
+      $user-> save();
+      return redirect('/trainer_dashboard');
     }
 
     public function destroy(user $user)

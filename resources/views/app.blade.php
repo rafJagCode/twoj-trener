@@ -35,7 +35,7 @@
 </body>
 
 </html>
-<script src="{{ asset('js/app.js') }}"></script>
+{{-- <script src="{{ asset('js/app.js') }}"></script>
 <script>$('#business-card-modal-edit').on('show.bs.modal', function (event) {
 
     console.log('Modal Jest Otwarty');
@@ -57,3 +57,4 @@
 
   })
   </script>
+ --}}
