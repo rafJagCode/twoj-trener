@@ -18,21 +18,14 @@
                 @csrf
                     <div class="form-row mb-3">
                         <div class="col">
-                            <input type="text" name="firstName" id="firstName" class="form-control" {{-- placeholder="Imię" --}}>
+                            <input type="text" name="firstName" id="firstName" class="form-control" placeholder="{{$loggedUser->firstName}}">
                         </div>
                     </div>
                     <div class="form-row mb-3">
                         <div class="col">
-                            <input type="text" name="secondName" id="secondName" class="form-control" {{-- placeholder="Nazwisko" --}}>
+                            <input type="text" name="secondName" id="secondName" class="form-control" placeholder="{{$loggedUser->secondName}}">
                         </div>
                     </div>
-
-                    <div class="form-row mb-3">
-                        <div class="col">
-                            <input type="text" name="secondName" id="city" class="form-control" {{-- placeholder="Nazwisko" --}}>
-                        </div>
-                    </div>
-
 
                     <div class="form-row mb-3">
                         <div class="col">
