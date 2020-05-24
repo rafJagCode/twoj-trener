@@ -25,10 +25,13 @@ class DashboardController extends Controller
     {
         if(auth()->check()) {
             $user = auth()->user();
-            $cities = Cities::pluck('name');
-            $disciplines = Dysciplines::pluck('name');
-            return view('trainer_dashboard', ['user' => $user, 'cities' => $cities,
-                'disciplines' => $disciplines]);
+            $cities = User::select('city')->groupBy('city')->get() ;
+            $disciplines = Dysciplines::all();
+            $checkedDisciplines= $user->disciplines()->get();
+
+//            return view('trainer_dashboard', ['user' => $user, 'cities' => $cities,
+//                'disciplines' => $allDisciplines]);
+            return view('trainer_dashboard',compact('user','disciplines','checkedDisciplines','cities'));
         }
         else
             return view('login');
@@ -87,6 +90,7 @@ class DashboardController extends Controller
     public function update(Request $request)
     {
         $user= auth()->user();
+        //$disciplines=$user->disiplines()->get();
 
         $user->firstName= $request->input('firstName');
         $user->secondName= $request->input('secondName');
