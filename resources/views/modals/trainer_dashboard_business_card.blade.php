@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-row mb-3">
                         <div class="col">
-                            <input type="tel" class="form-control" placeholder="Numer telefonu">
+                            <input type="phoneNumber" name="phoneNumber" value="{{user->$phoneNumber}}" class="form-control" placeholder="Numer telefonu">
                         </div>
                     </div>
 
@@ -54,12 +54,12 @@
                             <div class="discipline col-md-6 col-sm-12 text-left">
                                 <div class="custom-control custom-checkbox ">
                                     <input type="checkbox" class="custom-control-input my-checkbox" name="disciplines[]"
-                                           id="{{ $discipline->name }}" value="{{$discipline->name}}"
-                                    @foreach($checkedDisciplines as $ch)
-                                        @if($ch->name===$discipline->name))
-                                            checked=checked
+                                           id="{{ $discipline->name }}" value="{{$discipline->id}}"
+                                           @foreach($checkedDisciplines as $ch)
+                                           @if($ch->name===$discipline->name))
+                                           checked=checked
                                         @endif
-                                    @endforeach>
+                                        @endforeach>
                                     <label class="custom-control-label my-label" for="{{ $discipline->name }}">
                                         <p>{{ $discipline->name }}</p> <img
                                             class="discipline-icon"
@@ -69,6 +69,7 @@
                             </div>
 
                         @endforeach
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" role="button" class="btn btn-secondary" data-dismiss="modal">Zamknij
