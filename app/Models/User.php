@@ -16,17 +16,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-<<<<<<< HEAD:app/User.php
-        'firstName','secondName', 'email','city','phone_number', 'password',
-=======
-        'firstName','secondName','email','cities_id', 'password',
->>>>>>> 7cbb99ea5cb6ab2c0bd89bf7d4319ef2bc90ad30:app/Models/User.php
+
+        'firstName', 'secondName', 'email', 'city', 'phone_number', 'password',
     ];
 
-
-
-
-    
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -45,10 +38,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-  
 
 
-    public function hasAnyRole($role)
+
+    public function hasAnyRole($roles)
     {
         if (is_array($roles)) {
             foreach ($roles as $role) {
@@ -73,10 +66,10 @@ class User extends Authenticatable
     }
 
   public function roles()
-    {
-        //return $this->belongsToMany(Roles::class, 'roles_has_users', 'users_id', 'roles_id')->withTimestamps();
-        return $this->belongsToMany(Roles::class)->withTimestamps();
-    }
+  {
+      //return $this->belongsToMany(Roles::class, 'roles_has_users', 'users_id', 'roles_id')->withTimestamps();
+      return $this->belongsToMany(Roles::class)->withTimestamps();
+  }
 
     public function diets()
     {
@@ -92,18 +85,15 @@ class User extends Authenticatable
 
     public function gyms()
     {
-<<<<<<< HEAD:app/User.php
+
        // return $this->belongsToMany(Gyms::class, 'gyms_has_users', 'users_id', 'gyms_id')->withTimestamps();
         return $this->belongsToMany(Gyms::class)->withTimestamps();
     }
 
     public function  disciplines(){
         return $this->belongsToMany(Dysciplines::class,'dysciplines_has_users','users_id')->withTimestamps();
-=======
-        return $this->belongsToMany(Gyms::class, 'gyms_has_users', 'users_id', 'gyms_id')->withTimestamps();
-
->>>>>>> 7cbb99ea5cb6ab2c0bd89bf7d4319ef2bc90ad30:app/Models/User.php
+        //return $this->belongsToMany(Gyms::class, 'gyms_has_users', 'users_id', 'gyms_id')->withTimestamps();
     }
 
-  
+
 }

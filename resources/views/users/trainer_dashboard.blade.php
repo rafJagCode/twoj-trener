@@ -11,25 +11,22 @@
     <div class="row text-center">
         <div class="col-lg-12 ">
             <div class="alert alert-warning">
-<<<<<<< HEAD:resources/views/trainer_dashboard.blade.php
                 <strong>Witaj {{$user->firstName}} ! </strong> Nie masz nowych wiadomości.
-=======
-                <strong>Witaj {{$loggedUser->firstName}} ! </strong> Nie masz nowych wiadomości.
->>>>>>> 7cbb99ea5cb6ab2c0bd89bf7d4319ef2bc90ad30:resources/views/users/trainer_dashboard.blade.php
+
             </div>
         </div>
     </div>
-    <div class="row text-center">
 
+    <div class="row text-center">
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <a href="{{ route('users.show') }}" class="no-underline"  data-toggle="modal" data-myfirstName="{{$loggedUser->firstName}}" 
-            data-mysecondName="{{$loggedUser->secondName}}" data-myCity="{{$cities}}" data-myDisciplines="{{$disciplines}}" data-target="#business-card-modal-edit">
+            <a href="#" class="no-underline" data-toggle="modal" data-target="#business-card-modal">
                 <div class="div-square py-3">
                     <i class="fas fa-user fa-5x"></i>
                     <h4>Twoja Wizytówka</h4>
                 </div>
             </a>
         </div>
+
         <div class="col-lg-4 col-md-6 col-sm-12">
             <a href="#" class="no-underline">
                 <div class="div-square py-3">
@@ -38,6 +35,7 @@
                 </div>
             </a>
         </div>
+
         <div class="col-lg-4 col-md-6 col-sm-12">
             <a href="#" class="no-underline">
                 <div class="div-square py-3">
@@ -72,7 +70,6 @@
         </div>
     </div>
 </div>
-
 
 @include("modals.trainer_dashboard_business_card")
 

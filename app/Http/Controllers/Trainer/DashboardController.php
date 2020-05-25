@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Trainer;
 
 use App\Http\Controllers\Controller;
-use App\Cities;
-use App\Dysciplines;
-use App\User;
+use App\Models\Cities;
+use App\Models\Dysciplines;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,9 +29,7 @@ class DashboardController extends Controller
             $disciplines = Dysciplines::all();
             $checkedDisciplines= $user->disciplines()->get();
 
-//            return view('trainer_dashboard', ['user' => $user, 'cities' => $cities,
-//                'disciplines' => $allDisciplines]);
-            return view('trainer_dashboard',compact('user','disciplines','checkedDisciplines','cities'));
+            return view('users\trainer_dashboard',compact('user','disciplines','checkedDisciplines','cities'));
         }
         else
             return view('login');
