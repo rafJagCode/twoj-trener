@@ -3,8 +3,8 @@
 use App\Models\Roles;
 use App\Models\User;
 use App\Models\Diets;
-use App\Models\Ratings;
 use App\Models\Gyms;
+use App\Models\Ratings;
 
 use Illuminate\Database\Seeder;
 
@@ -27,7 +27,7 @@ class UsersTableSeeder extends Seeder
         $user->phoneNumber = '787123644';
         $user->password = bcrypt('user');
         $user->save();
-    
+
 
         $user->roles()->attach($role);
 

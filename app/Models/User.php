@@ -16,13 +16,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstName','secondName','email','cities_id', 'password',
+        'firstName', 'secondName', 'email', 'city', 'phoneNumber', 'password',
     ];
 
-
-
-
-    
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -41,10 +37,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-  
 
 
-    public function hasAnyRole($role)
+
+    public function hasAnyRole($roles)
     {
         if (is_array($roles)) {
             foreach ($roles as $role) {
@@ -69,9 +65,10 @@ class User extends Authenticatable
     }
 
   public function roles()
-    {
-        return $this->belongsToMany(Roles::class, 'roles_has_users', 'users_id', 'roles_id')->withTimestamps();
-    }
+  {
+      return $this->belongsToMany(Roles::class, 'roles_has_users', 'users_id', 'roles_id')->withTimestamps();
+
+  }
 
     public function diets()
     {
@@ -86,7 +83,10 @@ class User extends Authenticatable
     public function gyms()
     {
         return $this->belongsToMany(Gyms::class, 'gyms_has_users', 'users_id', 'gyms_id')->withTimestamps();
+    }
 
+    public function  disciplines(){
+        return $this->belongsToMany(Dysciplines::class,'dysciplines_has_users','users_id')->withTimestamps();
     }
 
     

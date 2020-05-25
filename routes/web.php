@@ -19,37 +19,8 @@ Route::get('/', function () {
 });
 
 
-/* Route::get('/trainer_dashboard', function () {
-=======
-Route::get('/trainer_dashboard', function () {
->>>>>>> develop
-    $userName = 'John';
-    $cities = [
-        'Warszawa',
-        'Olsztyn',
-        'Kraków',
-        'Poznań'
-    ];
-    $disciplines = [
-        'Bodybuilding',
-        'Kalistenika',
-        'Crossfit',
-        'Kettlebel',
-        'Cardio',
-        'Streetching',
-        'Fitnes',
-        'Interwały',
-        'Fbw'
-    ];
-    return view('trainer_dashboard',[
-        'userName' => $userName,
-        'cities' => $cities,
-        'disciplines' => $disciplines
-    ]);
-}); */
 
-
-/* Route::group([
+ Route::group([
     'middleware' => 'roles',
     'roles' => 'Trainer'
 ], function () {
@@ -59,14 +30,17 @@ Route::get('/trainer_dashboard', function () {
         'as' => 'users.show'
     ]);
 });
- */
+
 
 Route::get('/trainer_dashboard', [
     'uses' => 'UsersController@show',
     'as' => 'users.show'
 ]);
 
-Route::post('/trainer_dashboard','UsersController@update')->name('users.update');
+Route::post('/trainer_dashboard', [
+    'uses' => 'UsersController@store',
+    'as' => 'users.update'
+]);
 
 Route::get('/registration', function () {
     return view('registration');
@@ -76,16 +50,20 @@ Route::get('/registration', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route::get('/login', function () {
     return view('login');
 });
 
 Auth::routes();
-//Registration Routes...
-//Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-//Route::post('register', 'Auth\RegisterController@register');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('trainer-dashboard.index');
+Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
+
+
+Route::get('/user-dashboard', 'UserDashboardController@index')->name('user_dashboard');
+Route::get('user/{id}', 'UserController@show');
+
+Route::get('/user_dashboard', 'UserDashboardController@index')->name('user_dashboard');
+Route::get('user/{id}', 'UserController@show');

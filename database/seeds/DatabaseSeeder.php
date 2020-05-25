@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\RolesHasUsers;
 use Illuminate\Database\Seeder;
+
 use App\Models\Diets;
 use App\Models\Ratings;
 use App\Models\Roles;
@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(DietsTableSeeder::class);
-        $this->call(RatingsTableSeeder::class);
         $this->call(DysciplinesTableSeeder::class);
+        $this->call(RatingsTableSeeder::class);
         $this->call(GymsTableSeeder::class);
         $this->call(RolesTableSeeder::class);
         $this->call(UsersTableSeeder::class);
