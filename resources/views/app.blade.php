@@ -36,3 +36,25 @@
 </body>
 
 </html>
+<script src="{{ asset('js/app.js') }}"></script>
+<script>$('#business-card-modal-edit').on('show.bs.modal', function (event) {
+
+    console.log('Modal Jest Otwarty');
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var firstName = button.data('myfirstName')
+    var secondName = button.data('mysecondName')
+    var city = button.data('myCity')
+    var disciplines = button.data('myDisciplines')
+
+
+
+    var modal = $(this)
+
+    modal.find('.modal-body #firstName').val(firstName);
+    modal.find('.modal-body #secondName').val(secondName);
+    modal.find('.modal-body #city').val(city);
+    modal.find('.modal-body #disciplines').val(disciplines);
+
+
+  })
+  </script>

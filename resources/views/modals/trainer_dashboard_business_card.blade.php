@@ -4,8 +4,13 @@
 @section('business-card-js')
     <script src="{{ asset('/js/apend_icons_to_disciplines.js') }}"></script>
 @endsection
+<<<<<<< HEAD
 <div class="modal fade" id="business-card-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
+=======
+<div class="modal fade" id="business-card-modal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+>>>>>>> 7cbb99ea5cb6ab2c0bd89bf7d4319ef2bc90ad30
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -13,6 +18,7 @@
             </div>
             <div class="modal-body">
 
+<<<<<<< HEAD
                 <form method="POST" action="{{ route('trainer-dashboard.update') }}" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
@@ -20,14 +26,33 @@
                         <div class="col">
                             <input type="text" class="form-control" placeholder="Imię" name="firstName" id="firstName"
                                    value="{{$user->firstName}}">
+=======
+                <form action="{{ route('users.update','testowanie')}}" method="POST">
+
+                @csrf
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <input type="text" name="firstName" id="firstName" class="form-control" {{-- placeholder="Imię" --}}>
+>>>>>>> 7cbb99ea5cb6ab2c0bd89bf7d4319ef2bc90ad30
                         </div>
                     </div>
                     <div class="form-row mb-3">
                         <div class="col">
+<<<<<<< HEAD
                             <input type="text" class="form-control" placeholder="Nazwisko" name="secondName"
                                    id="secondName" value="{{$user->secondName}}">
+=======
+                            <input type="text" name="secondName" id="secondName" class="form-control" {{-- placeholder="Nazwisko" --}}>
+>>>>>>> 7cbb99ea5cb6ab2c0bd89bf7d4319ef2bc90ad30
                         </div>
                     </div>
+
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <input type="text" name="secondName" id="city" class="form-control" {{-- placeholder="Nazwisko" --}}>
+                        </div>
+                    </div>
+
 
                     <div class="form-row mb-3">
                         <div class="col">
@@ -43,13 +68,21 @@
                     </div>
                     <div class="form-row mb-3">
                         <div class="col">
+<<<<<<< HEAD
                             <input type="phoneNumber" name="phoneNumber" value="{{user->$phoneNumber}}" class="form-control" placeholder="Numer telefonu">
+=======
+                            <input type="tel" name="phoneNumber" class="form-control" placeholder="Numer telefonu">
+>>>>>>> 7cbb99ea5cb6ab2c0bd89bf7d4319ef2bc90ad30
                         </div>
                     </div>
 
                     <div class="row text-center disciplines">
+<<<<<<< HEAD
 
                         @foreach($disciplines as $discipline)
+=======
+                        @foreach($disciplines ?? '' as $discipline)
+>>>>>>> 7cbb99ea5cb6ab2c0bd89bf7d4319ef2bc90ad30
 
                             <div class="discipline col-md-6 col-sm-12 text-left">
                                 <div class="custom-control custom-checkbox ">
@@ -70,6 +103,7 @@
 
                         @endforeach
 
+<<<<<<< HEAD
                     </div>
                     <div class="modal-footer">
                         <button type="button" role="button" class="btn btn-secondary" data-dismiss="modal">Zamknij
@@ -81,5 +115,15 @@
             </div>
 
         </div>
+=======
+                    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                        <button type="submit" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
+                    </div>
+                </form>
+
+>>>>>>> 7cbb99ea5cb6ab2c0bd89bf7d4319ef2bc90ad30
     </div>
 </div>
