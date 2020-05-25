@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Trainer;
 
 use App\Http\Controllers\Controller;
-use App\Cities;
-use App\Dysciplines;
-use App\User;
+use App\Models\Cities;
+use App\Models\Dysciplines;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,10 +25,11 @@ class DashboardController extends Controller
     {
         if(auth()->check()) {
             $user = auth()->user();
-            $cities = Cities::pluck('name');
-            $disciplines = Dysciplines::pluck('name');
-            return view('trainer_dashboard', ['user' => $user, 'cities' => $cities,
-                'disciplines' => $disciplines]);
+            $cities = User::select('city')->groupBy('city')->get() ;
+            $disciplines = Dysciplines::all();
+            $checkedDisciplines= $user->disciplines()->get();
+
+            return view('users\trainer_dashboard',compact('user','disciplines','checkedDisciplines','cities'));
         }
         else
             return view('login');
@@ -87,10 +88,12 @@ class DashboardController extends Controller
     public function update(Request $request)
     {
         $user= auth()->user();
-
         $user->firstName= $request->input('firstName');
         $user->secondName= $request->input('secondName');
         $user->city= $request->input('city');
+        $user->phoneNumber= $request->input('phoneNumber');
+        $user->disciplines()->sync($request->input('disciplines'));
+
         $user->save();
         return redirect('/trainer-dashboard');
     }

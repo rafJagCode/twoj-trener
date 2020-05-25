@@ -12,11 +12,12 @@
         <div class="col-lg-12 ">
             <div class="alert alert-warning">
                 <strong>Witaj {{$user->firstName}} ! </strong> Nie masz nowych wiadomości.
+
             </div>
         </div>
     </div>
-    <div class="row text-center">
 
+    <div class="row text-center">
         <div class="col-lg-4 col-md-6 col-sm-12">
             <a href="#" class="no-underline" data-toggle="modal" data-target="#business-card-modal">
                 <div class="div-square py-3">
@@ -25,14 +26,16 @@
                 </div>
             </a>
         </div>
+
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <a href="#" class="no-underline">
+            <a href="#" class="no-underline" data-toggle="modal" data-target="#myModal">
                 <div class="div-square py-3">
                     <i class="fas fa-pen fa-5x"></i>
                     <h4>Twój Opis</h4>
                 </div>
             </a>
         </div>
+
         <div class="col-lg-4 col-md-6 col-sm-12">
             <a href="#" class="no-underline">
                 <div class="div-square py-3">
@@ -69,5 +72,6 @@
 </div>
 
 @include("modals.trainer_dashboard_business_card")
+
 
 @endsection

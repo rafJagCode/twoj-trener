@@ -1,13 +1,13 @@
 var icons = {
-    'Bodybuilding' : 'bodybuilding.png',
-    'Kalistenika' : 'calisthenics.png',
+    'Siłowy' : 'bodybuilding.png',
+    'Kalisteniczny' : 'calisthenics.png',
     'Crossfit' : 'crossfit.png',
-    'Kettlebel' : 'kettlebell.png',
-    'Cardio' : 'cardio.png',
+    'Kettlebar' : 'kettlebell.png',
+    'Wytrzymałościowy' : 'cardio.png',
     'Streetching' : 'streetching.png',
     'Fitnes' : 'fitness.png',
-    'Interwały' : 'intervals.png',
-    'Fbw' : 'fbw.png'
+    'Interwałowy' : 'intervals.png',
+    'FBW' : 'fbw.png'
 }
 //"{{ asset('/images/bodybuilding.png') }}"
 $('.my-label p').each(function(i){

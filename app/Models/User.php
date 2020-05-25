@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstName','secondName', 'email','city', 'password',
+        'firstName', 'secondName', 'email', 'city', 'phoneNumber', 'password',
     ];
 
     /**
@@ -37,10 +37,38 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function roles()
+
+
+
+    public function hasAnyRole($roles)
     {
-        return $this->belongsToMany(Roles::class, 'roles_has_users', 'users_id', 'roles_id')->withTimestamps();
+        if (is_array($roles)) {
+            foreach ($roles as $role) {
+                if ($this->hasRole($role)) {
+                    return true;
+                }
+            }
+        } else {
+            if ($this->hasRole($roles)) {
+                return true;
+            }
+        }
+        return false;
     }
+
+    public function hasRole($role)
+    {
+        if ($this->roles()->where('name', $role)->first()) {
+            return true;
+        }
+        return false;
+    }
+
+  public function roles()
+  {
+      return $this->belongsToMany(Roles::class, 'roles_has_users', 'users_id', 'roles_id')->withTimestamps();
+
+  }
 
     public function diets()
     {
@@ -56,4 +84,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Gyms::class, 'gyms_has_users', 'users_id', 'gyms_id')->withTimestamps();
     }
+
+    public function  disciplines(){
+        return $this->belongsToMany(Dysciplines::class,'dysciplines_has_users','users_id')->withTimestamps();
+    }
+
+
 }

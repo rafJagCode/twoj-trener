@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Diets;
-use App\Ratings;
-use App\Roles;
-use App\Gyms;
-use App\Dysciplines;
+
+use App\Models\Diets;
+use App\Models\Ratings;
+use App\Models\Roles;
+use App\Models\Gyms;
+use App\Models\Dysciplines;
+use app\Models\Cities;
 
 
 class DatabaseSeeder extends Seeder
@@ -18,7 +20,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(DietsTableSeeder::class);
-        $this->call(CitiesTableSeeder::class);
         $this->call(DysciplinesTableSeeder::class);
         $this->call(RatingsTableSeeder::class);
         $this->call(GymsTableSeeder::class);

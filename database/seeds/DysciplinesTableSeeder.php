@@ -1,6 +1,6 @@
 <?php
 
-use App\Dysciplines;
+use App\Models\Dysciplines;
 use Illuminate\Database\Seeder;
 
 class DysciplinesTableSeeder extends Seeder
@@ -54,7 +54,7 @@ class DysciplinesTableSeeder extends Seeder
         $dyscyplines->save();
 
         $dyscyplines = new Dysciplines();
-        $dyscyplines->name = 'Strerching';
+        $dyscyplines->name = 'Streetching';
         $dyscyplines->description = 'Stretching, czyli ćwiczenia rozciągające to rodzaj zajęć polecanych osobom, które godzinami pozostają w tej samej pozycji - na przykład osobom pracującym przy komputerze. Na czym dokładnie polega stretching? Przeciągnij się jak kot. Leniwie, powoli. Zrób kilka głębokich wdechów i wydechów. Czujesz się jak nowo narodzony? Właśnie poznałeś jedne z podstawowych ćwiczeń wykorzystywanych w stretchingu.';
         $dyscyplines->save();
     }
