@@ -88,11 +88,12 @@ class DashboardController extends Controller
     public function update(Request $request)
     {
         $user= auth()->user();
-        //$disciplines=$user->disiplines()->get();
-
         $user->firstName= $request->input('firstName');
         $user->secondName= $request->input('secondName');
         $user->city= $request->input('city');
+        $user->phoneNumber= $request->input('phoneNumber');
+        $user->disciplines()->sync($request->input('disciplines'));
+
         $user->save();
         return redirect('/trainer-dashboard');
     }

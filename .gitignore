@@ -12,6 +12,6 @@ npm-debug.log
 yarn-error.log
 <<<<<<< HEAD
 
-.idea
-=======
->>>>>>> parent of b1303e6... gitignore
+.idea/
+
+

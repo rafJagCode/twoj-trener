@@ -16,12 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-<<<<<<< HEAD:app/Models/User.php
-
-        'firstName', 'secondName', 'email', 'city', 'phone_number', 'password',
-=======
-        'firstName','secondName', 'email','city', 'password',
->>>>>>> parent of 78bc18c... update disciplines:app/User.php
+        'firstName', 'secondName', 'email', 'city', 'phoneNumber', 'password',
     ];
 
     /**
@@ -71,32 +66,27 @@ class User extends Authenticatable
 
   public function roles()
   {
-      //return $this->belongsToMany(Roles::class, 'roles_has_users', 'users_id', 'roles_id')->withTimestamps();
-      return $this->belongsToMany(Roles::class)->withTimestamps();
+      return $this->belongsToMany(Roles::class, 'roles_has_users', 'users_id', 'roles_id')->withTimestamps();
+
   }
 
     public function diets()
     {
-        //return $this->belongsToMany(Diets::class, 'diets_has_users', 'users_id', 'diets_id')->withTimestamps();
-        return $this->belongsToMany(Diets::class)->withTimestamps();
+        return $this->belongsToMany(Diets::class, 'diets_has_users', 'users_id', 'diets_id')->withTimestamps();
     }
 
     public function ratings()
     {
-        //return $this->belongsToMany(Ratings::class, 'ratings_has_users', 'users_id', 'ratings_id')->withTimestamps();
-        return $this->belongsToMany(Ratings::class)->withTimestamps();
+        return $this->belongsToMany(Ratings::class, 'ratings_has_users', 'users_id', 'ratings_id')->withTimestamps();
     }
 
     public function gyms()
     {
-
-       // return $this->belongsToMany(Gyms::class, 'gyms_has_users', 'users_id', 'gyms_id')->withTimestamps();
-        return $this->belongsToMany(Gyms::class)->withTimestamps();
+        return $this->belongsToMany(Gyms::class, 'gyms_has_users', 'users_id', 'gyms_id')->withTimestamps();
     }
 
     public function  disciplines(){
         return $this->belongsToMany(Dysciplines::class,'dysciplines_has_users','users_id')->withTimestamps();
-        //return $this->belongsToMany(Gyms::class, 'gyms_has_users', 'users_id', 'gyms_id')->withTimestamps();
     }
 
 
