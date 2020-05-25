@@ -19,6 +19,7 @@
 <body>
   @include('top_navbar')
   @yield('trainer-dashboard')
+  @yield('welcome')
   @include('footer')
 
 
