@@ -46,6 +46,7 @@
                                        class="form-control"  placeholder="Nazwisko">
                             </div>
                         </div>
+<<<<<<< HEAD
 
 
                         <div class="form-row mb-3">
@@ -89,10 +90,48 @@
                                                 src=""
                                                 alt="{{ $discipline->name }}"></label>
                                     </div>
+=======
+                    </div>
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <input type="tel" class="form-control" placeholder="Numer telefonu">
+                        </div>
+                    </div>
+
+                    <div class="row text-center disciplines">
+
+                        @foreach($disciplines as $discipline)
+
+                            <div class="discipline col-md-6 col-sm-12 text-left">
+                                <div class="custom-control custom-checkbox ">
+                                    <input type="checkbox" class="custom-control-input my-checkbox" name="disciplines[]"
+                                           id="{{ $discipline->name }}" value="{{$discipline->name}}"
+                                    @foreach($checkedDisciplines as $ch)
+                                        @if($ch->name===$discipline->name))
+                                            checked=checked
+                                        @endif
+                                    @endforeach>
+                                    <label class="custom-control-label my-label" for="{{ $discipline->name }}">
+                                        <p>{{ $discipline->name }}</p> <img
+                                            class="discipline-icon"
+                                            src=""
+                                            alt="{{ $discipline->name }}"></label>
+>>>>>>> parent of 78bc18c... update disciplines
                                 </div>
 
+<<<<<<< HEAD
                             @endforeach
 
+=======
+                        @endforeach
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" role="button" class="btn btn-secondary" data-dismiss="modal">Zamknij
+                        </button>
+                        <button type="submit" role="button" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
+                    </div>
+                </form>
+>>>>>>> parent of 78bc18c... update disciplines
 
                         </div>
                         <div class="modal-footer">

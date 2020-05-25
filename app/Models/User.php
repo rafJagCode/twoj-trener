@@ -16,8 +16,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+<<<<<<< HEAD:app/Models/User.php
 
         'firstName', 'secondName', 'email', 'city', 'phone_number', 'password',
+=======
+        'firstName','secondName', 'email','city', 'password',
+>>>>>>> parent of 78bc18c... update disciplines:app/User.php
     ];
 
     /**
