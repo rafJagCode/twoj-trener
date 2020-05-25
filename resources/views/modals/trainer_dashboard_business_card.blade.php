@@ -4,7 +4,7 @@
 @section('business-card-js')
 <script src="{{ asset('/js/apend_icons_to_disciplines.js') }}"></script>
 @endsection
-<div class="modal fade" id="business-card-modal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="business-card-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -13,7 +13,7 @@
             </div>
             <div class="modal-body">
 
-                <form action="{{ route('users.update','testowanie')}}" method="POST">
+                <form action="{{ route('users.update')}}" method="POST">
 
                 @csrf
                     <div class="form-row mb-3">
@@ -51,7 +51,7 @@
                                 <div class="custom-control custom-checkbox ">
                                     <input type="checkbox" class="custom-control-input my-checkbox"
                                         id="{{ $discipline }}">
-                                    <label class="custom-control-label my-label" for="{{ $discipline }}"> <p>{{ $discipline }}</p> <img
+                                    <label class="custom-control-label my-label" name="discipline" for="{{ $discipline }}"> <p>{{ $discipline }}</p> <img
                                             class="discipline-icon"
                                             src=""
                                             alt="{{ $discipline }}"></label>

@@ -66,11 +66,7 @@ Route::get('/trainer_dashboard', [
     'as' => 'users.show'
 ]);
 
-Route::post('/trainer_dashboard', [
-    'uses' => 'UsersController@update',
-    'as' => 'users.update'
-]);
-
+Route::post('/trainer_dashboard','UsersController@update')->name('users.update');
 
 Route::get('/registration', function () {
     return view('registration');

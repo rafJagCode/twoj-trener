@@ -19,15 +19,10 @@
     <div class="row text-center">
 
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <a href="{{ route('users.show') }}" class="no-underline"  {{-- data-toggle="modal" data-myfirstName="{{$loggedUser->firstName}}" 
-            data-mysecondName="{{$loggedUser->secondName}}" data-myCity="{{$cities}}" data-myDisciplines="{{$disciplines}}" --}} data-target="#trainer_dashboard_business_card">
+            <a href="#" class="no-underline" data-toggle="modal" data-target="#business-card-modal">
                 <div class="div-square py-3">
                     <i class="fas fa-user fa-5x"></i>
                     <h4>Twoja Wizytówka</h4>
-                    @foreach ($diets as $diet)
-                    <h1> {{ $diet->name }}</h1>
-                        
-                    @endforeach
                 </div>
             </a>
         </div>
