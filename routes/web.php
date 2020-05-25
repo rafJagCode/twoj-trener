@@ -35,4 +35,5 @@ Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('tra
 Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
 
 
-
+Route::get('/user_dashboard', 'UserDashboardController@index')->name('user_dashboard');
+Route::get('user/{id}', 'UserController@show');
