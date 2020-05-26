@@ -20,27 +20,36 @@ Route::get('/', function () {
 
 
 
- Route::group([
+
+Route::group([
     'middleware' => 'roles',
     'roles' => 'Trainer'
 ], function () {
-
-    Route::get('/trainer_dashboard', [
-        'uses' => 'UsersController@show',
-        'as' => 'users.show'
-    ]);
+    Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('trainer-dashboard.index');
+    Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
+   
 });
 
 
-Route::get('/trainer_dashboard', [
-    'uses' => 'UsersController@show',
-    'as' => 'users.show'
-]);
 
-Route::post('/trainer_dashboard', [
-    'uses' => 'UsersController@store',
-    'as' => 'users.update'
-]);
+
+
+
+Route::group([
+    'middleware' => 'roles',
+    'roles' => 'User'
+], function () { 
+
+
+});
+
+
+
+
+
+
+
+
 
 Route::get('/registration', function () {
     return view('registration');
@@ -58,12 +67,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('trainer-dashboard.index');
-Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
-
-
-Route::get('/user-dashboard', 'UserDashboardController@index')->name('user_dashboard');
-Route::get('user/{id}', 'UserController@show');
-
 Route::get('/user_dashboard', 'UserDashboardController@index')->name('user_dashboard');
 Route::get('user/{id}', 'UserController@show');
+
+
