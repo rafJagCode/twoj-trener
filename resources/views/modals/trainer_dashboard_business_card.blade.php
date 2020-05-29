@@ -10,10 +10,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title center" id="busines-card-modal-label">Twoja Wizytówka</h5>
+                <a type="button" data-dismiss="modal"><i class="far fa-times-circle  fa-2x modal-icon"></i></a>
             </div>
             <div class="modal-body">
 
-                <form>
+                <form action="submit" method="POST">
                     <div class="form-row mb-3">
                         <div class="col">
                             <input type="text" class="form-control" placeholder="Imię">
@@ -28,7 +29,7 @@
                     <div class="form-row mb-3">
                         <div class="col">
                             <select id="citySelector" class="form-control selectpicker" data-live-search="true"
-                                data-style="btn-selection">
+                                data-style="btn-selection" title="Lokalizacja">
 
                                 @foreach($cities as $city)
                                     <option class="city-choice" data-tokens="{{ $city }}">{{ $city }}</option>
@@ -65,7 +66,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                <button type="button" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
+                <button type="submit" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
             </div>
         </div>
     </div>
