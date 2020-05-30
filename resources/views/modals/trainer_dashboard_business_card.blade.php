@@ -12,6 +12,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title center" id="busines-card-modal-label">Twoja Wizytówka</h5>
+                <a type="button" data-dismiss="modal"><i class="far fa-times-circle  fa-2x modal-icon"></i></a>
             </div>
             <div class="modal-body">
 
