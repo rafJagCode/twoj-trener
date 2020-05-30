@@ -39,9 +39,11 @@
     <script type="text/javascript">
         let src;
         let displayedImg;
-        $(".trainers-photo").click((event) => {
+        $(".show-photo").click((event) => {
             $("body").css("overflow", "hidden");
-            displayedImg = $(event.target);
+            let clickedBtn = $(event.target);
+            displayedImg = clickedBtn.parents('.photo-link').find('.trainers-photo');
+            console.log(displayedImg);
             src = displayedImg.attr("src");
             $("#big-photo").attr("src", src);
         });
@@ -67,7 +69,12 @@
             src = displayedImg.attr("src");
             $("#big-photo").attr("src", src);
         });
-
+        $('.upload-image-btn').click(()=>{
+            $('.upload-image-input').trigger('click');
+        })
+        $('.add-photo').click(()=>{
+            $('.upload-image-input').trigger('click');
+        })
     </script>
 </body>
 

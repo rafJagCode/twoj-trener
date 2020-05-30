@@ -8,17 +8,25 @@
             </div>
             <div class="modal-body">
                 <div class="uploaded_photos container">
-                    <p class="orange-text text-center">Zdjęcia które dodałeś</p>
                     <div class="row justify-content-center">
                         @forelse($photos as $photoDescription => $photoSrc)
-                            <a class="photo-link" href="{{ $photoSrc }}" data-dismiss="modal" data-toggle="modal"
-                                data-target="#image-gallery">
-                                <img class="trainers-photo img-thumbnail col px-1 py-1" src="{{ $photoSrc }}"
-                                    alt="{{ $photoDescription }}">
-                            </a>
+                            <div class="photo-link">
+                                <img class="trainers-photo col px-1 py-1" src="{{ $photoSrc }}" alt="{{ $photoDescription }}">
+                                <div class="image-controls">
+                                    <a href="" class="show-photo mx-1" data-dismiss="modal" data-toggle="modal" data-target="#image-gallery"><i class="far fa-eye fa-2x modal-icon"></i></a>
+                                    <a href="" class="delete-photo mx-1"><i class="far fa-trash-alt fa-2x modal-icon"></i></a>
+                                </div>
+                            </div>
                         @empty
-                            <p>Nie dodałeś żadnych zdjęć</p>
+                        <div class="photo-link">
+                            <img class="trainers-photo col px-1 py-1" src="{{ asset('images/no_photo.png') }}" alt="brak zdjęć">
+                            <div class="image-controls">
+                                <div type="button" class="add-photo mx-1"><i class="fas fa-plus-circle fa-2x modal-icon"></i></div>
+                            </div>
+                        </div>
                         @endforelse
+                        <button class="upload-image-btn btn btn-orange mt-2" style="width: 300px">Dodaj zdjęcie</button>
+                        <input class="upload-image-input" style="display:none" type="file">
                     </div>
                 </div>
             </div>
