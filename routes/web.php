@@ -28,8 +28,7 @@ Route::get('/', function () {
     Route::get('/trainer_dashboard', [
         'uses' => 'UsersController@show',
         'as' => 'users.show'
-    ]);
-});
+
 
 
 Route::get('/trainer_dashboard', [

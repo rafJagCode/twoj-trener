@@ -12,6 +12,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title center" id="busines-card-modal-label">Twoja Wizytówka</h5>
+                <a type="button" data-dismiss="modal"><i class="far fa-times-circle  fa-2x modal-icon"></i></a>
             </div>
             <div class="modal-body">
 
@@ -19,6 +20,7 @@
                 <form method="POST" action="{{ route('trainer-dashboard.update') }}" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
+       //         <form action="submit" method="POST">
                     <div class="form-row mb-3">
                         <div class="col">
                             <input type="text" class="form-control" placeholder="Imię" name="firstName"
@@ -37,8 +39,15 @@
 
                     <div class="form-row mb-3">
                         <div class="col">
-                            <input type="text" name="phoneNumber" id="phoneNumber"
-                                   class="form-control" placeholder="Numer telefonu" value="{{$user->phoneNumber}}">
+
+                            <select id="citySelector" class="form-control selectpicker" data-live-search="true"
+                                data-style="btn-selection" title="Lokalizacja">
+
+                                @foreach($cities as $city)
+                                    <option class="city-choice" data-tokens="{{ $city }}">{{ $city }}</option>
+                                @endforeach
+                            </select>
+
                         </div>
                     </div>
 
@@ -95,6 +104,13 @@
                         </button>
                     </div>
                 </form>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                <button type="submit" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
+
             </div>
         </div>
     </div>
