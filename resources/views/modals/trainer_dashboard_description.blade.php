@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <form action="submit" method="POST">
                     <div class="form-group">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="description-form" rows="3"></textarea>
                       </div>
                 </form>
 

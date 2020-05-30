@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
     <link href="{{ asset('/css/top_navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/footer.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
     @yield('trainer-dashboard-css')
     @yield('trainer-dashboard-business-card-css')
     <title>@yield('title')</title>
@@ -35,6 +37,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
     @yield('business-card-js')
     <script type="text/javascript">
         let src;
@@ -71,10 +74,23 @@
         });
         $('.upload-image-btn').click(()=>{
             $('.upload-image-input').trigger('click');
-        })
+        });
         $('.add-photo').click(()=>{
             $('.upload-image-input').trigger('click');
-        })
+        });
+    </script>
+    <script>
+    $('#description-form').summernote({
+        minHeight: 300,
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+        ]
+    });
+    $('#description-form').summernote('code', '{{$description}}');
     </script>
 </body>
 
