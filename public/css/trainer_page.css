@@ -136,6 +136,26 @@
   opacity: 1;
 }
 
+.arrow-right {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.arrow-right {
+  grid-column-start: 5;
+  grid-column-end: 6;
+}
+
+.photo-indicators {
+  margin: 2vh auto;
+  text-align: center;
+  color: #FFB300;
+}
+
+.marked-indicator {
+  color: #F17105;
+}
+
 @media (max-width: 1024px) {
   .left-img {
     display: none;

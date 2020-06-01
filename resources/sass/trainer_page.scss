@@ -115,7 +115,22 @@ $very-light-orange: #fff3cd;
         opacity:1;
     }
 }
-
+.arrow-right{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.arrow-right{
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+.photo-indicators{
+    margin:2vh auto;
+    text-align: center;
+    color: $light-orange;
+}
+.marked-indicator{
+    color: $dark-orange-border;
+}
 @media (max-width: 1024px) {
     .left-img {
       display: none;
