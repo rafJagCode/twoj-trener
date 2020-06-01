@@ -52,6 +52,29 @@ Route::get('/trainer_dashboard', function () {
     ]);
 });
 
+Route::get('/trainer_page', function () {
+    $disciplines = [
+        'bodybuilding',
+        'calisthenics',
+        'crossfit',
+        'kettlebell',
+        'cardio',
+        'streetching',
+        'fitness',
+        'intervals',
+        'fbw'
+    ];
+    $photos = [
+        "photo1" => "https://ae01.alicdn.com/kf/HTB1hg1mwMKTBuNkSne1q6yJoXXal/Women-Yoga-Set-Women-Sport-Suit-Gym-Set-Gym-Clothing-Sportswear-fitness-Wear-Fitness-Suit-Yoga.jpg_640x640.jpg",
+        "photo2" => "https://cdn.shopify.com/s/files/1/0158/4748/9584/products/product-image-862007639_1024x1024@2x.jpg?v=1575426525",
+        "photo3" => "https://as2.ftcdn.net/jpg/03/24/12/83/500_F_324128389_f7dWYMBeMDT2uFsymos0S90KfUtQ0gRW.jpg",
+        "photo4" => "https://i.pinimg.com/474x/be/a7/b0/bea7b0eaaecb59672c8ccd9d0de86123.jpg"
+    ];
+    return view('trainer_page',[
+        'disciplines' => $disciplines,
+        'photos' => $photos
+    ]);
+});
 
 Route::get('/registration', function () {
     return view('registration');

@@ -1,0 +1,148 @@
+.trainer-page-wrapper {
+  min-height: 500px;
+  font-family: exo;
+  font-weight: 700;
+  margin: 5vh 5vw;
+}
+
+.informations {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 500px;
+  height: 300px;
+  background-color: #F17105;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.photo {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  margin: auto;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: solid 3px #32373b;
+  border-radius: 10px;
+}
+
+.details {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin: auto;
+}
+
+.details p {
+  text-align: center;
+}
+
+.disciplines {
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.discipline-img {
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.trainer-page-section {
+  background-color: #fff3cd;
+  border: 2px solid #FFB300;
+  border-radius: 10px;
+  margin-top: 2vh;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 2vh 2vw;
+}
+
+.description-text {
+  margin: 2vh 2vw;
+}
+
+.gallery-title {
+  text-align: center;
+}
+
+.images {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 4fr 6fr 4fr 1fr;
+  margin: 2vh auto;
+  align-items: center;
+  justify-items: center;
+}
+
+.trainer-page-img {
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.side-img {
+  width: 200px;
+  height: 200px;
+}
+
+.central-img {
+  width: 300px;
+  height: 300px;
+}
+
+.img-container {
+  border: 2px solid #FFB300;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.left-img {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  width: 200px;
+  height: 200px;
+}
+
+.main-img {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  width: 300px;
+  height: 300px;
+}
+
+.right-img {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  width: 200px;
+  height: 200px;
+}
+
+.trainer-page-arrow {
+  opacity: 0.2;
+}
+
+.trainer-page-arrow:hover {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .left-img {
+    display: none;
+  }
+
+  .right-img {
+    display: none;
+  }
+}
+
