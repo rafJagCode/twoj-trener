@@ -91,7 +91,7 @@
             ['para', ['ul', 'ol', 'paragraph']],
         ]
     });
-    $('#description-form').summernote('code', '{{$description}}');
+    $('#description-form').summernote('code', '{{$description ?? ''}}');
     </script>
 </body>
 
