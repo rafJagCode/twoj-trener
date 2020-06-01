@@ -15,18 +15,14 @@
                 <a type="button" data-dismiss="modal"><i class="far fa-times-circle  fa-2x modal-icon"></i></a>
             </div>
             <div class="modal-body">
-
-
                 <form method="POST" action="{{ route('trainer-dashboard.update') }}" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
-       //         <form action="submit" method="POST">
                     <div class="form-row mb-3">
                         <div class="col">
                             <input type="text" class="form-control" placeholder="Imię" name="firstName"
                                    id="firstName"
                                    value="{{$user->firstName}}">
-
                         </div>
                     </div>
 
@@ -37,19 +33,19 @@
                         </div>
                     </div>
 
-                    <div class="form-row mb-3">
-                        <div class="col">
+                    {{--                        <div class="form-row mb-3">--}}
+                    {{--                            <div class="col">--}}
 
-                            <select id="citySelector" class="form-control selectpicker" data-live-search="true"
-                                data-style="btn-selection" title="Lokalizacja">
+                    {{--                                <select id="citySelector" class="form-control selectpicker" data-live-search="true"--}}
+                    {{--                                        data-style="btn-selection" title="Lokalizacja">--}}
 
-                                @foreach($cities as $city)
-                                    <option class="city-choice" data-tokens="{{ $city }}">{{ $city }}</option>
-                                @endforeach
-                            </select>
+                    {{--                                    @foreach($cities as $city)--}}
+                    {{--                                        <option class="city-choice" data-tokens="{{ $city }}">{{ $city }}</option>--}}
+                    {{--                                    @endforeach--}}
+                    {{--                                </select>--}}
 
-                        </div>
-                    </div>
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
 
 
                     <div class="form-row mb-3">
@@ -64,19 +60,17 @@
                             </select>
                         </div>
                     </div>
-                    {{--                        <div class="form-row mb-3">--}}
-                    {{--                            <div class="col">--}}
 
-                    {{--                                <input type="phoneNumber" name="phoneNumber" value="{{user->phoneNumber}}"--}}
-                    {{--                                       class="form-control" placeholder="Numer telefonu">--}}
+                    <div class="form-row mb-3">
+                        <div class="col">
 
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
+                            <input type="phoneNumber" name="phoneNumber" value="{{$user->phoneNumber}}"
+                                   class="form-control" placeholder="Numer telefonu">
+                        </div>
+                    </div>
 
                     <div class="row text-center disciplines">
-
                         @foreach($disciplines as $discipline)
-
                             <div class="discipline col-md-6 col-sm-12 text-left">
                                 <div class="custom-control custom-checkbox ">
                                     <input type="checkbox" class="custom-control-input my-checkbox"
@@ -98,18 +92,10 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" role="button" class="btn btn-secondary" data-dismiss="modal">Zamknij
-                        </button>
-                        <button type="submit" role="button" class="btn btn-rounded btn-orange">Zapisz zmiany
-                        </button>
+                        <button type="button" role="button" class="btn btn-secondary" data-dismiss="modal">Zamknij </button>
+                        <button type="submit" role="button" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
                     </div>
                 </form>
-
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
-                <button type="submit" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
 
             </div>
         </div>

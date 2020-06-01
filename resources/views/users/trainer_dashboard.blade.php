@@ -28,11 +28,8 @@
         </div>
 
         <div class="col-lg-4 col-md-6 col-sm-12">
-<<<<<<< HEAD:resources/views/users/trainer_dashboard.blade.php
-            <a href="#" class="no-underline" data-toggle="modal" data-target="#myModal">
-=======
+
             <a href="#" class="no-underline" data-toggle="modal" data-target="#description-modal">
->>>>>>> 313cbaa76b524d40e1408e9c7f9ed786d7bb5db9:resources/views/trainer_dashboard.blade.php
                 <div class="div-square py-3">
                     <i class="fas fa-pen fa-5x"></i>
                     <h4>Twój Opis</h4>
@@ -76,11 +73,6 @@
 </div>
 
 @include("modals.trainer_dashboard_business_card")
-<<<<<<< HEAD:resources/views/users/trainer_dashboard.blade.php
-
-
-=======
 @include("modals.trainer_dashboard_description")
 @include("modals.trainer_dashboard_galery")
->>>>>>> 313cbaa76b524d40e1408e9c7f9ed786d7bb5db9:resources/views/trainer_dashboard.blade.php
 @endsection
