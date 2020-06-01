@@ -9,7 +9,11 @@
 @section('trainer-page')
     <div class="trainer-page-wrapper">
         @include('trainer_page_info')
+        @include('trainer_page_message_bar')
         @include('trainer_page_description')
-        @include('trainer_page_gallery')
+        @if(count($photos)>0)
+            @include('trainer_page_gallery')
+        @endif
+        @include('trainer_page_certyficates')
     </div>
 @endsection

@@ -1,4 +1,5 @@
 .trainer-page-wrapper {
+  position: relative;
   min-height: 500px;
   font-family: exo;
   font-weight: 700;
@@ -154,6 +155,58 @@
 
 .marked-indicator {
   color: #F17105;
+}
+
+.certyficates {
+  text-align: center;
+}
+
+.certyficate-photo {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.certyficate-description {
+  display: inline-block;
+  margin: 0 1vw;
+}
+
+.message-bar {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 500px;
+  height: 80px;
+  background-color: #F17105;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.message-bar a {
+  text-decoration: none;
+  color: #32373b;
+  opacity: 0.8;
+}
+
+.message-bar a:hover {
+  color: #32373b;
+  opacity: 1;
+}
+
+.message-bar-content {
+  margin: auto;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90%;
+  font-size: 3rem;
+}
+
+.message-btn {
+  padding: 0 30px;
+  border-right: 2px solid #32373b;
 }
 
 @media (max-width: 1024px) {

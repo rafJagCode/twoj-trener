@@ -26,7 +26,6 @@
         const markPhotoIndicator = ()=>{
             let number = photosAmount-((i+2)%(photosAmount));
             $('.photo-indicator:nth-of-type('+number+')').toggleClass('marked-indicator');
-            console.log(number);
         };
         const removeMarking = () =>{
             let number = photosAmount-((i+2)%(photosAmount));
