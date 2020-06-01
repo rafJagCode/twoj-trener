@@ -29,7 +29,15 @@ class DashboardController extends Controller
             $disciplines = Dysciplines::all();
             $checkedDisciplines= $user->disciplines()->get();
 
-            return view('users\trainer_dashboard',compact('user','disciplines','checkedDisciplines','cities'));
+            $photos = [
+                "photo1" => "http://4.bp.blogspot.com/-fmWvJFVZZxI/Uc5iK_5EKfI/AAAAAAAAEbs/2Qt7I-XNHwc/s550/nature+photography+(1).jpg",
+                "photo2" => "http://3.bp.blogspot.com/-s89PXSoX9hw/Uc5iVGHzy6I/AAAAAAAAEdA/hOrjxoc9cRA/s550/nature+photography+(2).jpg",
+                "photo3" => "http://2.bp.blogspot.com/-gK83D-ZxrAA/Uc5iVP_hJJI/AAAAAAAAEc8/omD_Y_U8TdQ/s550/nature+photography+(3).jpg",
+                "photo4" => "https://picsum.photos/3000"
+            ];
+            $description = "Opis trenera";
+
+            return view('users\trainer_dashboard',compact('user','disciplines','checkedDisciplines','cities','photos','description'));
         }
         else
             return view('login');

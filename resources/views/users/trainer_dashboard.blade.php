@@ -28,7 +28,7 @@
         </div>
 
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <a href="#" class="no-underline" data-toggle="modal" data-target="#myModal">
+            <a href="#" class="no-underline" data-toggle="modal" data-target="#description-modal">
                 <div class="div-square py-3">
                     <i class="fas fa-pen fa-5x"></i>
                     <h4>Twój Opis</h4>
@@ -45,7 +45,7 @@
             </a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <a href="#" class="no-underline">
+            <a href="#" class="no-underline" data-toggle="modal" data-target="#galery-modal">
                 <div class="div-square py-3">
                     <i class="fas fa-image fa-5x"></i>
                     <h4>Galeria</h4>
@@ -72,6 +72,6 @@
 </div>
 
 @include("modals.trainer_dashboard_business_card")
-
-
+@include("modals.trainer_dashboard_description")
+@include("modals.trainer_dashboard_galery")
 @endsection

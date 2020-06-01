@@ -42,11 +42,14 @@ class UsersController extends Controller
   }
 
   public function edit(user $user)
-  { }
+  { 
+
+  }
+
   public function update(Request $request)
   {
 
-    };
+    
 
    /*  return redirect('/trainer_dashboard'); */
   }
