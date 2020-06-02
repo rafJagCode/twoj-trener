@@ -26,15 +26,15 @@ Route::get('/trainer_dashboard', function () {
         'Poznań'
     ];
     $disciplines = [
-        'Bodybuilding',
-        'Kalistenika',
-        'Crossfit',
-        'Kettlebel',
-        'Cardio',
-        'Streetching',
-        'Fitnes',
-        'Interwały',
-        'Fbw'
+        'bodybuilding',
+        'calisthenics',
+        'crossfit',
+        'kettlebell',
+        'cardio',
+        'streetching',
+        'fitness',
+        'intervals',
+        'fbw'
     ];
     $photos = [
         "photo1" => "http://4.bp.blogspot.com/-fmWvJFVZZxI/Uc5iK_5EKfI/AAAAAAAAEbs/2Qt7I-XNHwc/s550/nature+photography+(1).jpg",

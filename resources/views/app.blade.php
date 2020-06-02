@@ -37,7 +37,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
    
-    @yield('business-card-js')
     @yield('description-editor-js')
     @yield('trainer-dashboard-gallery-js')
     @yield('trainer-page-gallery-js')
