@@ -87,6 +87,7 @@ Route::get('/login', function () {
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('trainer-dashboard.index');
@@ -96,5 +97,4 @@ Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('
 Route::get('/user-dashboard', 'User\UserDashboardController@index')->name('user_dashboard');
 Route::get('user/{id}', 'User\UserController@show');
 
-Route::get('/user_dashboard', 'User\UserDashboardController@index')->name('user_dashboard');
-Route::get('user/{id}', 'User\UserController@show');
+Route::get('/search', 'User\UserController@search');

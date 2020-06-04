@@ -37,7 +37,9 @@
                         </ul>
                     </div>
 
+                @if($authId)
                     <a class="btn btn-warning" href="/user/{{$user->id}}/edit" role="button">Edytuj</a>
+                @endif
                 </div>
             </div>
 
