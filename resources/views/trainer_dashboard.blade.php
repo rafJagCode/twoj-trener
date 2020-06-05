@@ -10,11 +10,21 @@
     <script type="text/javascript">
         let src;
         let displayedImg;
-        $(".show-photo").click((event) => {
+        $('#galery-modal').on("show.bs.modal", ()=>{
             $("body").css("overflow", "hidden");
+            });
+        $('#galery-modal').on("hide.bs.modal", ()=>{
+            $("body").css("overflow", "auto");
+            });
+        $('#image-gallery').on("show.bs.modal", ()=>{
+            $("body").css("overflow", "hidden");
+            })
+        $('#image-gallery').on("hide.bs.modal", ()=>{
+            $("body").css("overflow", "auto");
+            });
+        $(".show-photo").click((event) => {
             let clickedBtn = $(event.target);
             displayedImg = clickedBtn.parents('.photo-link').find('.trainers-photo');
-            console.log(displayedImg);
             src = displayedImg.attr("src");
             $("#big-photo").attr("src", src);
         });
