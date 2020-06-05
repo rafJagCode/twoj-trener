@@ -146,6 +146,7 @@ $very-light-orange: #fff3cd;
 }
 .message-bar{
     position: absolute;
+    margin: 20px auto;
     top: 0px;
     right:0px;
     width: 500px;
@@ -213,11 +214,78 @@ $very-light-orange: #fff3cd;
     border: 2px solid $dark-orange-border;
     border-radius: 5px;
 }
+.calendar-arrow-left{
+    grid-area: 2/1/3/2;
+}
+.calendar-arrow-right{
+    grid-area: 2/5/3/6;
+}
+@media(max-width: 1200px){
+    .month-container{
+        &.first{
+            display: none;
+        }
+        &.third{
+            display:none;
+        }
+    }
+}
+@media (max-width: 1150px){
+    .informations{
+        margin: 0 auto;
+    }
+    .message-bar{
+        position: unset;
+    }
+}
 @media (max-width: 1024px) {
     .left-img {
       display: none;
     }
     .right-img {
         display: none;
+      }
+
+  }
+  @media (max-width: 580px){
+      .informations{
+          width: 300px;
+          height: auto;
+          grid-template-columns: none;
+          grid-template-rows: 1fr 1fr;
+      }
+      .photo{
+          grid-area: 1/1/2/2;
+          margin: 10px auto;
+      }
+      .details{
+          grid-area: 2/1/3/2;
+      }
+      .message-bar{
+          width: 300px;
+          height: auto;
+      }
+      .message-bar-content{
+          transform:none;
+          font-size: 2rem;
+          padding:20px;
+      }
+      .message-btn{
+          display: block;
+          border-right: none;
+      }
+  }
+  @media (max-width: 500px){
+      .main-img{
+        width:150px;
+        height:150px;
+      }
+      .central-img{
+          width:150px;
+          height:150px;
+      }
+      .month-card{
+        width:150px;
+        height:150px;
       }
   }
