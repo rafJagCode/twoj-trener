@@ -31,6 +31,7 @@
                         </div>
                     </div>
 
+
                     {{--                        <div class="form-row mb-3">--}}
                     {{--                            <div class="col">--}}
 
@@ -44,6 +45,13 @@
 
                     {{--                            </div>--}}
                     {{--                        </div>--}}
+
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <input type="text" name="phoneNumber" id="phoneNumber"
+                                   class="form-control" placeholder="Numer telefonu" value="{{$user->phoneNumber}}">
+                        </div>
+                    </div>
 
 
                     <div class="form-row mb-3">
@@ -94,7 +102,6 @@
                         <button type="submit" role="button" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>

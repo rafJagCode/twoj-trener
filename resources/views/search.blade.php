@@ -19,27 +19,6 @@
             height: 100vh;
             margin: 0;
         }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
         .content {
             text-align: center;
         }
@@ -61,6 +40,7 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+
     </style>
 </head>
 <body>
@@ -84,6 +64,30 @@
             </form>
         </div>
 
+        @if(count($users))
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Email</th>
+                    <th>Misto</th>
+                </tr>
+                </thead>
+                <tbody id="myTable">
+                @foreach ($users as $user)
+                    <tr onclick="window.location='/user/{{$user->id}}';">
+                        <td>{{ $user->firstName }}</td>
+                        <td>{{ $user->secondName }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->city }}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        @else
+            <p>Brak wyników</p>
+        @endif
     </div>
 @endsection
 </body>
