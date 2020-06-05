@@ -176,6 +176,43 @@ $very-light-orange: #fff3cd;
     padding: 0 30px;
     border-right: 2px solid $granite;
 }
+.calendar{
+    display: grid;
+    grid-template-columns: 1fr 6fr 6fr 6fr 1fr;
+    grid-template-rows: 70px auto;
+    align-items: center;
+}
+.year{
+    grid-area: 1/1/2/6;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom:30px;
+    font-size: 1.3rem;
+}
+.month-container{
+    margin: 0 auto;
+    margin-bottom: 20px;
+    justify-items: center;
+    &.first{
+        grid-area: 2/2/3/3;
+    }
+    &.second{
+        grid-area: 2/3/3/4;
+    }
+    &.third{
+        grid-area: 2/4/3/5;
+    }
+}
+.month-title{
+    text-align: center;
+}
+.month-card{
+    margin: 10px 10px;
+    width:300px;
+    height:300px;
+    border: 2px solid $dark-orange-border;
+    border-radius: 5px;
+}
 @media (max-width: 1024px) {
     .left-img {
       display: none;

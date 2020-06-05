@@ -209,6 +209,51 @@
   border-right: 2px solid #32373b;
 }
 
+.calendar {
+  display: grid;
+  grid-template-columns: 1fr 6fr 6fr 6fr 1fr;
+  grid-template-rows: 70px auto;
+  align-items: center;
+}
+
+.year {
+  grid-area: 1/1/2/6;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: 1.3rem;
+}
+
+.month-container {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  justify-items: center;
+}
+
+.month-container.first {
+  grid-area: 2/2/3/3;
+}
+
+.month-container.second {
+  grid-area: 2/3/3/4;
+}
+
+.month-container.third {
+  grid-area: 2/4/3/5;
+}
+
+.month-title {
+  text-align: center;
+}
+
+.month-card {
+  margin: 10px 10px;
+  width: 300px;
+  height: 300px;
+  border: 2px solid #F17105;
+  border-radius: 5px;
+}
+
 @media (max-width: 1024px) {
   .left-img {
     display: none;

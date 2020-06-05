@@ -15,5 +15,6 @@
             @include('trainer_page_gallery')
         @endif
         @include('trainer_page_certyficates')
+        @include('trainer_page_calendar')
     </div>
 @endsection
