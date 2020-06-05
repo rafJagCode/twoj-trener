@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9690d133-ed3a-45f5-97fb-d9ff675cc66c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DysciplinesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DysciplinesTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/bodybuilding.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/calisthenics.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/intervals.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/kettlebell.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/apend_icons_to_disciplines.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/apend_icons_to_disciplines.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/apend_icons_to_disciplines.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/apend_icons_to_disciplines.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/trainer_dashboard_business_card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/trainer_dashboard_business_card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="9690d133-ed3a-45f5-97fb-d9ff675cc66c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
