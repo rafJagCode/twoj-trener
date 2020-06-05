@@ -71,10 +71,6 @@
         </div>
 
         <div class="col-lg-4 col-md-6 col-sm-12">
-<<<<<<< HEAD
-
-=======
->>>>>>> 52bf66fdceb99f3c1f5854279a72baa65a3eb114
             <a href="#" class="no-underline" data-toggle="modal" data-target="#description-modal">
                 <div class="div-square py-3">
                     <i class="fas fa-pen fa-5x"></i>

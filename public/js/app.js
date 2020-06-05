@@ -49676,11 +49676,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 0:
+/***/ "./resources/sass/trainer_page.scss":
+/*!******************************************!*\
+  !*** ./resources/sass/trainer_page.scss ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/trainer_dashboard.scss ./resources/sass/top_navbar.scss ./resources/sass/footer.scss ./resources/sass/trainer_dashboard_business_card.scss ***!
-  \*************************************************************************************************************************************************************************************************************************/
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 0:
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/trainer_dashboard.scss ./resources/sass/top_navbar.scss ./resources/sass/footer.scss ./resources/sass/trainer_dashboard_business_card.scss ./resources/sass/trainer_page.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49688,8 +49698,9 @@ __webpack_require__(/*! C:\xampp\htdocs\twoj-trener\resources\sass\app.scss */".
 __webpack_require__(/*! C:\xampp\htdocs\twoj-trener\resources\sass\trainer_dashboard.scss */"./resources/sass/trainer_dashboard.scss");
 __webpack_require__(/*! C:\xampp\htdocs\twoj-trener\resources\sass\top_navbar.scss */"./resources/sass/top_navbar.scss");
 __webpack_require__(/*! C:\xampp\htdocs\twoj-trener\resources\sass\footer.scss */"./resources/sass/footer.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\twoj-trener\resources\sass\trainer_dashboard_business_card.scss */"./resources/sass/trainer_dashboard_business_card.scss");
-
+__webpack_require__(/*! C:\xampp\htdocs\twoj-trener\resources\sass\trainer_dashboard_business_card.scss */"./resources/sass/trainer_dashboard_business_card.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\twoj-trener\resources\sass\trainer_page.scss *
+/***/ }),
 /*!*************************************************************!*\
   !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
   \*************************************************************/
@@ -49699,9 +49710,4 @@ module.exports = __webpack_require__(/*! C:\xampp\htdocs\twoj-trener\resources\s
 __webpack_require__(/*! F:\Projekt zespołowy\twoj-trener\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! F:\Projekt zespołowy\twoj-trener\resources\sass\app.scss */"./resources/sass/app.scss");
 
-
-
-/***/ })
-}
-
-/******/ });
+/***/ }),

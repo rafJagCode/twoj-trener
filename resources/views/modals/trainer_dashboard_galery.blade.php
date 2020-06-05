@@ -13,7 +13,7 @@
                         <div class="row justify-content-center">
                             @forelse($photos as $photo)
                                 <div class="photo-link">
-                                    <img class="trainers-photo col px-1 py-1" src="{{ asset('images/galery/'.$photo->name) }}"
+                                    <img class="trainers-photo col px-1 py-1" src="{{ asset("images/galery/$photo->name.png") }}"
                                          alt="img">
                                     <div class="image-controls">
                                         <a href="" class="show-photo mx-1" data-dismiss="modal" data-toggle="modal"
