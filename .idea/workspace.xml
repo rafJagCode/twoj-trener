@@ -3,18 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9690d133-ed3a-45f5-97fb-d9ff675cc66c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Trainer/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Trainer/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/FWB.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Interwałowy.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/intervals.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/Kalisteniczny.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/calisthenics.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DysciplinesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DysciplinesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/bodybuilding.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/calisthenics.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/intervals.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/kettlebell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/apend_icons_to_disciplines.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/apend_icons_to_disciplines.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/apend_icons_to_disciplines.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/apend_icons_to_disciplines.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/modals/trainer_dashboard_business_card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/trainer_dashboard_business_card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/trainer_dashboard_description.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/trainer_dashboard_description.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/modals/trainer_dashboard_galery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/modals/trainer_dashboard_galery.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/trainer_dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/trainer_dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +213,8 @@
       <workItem from="1590862769581" duration="4144000" />
       <workItem from="1590924033723" duration="4613000" />
       <workItem from="1590943935403" duration="5722000" />
-      <workItem from="1591002097388" duration="12796000" />
+      <workItem from="1591002097388" duration="13520000" />
+      <workItem from="1591116193972" duration="1738000" />
     </task>
     <servers />
   </component>
@@ -265,11 +263,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="681" y="261" width="540" height="524" key="StructurePopup/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1587995418413" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1591002098144">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1591116193831">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="525" y="273" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1590249499347" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1591002098144" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1591116193831" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589575727609" />
     <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591013757895">
       <screen x="0" y="0" width="1920" height="1040" />

@@ -1,9 +1,7 @@
 @section('trainer-dashboard-business-card-css')
     <link href="{{ asset('/css/trainer_dashboard_business_card.css') }}" rel="stylesheet">
 @endsection
-@section('business-card-js')
-    <script src="{{ asset('/js/apend_icons_to_disciplines.js') }}"></script>
-@endsection
+
 
 <div class="modal fade" id="business-card-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
@@ -84,7 +82,7 @@
                                     <label class="custom-control-label my-label" for="{{ $discipline->name }}">
                                         <p>{{ $discipline->name }}</p> <img
                                             class="discipline-icon"
-                                            src=""
+                                            src="{{asset("/images/$discipline->name.png")}}"
                                             alt="{{ $discipline->name }}"></label>
                                 </div>
                             </div>
