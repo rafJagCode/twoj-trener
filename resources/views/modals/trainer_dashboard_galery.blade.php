@@ -13,7 +13,7 @@
                             <div class="photo-link">
                                 <img class="trainers-photo col px-1 py-1" src="{{ $photoSrc }}" alt="{{ $photoDescription }}">
                                 <div class="image-controls">
-                                    <a href="" class="show-photo mx-1" data-dismiss="modal" data-toggle="modal" data-target="#image-gallery"><i class="far fa-eye fa-2x modal-icon"></i></a>
+                                    <a href="" class="show-photo mx-1" data-dismiss="modal" data-toggle="modal" data-target="#image-gallery"><i class="fas fa-search-plus fa-2x modal-icon"></i></a>
                                     <a href="" class="delete-photo mx-1"><i class="far fa-trash-alt fa-2x modal-icon"></i></a>
                                 </div>
                             </div>

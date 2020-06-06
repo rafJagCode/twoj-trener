@@ -48,6 +48,40 @@
   flex-wrap: wrap;
 }
 
+.discipline-container {
+  position: relative;
+}
+
+.discipline-container:hover .discipline-tooltip {
+  visibility: visible;
+}
+
+.discipline-tooltip {
+  visibility: hidden;
+  background-color: #32373b;
+  color: #FFB300;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 90%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.discipline-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #32373b transparent transparent transparent;
+}
+
 .discipline-img {
   height: 30px;
   width: 30px;
@@ -103,9 +137,23 @@
 }
 
 .img-container {
+  background-color: #32373b;
   border: 2px solid #FFB300;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
+}
+
+.img-container:hover .trainer-page-img {
+  opacity: 0.3;
+}
+
+.img-container:hover .image-controls {
+  opacity: 1;
+}
+
+.img-container:hover {
+  border-color: #32373b;
 }
 
 .left-img {
@@ -165,6 +213,16 @@
   border-color: #32373b;
 }
 
+.certyficates:hover .certificate-closeup-icon {
+  visibility: visible;
+}
+
+.certificate-closeup-icon {
+  margin: auto 10px;
+  visibility: hidden;
+  vertical-align: middle;
+}
+
 .certyficate-photo {
   display: inline-block;
   width: 50px;
@@ -219,6 +277,7 @@
   grid-template-columns: 1fr 6fr 6fr 6fr 1fr;
   grid-template-rows: 70px auto;
   align-items: center;
+  justify-items: center;
 }
 
 .year {
@@ -283,20 +342,21 @@
 #closeup {
   width: 100vw;
   height: 100vh;
+  padding-right: 0 !important;
 }
 
 .photo-preview {
-  width: 90%;
-  height: 90%;
-  margin: 5% 5%;
+  width: 98%;
+  height: 100%;
+  margin: 0 1%;
   border: 2px solid #FFB300;
   border-radius: 10px;
 }
 
 #big-photo {
   margin: auto;
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 99%;
+  max-height: 99%;
   -o-object-fit: contain;
      object-fit: contain;
   border: 2px solid #FFB300;
@@ -307,6 +367,21 @@
   position: absolute;
   top: 2vh;
   right: 1vw;
+}
+
+.image-controls {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.image-controls:hover {
+  opacity: 1;
 }
 
 @media (max-width: 1200px) {

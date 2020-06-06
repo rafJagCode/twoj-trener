@@ -10,12 +10,15 @@
         let bigPhoto = $('#big-photo');
         let src;
         $('.certyficates').click((event)=>{
-            src = $(event.target).find('img').attr('src');
-            console.log(src);
+            let targetedCertificate = $(event.target).closest('.certyficates');
+            src = targetedCertificate.find('img').attr('src');
             bigPhoto.attr('src', src);
         });
         $('.img-container').click((event)=>{
-            src = $(event.target).attr('src');
+            let targetedPhoto = $(event.target).closest('.img-container').find('img');
+            console.log(targetedPhoto);
+            src = targetedPhoto.attr('src');
+            console.log(src);
             bigPhoto.attr('src', src);
         });
     </script>
