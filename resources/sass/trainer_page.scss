@@ -134,6 +134,9 @@ $very-light-orange: #fff3cd;
 }
 .certyficates{
     text-align: center;
+    &:hover{
+        border-color: $granite;
+    }
 }
 .certyficate-photo{
     display: inline-block;
@@ -220,6 +223,40 @@ $very-light-orange: #fff3cd;
 .calendar-arrow-right{
     grid-area: 2/5/3/6;
 }
+.modal-content{
+    background-color: $granite;
+}
+.modal-icon{
+    color: $light-orange;
+    margin: 0 auto;
+    &:hover{
+        color: $dark-orange-border;
+    }
+ }
+#closeup{
+    width: 100vw;
+    height: 100vh;
+  }
+ .photo-preview{
+    width:90%;
+    height: 90%;
+    margin:5% 5%;
+    border: 2px solid $light-orange;
+    border-radius: 10px;
+ }
+ #big-photo{
+    margin:auto;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border: 2px solid $light-orange;
+    border-radius: 5px;
+ }
+ .close-preview{
+    position: absolute;
+    top: 2vh;
+    right: 1vw;
+  }
 @media(max-width: 1200px){
     .month-container{
         &.first{

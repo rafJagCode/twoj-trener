@@ -161,6 +161,10 @@
   text-align: center;
 }
 
+.certyficates:hover {
+  border-color: #32373b;
+}
+
 .certyficate-photo {
   display: inline-block;
   width: 50px;
@@ -261,6 +265,48 @@
 
 .calendar-arrow-right {
   grid-area: 2/5/3/6;
+}
+
+.modal-content {
+  background-color: #32373b;
+}
+
+.modal-icon {
+  color: #FFB300;
+  margin: 0 auto;
+}
+
+.modal-icon:hover {
+  color: #F17105;
+}
+
+#closeup {
+  width: 100vw;
+  height: 100vh;
+}
+
+.photo-preview {
+  width: 90%;
+  height: 90%;
+  margin: 5% 5%;
+  border: 2px solid #FFB300;
+  border-radius: 10px;
+}
+
+#big-photo {
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border: 2px solid #FFB300;
+  border-radius: 5px;
+}
+
+.close-preview {
+  position: absolute;
+  top: 2vh;
+  right: 1vw;
 }
 
 @media (max-width: 1200px) {

@@ -87,9 +87,9 @@
     <p class="gallery-title title">Galeria</p>
     <div class="images">
         <a type="button" class="trainer-page-arrow arrow-left"><i class="fas fa-chevron-left fa-4x"></i></a>
-        <div class="img-container left-img"><img class="trainer-page-img side-img" src=""></div>
-        <div class="img-container main-img mx-2"><img class="trainer-page-img central-img" src=""></div>
-        <div class="img-container right-img"><img class="trainer-page-img side-img" src=""></div>
+        <div class="img-container left-img" type="button" data-toggle="modal" data-target="#closeup"><img class="trainer-page-img side-img" src=""></div>
+        <div class="img-container main-img mx-2" type="button" data-toggle="modal" data-target="#closeup"><img class="trainer-page-img central-img" src=""></div>
+        <div class="img-container right-img" type="button" data-toggle="modal" data-target="#closeup"><img class="trainer-page-img side-img" src=""></div>
         <a type="button" class="trainer-page-arrow arrow-right"><i class="fas fa-chevron-right fa-4x"></i></a>
     </div>
     <div class="photo-indicators">

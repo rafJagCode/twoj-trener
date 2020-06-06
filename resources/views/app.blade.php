@@ -40,7 +40,7 @@
     @yield('description-editor-js')
     @yield('trainer-dashboard-gallery-js')
     @yield('trainer-page-gallery-js')
-
+    @yield('closeup-js')
 </body>
 
 </html>

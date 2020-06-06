@@ -10,6 +10,18 @@
     <script type="text/javascript">
         let src;
         let displayedImg;
+        $('#description-modal').on("show.bs.modal", ()=>{
+            $("body").css("overflow", "hidden");
+            });
+        $('#description-modal').on("hide.bs.modal", ()=>{
+            $("body").css("overflow", "auto");
+            });
+        $('#business-card-modal').on("show.bs.modal", ()=>{
+            $("body").css("overflow", "hidden");
+            });
+        $('#business-card-modal').on("hide.bs.modal", ()=>{
+            $("body").css("overflow", "auto");
+            });
         $('#galery-modal').on("show.bs.modal", ()=>{
             $("body").css("overflow", "hidden");
             });
