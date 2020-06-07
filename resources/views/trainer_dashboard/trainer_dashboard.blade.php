@@ -133,7 +133,7 @@
     </div>
 </div>
 
-@include("modals.trainer_dashboard_business_card")
-@include("modals.trainer_dashboard_description")
-@include("modals.trainer_dashboard_galery")
+@include("trainer_dashboard.modals.business_card")
+@include("trainer_dashboard.modals.description")
+@include("trainer_dashboard.modals.gallery")
 @endsection

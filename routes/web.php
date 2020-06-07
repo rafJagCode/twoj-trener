@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/trainer_dashboard', function () {
+Route::get('trainer_dashboard', function () {
     $userName = 'John';
     $cities = [
         'Warszawa',
@@ -43,7 +43,7 @@ Route::get('/trainer_dashboard', function () {
         "photo4" => "https://picsum.photos/3000"
     ];
     $description = "Opis trenera";
-    return view('trainer_dashboard',[
+    return view('trainer_dashboard.trainer_dashboard',[
         'userName' => $userName,
         'cities' => $cities,
         'disciplines' => $disciplines,
@@ -76,7 +76,7 @@ Route::get('/trainer_page', function () {
         "Certyfikat 3" => "https://png.pngtree.com/png-clipart/20190630/original/pngtree-img-file-document-icon-png-image_4165020.jpg",
         "Certyfikat 4" => "https://png.pngtree.com/png-clipart/20190630/original/pngtree-img-file-document-icon-png-image_4165020.jpg"
     ];
-    return view('trainer_page',[
+    return view('trainer_page.trainer_page',[
         'disciplines' => $disciplines,
         'photos' => $photos,
         'certyficates' => $certyficates

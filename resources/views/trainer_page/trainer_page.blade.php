@@ -26,14 +26,14 @@
 
 @section('trainer-page')
 <div class="trainer-page-wrapper">
-    @include('trainer_page_info')
-    @include('trainer_page_message_bar')
-    @include('trainer_page_description')
+    @include('trainer_page.info')
+    @include('trainer_page.message_bar')
+    @include('trainer_page.description')
     @if(count($photos)>0)
-        @include('trainer_page_gallery')
+        @include('trainer_page.gallery')
     @endif
-    @include('trainer_page_certyficates')
-    @include('trainer_page_calendar')
-    @include('modals.trainer_page_closeup')
+    @include('trainer_page.certyficates')
+    @include('trainer_page.calendar')
+    @include('trainer_page.modals.closeup')
 </div>
 @endsection
