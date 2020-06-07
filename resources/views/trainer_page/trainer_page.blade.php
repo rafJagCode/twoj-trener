@@ -35,5 +35,6 @@
     @include('trainer_page.certyficates')
     @include('trainer_page.calendar')
     @include('trainer_page.modals.closeup')
+    @include('trainer_page.modals.message')
 </div>
 @endsection

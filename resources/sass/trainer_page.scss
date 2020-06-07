@@ -210,11 +210,6 @@ $very-light-orange: #fff3cd;
     & a{
         text-decoration: none;
         color: $granite;
-        opacity: 0.8;
-        &:hover{
-            color: $granite;
-            opacity: 1;
-        }
     }
 }
 .message-bar-content{
@@ -228,7 +223,13 @@ $very-light-orange: #fff3cd;
 }
 .message-btn{
     padding: 0 30px;
-    border-right: 2px solid $granite;
+    border-right: 2px solid black;
+    &:hover i{
+        color:black;
+    }
+}
+.stars i:hover{
+    color: black;
 }
 .calendar{
     display: grid;
@@ -322,6 +323,19 @@ $very-light-orange: #fff3cd;
         opacity:1;
     }
 }
+#message{
+    margin:auto;
+    & .modal-content{
+        font-family: exo;
+        border-radius: 10px;
+    }
+    & .message-title{
+        font-size:1.3rem;
+        color: $light-orange;
+        vertical-align: middle;
+        margin-bottom:0;
+    }
+}
 @media(max-width: 1200px){
     .month-container{
         &.first{
@@ -375,6 +389,11 @@ $very-light-orange: #fff3cd;
       .message-btn{
           display: block;
           border-right: none;
+          padding-bottom:10px;
+      }
+      .stars{
+          padding-top:10px;
+          border-top: 2px solid black;
       }
   }
   @media (max-width: 500px){
