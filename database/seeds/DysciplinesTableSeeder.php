@@ -38,8 +38,8 @@ class DysciplinesTableSeeder extends Seeder
         $dyscyplines->save();
 
         $dyscyplines = new Dysciplines();
-        $dyscyplines->name = 'Wytrzymałościowy';
-        $dyscyplines->description = 'Inaczej trening cardio to ćwiczenia wytrzymałościowe dotleniające organizm, poprawiające pracę układu krążenia oraz kondycję organizmu. Trening cardio nazywany jest też treningiem tlenowym. Zwiększa ilość oddechów na minutę oraz przyspiesza tętno, co sprawia, że komórki i tkanki mięśniowe są lepiej dotlenione. Pozwala również dość szybko pozbyć się zbędnych kilogramów.';
+        $dyscyplines->name = 'Kardio';
+        $dyscyplines->description = 'Inaczej trening wytrzymałościowy to ćwiczenia dotleniające organizm, poprawiające pracę układu krążenia oraz kondycję organizmu. Trening cardio nazywany jest też treningiem tlenowym. Zwiększa ilość oddechów na minutę oraz przyspiesza tętno, co sprawia, że komórki i tkanki mięśniowe są lepiej dotlenione. Pozwala również dość szybko pozbyć się zbędnych kilogramów.';
         $dyscyplines->save();
 
 

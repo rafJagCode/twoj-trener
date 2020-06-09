@@ -18,6 +18,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <img src="{{url('/images/profile.jpg')}}" alt="Image" width="200" height="200"/>
                     </div>
+                    
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <a href="#" class="no-underline">
                             <div class="div-square py-4">
@@ -37,7 +38,7 @@
                         </ul>
                     </div>
 
-                    <a class="btn btn-warning" href="/user/{{$user->id}}/edit" role="button">Edytuj</a>
+                    <a class="btn btn-warning" href="{{ route('user.show', $user->id) }}" role="button">Edit</a>
                 </div>
             </div>
 

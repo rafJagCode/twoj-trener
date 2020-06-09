@@ -13,7 +13,7 @@ class UserDashboardController extends Controller
         if (auth()->check())
         {
             $user = auth()->user();
-            return view('user_dashboard') -> with('user', $user);
+            return view('users\user_dashboard') -> with('user', $user);
         }
         else{
             return view('login');

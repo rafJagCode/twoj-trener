@@ -1,9 +1,7 @@
 @section('trainer-dashboard-business-card-css')
     <link href="{{ asset('/css/trainer_dashboard_business_card.css') }}" rel="stylesheet">
 @endsection
-@section('business-card-js')
-    <script src="{{ asset('/js/apend_icons_to_disciplines.js') }}"></script>
-@endsection
+
 
 <div class="modal fade" id="business-card-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
@@ -25,7 +23,6 @@
                             <input type="text" class="form-control" placeholder="Imię" name="firstName"
                                    id="firstName"
                                    value="{{$user->firstName}}">
-
                         </div>
                     </div>
 
@@ -56,19 +53,17 @@
                             </select>
                         </div>
                     </div>
-                    {{--                        <div class="form-row mb-3">--}}
-                    {{--                            <div class="col">--}}
 
-                    {{--                                <input type="phoneNumber" name="phoneNumber" value="{{user->phoneNumber}}"--}}
-                    {{--                                       class="form-control" placeholder="Numer telefonu">--}}
+                    <div class="form-row mb-3">
+                        <div class="col">
 
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
+                            <input type="phoneNumber" name="phoneNumber" value="{{$user->phoneNumber}}"
+                                   class="form-control" placeholder="Numer telefonu">
+                        </div>
+                    </div>
 
                     <div class="row text-center disciplines">
-
                         @foreach($disciplines as $discipline)
-
                             <div class="discipline col-md-6 col-sm-12 text-left">
                                 <div class="custom-control custom-checkbox ">
                                     <input type="checkbox" class="custom-control-input my-checkbox"
@@ -82,7 +77,7 @@
                                     <label class="custom-control-label my-label" for="{{ $discipline->name }}">
                                         <p>{{ $discipline->name }}</p> <img
                                             class="discipline-icon"
-                                            src=""
+                                            src="{{asset("/images/$discipline->name.png")}}"
                                             alt="{{ $discipline->name }}"></label>
                                 </div>
                             </div>
@@ -90,10 +85,8 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" role="button" class="btn btn-secondary" data-dismiss="modal">Zamknij
-                        </button>
-                        <button type="submit" role="button" class="btn btn-rounded btn-orange">Zapisz zmiany
-                        </button>
+                        <button type="button" role="button" class="btn btn-secondary" data-dismiss="modal">Zamknij </button>
+                        <button type="submit" role="button" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
                     </div>
                 </form>
             </div>

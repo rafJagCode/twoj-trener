@@ -94,7 +94,7 @@
 /***/ (function(module, exports) {
 
 var icons = {
-  'Bodybuilding': 'bodybuilding.png',
+  'Bodybuilding': 'Bodybuilding.png',
   'Kalistenika': 'calisthenics.png',
   'Crossfit': 'crossfit.png',
   'Kettlebel': 'kettlebell.png',
@@ -103,7 +103,7 @@ var icons = {
   'Fitnes': 'fitness.png',
   'Interwały': 'intervals.png',
   'Fbw': 'fbw.png'
-}; //"{{ asset('/images/bodybuilding.png') }}"
+}; //"{{ asset('/images/Bodybuilding.png') }}"
 
 $('.my-label p').each(function (i) {
   $(".discipline:nth-of-type(" + (i + 1) + ") img").attr("src", "/images/" + icons[this.innerText]);
