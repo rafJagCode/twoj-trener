@@ -19,19 +19,18 @@
 
     @yield('trainer-dashboard-css')
     @yield('trainer-dashboard-business-card-css')
+    @yield('trainer-page-css')
     <title>@yield('title')</title>
 </head>
 
 <body>
-@include('top_navbar')
-@yield('trainer-dashboard')
-@yield('welcome')
-@include('footer')
+    @include('top_navbar')
+    @yield('trainer-dashboard')
+    @yield('trainer-page')
+    @include('footer')
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
 </script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
@@ -92,6 +91,14 @@
     $('#description-form').summernote('code', '{{$user->description ?? ''}}');
 </script>
 
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+   
+    @yield('description-editor-js')
+    @yield('trainer-dashboard-gallery-js')
+    @yield('trainer-page-gallery-js')
+    @yield('closeup-js')
 </body>
 
 </html>
