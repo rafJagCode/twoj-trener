@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers;
+use App\Http\Controllers\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -78,8 +79,8 @@ Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('tra
 Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
 
 
-Route::get('/user-dashboard', 'User\UserDashboardController@index')->name('user_dashboard');
-Route::get('user/{id}', 'User\UserController@show');
-
 Route::get('/user_dashboard', 'User\UserDashboardController@index')->name('user_dashboard');
-Route::get('user/{id}', 'User\UserController@show');
+Route::get('/user/index/{id}', 'User\UserController@index')->name('user.index');
+Route::get('/user/show/{id}', 'User\UserController@show')->name('user.show');
+Route::post('/user/update/{id}', 'User\UserController@update')->name('user.update');
+
