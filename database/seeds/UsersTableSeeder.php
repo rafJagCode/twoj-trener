@@ -24,6 +24,7 @@ class UsersTableSeeder extends Seeder
         $user->secondName = 'Kowalski';
         $user->email = 'Kowalski@gmail.com';
         $user->city = 'Olsztyn';
+        $user->description="hdgashjdgasghfjagshfsjvjaskjfsgadfkghaskdgfkasghfkasfasf";
         $user->phoneNumber = '787123644';
         $user->password = bcrypt('user');
         $user->save();
