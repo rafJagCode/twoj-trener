@@ -10,11 +10,33 @@
     <script type="text/javascript">
         let src;
         let displayedImg;
-        $(".show-photo").click((event) => {
+        $('#description-modal').on("show.bs.modal", ()=>{
             $("body").css("overflow", "hidden");
+            });
+        $('#description-modal').on("hide.bs.modal", ()=>{
+            $("body").css("overflow", "auto");
+            });
+        $('#business-card-modal').on("show.bs.modal", ()=>{
+            $("body").css("overflow", "hidden");
+            });
+        $('#business-card-modal').on("hide.bs.modal", ()=>{
+            $("body").css("overflow", "auto");
+            });
+        $('#galery-modal').on("show.bs.modal", ()=>{
+            $("body").css("overflow", "hidden");
+            });
+        $('#galery-modal').on("hide.bs.modal", ()=>{
+            $("body").css("overflow", "auto");
+            });
+        $('#image-gallery').on("show.bs.modal", ()=>{
+            $("body").css("overflow", "hidden");
+            })
+        $('#image-gallery').on("hide.bs.modal", ()=>{
+            $("body").css("overflow", "auto");
+            });
+        $(".show-photo").click((event) => {
             let clickedBtn = $(event.target);
             displayedImg = clickedBtn.parents('.photo-link').find('.trainers-photo');
-            console.log(displayedImg);
             src = displayedImg.attr("src");
             $("#big-photo").attr("src", src);
         });
@@ -55,12 +77,11 @@
         <div class="col-lg-12 ">
             <div class="alert alert-warning">
                 <strong>Witaj {{$user->firstName}} ! </strong> Nie masz nowych wiadomości.
-
             </div>
         </div>
     </div>
-
     <div class="row text-center">
+
         <div class="col-lg-4 col-md-6 col-sm-12">
             <a href="#" class="no-underline" data-toggle="modal" data-target="#business-card-modal">
                 <div class="div-square py-3">
@@ -69,7 +90,6 @@
                 </div>
             </a>
         </div>
-
         <div class="col-lg-4 col-md-6 col-sm-12">
             <a href="#" class="no-underline" data-toggle="modal" data-target="#description-modal">
                 <div class="div-square py-3">
@@ -78,7 +98,6 @@
                 </div>
             </a>
         </div>
-
         <div class="col-lg-4 col-md-6 col-sm-12">
             <a href="#" class="no-underline">
                 <div class="div-square py-3">
@@ -114,7 +133,7 @@
     </div>
 </div>
 
-@include("modals.trainer_dashboard_business_card")
-@include("modals.trainer_dashboard_description")
-@include("modals.trainer_dashboard_galery")
+@include("trainer_dashboard.modals.business_card")
+@include("trainer_dashboard.modals.description")
+@include("trainer_dashboard.modals.gallery")
 @endsection
