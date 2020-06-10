@@ -28,9 +28,9 @@ Route::get('/', function () {
     Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('trainer-dashboard.index');
     Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
    
-});
+}); */
 
-Route::get('/trainer_page', function () {
+Route::get('/trainer-page', function () {
     $disciplines = [
         'bodybuilding',
         'calisthenics',
@@ -64,7 +64,7 @@ Route::get('/trainer_page', function () {
 
 
 
-
+/* 
 Route::group([
     'middleware' => 'roles',
     'roles' => 'User'
@@ -73,22 +73,13 @@ Route::group([
 
     Route::get('/trainer_dashboard', [
         'uses' => 'UsersController@show',
-        'as' => 'users.show';
-    }); */
+        'as' => 'users.show'
+    }); 
 
 
-
-
-/* Route::get('/trainer_dashboard', [
-    'uses' => 'UsersController@show',
-    'as' => 'users.show'
-]);
-
-Route::post('/trainer_dashboard', [
-    'uses' => 'UsersController@store',
-    'as' => 'users.update'
-]);
  */
+
+
 Route::get('/registration', function () {
     return view('registration');
 });
@@ -116,7 +107,7 @@ Route::get('deleteimage/{id}', 'ImageController@delete');
 Route::get('/user-dashboard', 'UserDashboardController@index')->name('user.dashboard');
 Route::get('/user/{id}', 'UserController@show');
 
-Route::get('/user_dashboard', 'User\UserDashboardController@index')->name('user_dashboard');
+Route::get('/user-dashboard', 'User\UserDashboardController@index')->name('user_dashboard');
 Route::get('/user/index/{id}', 'User\UserController@index')->name('user.index');
 Route::get('/user/show/{id}', 'User\UserController@show')->name('user.show');
 Route::post('/user/update/{id}', 'User\UserController@update')->name('user.update');
