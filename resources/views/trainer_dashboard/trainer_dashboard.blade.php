@@ -130,6 +130,11 @@
                 </div>
             </a>
         </div>
+
+        @if(session('success'))
+            <h4>{{session('success')}}</h4>
+        @endif
+
     </div>
 </div>
 

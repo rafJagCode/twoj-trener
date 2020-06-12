@@ -1,4 +1,5 @@
 <section class="description trainer-page-section">
     <p class="description-title title">O mnie</p>
-    <p class="description-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto sed recusandae ullam, corporis sapiente aliquam animi optio illo assumenda ipsam veniam minima maxime omnis rem impedit? Repellat ipsum facilis maiores.</p>
+    <div contenteditable="true"><p class="description-text">{{$user->description}}</p></div>
+    <div contenteditable="true">{{$user->description}}</div>
 </section>

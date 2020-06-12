@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('city',55);
             $table->text('description');
             $table->string('phoneNumber',11);
+            $table->string('profilePicture',255)->default('profile.jpg');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

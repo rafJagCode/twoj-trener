@@ -31,11 +31,11 @@
                     <a href="{{ route('user.index', $user->id) }}" class="no-underline">
                         <div class="div-square py-3">
                             <i class="fas fa-pen fa-5x"></i>
-                            <h4>Twój Opissss</h4>
+                            <h4>Twoje dane</h4>
                         </div>
                     </a>
                 </div>
-        
+
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <a href="#" class="no-underline">
                         <div class="div-square py-3">
