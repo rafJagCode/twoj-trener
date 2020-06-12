@@ -13,7 +13,7 @@ class ImageController extends Controller
         $user = auth()->user();
         $image = new Image();
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2096',
         ]);
 
         if ($request->hasFile('image')) {

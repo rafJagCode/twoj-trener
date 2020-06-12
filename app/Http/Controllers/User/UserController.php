@@ -31,6 +31,6 @@ class UserController extends Controller
 
 
         $user->save();
-        return redirect('/user_dashboard');
+        return redirect('/user-dashboard');
     }
 }
