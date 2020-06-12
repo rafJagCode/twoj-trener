@@ -54,10 +54,10 @@ Route::get('/trainer_page', function () {
 /*  Route::group([
     'middleware' => 'roles',
     'roles' => 'Trainer'
-], function () {
-    Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('trainer-dashboard.index');
-    Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
-   
+    ], function () {
+        Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('trainer-dashboard.index');
+        Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
+
 }); */
 
 Route::get('/trainer-page', function () {
@@ -94,17 +94,17 @@ Route::get('/trainer-page', function () {
 
 
 
-/* 
+/*
 Route::group([
     'middleware' => 'roles',
     'roles' => 'User'
-], function () { 
+], function () {
 
 
     Route::get('/trainer_dashboard', [
         'uses' => 'UsersController@show',
         'as' => 'users.show'
-    }); 
+    });
 
 
  */

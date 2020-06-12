@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Trainer;
 use App\Http\Controllers\Controller;
 use App\Models\Cities;
 use App\Models\Dysciplines;
-use App\Models\Image;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,7 +25,7 @@ class DashboardController extends Controller
     {
         if(auth()->check()) {
             $user = auth()->user();
-            $cities = User::select('city')->groupBy('city')->get() ;
+            $cities = User::select('city')->groupBy('city')->get();
             $disciplines = Dysciplines::all();
             $checkedDisciplines= $user->disciplines()->get();
             $description= $user->description;
