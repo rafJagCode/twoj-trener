@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cities;
 use App\Models\Dysciplines;
 use App\Models\User;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,8 +30,9 @@ class DashboardController extends Controller
             $disciplines = Dysciplines::all();
             $checkedDisciplines= $user->disciplines()->get();
 
-            $photos = $user->images();
-            $description = "Opis trenera";
+            $photos = $user->images()->get();
+
+            $description = $user->description;
 
             return view('users\trainer_dashboard',compact('user','disciplines','checkedDisciplines','cities','photos','description'));
         }

@@ -56,7 +56,7 @@ Route::get('deleteimage/{id}', 'ImageController@delete');
 //Route::patch('/trainer-dashboard', 'Trainer\DashboardController@updateDescription')->name('trainer-dashboard.updateDescription');
 
 
-Route::get('/user-dashboard', 'UserDashboardController@index')->name('user.dashboard');
-Route::get('/user/{id}', 'UserController@show');
+Route::get('/user-dashboard', 'User\UserDashboardController@index')->name('user.dashboard');
+Route::get('/user/{id}', 'User\UserController@show');
 
 Route::get('/search', 'User\UserController@search');
