@@ -13,7 +13,7 @@ class ImageController extends Controller
         $user = auth()->user();
         $image = new Image();
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:4096',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2096',
         ]);
 
         if ($request->hasFile('image')) {
@@ -24,7 +24,7 @@ class ImageController extends Controller
             $image->users_id=$user->id;
         }
         $image->save();
-        return back()->withSuccess('Great! Image has been successfully uploaded.')->with('image', $imageName);
+        return back()->withSuccess('Pomyślnie dodano zdjęcie')->with('image', $imageName);
     }
 
     public function delete($id){

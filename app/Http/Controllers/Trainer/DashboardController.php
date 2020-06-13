@@ -26,15 +26,13 @@ class DashboardController extends Controller
     {
         if(auth()->check()) {
             $user = auth()->user();
-            $cities = User::select('city')->groupBy('city')->get() ;
+            $cities = User::select('city')->groupBy('city')->get();
             $disciplines = Dysciplines::all();
             $checkedDisciplines= $user->disciplines()->get();
 
-            $photos = $user->images()->get();
-
-            $description = $user->description;
-
-            return view('users\trainer_dashboard',compact('user','disciplines','checkedDisciplines','cities','photos','description'));
+            $description= $user->description;
+            $photos= $user->images()->get();
+            return view('trainer_dashboard\trainer_dashboard',compact('user','disciplines','checkedDisciplines','cities','photos','description'));
         }
         else
             return view('login');

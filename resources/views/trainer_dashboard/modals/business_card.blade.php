@@ -13,7 +13,7 @@
                 <a type="button" data-dismiss="modal"><i class="far fa-times-circle  fa-2x modal-icon"></i></a>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('trainer-dashboard.update') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('trainer-dashboard.update') }}" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
                     <div class="form-row mb-3">
@@ -30,7 +30,6 @@
                                    id="secondName" value="{{$user->secondName}}">
                         </div>
                     </div>
-
 
                     {{--                        <div class="form-row mb-3">--}}
                     {{--                            <div class="col">--}}
