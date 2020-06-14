@@ -31,19 +31,6 @@
                         </div>
                     </div>
 
-                    {{--                        <div class="form-row mb-3">--}}
-                    {{--                            <div class="col">--}}
-
-                    {{--                                <select id="citySelector" class="form-control selectpicker" data-live-search="true"--}}
-                    {{--                                        data-style="btn-selection" title="Lokalizacja">--}}
-
-                    {{--                                    @foreach($cities as $city)--}}
-                    {{--                                        <option class="city-choice" data-tokens="{{ $city }}">{{ $city }}</option>--}}
-                    {{--                                    @endforeach--}}
-                    {{--                                </select>--}}
-
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
 
                     <div class="form-row mb-3">
                         <div class="col">
@@ -63,14 +50,6 @@
                                             data-tokens="{{ $city['city'] }}">{{ $city['city'] }}</option>
                                 @endforeach
                             </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row mb-3">
-                        <div class="col">
-
-                            <input type="phoneNumber" name="phoneNumber" value="{{$user->phoneNumber}}"
-                                   class="form-control" placeholder="Numer telefonu">
                         </div>
                     </div>
 

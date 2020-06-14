@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Trainer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Ratings;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
@@ -25,9 +26,14 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request,$id)
     {
-        //
+        $user = User::findOrFail($id);
+        $rating= new Ratings();
+        $rating->stars=$request->input('stars');
+        $rating->note=$request->input('note');
+        $rating->save();
+        $user->ratings()->attach($rating->id);
     }
 
     /**
@@ -52,7 +58,13 @@ class PageController extends Controller
         $user = User::findOrFail($id);
         $disciplines = $user->disciplines()->get();
         $photos= $user->images()->get();
-        return view('trainer_page\trainer_page', compact('user', 'disciplines', 'photos'));
+        $ratings= $user->ratings()->get();
+
+        $avgRating=round($ratings->avg('stars'),2);
+
+        //dd($avgRating);
+
+        return view('trainer_page\trainer_page', compact('user', 'disciplines', 'photos','avgRating'));
     }
 
     /**

@@ -18,23 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-//
-//Route::group([
-//    'middleware' => 'roles',
-//    'roles' => 'Trainer',
-//]);
-//Route::get('/trainer_page')
-
-Route::get('/trainer_dashboard', [
-    'uses' => 'UsersController@show',
-    'as' => 'users.show',
-]);
-
-Route::post('/trainer_dashboard', [
-    'uses' => 'UsersController@store',
-    'as' => 'users.update'
-]);
-
 
 
 /*  Route::group([
@@ -96,9 +79,12 @@ Route::group([
 
  */
 
+
 Route::get('/registration', function () {
     return view('registration');
 });
+
+
 
 Auth::routes();
 
@@ -106,6 +92,7 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -114,15 +101,15 @@ Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('
 Route::post('/trainer-dashboard', 'ImageController@save')->name('save.image');
 Route::get('deleteimage/{id}', 'ImageController@delete');
 
+Route::put('/trainer-dashboard', 'Trainer\DashboardController@updateDescription')->name('trainer-dashboard.updateDescription');
+
 Route::get('trainer/{id}','Trainer\PageController@show')->name('trainer.show');
 
 
-
+Route::get('/user-dashboard', 'User\UserDashboardController@index')->name('user.dashboard');
 Route::get('/user/{id}', 'User\UserController@show');
-Route::get('/search', 'User\UserController@search');
-Route::get('/user-dashboard', 'UserDashboardController@index')->name('user.dashboard');
-Route::get('/user/{id}', 'UserController@show');
 
+Route::get('/user-dashboard', 'User\UserDashboardController@index')->name('user_dashboard');
 Route::get('/user/index/{id}', 'User\UserController@index')->name('user.index');
 Route::get('/user/show/{id}', 'User\UserController@show')->name('user.show');
 Route::post('/user/update/{id}', 'User\UserController@update')->name('user.update');

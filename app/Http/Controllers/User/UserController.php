@@ -14,24 +14,19 @@ class UserController extends Controller
         $authId = false;
         if (auth()->check()){
             $authUser = auth()->user()->id;
-            if($authUser == $user->id){
+            if($authUser == $user->id)
                 $authId = true;
-            }
+
         }
 
-        return view('user_show') -> with(array('user'=>$user, 'authId'=>$authId));
+        return view('users\user_show') -> with(array('user'=>$user, 'authId'=>$authId));
     }
 
     public function search(Request $request)
     {
         $imie = $request->get('imie');
         $nazwisko = $request->get('nazwisko');
-        $users = User::where('firstName', $imie)
-            ->orWhere('secondName', $nazwisko)->get();
-        return view('/search')->with('users', $users);
-    }
-
-
+        $user = User::where('firstName', $imie)->orWhere('secondName', $nazwisko)->get();
 
         return view('users\user_show')->with('user', $user);
     }
@@ -50,9 +45,8 @@ class UserController extends Controller
         $user->secondName = $request->input('secondName');
         $user->city = $request->input('city');
         $user->phoneNumber = $request->input('phoneNumber');
-
-
         $user->save();
-        return redirect('/user-dashboard');
+
+        return redirect('user\user-dashboard');
     }
 }

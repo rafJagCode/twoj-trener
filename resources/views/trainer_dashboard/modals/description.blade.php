@@ -23,11 +23,11 @@
                 <a type="button" data-dismiss="modal"><i class="far fa-times-circle  fa-2x modal-icon"></i></a>
             </div>
             <div class="modal-body">
-                <form method="POST" action="{{ route('trainer-dashboard.update') }}"
+                <form method="POST" action="{{ route('trainer-dashboard.updateDescription') }}"
                       enctype="multipart/form-data">
                     {{--                <form method="POST" action="submit" enctype="multipart/form-data">--}}
                     @csrf
-                    @method('PATCH')
+                    @method('PUT')
                     <div class="form-group">
                         <textarea class="form-control" name="description" id="description-form" rows="3">
                         </textarea>

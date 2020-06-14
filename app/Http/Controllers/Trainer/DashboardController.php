@@ -29,10 +29,10 @@ class DashboardController extends Controller
             $cities = User::select('city')->groupBy('city')->get();
             $disciplines = Dysciplines::all();
             $checkedDisciplines= $user->disciplines()->get();
-
             $description= $user->description;
             $photos= $user->images()->get();
-            return view('trainer_dashboard\trainer_dashboard',compact('user','disciplines','checkedDisciplines','cities','photos','description'));
+
+            return view('trainer_dashboard\dashboard',compact('user','disciplines','checkedDisciplines','cities','photos','description'));
         }
         else
             return view('login');
@@ -45,7 +45,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -96,11 +96,18 @@ class DashboardController extends Controller
         $user->city= $request->input('city');
         $user->phoneNumber= $request->input('phoneNumber');
         $user->disciplines()->sync($request->input('disciplines'));
-
         $user->save();
-        return redirect('/trainer-dashboard');
+
+        return redirect('/trainer-dashboard' );
     }
 
+    public function updateDescription(Request $request)
+    {
+        $user= auth()->user();
+        $user->description=$request->input('description');
+        $user->save();
+        return redirect('/trainer-dashboard' );
+    }
     /**
      * Remove the specified resource from storage.
      *

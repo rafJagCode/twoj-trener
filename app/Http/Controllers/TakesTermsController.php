@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TakesTermsController extends Controller
+class akesTermsController extends Controller
 {
     //
 }

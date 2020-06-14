@@ -65,9 +65,6 @@ class User extends Authenticatable
     }
 
 
-
-
-    
     public function roles()
     {
         return $this->belongsToMany(Roles::class, 'roles_has_users', 'users_id', 'roles_id')->withTimestamps();
@@ -101,4 +98,7 @@ class User extends Authenticatable
     public function images(){
         return $this->hasMany(Image::class,'users_id');
     }
+
+
+
 }
