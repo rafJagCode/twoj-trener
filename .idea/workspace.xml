@@ -2,35 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9690d133-ed3a-45f5-97fb-d9ff675cc66c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/certificates.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CalendarsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DietsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DietsHasUsersController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DysciplinesController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FreeTermsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GownoController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GymsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GymsHasUsersController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RatingsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RatingsHasUsersController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RolesController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RolesHasUsersController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TakesTermsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TakesTermsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Trainer/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Trainer/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Trainer/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Trainer/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/DietsHasUsers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/DysciplinesHasUsers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/GymsHasUsers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/RatingsHasUsers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/RolesHasUsers.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/business_card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/business_card.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/description.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/description.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/trainer_dashboard/trainer_dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_dashboard/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/trainer_page/description.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_page/description.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/user_show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/user_show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_31_171242_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_31_171242_create_images_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/galery/1592037299.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/galery/1592037326.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/trainer_dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_dashboard/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/gallery.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/trainer_page/certyficates.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_page/certyficates.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/trainer_page/modals/closeup.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_page/modals/closeup.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +144,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/storage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/trainer_dashboard/modals" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -171,16 +154,17 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Projekt zespołowy\twoj-trener\resources\views\trainer_dashboard\modals" />
+      <recent name="F:\Projekt zespołowy\twoj-trener\public\storage" />
+      <recent name="F:\Projekt zespołowy\twoj-trener" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Projekt zespołowy\twoj-trener\app\Models" />
       <recent name="F:\Projekt zespołowy\twoj-trener\resources\views" />
       <recent name="F:\Projekt zespołowy\twoj-trener\app" />
       <recent name="F:\Projekt zespołowy\twoj-trener\app\Http\Controllers\Trainer" />
       <recent name="F:\Projekt zespołowy\twoj-trener\app\Http\Controllers" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Projekt zespołowy\twoj-trener\public\storage" />
-      <recent name="F:\Projekt zespołowy\twoj-trener" />
     </key>
   </component>
   <component name="RunManager">
@@ -237,6 +221,7 @@
       <workItem from="1591116193972" duration="1738000" />
       <workItem from="1591953787341" duration="19488000" />
       <workItem from="1592035280999" duration="10592000" />
+      <workItem from="1592165284535" duration="8757000" />
     </task>
     <servers />
   </component>
@@ -257,10 +242,10 @@
     </state>
     <state x="552" y="212" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1590320608541" />
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1592063850227" />
-    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591962074320">
+    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592166390196">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1591962074320" />
+    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/-1920.0.1536.824@0.0.1920.1040" timestamp="1592166390196" />
     <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1589206749627">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

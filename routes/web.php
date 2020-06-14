@@ -99,7 +99,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('trainer-dashboard.index');
 Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
 Route::post('/trainer-dashboard', 'ImageController@save')->name('save.image');
+Route::post('/certificate', 'CertificateController@uploadCertificate')->name('save.certificate');
 Route::get('deleteimage/{id}', 'ImageController@delete');
+Route::get('deletecertificate/{id}', 'CertificateController@delete');
 
 Route::put('/trainer-dashboard', 'Trainer\DashboardController@updateDescription')->name('trainer-dashboard.updateDescription');
 

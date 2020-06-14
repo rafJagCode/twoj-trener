@@ -59,12 +59,13 @@ class PageController extends Controller
         $disciplines = $user->disciplines()->get();
         $photos= $user->images()->get();
         $ratings= $user->ratings()->get();
+        $certificates= $user->certificates()->get();
 
         $avgRating=round($ratings->avg('stars'),2);
 
-        //dd($avgRating);
+        //dd($certificates);
 
-        return view('trainer_page\trainer_page', compact('user', 'disciplines', 'photos','avgRating'));
+        return view('trainer_page\trainer_page', compact('user', 'disciplines', 'photos','avgRating','certificates'));
     }
 
     /**

@@ -99,6 +99,8 @@ class User extends Authenticatable
         return $this->hasMany(Image::class,'users_id');
     }
 
-
+    public function certificates(){
+        return $this->hasMany(Certificates::class,'users_id');
+    }
 
 }
