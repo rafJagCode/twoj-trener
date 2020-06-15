@@ -2,8 +2,9 @@
 
 @section('title', 'trainer_dashboard')
 
-@section('trainer-dashboard-css')
-    <link href="{{ asset('/css/trainer_dashboard.css') }}" rel="stylesheet">
+
+@section('trainer-dashboard-business-card-css')
+    <link href="{{ asset('/css/trainer_dashboard_business_card.css') }}" rel="stylesheet">
 @endsection
 
 @section('trainer-dashboard')
@@ -16,6 +17,15 @@
                 <div class="card-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         @csrf
+
+                        <div class="form-group">
+                            <div class="cols-sm-10">
+                                <div class="input-group">
+                                    <input type="checkbox"  class="regular-checkbox" name="role">
+                                    <label for="role" class="cols-sm-2 control-label">Konto trenera</label>
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <span class="input-group-addon"><i class="fa fa-user-ninja fa" aria-hidden="true"></i></span>

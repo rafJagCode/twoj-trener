@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
 
-        $role = Roles::where('name', 'Trainer')->first();
+
         $user = new User();
         $user->firstName = 'Jan';
         $user->secondName = 'Kowalski';
@@ -28,9 +28,7 @@ class UsersTableSeeder extends Seeder
         $user->phoneNumber = '787123644';
         $user->password = bcrypt('user');
         $user->save();
-
-
-        $user->roles()->attach($role);
+        $user->roles()->attach(1);
 
         $user = new User();
         $user->firstName = 'Anna';
