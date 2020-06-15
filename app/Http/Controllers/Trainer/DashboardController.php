@@ -24,18 +24,17 @@ class DashboardController extends Controller
 
     public function index()
     {
-        if(auth()->check()) {
+        if (auth()->check()) {
             $user = auth()->user();
             $cities = User::select('city')->groupBy('city')->get();
             $disciplines = Dysciplines::all();
-            $checkedDisciplines= $user->disciplines()->get();
-            $description= $user->description;
-            $photos= $user->images()->get();
-            $certificates= $user->certificates()->get();
+            $checkedDisciplines = $user->disciplines()->get();
+            $description = $user->description;
+            $photos = $user->images()->get();
+            $certificates = $user->certificates()->get();
 
-            return view('trainer_dashboard\dashboard',compact('user','disciplines','checkedDisciplines','cities','photos','description','certificates'));
-        }
-        else
+            return view('trainer_dashboard\dashboard', compact('user', 'disciplines', 'checkedDisciplines', 'cities', 'photos', 'description', 'certificates'));
+        } else
             return view('login');
     }
 
@@ -52,7 +51,7 @@ class DashboardController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -63,7 +62,7 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -74,7 +73,7 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -85,34 +84,35 @@ class DashboardController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
-        $user= auth()->user();
-        $user->firstName= $request->input('firstName');
-        $user->secondName= $request->input('secondName');
-        $user->city= $request->input('city');
-        $user->phoneNumber= $request->input('phoneNumber');
+        $user = auth()->user();
+        $user->firstName = $request->input('firstName');
+        $user->secondName = $request->input('secondName');
+        $user->city = $request->input('city');
+        $user->phoneNumber = $request->input('phoneNumber');
         $user->disciplines()->sync($request->input('disciplines'));
         $user->save();
 
-        return redirect('/trainer-dashboard' );
+        return redirect('/trainer-dashboard');
     }
 
     public function updateDescription(Request $request)
     {
-        $user= auth()->user();
-        $user->description=$request->input('description');
+        $user = auth()->user();
+        $user->description = $request->input('description');
         $user->save();
-        return redirect('/trainer-dashboard' );
+        return redirect('/trainer-dashboard');
     }
+
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
