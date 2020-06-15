@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'trainer_dashboard')
+@section('title', 'user_show')
 
 @section('trainer-dashboard-css')
     <link href="{{ asset('/css/user_show.css') }}" rel="stylesheet">
@@ -43,5 +43,6 @@
             </div>
 
         </div>
+    </div>
 
 @endsection

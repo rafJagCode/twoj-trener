@@ -2,7 +2,10 @@
 
 use App\Http\Controllers;
 use App\Http\Controllers\User;
+use App\Models\User as AppUser;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\Console\Input\Input;
+use Symfony\Component\HttpFoundation\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,6 +37,7 @@ Route::get('/trainer_page', function () {
         'intervals',
         'fbw'
     ];
+    
     $photos = [
         "photo1" => "https://ae01.alicdn.com/kf/HTB1hg1mwMKTBuNkSne1q6yJoXXal/Women-Yoga-Set-Women-Sport-Suit-Gym-Set-Gym-Clothing-Sportswear-fitness-Wear-Fitness-Suit-Yoga.jpg_640x640.jpg",
         "photo2" => "https://cdn.shopify.com/s/files/1/0158/4748/9584/products/product-image-862007639_1024x1024@2x.jpg?v=1575426525",
@@ -142,3 +148,13 @@ Route::get('/user/index/{id}', 'User\UserController@index')->name('user.index');
 Route::get('/user/show/{id}', 'User\UserController@show')->name('user.show');
 Route::post('/user/update/{id}', 'User\UserController@update')->name('user.update');
 
+
+//Routes for Searchbar
+Route::get('/searchbar', function () {
+    return view('search');
+});
+Route::post('/search', 'SearchController@index')->name('search.index');
+Route::get('/results', function(){
+    return view('results');
+});
+Route::get('/trainers-page/{id}', 'SearchController@show')->name('search.show');
