@@ -150,7 +150,7 @@ Route::post('/user/update/{id}', 'User\UserController@update')->name('user.updat
 
 
 //Routes for Searchbar
-Route::get('/searchbar', function () {
+Route::get('/search', function () {
     return view('search');
 });
 Route::post('/search', 'SearchController@index')->name('search.index');
