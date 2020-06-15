@@ -28,4 +28,11 @@ a.no-underline {
 a.no-underline:hover {
     text-decoration: none;
 }
-
+.lab1{
+    font-size: 18px;
+}
+.form-user{
+    padding-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
