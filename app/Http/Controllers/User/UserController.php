@@ -11,6 +11,22 @@ class UserController extends Controller
     public function index($id)
     {
         $user = User::findOrFail($id);
+        $authId = false;
+        if (auth()->check()){
+            $authUser = auth()->user()->id;
+            if($authUser == $user->id)
+                $authId = true;
+        }
+
+        return view('users\user_show') -> with(array('user'=>$user, 'authId'=>$authId));
+    }
+
+    public function search(Request $request)
+    {
+        $imie = $request->get('imie');
+        $nazwisko = $request->get('nazwisko');
+        $user = User::where('firstName', $imie)->orWhere('secondName', $nazwisko)->get();
+
         return view('users\user_show')->with('user', $user);
     }
 
@@ -28,9 +44,8 @@ class UserController extends Controller
         $user->secondName = $request->input('secondName');
         $user->city = $request->input('city');
         $user->phoneNumber = $request->input('phoneNumber');
-
-
         $user->save();
-        return redirect('/user-dashboard');
+
+        return redirect('user\user-dashboard');
     }
 }

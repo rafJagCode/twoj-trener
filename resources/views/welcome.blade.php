@@ -64,23 +64,61 @@
     </style>
 </head>
 <body>
-  @extends('app')
-  @section('welcome')
+@extends('app')
+@section('trainer-dashboard-business-card-css')
+    <link href="{{ asset('/css/trainer_dashboard_business_card.css') }}" rel="stylesheet">
+@endsection
+
+@section('trainer-dashboard')
     <div class="content">
-        <div class="title m-b-md">
-            Laravel
+        <div>
+            <form action="{{route('user.search')}}" method="post">
+                @csrf
+                <div class="input-group">
+                    <div class="row text-center disciplines">
+                        @foreach($allDisciplines ?? '' as $discipline)
+                            <div class="discipline col-md-6 col-sm-12 text-left">
+                                <div class="custom-control custom-checkbox ">
+                                    <input type="checkbox" class="custom-control-input my-checkbox"
+                                           name="disciplines[]"
+                                           id="{{ $discipline->name }}" value="{{$discipline->id}}">
+                                    <label class="custom-control-label my-label" for="{{ $discipline->name }}">
+                                        <p>{{ $discipline->name }}</p> <img
+                                            class="discipline-icon"
+                                            src="{{asset("/images/$discipline->name.png")}}"
+                                            alt="{{ $discipline->name }}"></label>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="form-row mb-3 col-lg-6">
+                        <div class="col">
+                            <input type="search" name="city" class="form-control" placeholder="Miasto">
+                        </div>
+                        <div class="input-group-append flex-center">
+                            <button class="btn btn-warning" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
 
-        <div class="links">
-            <a href="https://laravel.com/docs">Docs</a>
-            <a href="https://laracasts.com">Laracasts</a>
-            <a href="https://laravel-news.com">News</a>
-            <a href="https://blog.laravel.com">Blog</a>
-            <a href="https://nova.laravel.com">Nova</a>
-            <a href="https://forge.laravel.com">Forge</a>
-            <a href="https://vapor.laravel.com">Vapor</a>
-            <a href="https://github.com/laravel/laravel">GitHub</a>
-        </div>
+        @if($matchedTrainers->count()!=0)
+            @foreach($matchedTrainers as $trainer)
+                <div class="row text-center">
+                    <div class="col-lg-12 ">
+                        <a href="http://127.0.0.1:8000/trainer/{{$trainer->id}}">
+                        <div class="alert alert-warning">
+                            <strong>Trenejro {{$trainer->firstName}} ! </strong>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        @endif
+
     </div>
 @endsection
 </body>

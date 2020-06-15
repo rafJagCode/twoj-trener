@@ -1,56 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Laravel</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+    <!-- Styles -->
+    <style>
+        html, body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+        }
+        .content {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 84px;
+        }
+
+        .links > a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .m-b-md {
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
 @extends('app')
-@section('title','Search trainer')
-@section('trainer-dashboard-css')
-<link href="{{ asset('/css/searchbar.css') }}" rel="stylesheet">
-@endsection
-
-
 @section('trainer-dashboard')
-<div class="container1 ">
-    <div class="wrap ">
-        <div class="">
-            <p class="text-bolder text-center">Wyszukaj Trenera</p>
+    <div class="content">
+        <div class="title m-b-md">
+            Laravel
         </div>
-    </div>
-    <div class="container2">
-        <div class="wrap">
-            <div class="search">
-                <form action="{{ route('search.index') }}" method="POST" role="search">
-                    {{ csrf_field() }}
-                    <input type="text" class="searchTerm" name="q" placeholder="Wpisz czego szukasz "> <span class="input-group-btn">
-                        <button type="submit" class="searchButton">
+        <div>
+            <form action="/search" method="get">
+                <div class="input-group">
+                    <input type="search" name="imie" class="form-control" placeholder="Imie">
+                    <input type="search" name="nazwisko" class="form-control" placeholder="Nazwisko">
+                    <div class="input-group-append">
+                        <button class="btn btn-warning" type="submit">
                             <i class="fa fa-search"></i>
                         </button>
-                    </span>
-                </form>
-            </div>
+                    </div>
+                </div>
+            </form>
         </div>
+
+        @if(count($users))
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                    <th>Email</th>
+                    <th>Misto</th>
+                </tr>
+                </thead>
+                <tbody id="myTable">
+                @foreach ($users as $user)
+                    <tr onclick="window.location='/user/{{$user->id}}';">
+                        <td>{{ $user->firstName }}</td>
+                        <td>{{ $user->secondName }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->city }}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        @else
+            <p>Brak wyników</p>
+        @endif
     </div>
-    
-
-</div>
-
 @endsection
-
-
-{{-- <div class="col-md-12">
-                <div class="card">
-                    <div class="row">
-                    <div class="card-header">Wyszukaj</div>
-
-                    <div class="card-body">
-                    
-                    
-                                    
-                        <form action="{{ route('search.index') }}" method="POST" role="search">
-{{ csrf_field() }}
-<div class="input-group">
-    <input type="text" class="form-control" name="q" placeholder="Search users"> <span class="input-group-btn">
-        <button type="submit" class="btn btn-default"> Szukaj </button>
-    </span>
-</div>
-</form>
-
-</div>
-</div>
-</div> --}}
+</body>
+</html>

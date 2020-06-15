@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Cities;
 use App\Models\Dysciplines;
 use App\Models\User;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,16 +24,17 @@ class DashboardController extends Controller
 
     public function index()
     {
-        if(auth()->check()) {
+        if (auth()->check()) {
             $user = auth()->user();
             $cities = User::select('city')->groupBy('city')->get();
             $disciplines = Dysciplines::all();
-            $checkedDisciplines= $user->disciplines()->get();
-            $description= $user->description;
-            $photos= $user->images()->get();
-            return view('trainer_dashboard\trainer_dashboard',compact('user','disciplines','checkedDisciplines','cities','photos','description'));
-        }
-        else
+            $checkedDisciplines = $user->disciplines()->get();
+            $description = $user->description;
+            $photos = $user->images()->get();
+            $certificates = $user->certificates()->get();
+
+            return view('trainer_dashboard\dashboard', compact('user', 'disciplines', 'checkedDisciplines', 'cities', 'photos', 'description', 'certificates'));
+        } else
             return view('login');
     }
 
@@ -43,13 +45,13 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -60,7 +62,7 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -71,7 +73,7 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -82,24 +84,27 @@ class DashboardController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
-        $user= auth()->user();
+        $user = auth()->user();
+        $user->firstName = $request->input('firstName');
+        $user->secondName = $request->input('secondName');
+        $user->city = $request->input('city');
+        $user->phoneNumber = $request->input('phoneNumber');
+        $user->disciplines()->sync($request->input('disciplines'));
+        $user->save();
 
-        if( $request->input('description')==null) {
-            $user->firstName = $request->input('firstName');
-            $user->secondName = $request->input('secondName');
-            $user->city = $request->input('city');
-            $user->phoneNumber = $request->input('phoneNumber');
-            $user->disciplines()->sync($request->input('disciplines'));
-        }
-        else
-            $user->description = $request->input('description');
+        return redirect('/trainer-dashboard');
+    }
 
+    public function updateDescription(Request $request)
+    {
+        $user = auth()->user();
+        $user->description = $request->input('description');
         $user->save();
         return redirect('/trainer-dashboard');
     }
@@ -107,7 +112,7 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

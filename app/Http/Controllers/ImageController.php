@@ -24,7 +24,7 @@ class ImageController extends Controller
             $image->users_id=$user->id;
         }
         $image->save();
-        return back()->withSuccess('Great! Image has been successfully uploaded.')->with('image', $imageName);
+        return back()->withSuccess('Pomyślnie dodano zdjęcie')->with('image', $imageName);
     }
 
     public function delete($id){

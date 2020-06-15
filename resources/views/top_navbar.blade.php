@@ -1,5 +1,5 @@
 <nav id='top-navbar' class="navbar navbar-expand-md">
-    <a href="#" title="Return to the homepage" id="logo">
+    <a href="/" title="Return to the homepage" id="logo">
         <img class="img-logo" src="{{ asset('/images/TwójTrenerLogo.png') }}" alt="Logo"/>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"

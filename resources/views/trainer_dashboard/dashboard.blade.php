@@ -6,71 +6,6 @@
 <link href="{{ asset('/css/trainer_dashboard.css') }}" rel="stylesheet">
 @endsection
 
-@section('trainer-dashboard-gallery-js')
-    <script type="text/javascript">
-        let src;
-        let displayedImg;
-        $('#description-modal').on("show.bs.modal", ()=>{
-            $("body").css("overflow", "hidden");
-            });
-        $('#description-modal').on("hide.bs.modal", ()=>{
-            $("body").css("overflow", "auto");
-            });
-        $('#business-card-modal').on("show.bs.modal", ()=>{
-            $("body").css("overflow", "hidden");
-            });
-        $('#business-card-modal').on("hide.bs.modal", ()=>{
-            $("body").css("overflow", "auto");
-            });
-        $('#galery-modal').on("show.bs.modal", ()=>{
-            $("body").css("overflow", "hidden");
-            });
-        $('#galery-modal').on("hide.bs.modal", ()=>{
-            $("body").css("overflow", "auto");
-            });
-        $('#image-gallery').on("show.bs.modal", ()=>{
-            $("body").css("overflow", "hidden");
-            })
-        $('#image-gallery').on("hide.bs.modal", ()=>{
-            $("body").css("overflow", "auto");
-            });
-        $(".show-photo").click((event) => {
-            let clickedBtn = $(event.target);
-            displayedImg = clickedBtn.parents('.photo-link').find('.trainers-photo');
-            src = displayedImg.attr("src");
-            $("#big-photo").attr("src", src);
-        });
-        $('.gallery-arrow-right').click(() => {
-            let lastPhoto = $('.photo-link').last().find('.trainers-photo');
-            if (displayedImg.is(lastPhoto)){
-                displayedImg = $('.photo-link').first().find('.trainers-photo');
-            }
-            else {
-                displayedImg = displayedImg.closest('.photo-link').next().find('.trainers-photo');
-            }
-            src = displayedImg.attr("src");
-            $("#big-photo").attr("src", src);
-        });
-        $('.gallery-arrow-left').click(() => {
-            let firstPhoto = $('.photo-link').first().find('.trainers-photo');
-            if (displayedImg.is(firstPhoto)){
-                displayedImg = $('.photo-link').last().find('.trainers-photo');
-            }
-            else {
-                displayedImg = displayedImg.closest('.photo-link').prev().find('.trainers-photo');
-            }
-            src = displayedImg.attr("src");
-            $("#big-photo").attr("src", src);
-        });
-        $('.upload-image-btn').click(()=>{
-            $('.upload-image-input').trigger('click');
-        });
-        $('.add-photo').click(()=>{
-            $('.upload-image-input').trigger('click');
-        });
-    </script>
-@endsection
-
 @section('trainer-dashboard')
 <div id="wrapper">
     <div class="row text-center">
@@ -80,6 +15,7 @@
             </div>
         </div>
     </div>
+
     <div class="row text-center">
 
         <div class="col-lg-4 col-md-6 col-sm-12">
@@ -130,10 +66,16 @@
                 </div>
             </a>
         </div>
+
+        @if(session('success'))
+            <h4>{{session('success')}}</h4>
+        @endif
+
     </div>
 </div>
 
 @include("trainer_dashboard.modals.business_card")
 @include("trainer_dashboard.modals.description")
 @include("trainer_dashboard.modals.gallery")
+@include("trainer_dashboard.modals.certificates")
 @endsection

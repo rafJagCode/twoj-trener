@@ -10,11 +10,8 @@
 
     <div class="container">
         <div class="row">
-
             <div class="col-md-7 ">
-
                 <div class="row text-center">
-
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <img src="{{url('/images/profile.jpg')}}" alt="Image" width="200" height="200"/>
                     </div>

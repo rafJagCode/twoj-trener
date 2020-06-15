@@ -65,9 +65,6 @@ class User extends Authenticatable
     }
 
 
-
-
-    
     public function roles()
     {
         return $this->belongsToMany(Roles::class, 'roles_has_users', 'users_id', 'roles_id')->withTimestamps();
@@ -93,12 +90,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Dysciplines::class, 'dysciplines_has_users', 'users_id')->withTimestamps();
     }
 
-    public function dysciplines()
-    {
-        return $this->belongsToMany(Gyms::class, 'dysciplines_has_users', 'users_id', 'dysciplines_id')->withTimestamps();
-    }
 
     public function images(){
         return $this->hasMany(Image::class,'users_id');
     }
+
+    public function certificates(){
+        return $this->hasMany(Certificates::class,'users_id');
+    }
+
 }
