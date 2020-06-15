@@ -5,34 +5,40 @@ namespace App\Http\Controllers;
 use App\Models\Dysciplines;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Roles;
 use Illuminate\Support\Collection;
 
 class SearchController extends Controller
 {
     public function search(Request $request)
     {
-
         $allDisciplines = Dysciplines::all();
         $checkedDisciplines = $request->input('disciplines');
-        $trainers=null;
+        $role = Roles::where('name', 'Trainer')->first();
+        $trainers = Collection::make();
         if ($request->input('city') != null) {
             $city = $request->input('city');
-            $trainers = User::where('city', $city)->get();
-        }
-        $trainers=User::all();
+            $tmp = User::where('city', $city)->get();
+        } else
+            $tmp = User::all();
+
+        foreach ($tmp as $tm)
+            if ($tm->roles()->get()->contains($role))
+                $trainers->push($tm);
+
         $matchedTrainers = Collection::make();
-        foreach ($trainers as $trainer) {
-            $result = true;
-            foreach ($checkedDisciplines as $dis) {
-                if (!$trainer->disciplines()->get()->contains($dis))
-                    $result = false;
+        if ($checkedDisciplines != null)
+            foreach ($trainers as $trainer) {
+                $result = true;
+                foreach ($checkedDisciplines as $dis) {
+                    if (!$trainer->disciplines()->get()->contains($dis))
+                        $result = false;
+                }
+                if ($result)
+                    $matchedTrainers->push($trainer);
             }
-            if ($result)
-                $matchedTrainers->push($trainer);
-        }
-
-
-        //d($matchedTrainers);
+        else
+            $matchedTrainers=$trainers;
 
         return view('welcome', compact('matchedTrainers', 'allDisciplines'));
     }

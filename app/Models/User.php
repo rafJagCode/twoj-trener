@@ -90,7 +90,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Dysciplines::class, 'dysciplines_has_users', 'users_id')->withTimestamps();
     }
 
-
     public function images(){
         return $this->hasMany(Image::class,'users_id');
     }
