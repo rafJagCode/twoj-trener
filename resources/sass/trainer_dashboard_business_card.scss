@@ -77,6 +77,7 @@ $very-light-orange: #fff3cd;
  }
  .my-label p{
      display: inline;
+     margin-bottom: 0;
  }
  .discipline-icon{
      width: 20px;
@@ -84,14 +85,3 @@ $very-light-orange: #fff3cd;
      margin-left: 10px;
      margin-bottom:5px;
  }
- .bootstrap-select .dropdown-toggle .filter-option-inner-inner{
-     color:$light-orange;
- }
- .bootstrap-select .dropdown-toggle:focus{
-     outline: none !important;
- }
- .orange-text{
-     font-size: 1rem;
-     color:$light-orange;
- }
- 

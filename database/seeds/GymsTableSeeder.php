@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Gyms;
+use App\Gyms;
 use Illuminate\Database\Seeder;
 
 class GymsTableSeeder extends Seeder

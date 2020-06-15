@@ -15,7 +15,7 @@
                     @endif
                     You are logged in! {{$user->firstName}} {{$user->email}}
 
-                   <a href="{{route('trainer-dashboard.index')}}">dashboard</a>
+                   <a href="{{route('trainer-dashboard.show')}}">dashboard</a>
                 </div>
             </div>
         </div>

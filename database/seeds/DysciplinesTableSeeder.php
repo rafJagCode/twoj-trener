@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Dysciplines;
+use App\Dysciplines;
 use Illuminate\Database\Seeder;
 
 class DysciplinesTableSeeder extends Seeder
@@ -38,8 +38,8 @@ class DysciplinesTableSeeder extends Seeder
         $dyscyplines->save();
 
         $dyscyplines = new Dysciplines();
-        $dyscyplines->name = 'Kardio';
-        $dyscyplines->description = 'Inaczej trening wytrzymałościowy to ćwiczenia dotleniające organizm, poprawiające pracę układu krążenia oraz kondycję organizmu. Trening cardio nazywany jest też treningiem tlenowym. Zwiększa ilość oddechów na minutę oraz przyspiesza tętno, co sprawia, że komórki i tkanki mięśniowe są lepiej dotlenione. Pozwala również dość szybko pozbyć się zbędnych kilogramów.';
+        $dyscyplines->name = 'Wytrzymałościowy';
+        $dyscyplines->description = 'Inaczej trening cardio to ćwiczenia wytrzymałościowe dotleniające organizm, poprawiające pracę układu krążenia oraz kondycję organizmu. Trening cardio nazywany jest też treningiem tlenowym. Zwiększa ilość oddechów na minutę oraz przyspiesza tętno, co sprawia, że komórki i tkanki mięśniowe są lepiej dotlenione. Pozwala również dość szybko pozbyć się zbędnych kilogramów.';
         $dyscyplines->save();
 
 
@@ -54,7 +54,7 @@ class DysciplinesTableSeeder extends Seeder
         $dyscyplines->save();
 
         $dyscyplines = new Dysciplines();
-        $dyscyplines->name = 'Streetching';
+        $dyscyplines->name = 'Strerching';
         $dyscyplines->description = 'Stretching, czyli ćwiczenia rozciągające to rodzaj zajęć polecanych osobom, które godzinami pozostają w tej samej pozycji - na przykład osobom pracującym przy komputerze. Na czym dokładnie polega stretching? Przeciągnij się jak kot. Leniwie, powoli. Zrób kilka głębokich wdechów i wydechów. Czujesz się jak nowo narodzony? Właśnie poznałeś jedne z podstawowych ćwiczeń wykorzystywanych w stretchingu.';
         $dyscyplines->save();
     }

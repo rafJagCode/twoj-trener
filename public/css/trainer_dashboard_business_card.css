@@ -103,6 +103,7 @@
 
 .my-label p {
   display: inline;
+  margin-bottom: 0;
 }
 
 .discipline-icon {
@@ -110,18 +111,5 @@
   height: 20px;
   margin-left: 10px;
   margin-bottom: 5px;
-}
-
-.bootstrap-select .dropdown-toggle .filter-option-inner-inner {
-  color: #FFB300;
-}
-
-.bootstrap-select .dropdown-toggle:focus {
-  outline: none !important;
-}
-
-.orange-text {
-  font-size: 1rem;
-  color: #FFB300;
 }
 

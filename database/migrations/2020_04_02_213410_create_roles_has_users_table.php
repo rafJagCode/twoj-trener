@@ -22,7 +22,7 @@ class CreateRolesHasUsersTable extends Migration
 
         Schema::table('roles_has_users', function (Blueprint $table) {
             $table->foreign('users_id')
-            ->references('id')
+                ->references('id')
                 ->on('users');
         });
 

@@ -1,12 +1,18 @@
-@extends('app')
-
-@section('title', 'trainer_dashboard')
-
-@section('trainer-dashboard-css')
-    <link href="{{ asset('/css/trainer_dashboard.css') }}" rel="stylesheet">
-@endsection
-
-@section('trainer-dashboard')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{{ asset('/css/registration.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        body {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -18,12 +24,12 @@
                         @csrf
 
                         <div class="form-group">
-                            <span class="input-group-addon"><i class="fa fa-user-ninja fa" aria-hidden="true"></i></span>
                             <label for="firstName" class="cols-sm-2 control-label">Imię</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
-                                    <input type="text" class="form-control  @error('firstName') is-invalid @enderror"
-                                           name="firstName" id="firstName" placeholder="Wpisz swoje imię"/>
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control  @error('firstName') is-invalid @enderror" name="firstName" id="firstName" placeholder="Wpisz swoje imię"/>
+
                                     @error('firstName')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -34,12 +40,11 @@
                         </div>
 
                         <div class="form-group">
-                            <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
                             <label for="secondName" class="cols-sm-2 control-label">Nazwisko</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
-                                    <input type="text" class="form-control @error('secondName') is-invalid @enderror"
-                                           name="secondName" id="secondName" placeholder="Wpisz swoje nazwisko"/>
+                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control @error('secondName') is-invalid @enderror" name="secondName" id="secondName" placeholder="Wpisz swoje nazwisko"/>
 
                                     @error('secondName')
                                     <span class="invalid-feedback" role="alert">
@@ -51,12 +56,11 @@
                         </div>
 
                         <div class="form-group">
-                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
                             <label for="email" class="cols-sm-2 control-label">Adres e-mail</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
-                                    <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                           name="email" id="email"
+                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" id="email"
                                            placeholder="Wpisz swój adres e-mail"/>
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -68,29 +72,12 @@
                         </div>
 
                         <div class="form-group">
-                            <span class="input-group-addon"><i class="fa fa-phone fa" aria-hidden="true"></i></span>
-                            <label for="phoneNumber" class="cols-sm-2 control-label">Numer telefonu</label>
-                            <div class="cols-sm-10">
-                                <div class="input-group">
-                                    <input type="text" class="form-control @error('phoneNumber') is-invalid @enderror"
-                                           name="phoneNumber" id="phoneNumber"
-                                           placeholder="Wpisz numer telefonu"/>
-                                    @error('city')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <span class="input-group-addon"><i class="fa fa-city fa" aria-hidden="true"></i></span>
                             <label for="city" class="cols-sm-2 control-label">Miasto</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
-                                    <input type="text" class="form-control @error('city') is-invalid @enderror"
-                                           name="city" id="city" placeholder="Wpisz miasto"/>
+                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control @error('city') is-invalid @enderror" name="city" id="city"  required autocomplete="new-password"
+                                           placeholder="Wpisz miasto"/>
                                     @error('city')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -101,12 +88,11 @@
                         </div>
 
                         <div class="form-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
                             <label for="password" class="cols-sm-2 control-label">Hasło</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror"
-                                           name="password" id="password" required autocomplete="new-password"
+                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror"  name="password" id="password"  required autocomplete="new-password"
                                            placeholder="Wpisz hasło"/>
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -117,12 +103,11 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
                             <label for="password-confirm" class="cols-sm-2 control-label">Powtórz hasło</label>
                             <div class="cols-sm-10">
                                 <div class="input-group">
-                                    <input type="password" class="form-control" name="password_confirmation"
-                                           id="password-confirm" required autocomplete="new-password"
+                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                    <input type="password" class="form-control" name="password_confirmation" id="password-confirm" required autocomplete="new-password"
                                            placeholder="Powtórz swoje hasło"/>
                                 </div>
                             </div>
@@ -143,4 +128,5 @@
         </div>
     </div>
 </div>
-@endsection
+</body>
+</html>

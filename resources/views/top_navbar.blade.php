@@ -9,8 +9,7 @@
     <div id="navbarText" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
             @guest
-                <li class="nav-item px-2 py-2">
-                    <a class="nav-link" href="{{ route('login') }}">  <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span> Zaloguj</a></li>
+                <li class="nav-item px-2 py-2"><a class="nav-link" href="{{ route('login') }}">Zaloguj</a></li>
                 <li class="nav-item px-2 py-2"><a class="nav-link" href="/home">home</a></li>
                 <li class="nav-item px-2"><a class="nav-link" href="{{ route('register') }}">
                         <div class="btn btn-lg btn-rounded btn-orange">Zarejestruj</div>
@@ -39,4 +38,5 @@
             @endguest
         </ul>
     </div>
+
 </nav>
