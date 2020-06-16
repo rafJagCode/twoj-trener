@@ -13,8 +13,7 @@
                         <div class="row justify-content-center">
                             @forelse($certificates as $certificate)
                                 <div class="photo-link">
-{{--                                    <img class="trainers-photo col px-1 py-1" src="{{ asset('certificates/'.$certificate->name) }}"--}}
-                                    <img class="trainers-photo col px-1 py-1" src="{{ asset('images/no_photo.png') }}"
+                                    <img class="trainers-photo col px-1 py-1" src="{{ asset('certificates/'.$certificate->name) }}"
                                          alt="img">
                                     <div class="image-controls">
                                         <a href="" class="show-photo mx-1" data-dismiss="modal" data-toggle="modal"

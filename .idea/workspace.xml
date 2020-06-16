@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9690d133-ed3a-45f5-97fb-d9ff675cc66c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Trainer/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Trainer/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Trainer/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Trainer/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/registration.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/registration.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/top_navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/top_navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/description.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/description.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/trainer_page/message_bar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_page/message_bar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/trainer_page/modals/rate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_page/modals/rate.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/trainer_page/ratings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_page/ratings.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/trainer_page/trainer_page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_page/trainer_page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/trainer_dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_dashboard/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/certificates.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/certificates.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

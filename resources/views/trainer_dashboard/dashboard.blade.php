@@ -35,7 +35,7 @@
             </a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <a href="#" class="no-underline">
+            <a href="#" class="no-underline" data-toggle="modal" data-target="#certificates-modal">
                 <div class="div-square py-3">
                     <i class="fas fa-file-alt fa-5x"></i>
                     <h4>Certyfikaty</h4>
