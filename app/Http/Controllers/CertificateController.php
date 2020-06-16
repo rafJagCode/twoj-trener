@@ -11,17 +11,22 @@ class CertificateController extends Controller
     public function uploadCertificate(Request $request){
         $user= auth()->user();
         $certificate= new Certificates();
+        $user = auth()->user();
 
         $request->validate([
-            'certificate' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2096',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2096',
         ]);
 
-        $fileName = time().'.'.$request->file->extension();
-        $request->file->move(public_path('certificates'), $fileName);
-        $certificate->name=$fileName;
+        if ($request->hasFile('image')) {
+            $certificateFile = $request->file('image');
+            $certificateName = time() . '.' .$certificateFile->extension();
+            $certificateFile->move(public_path('certificates'), $certificateName);
+            $certificate->name = $certificateName;
+            $certificate->users_id=$user->id;
+        }
         $certificate->save();
 
-        return redirect('/trainer-dashboard')->withSuccess('Pomyślnie dodano certyfikat')->with('certificate', $fileName);
+        return back()->withSuccess('Pomyślnie dodano zdjęcie')->with('image', $certificateName);
     }
 
     public function delete($id){
@@ -30,6 +35,5 @@ class CertificateController extends Controller
         File::delete($certificatePath);
         $certificate->delete();
         return redirect('/trainer-dashboard');
-
     }
 }

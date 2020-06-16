@@ -33,7 +33,6 @@
                                 </div>
                             @endforelse
 
-
                             <button type="button" class="upload-image-btn btn btn-orange mt-2" style="width: 300px">Dodaj
                                 certyfikat
                             </button>

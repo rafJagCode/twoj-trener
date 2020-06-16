@@ -34,7 +34,7 @@ Route::group([
     'middleware' => 'roles',
     'roles'=>'Trainer'
 ], function () {
-    
+
     Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('trainer-dashboard.index');
     Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
     Route::post('/trainer-dashboard', 'ImageController@save')->name('save.image');
@@ -42,13 +42,10 @@ Route::group([
     Route::get('deleteimage/{id}', 'ImageController@delete');
     Route::get('deletecertificate/{id}', 'CertificateController@delete');
     Route::put('/trainer-dashboard', 'Trainer\DashboardController@updateDescription')->name('trainer-dashboard.updateDescription');
-    
-    
 
-   
 
     });
-  
+
 
 
   //Middleware dla usera --------------------------------------------------------------------------------------------------
@@ -56,13 +53,13 @@ Route::group([
         'middleware' => 'roles',
         'roles'=> 'User'
     ], function () {
-    
+
         Route::get('/user-dashboard', 'User\UserDashboardController@index')->name('user.dashboard');
         Route::get('/user/{id}', 'User\UserController@show');
         Route::get('/user/index/{id}', 'User\UserController@index')->name('user.index');
         Route::get('/user/show/{id}', 'User\UserController@show')->name('user.show');
         Route::post('/user/update/{id}', 'User\UserController@update')->name('user.update');
-        Route::post('trainer/{id}','RateTrainerController@rate')->name('rate');    
+        Route::post('trainer/{id}','RateTrainerController@rate')->name('rate');
         });
 
 
