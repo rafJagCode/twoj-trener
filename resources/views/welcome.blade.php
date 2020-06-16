@@ -8,60 +8,10 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+   {{--  Styles --}}
+    <link href="{{ asset('/css/searchresults.css') }}" rel="stylesheet">
 
-    <!-- Styles -->
-    <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-    </style>
+  
 </head>
 <body>
 @extends('app')
@@ -106,16 +56,50 @@
         </div>
 
         @if($matchedTrainers->count()!=0)
-            @foreach($matchedTrainers as $trainer)
-                <div class="row text-center">
-                    <div class="col-lg-12 ">
-                        <a href="http://127.0.0.1:8000/trainer/{{$trainer->id}}">
-                        <div class="alert alert-warning">
-                            <strong>Trenejro {{$trainer->firstName}} ! </strong>
-                        </div>
-                        </a>
+            @foreach($matchedTrainers as $user)
+            <div class="row-cols-1 trainer-item ">
+                <div class=" thumbnail">
+                    <div class="col100">
+                        <h2>
+                            <a href="http://127.0.0.1:8000/trainer/{{$user->id}}" title="{{ $user-> firstName }} {{ $user-> secondName }}">{{ $user-> firstName }} {{ $user-> secondName }} </a>
+                        </h2>
                     </div>
+                    <div class="row">
+                        <div class="col25">
+                            <img src="{{url('/images/profile.jpg')}}" alt="brak zdjecia " class="pull-left  trainer-photo " style="height: 20px  width:20px borderiradius:50%">
+                        </div>
+                        <div class="col75">
+                            <div class="row">
+                                <div class="col100">
+        
+                                    <div class="text">
+                                        Miasto: <strong>{{ $user -> city }}</strong>
+                                    </div>
+        
+                                    <div class="col100 ">
+                                        {{-- @foreach ($collection as $dyscipline) --}}
+                                        <div class="text">
+                                            <span class="dyscipline ">{{-- {{$dyscipline->name}} --}}</span>
+        
+                                        </div>
+                                       {{--  @endforeach --}}
+        
+                                    </div>
+        
+        
+                                </div>
+        
+                            </div>
+                        </div>
+        
+        
+                    </div>
+        
+        
+        
                 </div>
+        
+            </div>
             @endforeach
         @endif
 
@@ -123,3 +107,14 @@
 @endsection
 </body>
 </html>
+
+
+{{-- <div class="row text-center">
+    <div class="col-lg-12 ">
+        <a href="http://127.0.0.1:8000/trainer/{{$trainer->id}}">
+        <div class="alert alert-warning">
+            <strong>Trenejro {{$trainer->firstName}} ! </strong>
+        </div>
+        </a>
+    </div>
+</div> --}}
