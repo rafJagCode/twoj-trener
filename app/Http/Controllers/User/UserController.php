@@ -17,7 +17,6 @@ class UserController extends Controller
             if($authUser == $user->id)
                 $authId = true;
         }
-
         return view('users\user_show') -> with(array('user'=>$user, 'authId'=>$authId));
     }
 

@@ -65,7 +65,7 @@ class PageController extends Controller
 
         //dd($certificates);
 
-        return view('trainer_page\trainer_page', compact('user', 'disciplines', 'photos','avgRating','certificates'));
+        return view('trainer_page\trainer_page', compact('user', 'disciplines', 'photos','avgRating','certificates','ratings'));
     }
 
     /**
