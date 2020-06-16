@@ -29,6 +29,17 @@ class UsersTableSeeder extends Seeder
         $user->roles()->attach(1);
 
         $user = new User();
+        $user->firstName = 'Kamil';
+        $user->secondName = 'Stalski';
+        $user->email = 'Stalski@gmail.com';
+        $user->city = 'Olsztyn';
+        $user->description="hdgashjdgasghfjagshfsjvjaskjfsgadfkghaskdgfkasghfkasfasf";
+        $user->phoneNumber = '787123644';
+        $user->password = bcrypt('user123');
+        $user->save();
+        $user->roles()->attach(1);
+
+        $user = new User();
         $user->firstName = 'Anna';
         $user->secondName = 'Kowalska';
         $user->email = 'kowalska@gmail.com';
@@ -44,8 +55,8 @@ class UsersTableSeeder extends Seeder
         $dietaWege = Diets::where('name', 'Wegetariańska')->first();
 
         $user = new User();
-        $user->firstName = 'user1';
-        $user->secondName = 'username';
+        $user->firstName = 'Hrabia';
+        $user->secondName = 'Potocki';
         $user->email = 'user1@gmail.com';
         $user->city = 'Gdańsk';
         $user->phoneNumber = '787173642';
@@ -57,10 +68,10 @@ class UsersTableSeeder extends Seeder
         $user->gyms()->attach($justGym);
 
         $user = new User();
-        $user->firstName = 'user2';
-        $user->secondName = 'username';
+        $user->firstName = 'Angelina';
+        $user->secondName = 'Marecka';
         $user->email = 'user2@example@gmail.com';
-        $user->city = 'Poznań';
+        $user->city = 'Gdańsk';
         $user->phoneNumber = '787123649';
         $user->password = bcrypt('user');
         $user->save();
@@ -69,8 +80,8 @@ class UsersTableSeeder extends Seeder
         $user->diets()->attach($dietaWege);
 
         $user = new User();
-        $user->firstName = 'user3';
-        $user->secondName = 'username';
+        $user->firstName = 'Blażej';
+        $user->secondName = 'Komarenko';
         $user->email = 'user3@example@gmail.com';
         $user->city = 'Warszawa';
         $user->phoneNumber = '787123645';

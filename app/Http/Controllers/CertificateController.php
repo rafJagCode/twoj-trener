@@ -26,7 +26,7 @@ class CertificateController extends Controller
         }
         $certificate->save();
 
-        return back()->withSuccess('Pomyślnie dodano zdjęcie')->with('image', $certificateName);
+        return back()->withSuccess('Pomyślnie dodano certyfikat')->with('image', $certificateName);
     }
 
     public function delete($id){
