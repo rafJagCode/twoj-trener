@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9690d133-ed3a-45f5-97fb-d9ff675cc66c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/trainer_dashboard/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_dashboard/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/certificates.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/trainer_dashboard/modals/certificates.blade.php" afterDir="false" />
     </list>
