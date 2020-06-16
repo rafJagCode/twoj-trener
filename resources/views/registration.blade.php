@@ -144,7 +144,7 @@
                             </button>
                         </div>
                         <div class="login-register">
-                            <a class="btn btn-warning" href="#" role="button">Zaloguj</a>
+                            <a class="btn btn-warning" href="/login" role="button">Zaloguj</a>
                         </div>
                     </form>
                 </div>

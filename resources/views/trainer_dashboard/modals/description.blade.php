@@ -33,8 +33,8 @@
                         </textarea>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
                         <button type="submit" class="btn btn-rounded btn-orange">Zapisz zmiany</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
                     </div>
                 </form>
             </div>

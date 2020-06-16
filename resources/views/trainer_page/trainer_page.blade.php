@@ -34,7 +34,12 @@
     @endif
     @include('trainer_page.certyficates')
     @include('trainer_page.calendar')
+    @foreach($ratings as $rating)
+        @include('trainer_page.ratings')
+    @endforeach
     @include('trainer_page.modals.closeup')
     @include('trainer_page.modals.message')
+    @include('trainer_page.modals.rate')
+
 </div>
 @endsection

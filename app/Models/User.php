@@ -98,4 +98,13 @@ class User extends Authenticatable
         return $this->hasMany(Certificates::class,'users_id');
     }
 
+    public function isTrainer(){
+        $roles=$this->roles()->get();
+        $role = Roles::where('name', 'Trainer')->first();
+        if($roles->contains($role))
+            return true;
+
+        return false;
+    }
+
 }

@@ -26,6 +26,7 @@ class DashboardController extends Controller
     {
         if (auth()->check()) {
             $user = auth()->user();
+
             $cities = User::select('city')->groupBy('city')->get();
             $disciplines = Dysciplines::all();
             $checkedDisciplines = $user->disciplines()->get();
