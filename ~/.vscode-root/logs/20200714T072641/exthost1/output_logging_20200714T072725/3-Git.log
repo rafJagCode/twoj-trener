@@ -1,0 +1,26 @@
+Looking for git in: git
+Using git 2.25.1 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+Open repository: /var/www/twojtrenergit/twoj-trener
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
