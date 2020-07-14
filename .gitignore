@@ -13,8 +13,8 @@ yarn-error.log
 config/database.php
 ~/*
 ~/.vscode-root/*
-.vscode/*
-.vscode
+.vscode/root/*
+.vscode-root
 
 <<<<<<< HEAD
 
