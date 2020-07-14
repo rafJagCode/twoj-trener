@@ -11,9 +11,11 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 config/database.php
+~/*
 <<<<<<< HEAD
 
 .idea/
 .idea/workspace.xml
+
 
 
