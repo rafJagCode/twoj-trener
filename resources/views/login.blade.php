@@ -41,7 +41,7 @@ body {margin-top: 100px;}
                                         <button type="submit" class="btn btn-warning btn-lg btn-block login-button">Zaloguj</button>
                                     </div>
                                     <div class="login-register">
-
+                                        @include('auth_errors')
                                     <a class="btn btn-warning" href="/register" role="button">Zarejestruj się!</a>
                                     </div>
                                 </form>

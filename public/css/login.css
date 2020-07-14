@@ -28,6 +28,11 @@ body{
     margin-right: 0;
 }
 
+.odst
+{
+    margin: 20px;
+}
+
 .login-form
 {
     padding-top: 100rem;

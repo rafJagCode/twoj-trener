@@ -24,3 +24,283 @@ Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remot
 Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
 > git config --get commit.template
 > git check-ignore -v -z --stdin
+> git add -A -- .
+> git commit --quiet --allow-empty-message --file -
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv HEAD:~/.vscode-root/CachedData/d5e9aa0227e057a60c82568bf31c04730dc15dcd/configurationEditingMain-629235011398a83b56eb508632e82a94.code
+> git ls-tree -l HEAD -- /var/www/twojtrenergit/twoj-trener/~/.vscode-root/CachedData/d5e9aa0227e057a60c82568bf31c04730dc15dcd/configurationEditingMain-629235011398a83b56eb508632e82a94.code
+> git ls-tree -l HEAD -- /var/www/twojtrenergit/twoj-trener/~/.vscode-root/CachedData/d5e9aa0227e057a60c82568bf31c04730dc15dcd/configurationEditingMain-629235011398a83b56eb508632e82a94.code
+> git check-ignore -v -z --stdin
+> git show --textconv HEAD:~/.vscode-root/CachedData/d5e9aa0227e057a60c82568bf31c04730dc15dcd/extension-702d7ab037d457b3a4cab719e36c3153.code
+> git ls-tree -l HEAD -- /var/www/twojtrenergit/twoj-trener/~/.vscode-root/CachedData/d5e9aa0227e057a60c82568bf31c04730dc15dcd/extension-702d7ab037d457b3a4cab719e36c3153.code
+> git ls-tree -l HEAD -- /var/www/twojtrenergit/twoj-trener/~/.vscode-root/CachedData/d5e9aa0227e057a60c82568bf31c04730dc15dcd/extension-702d7ab037d457b3a4cab719e36c3153.code
+> git show --textconv HEAD:~/.vscode-root/CachedData/d5e9aa0227e057a60c82568bf31c04730dc15dcd/jsonClientMain-f04f3ea3bed214555264cc9c4625240e.code
+> git ls-tree -l HEAD -- /var/www/twojtrenergit/twoj-trener/~/.vscode-root/CachedData/d5e9aa0227e057a60c82568bf31c04730dc15dcd/jsonClientMain-f04f3ea3bed214555264cc9c4625240e.code
+> git ls-tree -l HEAD -- /var/www/twojtrenergit/twoj-trener/~/.vscode-root/CachedData/d5e9aa0227e057a60c82568bf31c04730dc15dcd/jsonClientMain-f04f3ea3bed214555264cc9c4625240e.code
+> git check-ignore -v -z --stdin
+> git show --textconv :.gitignore
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/.gitignore
+> git cat-file -s d11f2ae243c94ce3ab67032285b101fe9272d422
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git show --textconv :config/app.php
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/config/app.php
+> git cat-file -s 8409e00ea9fc20548d3ce10d6af12607bad3e0af
+> git show --textconv :.env
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/.env
+> git check-ignore -v -z --stdin
+> git show --textconv :.env.example
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/.env.example
+> git cat-file -s ac748637ae52e837bedc4234dbcad2f82e5187e7
+> git show --textconv :.env
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/.env
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :config/app.php
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/config/app.php
+> git cat-file -s 8409e00ea9fc20548d3ce10d6af12607bad3e0af
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show --textconv :resources/views/users/user_dashboard.blade.php
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/resources/views/users/user_dashboard.blade.php
+> git cat-file -s 27c67801c54ceceed70fc6562c46a4fdc3c41b28
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show --textconv :app/Http/Controllers/Controller.php
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/app/Http/Controllers/Controller.php
+> git cat-file -s ea3c6780ba6427b994e76667f2c6a0c4d1c0f8d7
+> git show --textconv :app/Http/Controllers/CertificateController.php
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/app/Http/Controllers/CertificateController.php
+> git cat-file -s f9816bab549363748c1d91e88a3d937026701fcc
+> git check-ignore -v -z --stdin
+> git show --textconv :app/Http/Controllers/User/UserController.php
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/app/Http/Controllers/User/UserController.php
+> git cat-file -s af3ae26ac0f4f081f1c9f4c8197eef43e9662f52
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git show --textconv :app/Http/Controllers/User/UserDashboardController.php
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/app/Http/Controllers/User/UserDashboardController.php
+> git cat-file -s ff288e132119b312e85e30daf6e927c30f95f243
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git show --textconv :resources/views/auth_errors.blade.php
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/resources/views/auth_errors.blade.php
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git show --textconv :resources/views/login.blade.php
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/resources/views/login.blade.php
+> git cat-file -s c47e9c44e4bca626ab31f5b13ed52c74734d368b
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show --textconv :public/css/login.css
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/public/css/login.css
+> git cat-file -s 29f70810bd36d82d5d8764abd35eaa610ac2279d
+> git show --textconv :resources/views/login.blade.php
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/resources/views/login.blade.php
+> git cat-file -s c47e9c44e4bca626ab31f5b13ed52c74734d368b
+> git show --textconv :resources/views/auth_errors.blade.php
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/resources/views/auth_errors.blade.php
+> git show --textconv :public/css/login.css
+> git ls-files --stage -- /var/www/twojtrenergit/twoj-trener/public/css/login.css
+> git cat-file -s 29f70810bd36d82d5d8764abd35eaa610ac2279d
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse feature/5624
+> git rev-parse --symbolic-full-name feature/5624@{u}
+> git rev-list --left-right feature/5624...refs/remotes/origin/feature/5624
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname)
+> git remote --verbose
+Warning: Failed to watch ref '/var/www/twojtrenergit/twoj-trener/.git/refs/remotes/origin/feature/5624', is most likely packed.
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git add -A -- .
