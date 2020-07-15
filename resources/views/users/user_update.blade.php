@@ -15,13 +15,18 @@
                 <div class="list-group list-group-flush">
 
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <img src="{{url('/images/profile.jpg')}}" alt="Image" width="200" height="200"/>
+                        <img src="{{url('/images/avatars/'.$user->profilePicture)}}" alt="Image" width="200" height="200"/>
                     </div>
                     
                     <form method="POST" class="form-user" action="{{ route('user.update', $user->id) }}"
                           enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
+
+                        <div class="form-group">
+                            <label for="profilePicture" class="labl"> Zdjecie profilowe </label>
+                            <input type="file" name="profilePicture">
+                        </div>
 
                         <div class="form-group">
                             <label for="firstName" class="lab1">Imie</label>
@@ -51,8 +56,9 @@
 
                                     @foreach($cities ?? '' as $city)
                                         <option class="city-choice"
-                                                data-tokens="{{ $city['city'] }}">{{ $city['city'] }}</option>
+                                                data-tokens="{{ $city['city'] }}" {{$city['city'] == $user->city ? 'selected' : ''}}> {{ $city['city'] }} </option>
                                     @endforeach
+
                                 </select>
                             </div>
                         </div>

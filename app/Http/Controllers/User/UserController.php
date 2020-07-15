@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateUserRequest;
+use Image;
 
 class UserController extends Controller
 {
@@ -45,12 +46,27 @@ class UserController extends Controller
     }
 
 
-
-    public function update(UpdateUserRequest $request , $id) 
+    public function updateProfilePicture(Request $request)
     {
-        $user = User::findOrFail($id);
+
+    }
+
+    public function update(UpdateUserRequest $request) 
+    {
         $user = auth()->user();
-        $user->update($request->all());
+
+        if($request->hasFile('profilePicture')){
+            $avatar = $request -> file('profilePicture');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)-> resize(300,300)->save(public_path('images/avatars/' . $filename));
+            $user->profilePicture = $filename;
+        }
+      
+        $user->firstName = $request->input('firstName');
+        $user->secondName = $request->input('secondName');
+        $user->city = $request->input('city');
+        $user->phoneNumber = $request->input('phoneNumber');
+        $user->save();
         return redirect('user-dashboard');
     }
 }

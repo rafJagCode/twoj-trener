@@ -59,6 +59,7 @@ Route::group([
         Route::get('/user/index/{id}', 'User\UserController@index')->name('user.index');
         Route::get('/user/show/{id}', 'User\UserController@show')->name('user.show');
         Route::patch('/user/update/{id}', 'User\UserController@update')->name('user.update');
+        Route::patch('/user/updateprofilepicture/{id}', 'User\UserController@updateProfilePicture')->name('user.updateProfilePicture');
         Route::post('trainer/{id}','RateTrainerController@rate')->name('rate');
         });
 

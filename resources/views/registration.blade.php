@@ -85,7 +85,7 @@
                                     <input type="text" class="form-control @error('phoneNumber') is-invalid @enderror"
                                            name="phoneNumber" id="phoneNumber"
                                            placeholder="Wpisz numer telefonu"/>
-                                    @error('city')
+                                    @error('phoneNumber')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

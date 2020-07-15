@@ -62,7 +62,7 @@ class PageController extends Controller
         $certificates= $user->certificates()->get();
         $avgRating=round($ratings->avg('stars'),2);
 
-        return view('trainer_page\trainer_page', compact('user', 'disciplines', 'photos','avgRating','certificates','ratings'));
+        return view('trainer_page.trainer_page', compact('user', 'disciplines', 'photos','avgRating','certificates','ratings'));
     }
 
     /**

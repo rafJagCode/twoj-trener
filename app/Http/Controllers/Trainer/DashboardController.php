@@ -34,7 +34,7 @@ class DashboardController extends Controller
             $photos = $user->images()->get();
             $certificates = $user->certificates()->get();
 
-            return view('trainer_dashboard\dashboard', compact('user', 'disciplines', 'checkedDisciplines', 'cities', 'photos', 'description', 'certificates'));
+            return view('trainer_dashboard.dashboard', compact('user', 'disciplines', 'checkedDisciplines', 'cities', 'photos', 'description', 'certificates'));
         } else
             return view('login');
     }
@@ -99,7 +99,7 @@ class DashboardController extends Controller
         $user->disciplines()->sync($request->input('disciplines'));
         $user->save();
 
-        return redirect('/trainer-dashboard');
+        return redirect('trainer-dashboard');
     }
 
     public function updateDescription(Request $request)
@@ -107,7 +107,7 @@ class DashboardController extends Controller
         $user = auth()->user();
         $user->description = $request->input('description');
         $user->save();
-        return redirect('/trainer-dashboard');
+        return redirect('trainer-dashboard');
     }
 
     /**
