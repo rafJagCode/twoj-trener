@@ -36,3 +36,12 @@ a.no-underline:hover {
     margin-top: 15px;
     margin-bottom: 5px;
 }
+
+.avatars {
+    border-radius: 50%;
+}
+
+.btn-alignr {
+    left: 65%;
+    position: relative;
+}

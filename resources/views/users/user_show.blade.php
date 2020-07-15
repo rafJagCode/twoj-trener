@@ -13,7 +13,7 @@
             <div class="col-md-7 ">
                 <div class="row text-center">
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <img src="{{url('/images/avatars/'.$user->profilePicture)}}" alt="Image" width="200" height="200"/>
+                        <img src="{{url('/images/avatars/'.$user->profilePicture)}}" class="avatars" alt="Image" width="200" height="200"/>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-6">
@@ -35,10 +35,11 @@
                         <li class="list-group-item">Data Dołączenia: {{$user->created_at}}</li>
                     </ul>
                 </div>
+                <a href={{ route('user.dashboard') }} class="btn btn-warning" role="button">Powrot do profilu</a>
                 @if(auth()->user())
-                    <a class="btn btn-warning" href="{{ route('user.show', $user->id) }}" role="button">Edit</a>
+                    <a class="btn btn-warning btn-alignr" href="{{ route('user.show', $user->id) }}" role="button">Edytuj</a>
                     @else
-                    <a class="btn btn-warning disabled" role="button">Edit</a>
+                    <a class="btn btn-warning disabled btn-alignr" role="button">Edytuj</a>
                 @endif
             </div>
         </div>
