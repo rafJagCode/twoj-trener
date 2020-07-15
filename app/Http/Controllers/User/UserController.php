@@ -5,9 +5,17 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateUserRequest;
 
 class UserController extends Controller
 {
+    /* problemy z cache-m
+     public function AuthRouteAPI(Request $request){
+    return $request->user();
+ } */
+
+
+
     public function index($id)
     {
         $user = User::findOrFail($id);
@@ -36,15 +44,13 @@ class UserController extends Controller
         return view('users.user_update', compact('user', 'cities'));
     }
 
-    public function update(Request $request)
-    {
-        $user = auth()->user();
-        $user->firstName = $request->input('firstName');
-        $user->secondName = $request->input('secondName');
-        $user->city = $request->input('city');
-        $user->phoneNumber = $request->input('phoneNumber');
-        $user->save();
 
-        return redirect('user.user-dashboard');
+
+    public function update(UpdateUserRequest $request , $id) 
+    {
+        $user = User::findOrFail($id);
+        $user = auth()->user();
+        $user->update($request->all());
+        return redirect('user-dashboard');
     }
 }

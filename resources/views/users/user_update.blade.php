@@ -17,11 +17,11 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <img src="{{url('/images/profile.jpg')}}" alt="Image" width="200" height="200"/>
                     </div>
-
+                    
                     <form method="POST" class="form-user" action="{{ route('user.update', $user->id) }}"
                           enctype="multipart/form-data">
                         @csrf
-                        @method('POST')
+                        @method('PATCH')
 
                         <div class="form-group">
                             <label for="firstName" class="lab1">Imie</label>
@@ -56,9 +56,10 @@
                                 </select>
                             </div>
                         </div>
-                            <a class="btn btn-warning" href="{{ route('user.index', $user->id) }}"
-                               role="button">Zapisz</a>
+                            <input type="submit" class="btn btn-warning" value="Edit" role="button"/> 
                     </form>
+
+                    @include('errors')
                 </div>
             </div>
 
