@@ -52,9 +52,12 @@ class UserController extends Controller
 
         //sprawdza czy zosta dodany plik z nowym avatarem
         if($request->hasFile('profilePicture')){
-            //usuwanie starego pliku
+            //usuwanie starego pliku tak by nie usunac domyslnego
+            if($user->profilePicture != 'profile.jpg')
+            {
             $oldpath = public_path().'/images/avatars/'.$user->profilePicture;
             File::delete($oldpath);
+            }
 
             $avatar = $request -> file('profilePicture');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
