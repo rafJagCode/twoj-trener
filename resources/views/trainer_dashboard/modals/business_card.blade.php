@@ -16,6 +16,16 @@
             <form method="POST" action="{{ route('trainer-dashboard.update') }}" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
+
+                    <div class="form-row mb-3">
+                        <img src="{{url('/images/avatars/'.$user->profilePicture)}}" class="avatars" alt="Image" width="200" height="200"/>
+                    </div>
+
+                    <div class="form-row mb-3">
+                        <label for="profilePicture" class=".form-control-file ">  </label>
+                        <input type="file" name="profilePicture">
+                    </div>
+
                     <div class="form-row mb-3">
                         <div class="col">
                             <input type="text" class="form-control" placeholder="Imię" name="firstName"
@@ -74,7 +84,7 @@
                             </div>
                         @endforeach
                     </div>
-
+                    
                     <div class="modal-footer">
                         <button type="button" role="button" class="btn btn-secondary" data-dismiss="modal">Zamknij </button>
                         <button type="submit" role="button" class="btn btn-rounded btn-orange">Zapisz zmiany</button>

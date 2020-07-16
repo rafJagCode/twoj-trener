@@ -6,9 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Cities;
 use App\Models\Dysciplines;
 use App\Models\User;
-use App\Models\Image;
+use App\Models\Images; //model
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Image; //Intervention image
+use Illuminate\Support\Facades\File; 
+use App\Http\Requests\UpdateUserRequest;
 
 class DashboardController extends Controller
 {
@@ -89,9 +92,25 @@ class DashboardController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(UpdateUserRequest $request)
     {
         $user = auth()->user();
+
+        if($request->hasFile('profilePicture')){
+            //usuwanie starego pliku
+            if($user->profilePicture != 'profile.jpg')
+            {
+            $oldpath = public_path().'/images/avatars/'.$user->profilePicture;
+            File::delete($oldpath);
+            }
+            
+            $avatar = $request -> file('profilePicture');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)-> resize(300,300)->save(public_path('images/avatars/' . $filename));
+            $user->profilePicture = $filename;
+        }
+
+       
         $user->firstName = $request->input('firstName');
         $user->secondName = $request->input('secondName');
         $user->city = $request->input('city');

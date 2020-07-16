@@ -1,6 +1,7 @@
 <div class="informations">
     <div class="photo">
-        <img src="{{asset('images/profile.jpg')}}" alt="profilowe" class="profile-img">
+        <img src="{{url('/images/avatars/'.$user->profilePicture)}}" alt="profilowe" class="profile-img">
+        
     </div>
     <div class="details">
         <p class="name">

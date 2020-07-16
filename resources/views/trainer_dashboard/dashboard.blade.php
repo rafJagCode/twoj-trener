@@ -16,6 +16,7 @@
         </div>
     </div>
 
+    @include('errors')
     <div class="row text-center">
 
         <div class="col-lg-4 col-md-6 col-sm-12">
@@ -71,6 +72,7 @@
             <h4>{{session('success')}}</h4>
         @endif
 
+        
     </div>
 </div>
 

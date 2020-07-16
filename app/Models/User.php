@@ -91,7 +91,7 @@ class User extends Authenticatable
     }
 
     public function images(){
-        return $this->hasMany(Image::class,'users_id');
+        return $this->hasMany(Images::class,'users_id');
     }
 
     public function certificates(){

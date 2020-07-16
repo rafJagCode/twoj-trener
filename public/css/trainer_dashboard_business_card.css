@@ -24,6 +24,10 @@
   color: #FFB300;
 }
 
+.form-control-file {
+  color: #FFB300;
+}
+
 .form-control:focus {
   background-color: #32373b;
   color: #FFB300;
@@ -125,3 +129,6 @@
   color: #FFB300;
 }
 
+.avatars {
+  border-radius: 50%;
+}

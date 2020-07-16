@@ -46,12 +46,6 @@ class UserController extends Controller
         return view('users.user_update', compact('user', 'cities'));
     }
 
-
-    public function updateProfilePicture(Request $request)
-    {
-
-    }
-
     public function update(UpdateUserRequest $request) 
     {
         $user = auth()->user();
@@ -73,7 +67,6 @@ class UserController extends Controller
         $user->city = $request->input('city');
         $user->phoneNumber = $request->input('phoneNumber');
         $user->save();
-        //return redirect('user-dashboard');
-        return $oldpath;
+        return redirect('user-dashboard');
     }
 }
