@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateUserRequest;
 use Image;
+use Illuminate\Support\Facades\File; 
 
 class UserController extends Controller
 {
@@ -55,7 +56,12 @@ class UserController extends Controller
     {
         $user = auth()->user();
 
+        //sprawdza czy zosta dodany plik z nowym avatarem
         if($request->hasFile('profilePicture')){
+            //usuwanie starego pliku
+            $oldpath = public_path().'/images/avatars/'.$user->profilePicture;
+            File::delete($oldpath);
+
             $avatar = $request -> file('profilePicture');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
             Image::make($avatar)-> resize(300,300)->save(public_path('images/avatars/' . $filename));
@@ -67,6 +73,7 @@ class UserController extends Controller
         $user->city = $request->input('city');
         $user->phoneNumber = $request->input('phoneNumber');
         $user->save();
-        return redirect('user-dashboard');
+        //return redirect('user-dashboard');
+        return $oldpath;
     }
 }
