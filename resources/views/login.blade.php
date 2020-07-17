@@ -41,7 +41,7 @@ body {margin-top: 100px;}
                                         <button type="submit" class="btn btn-warning btn-lg btn-block login-button">Zaloguj</button>
                                     </div>
                                     <div class="form-group ">
-                                    <a href="{{ route('password.request') }}"> Forgot password </a>
+                                    <a href="{{ route('password.request') }}"> Zapomniałeś hasła? </a>
                                     </div>
                                     <div class="login-register">
                                         @include('errors')
