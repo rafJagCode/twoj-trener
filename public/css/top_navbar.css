@@ -1,0 +1,39 @@
+#top-navbar {
+    width: 100%;
+    padding: 15px;
+    border-bottom: 5px solid #FFB300;
+    background-color: #32373B;
+  }
+
+  .img-logo {
+    display: inline-block;
+    width: 200px;
+    height: 80px;
+  }
+
+  .navbar-nav a {
+    color: #FFB300;
+  }
+
+  .navbar-nav a:hover {
+    color: #F17105;
+  }
+
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+
+  .navbar-toggler-icon i {
+    margin-top: auto;
+    margin-bottom: auto;
+    color: #FFB300;
+  }
+
+  .btn-orange {
+    background-color: #FFB300;
+    color: black;
+  }
+
+  .btn-orange:hover {
+    background-color: #F17105;
+  }

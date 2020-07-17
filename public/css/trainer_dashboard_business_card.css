@@ -1,0 +1,127 @@
+.form-control {
+  background-color: #32373b;
+  border: 1px solid #FFB300;
+  color: #FFB300;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #FFB300;
+}
+
+.form-control::-moz-placeholder {
+  color: #FFB300;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #FFB300;
+}
+
+.form-control::-ms-input-placeholder {
+  color: #FFB300;
+}
+
+.form-control::placeholder {
+  color: #FFB300;
+}
+
+.form-control:focus {
+  background-color: #32373b;
+  color: #FFB300;
+  outline: none !important;
+  border: 1px solid #FFB300;
+  box-shadow: 0 0 10px #FFB300;
+}
+
+.city-choice {
+  color: #FFB300 !important;
+  background: #32373b !important;
+}
+
+.btn-selection {
+  color: #FFB300;
+  background-color: #32373b;
+  border: 1px solid #FFB300;
+}
+
+.btn-selection:focus {
+  outline: none !important;
+  border: 1px solid #FFB300;
+  box-shadow: 0 0 10px #FFB300;
+}
+
+.btn-selection:hover {
+  color: #FFB300;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.custom-checkbox .custom-control-input.my-checkbox ~ .custom-control-label::before {
+  top: 0.5rem;
+  border: 2px solid #FFB300;
+  background-color: #32373b;
+  outline: none !important;
+  box-shadow: none;
+}
+
+.custom-checkbox .custom-control-input.my-checkbox ~ .custom-control-label::after {
+  top: 0.5rem;
+}
+
+.modal-title {
+  color: #FFB300;
+}
+
+.modal-content {
+  background-color: #32373b;
+}
+
+.dropdown-menu.show {
+  max-height: 100px;
+  background-color: #32373b;
+  border: 1px solid #FFB300;
+}
+
+.bs-searchbox {
+  background-color: #32373b;
+}
+
+.bs-searchbox:focus {
+  background-color: #32373b;
+}
+
+.dark-bg {
+  background-color: #32373b;
+  color: #FFB300;
+}
+
+.my-label {
+  color: #FFB300;
+  font-size: 20px;
+}
+
+.my-label p {
+  display: inline;
+}
+
+.discipline-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+.bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+  color: #FFB300;
+}
+
+.bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+
+.orange-text {
+  font-size: 1rem;
+  color: #FFB300;
+}
+
