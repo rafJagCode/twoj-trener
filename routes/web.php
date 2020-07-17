@@ -87,8 +87,8 @@ Route::get('trainer/{id}','Trainer\PageController@show')->name('trainer.show');
 
 
 
-Route::post("/",'SearchController@search')->name('user.search');
-Route::get("/",'WelcomeController@show')->name('welcome.show');
+Route::post("/index",'SearchController@search')->name('user.search');
+Route::get("/index",'WelcomeController@show')->name('welcome.show');
 
 
 

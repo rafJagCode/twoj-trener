@@ -40,6 +40,6 @@ class SearchController extends Controller
         else
             $matchedTrainers=$trainers;
 
-        return view('welcome', compact('matchedTrainers', 'allDisciplines'));
+        return view('index', compact('matchedTrainers', 'allDisciplines'));
     }
 }
