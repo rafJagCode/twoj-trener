@@ -40,6 +40,9 @@ body {margin-top: 100px;}
                                     <div class="form-group ">
                                         <button type="submit" class="btn btn-warning btn-lg btn-block login-button">Zaloguj</button>
                                     </div>
+                                    <div class="form-group ">
+                                    <a href="{{ route('password.request') }}"> Forgot password </a>
+                                    </div>
                                     <div class="login-register">
                                         @include('errors')
                                     <a class="btn btn-warning" href="/register" role="button">Zarejestruj się!</a>
