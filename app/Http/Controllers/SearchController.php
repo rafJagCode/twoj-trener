@@ -26,7 +26,7 @@ class SearchController extends Controller
             if ($tm->roles()->get()->contains($role))
                 $trainers->push($tm);
 
-        $matchedTrainers = Collection::make();
+        $matchedTrainersId = collect();
         if ($checkedDisciplines != null)
             foreach ($trainers as $trainer) {
                 $result = true;
@@ -35,10 +35,14 @@ class SearchController extends Controller
                         $result = false;
                 }
                 if ($result)
-                    $matchedTrainers->push($trainer);
+                    $matchedTrainersId->push($trainer->id);
             }
         else
-            $matchedTrainers=$trainers;
+            foreach ($trainers as $trainer) {
+                $matchedTrainersId->push($trainer->id);
+            }
+        
+        $matchedTrainers = User::whereIn('id',$matchedTrainersId)->latest()->paginate(3);
 
         return view('index', compact('matchedTrainers', 'allDisciplines'));
     }

@@ -113,4 +113,7 @@ class User extends Authenticatable
         return false;
     }
 
+    public function avgStars(){
+        return number_format($this->ratings()->get()->avg('stars'), 1);
+    }
 }

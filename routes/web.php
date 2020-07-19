@@ -20,14 +20,14 @@ use Symfony\Component\HttpFoundation\Request;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/index', function () {
-    return view('index');
-});
-
+// Route::get('/', function () {
+//     return view('index');
+// });
+Route::get('/', 'HomeController@index')->name('home');
 
 
 
@@ -77,7 +77,7 @@ Route::get('/login', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 
 
@@ -87,8 +87,8 @@ Route::get('trainer/{id}','Trainer\PageController@show')->name('trainer.show');
 
 
 
-Route::post("/index",'SearchController@search')->name('user.search');
-Route::get("/index",'WelcomeController@show')->name('welcome.show');
+Route::post("/",'SearchController@search')->name('user.search');
+// Route::get("/index",'WelcomeController@show')->name('welcome.show');
 
 
 

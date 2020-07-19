@@ -106,17 +106,26 @@
                                             </div>
                                             <div class="homes-price">
                                                 <ul class="starts text-left mb-0">
-                                                    <li class="mb-0"><i class="fa fa-star"></i>
+                                                    @for ($i = 0; $i < floor($user->avgStars()); $i++)
+                                                        <li class="mb-0">
+                                                            <i class="fa fa-star"></i>
+                                                        </li>
+                                                    @endfor
+                                                    @if ($user->avgStars() - floor($user->avgStars()) >= 0.5)
+                                                        <li class="mb-0">
+                                                            <i class="fa fa-star-half"></i>
+                                                        </li>
+                                                    @endif
+                                                    <li class="ml-1">{{ $user->avgStars() }}</li>
+                                                    <li class="ml-1">
+                                                        ({{ count($user->ratings()->get()) }} {{ count($user->ratings()->get()) == 1 
+                                                        ? 'ocena' 
+                                                        : (((count($user->ratings()->get()) % 10 == 2 && count($user->ratings()->get()) != 12 && count($user->ratings()->get()) != 112)
+                                                        || (count($user->ratings()->get()) % 10 == 3 && count($user->ratings()->get()) != 13 && count($user->ratings()->get()) != 113)
+                                                        || (count($user->ratings()->get()) % 10 == 4 && count($user->ratings()->get()) != 14 && count($user->ratings()->get()) != 114))
+                                                        ? 'oceny' : 'ocen') 
+                                                        }})
                                                     </li>
-                                                    <li class="mb-0"><i class="fa fa-star"></i>
-                                                    </li>
-                                                    <li class="mb-0"><i class="fa fa-star"></i>
-                                                    </li>
-                                                    <li class="mb-0"><i class="fa fa-star"></i>
-                                                    </li>
-                                                    <li class="mb-0"><i class="fa fa-star"></i>
-                                                    </li>
-                                                    <li class="ml-1">{{ count($user->ratings()->get()) }}</li>
                                                 </ul>
                                             </div>
                                             <img src="{{ $user->profilePicture() }}" alt="zdjęcie trenera" class="img-responsive">
@@ -148,44 +157,33 @@
                                             <span>{{ $user->phoneNumber }}</span>
                                         </li>
                                         <li>
-                                            <i class="fa fa-comment" aria-hidden="true"></i>
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
                                             <span>{{ $user->email }}</span>
                                         </li>
                                     </ul>
 
                                     {{-- na razie zakomentowane, czy bedzie potrzebne?? --}}
 
-                                    {{-- <div class="footer mt-3">
-                                        <a href="listing-details.html">
-                                            <img src="images/icons/2.png" width="20" class="mr-2" alt=""> Restaurant
-                                        </a>
+                                    <div class="footer mt-3">
                                         <span>
-                                            <i class="fas fa-lock-open"></i> Open Now
+                                            @foreach ($user->disciplines()->get() as $discipline)
+                                                <img
+                                                    class="discipline-icon"
+                                                    src="{{ asset("/images/$discipline->name.png") }}"
+                                                    alt="{{ $discipline->name }}"
+                                                >
+                                            @endforeach
                                         </span>
-                                    </div> --}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                         
-                </div>   
-                <nav aria-label="..." class="pt-2">
-                    <ul class="pagination mt-0">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
+                </div>  
+
+                {{ $matchedTrainers->links() }} 
+            
             </div>
         </section>
     @endif
