@@ -41,6 +41,13 @@
                             </div>
                         @endforeach
                     </div>
+                    
+                    @if ($matchedTrainers->count()!=0 && $mesage ?? ''!=null )
+                        <div class="alert alert-success card  mb-3 col-lg-12">
+                            {!! $mesage !!}
+                        </div>
+                    @endif
+
                     <div class="form-row mb-3 col-lg-6">
                         <div class="col">
                             <input type="search" name="city" class="form-control" placeholder="Miasto">
@@ -77,9 +84,11 @@
                                 <div class="col100">
         
                                     <div class="text">
-                                        Miasto: <strong>{{ $user -> city }}</strong>
+                                        <h3>Miasto: <strong>{{ $user -> city }}</strong></h3>
                                     </div>
-                                    <h2>Mogę cię wyćwiczyć w:</h2>
+                                    <div class="text">
+                                    <h2>Specializuje się w treningu:</h2>
+                                    </div>
                                     @for ($i = 1; $i < $trenerDisciplines->count(); $i+=2)
                                         @if ($trenerDisciplines[$i-1]==$user->id)
                                             <div class="text">

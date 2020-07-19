@@ -19,7 +19,9 @@ class SearchController extends Controller
         $trenerDisciplines =collect();
         $sprawdzoneDisciplines =collect();
         $hom_meny_disciplin_corekt=0;
-        
+        $didynt_have_disciplin=collect();
+        $can_learn=collect();
+        $mesage=null;
         #Pobieranie wszystkich dyscyplin
         $checkedDisciplines = $request->input('disciplines');
         #Pobieranie wszystkich użytkowników trenerów
@@ -53,7 +55,7 @@ class SearchController extends Controller
                 $result = 0;
                 #sprawdzanie czy ma konkretny rodzaj treningu
                 foreach ($checkedDisciplines as $dis) {
-                    #jesili posiada choć jeden pasujocy trening dodaj i 
+                    #jesili posiada choć jeden pasujący  trening dodaj i 
                     
                     if ($trainer->disciplines()->get()->contains($dis))
                     {
@@ -75,22 +77,82 @@ class SearchController extends Controller
                        
                }
             }
-            /*#sprawdzanie czy wszystkie wybrne dyscypliny mają trenera
+            #sprawdzanie czy wszystkie wybrnę  dyscypliny mają trenera
             foreach($checkedDisciplines as $dis)
             {
-                for(int i=1;i<$trenerDisciplines->const();i++)
-                {
-                    if($die)
+                $result=false;
+                for ($i=1; $i <$trenerDisciplines->count() ; $i+=2) { 
+                    if($dis==$trenerDisciplines[$i])
+                    {
+                        $result=true; 
+                    }
                 }
-            }..*/
-
-
+                if($result==false)
+                {
+                    $didynt_have_disciplin->push($dis);
+                }
+            }
+            #Jeśli choć jedna dyscyplina nie ma trenera pobierz wszystkie możliwe dyscypliny
+            if( $didynt_have_disciplin->count()!=0)
+            {
+                    foreach($checkedDisciplines as $dis)
+                    {
+                        $result=false;
+                        for ($i=0; $i <$didynt_have_disciplin->count() ; $i++) 
+                        { 
+                            if($dis==$didynt_have_disciplin[$i])
+                            {
+                                $result=true;    
+                            }
+                        }
+                    if($result==false)
+                        {
+                            $can_learn->push($dis);
+                        }
+                }
+                #przygotowywanie wiadomości w czym możemy i w czym nie
+                $p=0;
+                $mesage= "Nie możemy cię wyszkolić w:" ;
+                foreach($allDisciplines as $discyplin)
+                {
+                    if($p<$didynt_have_disciplin->count() && $discyplin->id==$didynt_have_disciplin[$p])
+                    {
+                        
+                        $mesage .="</br>";
+                        $mesage .=$discyplin->name;
+                        $p++;
+                    }
+                }
+                $mesage .= "</br>Możemy zoferować trenig:" ;
+                $p=0;
+                foreach($allDisciplines as $discyplin)
+                {
+                    if($p<$can_learn->count() && $discyplin->id==$can_learn[$p])
+                    {
+                        
+                        $mesage .="</br>";
+                        $mesage .=$discyplin->name;
+                        $p++;
+                    }
+                }
+            }
         }
         else
         {
+            #przechodzenie pojedynczo po każdym trenerze
+            foreach ($trainers as $trainer) 
+            {
+                #przypisywanie czym zajmuje się dany trener
+                foreach ($user_conection_disciplin as $ste)
+                {
+                    if ($ste->users_id==$trainer->id)
+                    {
+                        $trenerDisciplines->push($ste->users_id,$ste->dysciplines_id);
+                    }   
+                }
+            }
             $matchedTrainers=$trainers;
         }
-        
-        return view('welcome', compact('matchedTrainers', 'allDisciplines','city','trenerDisciplines'));
+        return view('welcome', compact('matchedTrainers', 'allDisciplines','city','trenerDisciplines','mesage'));
     }
 }
