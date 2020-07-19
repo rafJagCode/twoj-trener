@@ -82,7 +82,7 @@ class SearchController extends Controller
                 {
                     if($die)
                 }
-            }*/
+            }..*/
 
 
         }
