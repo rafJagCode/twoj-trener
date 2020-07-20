@@ -1,117 +1,275 @@
-@section('trainer-dashboard-business-card-css')
-<link href="{{ asset('/css/trainer_dashboard_business_card.css') }}" rel="stylesheet">
-@endsection
-@section('trainer-dashboard')
-    <div class="content">
-        <div>
-            <form action="{{route('user.search')}}" method="post">
-                @csrf
-                <div class="input-group">
-                    <div class="row text-center disciplines">
-                        @foreach($allDisciplines ?? '' as $discipline)
-                            <div class="discipline col-md-6 col-sm-12 text-left">
-                                <div class="custom-control custom-checkbox ">
-                                    <input type="checkbox" class="custom-control-input my-checkbox"
-                                           name="disciplines[]"
-                                           id="{{ $discipline->name }}" value="{{$discipline->id}}">
-                                    <label class="custom-control-label my-label" for="{{ $discipline->name }}">
-                                        <p>{{ $discipline->name }}</p> <img
-                                            class="discipline-icon"
-                                            src="{{asset("/images/$discipline->name.png")}}"
-                                            alt="{{ $discipline->name }}"></label>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="form-row mb-3 col-lg-6">
-                        <div class="col">
-                            <input type="search" name="city" class="form-control" placeholder="Miasto">
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="html 5 template">
+    <meta name="author" content="">
+    <title>Twoj-trener</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,400i%7CMontserrat:600,800" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css')}}">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{ URL::asset('css/menu.css')}}">
+    <link rel="stylesheet" href="{{ URL::asset('css/styles.css')}}">
+</head>
+<div id="wrapper">
+
+        <!-- Header Container
+        ================================================== -->
+        <header id="header-container">
+            <!-- Topbar -->
+            <div class="header-top">
+                <div class="container">
+                    <div class="top-info hidden-sm-down">
+                        <div class="call-header">
+                            <p><i class="fa fa-phone" aria-hidden="true"></i> (234) 0200 17813</p>
                         </div>
-                        <div class="input-group-append flex-center">
-                            <button class="btn btn-warning" type="submit">
-                                <i class="fa fa-search"></i>
+                        <div class="address-header">
+                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> 95 South Park Ave, USA</p>
+                        </div>
+                        <div class="mail-header">
+                            <p><i class="fa fa-envelope" aria-hidden="true"></i> info@listifind.com</p>
+                        </div>
+                    </div>
+                    <div class="top-social hidden-sm-down">
+                        <div class="login-wrap">
+                            <ul class="d-flex">
+                                <li><a href="login.html"><i class="fa fa-user"></i> Login</a></li>
+                                <li><a href="register.html"><i class="fa fa-sign-in"></i> Register</a></li>
+                            </ul>
+                        </div>
+                        <div class="social-icons-header">
+                            <div class="social-icons">
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <!-- Topbar / End -->
+            <!-- Header -->
+            <div id="header">
+                <div class="container">
+                    <!-- Left Side Content -->
+                    <div class="left-side">
+                        <!-- Logo -->
+                        <div id="logo">
+                            <a href="index.html"><img src="images/logo.svg" alt=""></a>
+                        </div>
+                        <!-- Mobile Navigation -->
+                        <div class="mmenu-trigger">
+                            <button class="hamburger hamburger--collapse" type="button">
+                                <span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+                                </span>
                             </button>
                         </div>
+                        <!-- Main Navigation -->
+                        <nav id="navigation" class="style-1">
+                            <ul id="responsive">
+                                <li><a class="current" href="#">Home</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="contact-us.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="clearfix"></div>
+                        <!-- Main Navigation / End -->
                     </div>
-                </div>
-            </form>
-        </div>
-        @if (Session::has('brak_wprowadzenia'))
-        <div class="alert alert-danger card">
-            {{ Session::get('brak_wprowadzenia') }}
-        </div>
-        @endif
-        @if($matchedTrainers->count()!=0 && $city!=null)
-            @foreach($matchedTrainers as $user)
-            <div class="row-cols-1 trainer-item ">
-                <div class=" thumbnail">
-                    <div class="col100">
-                        <h2>
-                            <a href="/trainer/{{$user->id}}" title="{{ $user->firstName }} {{ $user->secondName }}">{{ $user->firstName }} {{ $user->secondName }} </a>
-                        </h2>
-                    </div>
-                    <div class="row">
-                        <div class="col25">
-                            <img src="{{url('/images/profile.jpg')}}" alt="brak zdjecia " class="pull-left  trainer-photo " style="height: 20px  width:20px borderiradius:50%">
+                    <!-- Left Side Content / End -->
+
+                    <!-- Right Side Content / End -->
+                    <div class="right-side hidden-lg-down">
+                        <!-- Header Widget -->
+                        <div class="header-widget">
+                            <a href="add-listing.html" class="button border">Add Listing</a>
                         </div>
-                        <div class="col75">
-                            <div class="row">
-                                <div class="col100">
-        
-                                    <div class="text">
-                                        <h3>Miasto: <strong>{{ $user -> city }}</strong></h3>
-                                    </div>
-                                    <div class="text">
-                                    <h2>Specializuje się w treningu:</h2>
-                                    </div>
-                                    @for ($i = 1; $i < $trenerDisciplines->count(); $i+=2)
-                                        @if ($trenerDisciplines[$i-1]==$user->id)
-                                            <div class="text">
-                                                @foreach($allDisciplines ?? '' as $discipline)
-                                                    @if ($discipline->id==$trenerDisciplines[$i])
-                                                        <label class="my-label">
-                                                            <p>{{ $discipline->name }}</p> <img
-                                                                class="discipline-icon"
-                                                                src="{{asset("/images/$discipline->name.png")}}"
-                                                                alt="{{ $discipline->name }}">
-                                                        </label>
-                                                    @endif
-                                                @endforeach
-                                            </div>
-                                        @endif
-                                    @endfor
-                                    
-        
-                                    <div class="col100 ">
-                                        {{-- @foreach ($collection as $dyscipline) --}}
-                                        <div class="text">
-                                            <span class="dyscipline ">{{-- {{$dyscipline->name}} --}}</span>
-        
+                        <!-- Header Widget / End -->
+                    </div>
+                    <!-- Right Side Content / End -->
+
+                </div>
+            </div>
+            <!-- Header / End -->
+        </header>
+         <div class="clearfix"></div>
+    
+
+
+
+
+         <section class="content">
+            <div class="container">
+                <h1>Hello world</h1>
+                @yield('content')
+            </div>
+        </section>
+       
+
+
+
+
+
+        <!-- START FOOTER -->
+        <footer class="first-footer">
+            <div class="top-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="netabout">
+                                <a href="index.html" class="logo">
+                                    <img src="images/logo-white-blue.svg" alt="netcom">         <!-- miejsce na logo-->
+                                </a>
+                                <p>Twoj-trener: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>
+                            </div>
+                            <div class="contactus">
+                                <ul>
+                                    <li>
+                                        <div class="info">
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            <p class="in-p">95 South Park Avenue, USA</p>
                                         </div>
-                                       {{--  @endforeach --}}
-        
-                                    </div>
-        
-        
-                                </div>
-        
+                                    </li>
+                                    <li>
+                                        <div class="info">
+                                            <i class="fa fa-phone" aria-hidden="true"></i>
+                                            <p class="in-p">+456 875 369 208</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="info">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                            <p class="in-p ti">support@directoryplus.com</p>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-        
-        
+                        <div class="col-lg-3 col-md-6">
+                            <div class="widget quick-link clearfix">
+                                <h3 class="widget-title">Quick Links</h3>
+                                <div class="quick-links">
+                                    <ul class="one-half mr-5">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="listing-details.html">Contact</a></li>
+                                    </ul>
+                                    <ul class="one-half">
+                                        <li><a href="blog-grid.html">Login</a></li>
+                                        <li><a href="pricing-table.html">Register</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="widget">
+                                <h3>Instagram</h3>              <!-- Tu powinny byc podpiete zdjecia, zadnych nie dodawalem dlatego nic nie ma -->
+                                <ul class="photo">
+                                    <li class="hover-effect">
+                                        <figure>
+                                            <a href="#"><img src="images/instagram/inst-1.jpg" alt=""></a>
+                                        </figure>
+                                    </li>
+                                    <li class="hover-effect">
+                                        <figure>
+                                            <a href="#"><img src="images/instagram/inst-2.jpg" alt=""></a>
+                                        </figure>
+                                    </li>
+                                    <li class="hover-effect">
+                                        <figure>
+                                            <a href="#"><img src="images/instagram/inst-3.jpg" alt=""></a>
+                                        </figure>
+                                    </li>
+                                    <li class="hover-effect">
+                                        <figure>
+                                            <a href="#"><img src="images/instagram/inst-4.jpg" alt=""></a>
+                                        </figure>
+                                    </li>
+                                    <li class="hover-effect">
+                                        <figure>
+                                            <a href="#"><img src="images/instagram/inst-5.jpg" alt=""></a>
+                                        </figure>
+                                    </li>
+                                    <li class="hover-effect">
+                                        <figure>
+                                            <a href="#"><img src="images/instagram/inst-6.jpg" alt=""></a>
+                                        </figure>
+                                    </li>
+                                    <li class="hover-effect mb-0">
+                                        <figure>
+                                            <a href="#"><img src="images/instagram/inst-7.jpg" alt=""></a>
+                                        </figure>
+                                    </li>
+                                    <li class="hover-effect mb-0">
+                                        <figure>
+                                            <a href="#"><img src="images/instagram/inst-8.jpg" alt=""></a>
+                                        </figure>
+                                    </li>
+                                    <li class="hover-effect mb-0">
+                                        <figure>
+                                            <a href="#"><img src="images/instagram/inst-9.jpg" alt=""></a>
+                                        </figure>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="newsletters">
+                                <h3>Newsletters</h3>
+                                <p>Sign Up for Our Newsletter to get Latest Updates and Offers. Subscribe to receive news in your inbox.</p>
+                            </div>
+                            <form class="bloq-email mailchimp form-inline" method="post">
+                                <label for="subscribeEmail" class="error"></label>
+                                <div class="email">
+                                    <input type="email" id="subscribeEmail" name="EMAIL" placeholder="Enter Your Email">
+                                    <input type="submit" value="Subscribe">
+                                    <p class="subscription-success"></p>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-        
-        
-        
                 </div>
-        
             </div>
-            @endforeach
-        @elseif($city ?? ''!=null)
-            <div class="alert alert-success card">
-                <h1>Nie mamy trenerów w tym mieście</h1>
+            <div class="second-footer">
+                <div class="container">
+                    <p>LastLevel. ©2020 All rights reserved. </p>
+                    <ul class="netsocials">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
             </div>
-        @endif
+        </footer>
 
-</div>
-@endsection
+        <a data-scroll href="#wrapper" class="go-up"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+        <!-- END FOOTER -->
+
+        <!-- START PRELOADER -->
+        <div id="preloader">
+            <div id="status">
+                <div class="status-mes"></div>
+            </div>
+        </div>
+        <!-- END PRELOADER -->
+
+        <!-- ARCHIVES JS -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/mmenu.min.js"></script>
+        <script src="js/mmenu.js"></script>
+        <!-- MAIN JS -->
+        <script src="js/script.js"></script>
+
+    </div>
+    <!-- Wrapper / End -->
+</body>
+
+</html>
+

@@ -19,6 +19,6 @@ class HomeController extends Controller
         $matchedTrainers = User::whereIn('id',$users)->latest()->paginate(3);
         // dd($matchedTrainers);
         
-        return view('index', compact('matchedTrainers','allDisciplines'));
+        return view('layout', compact('matchedTrainers','allDisciplines'));
     }
 }
