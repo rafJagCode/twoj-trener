@@ -32,6 +32,7 @@
 
 .col100 {
     width: 100%;
+    float: left;
 }
 
 .col25 {

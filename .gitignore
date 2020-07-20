@@ -15,10 +15,6 @@ config/database.php
 /~/*
 ~/.vscode-root/*
 /.vscode-root/*
-<<<<<<< HEAD
-
 .idea/
 .idea/workspace.xml
-
-
 

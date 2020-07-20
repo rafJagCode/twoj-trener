@@ -61,6 +61,7 @@ Route::group([
         Route::get('/user/index/{id}', 'User\UserController@index')->name('user.index');
         Route::get('/user/show/{id}', 'User\UserController@show')->name('user.show');
         Route::patch('/user/update/{id}', 'User\UserController@update')->name('user.update');
+        Route::post('/user/update/{id}', 'User\UserController@update')->name('user.update');
         Route::post('trainer/{id}','RateTrainerController@rate')->name('rate');
         });
 
@@ -77,7 +78,7 @@ Route::get('/login', function () {
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 
@@ -88,7 +89,7 @@ Route::get('trainer/{id}','Trainer\PageController@show')->name('trainer.show');
 
 
 Route::post("/",'SearchController@search')->name('user.search');
-// Route::get("/index",'WelcomeController@show')->name('welcome.show');
+Route::get("/",'WelcomeController@show')->name('welcome.show');
 
 
 

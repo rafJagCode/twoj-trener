@@ -84,7 +84,6 @@
                             </div>
                         @endforeach
                     </div>
-                    
                     <div class="modal-footer">
                         <button type="button" role="button" class="btn btn-secondary" data-dismiss="modal">Zamknij </button>
                         <button type="submit" role="button" class="btn btn-rounded btn-orange">Zapisz zmiany</button>

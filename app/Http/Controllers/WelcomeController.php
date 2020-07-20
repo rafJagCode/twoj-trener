@@ -12,6 +12,6 @@ class WelcomeController extends Controller
         $allDisciplines= Dysciplines::all();
        // dd($allDisciplines);
         $matchedTrainers= Collection::make();
-        return view('index',compact('allDisciplines','matchedTrainers'));
+        return view('welcome',compact('allDisciplines','matchedTrainers'));
     }
 }

@@ -54,14 +54,18 @@
                 </div>
             </form>
         </div>
-
-        @if($matchedTrainers->count()!=0)
+        @if (Session::has('brak_wprowadzenia'))
+        <div class="alert alert-danger card">
+            {{ Session::get('brak_wprowadzenia') }}
+        </div>
+        @endif
+        @if($matchedTrainers->count()!=0 && $city!=null)
             @foreach($matchedTrainers as $user)
             <div class="row-cols-1 trainer-item ">
                 <div class=" thumbnail">
                     <div class="col100">
                         <h2>
-                            <a href="http://127.0.0.1:8000/trainer/{{$user->id}}" title="{{ $user-> firstName }} {{ $user-> secondName }}">{{ $user-> firstName }} {{ $user-> secondName }} </a>
+                            <a href="/trainer/{{$user->id}}" title="{{ $user->firstName }} {{ $user->secondName }}">{{ $user->firstName }} {{ $user->secondName }} </a>
                         </h2>
                     </div>
                     <div class="row">
@@ -73,8 +77,28 @@
                                 <div class="col100">
         
                                     <div class="text">
-                                        Miasto: <strong>{{ $user -> city }}</strong>
+                                        <h3>Miasto: <strong>{{ $user -> city }}</strong></h3>
                                     </div>
+                                    <div class="text">
+                                    <h2>Specializuje się w treningu:</h2>
+                                    </div>
+                                    @for ($i = 1; $i < $trenerDisciplines->count(); $i+=2)
+                                        @if ($trenerDisciplines[$i-1]==$user->id)
+                                            <div class="text">
+                                                @foreach($allDisciplines ?? '' as $discipline)
+                                                    @if ($discipline->id==$trenerDisciplines[$i])
+                                                        <label class="my-label">
+                                                            <p>{{ $discipline->name }}</p> <img
+                                                                class="discipline-icon"
+                                                                src="{{asset("/images/$discipline->name.png")}}"
+                                                                alt="{{ $discipline->name }}">
+                                                        </label>
+                                                    @endif
+                                                @endforeach
+                                            </div>
+                                        @endif
+                                    @endfor
+                                    
         
                                     <div class="col100 ">
                                         {{-- @foreach ($collection as $dyscipline) --}}
@@ -101,6 +125,10 @@
         
             </div>
             @endforeach
+        @elseif($city ?? ''!=null)
+            <div class="alert alert-success card">
+                <h1>Nie mamy trenerów w tym mieście</h1>
+            </div>
         @endif
 
     </div>

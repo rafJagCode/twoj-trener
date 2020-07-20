@@ -13,9 +13,6 @@
         <div class="row">
             <div class="col-md-7 ">
                 <div class="list-group list-group-flush">
-
-                    
-                    
                     <form method="POST" class="form-user row" action="{{ route('user.update', $user->id) }}"
                           enctype="multipart/form-data">
                         @csrf
