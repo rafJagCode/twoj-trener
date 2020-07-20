@@ -64,6 +64,26 @@ class User extends Authenticatable
         return false;
     }
 
+    // na razie na sztywno, po umozliwieniu zapisu zdjec w profilu zostanie zmienione
+    public function profilePicture()
+    {
+        return ($this->profilePicture != 'profile.jpg') ? 'images/' . $this->profilePicture : 'images/profile.jpg';
+    }
+
+    //'nowy' jako jeden z ostatnich, czy wzgledem daty ???
+    public function profileFeature()
+    {
+        $daysAgo = now()->modify('-3 days')->format('Y-m-d');
+        // dd($diff);
+        return $this['created_at']->format('Y-m-d') >= $daysAgo 
+            ? ['Nowy','f3'] 
+            : ($this->avgStars() > 4.6 
+                ? ['Wysoko oceniany','f1'] 
+                : (count($this->ratings()->get()) > 0 
+                    ? ['Popularny','f2'] 
+                    : null));
+    }
+
 
     public function roles()
     {
@@ -107,6 +127,7 @@ class User extends Authenticatable
         return false;
     }
 
-    
-
+    public function avgStars(){
+        return number_format($this->ratings()->get()->avg('stars'), 1);
+    }
 }
