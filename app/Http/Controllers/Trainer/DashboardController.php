@@ -34,7 +34,7 @@ class DashboardController extends Controller
             $photos = $user->images()->get();
             $certificates = $user->certificates()->get();
 
-            return view('trainer_dashboard\dashboard', compact('user', 'disciplines', 'checkedDisciplines', 'cities', 'photos', 'description', 'certificates'));
+            return view('trainer_dashboard.dashboard', compact('user', 'disciplines', 'checkedDisciplines', 'cities', 'photos', 'description', 'certificates'));
         } else
             return view('login');
     }
