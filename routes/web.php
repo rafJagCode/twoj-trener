@@ -60,6 +60,8 @@ Route::group([
         Route::get('/user/show/{id}', 'User\UserController@show')->name('user.show');
         Route::post('/user/update/{id}', 'User\UserController@update')->name('user.update');
         Route::post('trainer/{id}','RateTrainerController@rate')->name('rate');
+        
+       
         });
 
 
@@ -78,7 +80,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
+ //calendars
+ Route::get('fullcalendar','FullCalendarController@index');
+ Route::post('fullcalendar/create','FullCalendarController@create');
+ Route::post('fullcalendar/update','FullCalendarController@update');
+ Route::post('fullcalendar/delete','FullCalendarController@destroy');
 
 Route::post('/rate/{id}','RateTrainerController@rate')->name('rate');
 Route::get('trainer/{id}','Trainer\PageController@show')->name('trainer.show');
