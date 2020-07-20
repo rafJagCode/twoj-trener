@@ -1,13 +1,9 @@
 @section('trainer-dashboard-business-card-css')
-    <link href="{{ asset('/css/trainer_dashboard_business_card.css') }}" rel="stylesheet">
+<link href="{{ asset('/css/trainer_dashboard_business_card.css') }}" rel="stylesheet">
 @endsection
 @section('trainer-dashboard')
     <div class="content">
-        
         <div>
-
-
-
             <form action="{{route('user.search')}}" method="post">
                 @csrf
                 <div class="input-group">
@@ -27,13 +23,6 @@
                             </div>
                         @endforeach
                     </div>
-                    
-                    @if ($matchedTrainers->count()!=0 && $mesage ?? ''!=null )
-                        <div class="alert alert-success card  mb-3 col-lg-12">
-                            {!! $mesage !!}
-                        </div>
-                    @endif
-
                     <div class="form-row mb-3 col-lg-6">
                         <div class="col">
                             <input type="search" name="city" class="form-control" placeholder="Miasto">
@@ -58,7 +47,7 @@
                 <div class=" thumbnail">
                     <div class="col100">
                         <h2>
-                            <a href="http://127.0.0.1:8000/trainer/{{$user->id}}" title="{{ $user-> firstName }} {{ $user-> secondName }}">{{ $user-> firstName }} {{ $user-> secondName }} </a>
+                            <a href="/trainer/{{$user->id}}" title="{{ $user->firstName }} {{ $user->secondName }}">{{ $user->firstName }} {{ $user->secondName }} </a>
                         </h2>
                     </div>
                     <div class="row">
@@ -93,7 +82,15 @@
                                     @endfor
                                     
         
-                                    
+                                    <div class="col100 ">
+                                        {{-- @foreach ($collection as $dyscipline) --}}
+                                        <div class="text">
+                                            <span class="dyscipline ">{{-- {{$dyscipline->name}} --}}</span>
+        
+                                        </div>
+                                       {{--  @endforeach --}}
+        
+                                    </div>
         
         
                                 </div>
@@ -116,5 +113,5 @@
             </div>
         @endif
 
-    </div>
+</div>
 @endsection

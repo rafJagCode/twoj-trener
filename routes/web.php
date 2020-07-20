@@ -78,7 +78,7 @@ Route::get('/login', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 
 
@@ -89,7 +89,7 @@ Route::get('trainer/{id}','Trainer\PageController@show')->name('trainer.show');
 
 
 Route::post("/",'SearchController@search')->name('user.search');
-Route::get("/",'WelcomeController@show')->name('welcome.show');
+//Route::get("/",'WelcomeController@show')->name('welcome.show');
 
 
 
