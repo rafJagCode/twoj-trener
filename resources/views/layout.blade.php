@@ -93,15 +93,7 @@
                                     @endfor
                                     
         
-                                    <div class="col100 ">
-                                        {{-- @foreach ($collection as $dyscipline) --}}
-                                        <div class="text">
-                                            <span class="dyscipline ">{{-- {{$dyscipline->name}} --}}</span>
-        
-                                        </div>
-                                       {{--  @endforeach --}}
-        
-                                    </div>
+                                    
         
         
                                 </div>
