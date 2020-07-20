@@ -1,27 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-   {{--  Styles --}}
-    <link href="{{ asset('/css/searchresults.css') }}" rel="stylesheet">
-
-  
-</head>
-<body>
-@extends('app')
 @section('trainer-dashboard-business-card-css')
     <link href="{{ asset('/css/trainer_dashboard_business_card.css') }}" rel="stylesheet">
 @endsection
-
 @section('trainer-dashboard')
     <div class="content">
+        
         <div>
+
+
+
             <form action="{{route('user.search')}}" method="post">
                 @csrf
                 <div class="input-group">
@@ -41,6 +27,13 @@
                             </div>
                         @endforeach
                     </div>
+                    
+                    @if ($matchedTrainers->count()!=0 && $mesage ?? ''!=null )
+                        <div class="alert alert-success card  mb-3 col-lg-12">
+                            {!! $mesage !!}
+                        </div>
+                    @endif
+
                     <div class="form-row mb-3 col-lg-6">
                         <div class="col">
                             <input type="search" name="city" class="form-control" placeholder="Miasto">
@@ -65,7 +58,7 @@
                 <div class=" thumbnail">
                     <div class="col100">
                         <h2>
-                            <a href="/trainer/{{$user->id}}" title="{{ $user->firstName }} {{ $user->secondName }}">{{ $user->firstName }} {{ $user->secondName }} </a>
+                            <a href="http://127.0.0.1:8000/trainer/{{$user->id}}" title="{{ $user-> firstName }} {{ $user-> secondName }}">{{ $user-> firstName }} {{ $user-> secondName }} </a>
                         </h2>
                     </div>
                     <div class="row">
@@ -100,15 +93,7 @@
                                     @endfor
                                     
         
-                                    <div class="col100 ">
-                                        {{-- @foreach ($collection as $dyscipline) --}}
-                                        <div class="text">
-                                            <span class="dyscipline ">{{-- {{$dyscipline->name}} --}}</span>
-        
-                                        </div>
-                                       {{--  @endforeach --}}
-        
-                                    </div>
+                                    
         
         
                                 </div>
@@ -131,16 +116,5 @@
             </div>
         @endif
 
-</body>
-</html>
-
-
-{{-- <div class="row text-center">
-    <div class="col-lg-12 ">
-        <a href="http://127.0.0.1:8000/trainer/{{$trainer->id}}">
-        <div class="alert alert-warning">
-            <strong>Trenejro {{$trainer->firstName}} ! </strong>
-        </div>
-        </a>
     </div>
-</div> --}}
+@endsection
