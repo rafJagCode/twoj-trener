@@ -18473,6 +18473,13 @@ form label.error {
   .align-items-center.bg8 p {
     font-size: 16px;
   }
+
+  .portfolio img.discipline-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
