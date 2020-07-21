@@ -8,7 +8,7 @@
 @section('content')
     <!-- START SECTION PHOTO -->
     <div>
-        <img class="w-100" src="{{ asset("/images/homePhoto.jpg") }}" alt="home photo"/>
+        <img class="w-100" src="{{ asset("/images/galery/homePhoto2.jpg") }}" alt="home photo"/>
     </div>
     <!-- END SECTION PHOTO -->
 
@@ -66,9 +66,9 @@
                 <p>Sprawdź sam, wybierz i poznaj szczegóły.</p>
             </div>
             <div class="portfolio col-xl-12">
-                <div class="slick-lancers h-100">
+                <div class="slick-lancers">
                     @foreach($matchedTrainers as $user)
-                        <div class="agents-grid h-100">                            
+                        <div class="agents-grid">                            
                             <div class="landscapes pt-3 pr-3 pl-3">
                                 <div class="project-single">
                                     <div class="project-inner project-head">
