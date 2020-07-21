@@ -64,10 +64,9 @@ class User extends Authenticatable
         return false;
     }
 
-    // na razie na sztywno, po umozliwieniu zapisu zdjec w profilu zostanie zmienione
     public function profilePicture()
     {
-        return ($this->profilePicture != 'profile.jpg') ? 'images/' . $this->profilePicture : 'images/profile.jpg';
+        return ($this->profilePicture != 'profile.jpg') ? 'images/avatars/' . $this->profilePicture : 'images/profile.jpg';
     }
 
     //'nowy' jako jeden z ostatnich, czy wzgledem daty ???

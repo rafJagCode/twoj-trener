@@ -1,150 +1,108 @@
-@extends('app')
-@section('title','Twój Trener | Strona główna')
-@section('trainer-dashboard-css')
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css?family=Asap:400,400i%7CMontserrat:600,800" rel="stylesheet">
-    <!-- FONT AWESOME -->
-    {{-- <link rel="stylesheet" href="{{ asset('css/fontawesome-all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}"> --}}
-    <!-- ARCHIVES CSS -->
-    {{-- <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/lightcase.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">--}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('css/menu.css') }}"> --}}
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}"> 
-    {{-- <link href="{{ asset('/css/default.css') }}" rel="stylesheet" id="color"> --}}
+@extends('layout')
+{{-- @section('title','Twój Trener | Strona główna') --}}
+@section('additional-css')
+    <link href="{{ asset('/css/slick.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('/css/trainer_dashboard_business_card.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/searchresults.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('/css/trainer_dashboard_business_card.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/searchresults.css') }}" rel="stylesheet"> --}}
 @endsection
 
-@section('trainer-dashboard')
-
-    {{-- tutaj domyslnie widok formularza, na razie na sztywno poprzedni do testowania --}}
-
-    <div>
-        <form action="{{route('user.search')}}" method="post">
-            @csrf
-            <div class="input-group">
-                <div class="row text-center disciplines">
-                    @foreach($allDisciplines ?? '' as $discipline)
-                        <div class="discipline col-md-6 col-sm-12 text-left">
-                            <div class="custom-control custom-checkbox ">
-                                <input type="checkbox" class="custom-control-input my-checkbox"
-                                       name="disciplines[]"
-                                       id="{{ $discipline->name }}" value="{{$discipline->id}}">
-                                <label class="custom-control-label my-label" for="{{ $discipline->name }}">
-                                    <p>{{ $discipline->name }}</p> 
-                                    <img
-                                        class="discipline-icon"
-                                        src="{{asset("/images/$discipline->name.png")}}"
-                                        alt="{{ $discipline->name }}"
-                                    >
-                                </label>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-                <div class="form-row mb-3 col-lg-6">
-                    <div class="col">
-                        <input type="search" name="city" class="form-control" placeholder="Miasto">
-                    </div>
-                    <div class="input-group-append flex-center">
-                        <button class="btn btn-warning" type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-                </div>
+@section('content')
+    <!-- START SECTION HOW IT WORKS -->
+    <section class="how-it-works bg-white">
+        <div class="container">
+            <div class="sec-title">
+                <h2><span>Jak do nas </span>Dołączyć</h2>
+                <p>To naprawdę proste!</p>
             </div>
-        </form>
-    </div>
-    @if($matchedTrainers->count() > 0)
-
-        {{-- tutaj domyslnie widok rezultatow wyszukiwania, na razie wynik dolaczony do tego widoku --}}
-
-        <section class="listings-full-grid featured popular portfolio blog">
-            <div class="container">
-                <!-- Block heading Start-->
-                <div class="block-heading">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-5 col-2">
-                            <h4>
-                            {{-- <span class="heading-icon"> --}}
-                                {{-- <i class="fa fa-th-list"></i>
-                                </span> --}}
-                                <span class="hidden-sm-down">Lista trenerów</span>
-                            </h4>
+            <div class="row service-1">
+                <article class="col-lg-4 col-md-6 col-xs-12 serv">
+                    <div class="serv-flex">
+                        <div class="art-1 img-13">
+                            <img src="css/colors/icons/purple/15.png" alt="">
+                            <h3>Załóż konto</h3>
                         </div>
-                        <div class="col-lg-6 col-md-7 col-10 cod-pad mt-22">
-                            <div class="sorting-options float-right">
-                                <h4>
-                                    <span class="hidden-sm-down">Sortuj</span>
-                                </h4>
-                                <select class="sorting mb-3" name="sorting" id="sorting">
-                                    <option value="alphabetUp" selected>Alfabetycznie - rosnąco</option>
-                                    <option value="alphabetDown">Alfabetycznie - malejąco</option>
-                                    <option value="quantityUp">Liczba ocen - rosnąco</option>
-                                    <option value="quantityDown">Liczba ocen - malejąco</option>
-                                    <option value="avgUp">Średnia ocena - rosnąco</option>
-                                    <option value="avgDown">Średnia ocen - malejąco</option>
-                                </select>
-                                {{-- <a href="listings-full-list.html" class="change-view-btn lde"><i class="fa fa-th-list"></i></a>
-                                <a href="listings-full-grid.html" class="change-view-btn active-view-btn"><i class="fa fa-th-large"></i></a> --}}
-                            </div>
+                        <div class="service-text-p">
+                            <p class="text-center">Niezależnie, czy jesteś trenerem, czy planujesz być jego podopiecznym/ą, Twoje konto umożliwi Ci dostęp do wszystkich funkcjonalności.</p>
                         </div>
                     </div>
-                </div>
-                <!-- Block heading end -->
-                <div class="row popular featured portfolio-items">
+                </article>
+                <article class="col-lg-4 col-md-6 col-xs-12 serv">
+                    <div class="serv-flex">
+                        <div class="art-1 img-14">
+                            <img src="css/colors/icons/purple/13.png" alt="">
+                            <h3>Wyszukaj trenera</h3>
+                        </div>
+                        <div class="service-text-p">
+                            <p class="text-center">Skorzystaj z naszej wyszukiwarki i znajdź odpowiedniego dla siebie trenera w swojej okolicy, który zaspokoi wszystkie Twoje wymagania.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-lg-4 col-md-6 col-xs-12 serv mb-0 pt">
+                    <div class="serv-flex arrow">
+                        <div class="art-1 img-15">
+                            <img src="css/colors/icons/purple/3.png" alt="">
+                            <h3>Zacznij trenować</h3>
+                        </div>
+                        <div class="service-text-p">
+                            <p class="text-center">Wybierz odpowiedniego trenera i gotowe! Teraz ustal z nim szczegóły treningów oraz Twoje cele i trenuj. Przekonaj się jakie to szybkie, proste i wygodne.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION HOW IT WORKS -->
+    
+    <!-- START SECTION TRAINERS SLIDER -->
+    <section class="featured popular portfolio freelancers rec-pro-1">
+        <div class="container-fluid">
+            <div class="sec-title">
+                <h2><span>Najlepsi </span>trenerzy</h2>
+                <p>Sprawdź sam, wybierz i poznaj szczegóły.</p>
+            </div>
+            <div class="portfolio col-xl-12">
+                <div class="slick-lancers h-100">
                     @foreach($matchedTrainers as $user)
-                        <div class="item col-lg-4 col-md-6 col-xs-12 landscapes sale d-flex align-items-stretch">
-                            <div class="project-single">
-                                <div class="project-inner project-head">
-                                    <div class="homes">
-                                        <!-- homes img -->
-                                        <a href="{{ url('trainer', $user->id) }}" class="homes-img hover-effect">
-                                            @if($user->profileFeature() !== null)
-                                                <div class="homes-tag button alt featured {{ $user->profileFeature()[1] }}">{{ $user->profileFeature()[0] }}</div>
-                                            @endif                                                
-                                            <div class="homes-price">
-                                                <ul class="starts text-left mb-0">
-                                                    @for ($i = 0; $i < floor($user->avgStars()); $i++)
-                                                        <li class="mb-0">
-                                                            <i class="fa fa-star"></i>
+                        <div class="agents-grid h-100">                            
+                            <div class="landscapes pt-3 pr-3 pl-3">
+                                <div class="project-single">
+                                    <div class="project-inner project-head">
+                                        <div class="homes">
+                                            <!-- homes img -->
+                                            <a href="{{ url('trainer', $user->id) }}" class="homes-img hover-effect">
+                                                @if($user->profileFeature() !== null)
+                                                    <div class="homes-tag button alt featured {{ $user->profileFeature()[1] }}">{{ $user->profileFeature()[0] }}</div>
+                                                @endif                                                
+                                                <div class="homes-price">
+                                                    <ul class="starts text-left mb-0">
+                                                        @for ($i = 0; $i < floor($user->avgStars()); $i++)
+                                                            <li class="mb-0">
+                                                                <i class="fa fa-star"></i>
+                                                            </li>
+                                                        @endfor
+                                                        @if ($user->avgStars() - floor($user->avgStars()) >= 0.5)
+                                                            <li class="mb-0">
+                                                                <i class="fa fa-star-half"></i>
+                                                            </li>
+                                                        @endif
+                                                        <li class="ml-1">{{ $user->avgStars() }}</li>
+                                                        <li class="ml-1">
+                                                            ({{ count($user->ratings()->get()) }} {{ count($user->ratings()->get()) == 1 
+                                                            ? 'ocena' 
+                                                            : (((count($user->ratings()->get()) % 10 == 2 && count($user->ratings()->get()) != 12 && count($user->ratings()->get()) != 112)
+                                                            || (count($user->ratings()->get()) % 10 == 3 && count($user->ratings()->get()) != 13 && count($user->ratings()->get()) != 113)
+                                                            || (count($user->ratings()->get()) % 10 == 4 && count($user->ratings()->get()) != 14 && count($user->ratings()->get()) != 114))
+                                                            ? 'oceny' : 'ocen') 
+                                                            }})
                                                         </li>
-                                                    @endfor
-                                                    @if ($user->avgStars() - floor($user->avgStars()) >= 0.5)
-                                                        <li class="mb-0">
-                                                            <i class="fa fa-star-half"></i>
-                                                        </li>
-                                                    @endif
-                                                    <li class="ml-1">{{ $user->avgStars() }}</li>
-                                                    <li class="ml-1">
-                                                        ({{ count($user->ratings()->get()) }} {{ count($user->ratings()->get()) == 1 
-                                                        ? 'ocena' 
-                                                        : (((count($user->ratings()->get()) % 10 == 2 && count($user->ratings()->get()) != 12 && count($user->ratings()->get()) != 112)
-                                                        || (count($user->ratings()->get()) % 10 == 3 && count($user->ratings()->get()) != 13 && count($user->ratings()->get()) != 113)
-                                                        || (count($user->ratings()->get()) % 10 == 4 && count($user->ratings()->get()) != 14 && count($user->ratings()->get()) != 114))
-                                                        ? 'oceny' : 'ocen') 
-                                                        }})
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <img src="{{ $user->profilePicture() }}" alt="zdjęcie trenera" class="img-responsive">
-                                            <div class="overlay"></div>
-                                        </a>
+                                                    </ul>
+                                                </div>
+                                                <img src="{{ $user->profilePicture() }}" alt="zdjęcie trenera" class="img-responsive">
+                                                <div class="overlay"></div>
+                                            </a>
+                                        </div>
                                     </div>
-
-                                    {{-- na razie zakomentowane, czy bedzie potrzebne?? --}}
-
-                                    {{-- <div class="fr-grid-thumb">
-                                        <a href="candidate-profile.html">
-                                            <div class="overall-rate"><i class="fas fa-check"></i></div>
-                                            <img src="images/freelancers/free-1.jpg" class="img-fluid mx-auto" alt="" />
-                                        </a>
-                                    </div> --}}
                                 </div>
                                 <!-- homes content -->
                                 <div class="homes-content">
@@ -165,7 +123,6 @@
                                             <span>{{ $user->email }}</span>
                                         </li>
                                     </ul>
-                                    
                                     <div class="footer">
                                     </div>   
                                     <span>
@@ -180,23 +137,14 @@
                                                 >
                                         @endforeach
                                     </span>
-                                    
-                                    {{-- </div> --}}
                                 </div>
-                            </div>
+                            </div>                            
                         </div>
                     @endforeach
-                        
-                </div>  
-
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center">
-                        {{ $matchedTrainers->links() }} 
-                    </div>
                 </div>
-            
-            </div>
-        </section>
-    @endif
-    <!-- END SECTION LISTINGs GRID -->
+            </div>  
+        
+        </div>
+    </section>
+    <!-- END SECTION TRAINERS SLIDER -->
 @endsection

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('css/menu.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css')}}">
+    @yield('additional-css')
 </head>
 <body>
 <div id="wrapper">
@@ -109,7 +110,7 @@
 
 
         <!-- START FOOTER -->
-        <footer class="first-footer stickToBotton">
+        <footer class="first-footer stickToBotton position-static">
             <div class="top-footer">
                 <div class="container">
                     <div class="row">
@@ -258,6 +259,9 @@
         <script src="js/mmenu.js"></script>
         <!-- MAIN JS -->
         <script src="js/script.js"></script>
+        <!-- SLICK -->
+        <script src="{{ asset('js/slick.min.js') }}"></script>
+        <script src="{{ asset('js/slick1.js') }}"></script>
 
     </div>
     <!-- Wrapper / End -->
