@@ -49,7 +49,7 @@
                             <h3>Zacznij trenować</h3>
                         </div>
                         <div class="service-text-p">
-                            <p class="text-center">Wybierz odpowiedniego trenera i gotowe! Teraz ustal z nim szczegóły treningów oraz Twoje cele i trenuj. Przekonaj się jakie to szybkie, proste i wygodne.</p>
+                            <p class="text-center">Wybierz odpowiedniego trenera i gotowe! Teraz ustal z nim szczegóły treningów oraz Twoje cele i trenuj. Przekonaj się, jakie to szybkie, proste i wygodne.</p>
                         </div>
                     </div>
                 </article>
