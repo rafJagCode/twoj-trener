@@ -86,6 +86,13 @@
 {
     float: right;
 }
+
+/* do ikon sportow */
+.slick-slide img.discipline-icon
+{
+    display: inline;
+}
+
 .slick-slide img
 {
     display: block;

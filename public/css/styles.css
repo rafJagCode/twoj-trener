@@ -18304,6 +18304,10 @@ form label.error {
     font-size: 1.2rem;
   }
 
+  .portfolio img.discipline-icon {
+    max-width: 20px;
+  }
+
   .portfolio img {
     width: 100%;
   }

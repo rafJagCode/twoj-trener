@@ -2,12 +2,16 @@
 {{-- @section('title','Twój Trener | Strona główna') --}}
 @section('additional-css')
     <link href="{{ asset('/css/slick.css') }}" rel="stylesheet">
-
-    {{-- <link href="{{ asset('/css/trainer_dashboard_business_card.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/searchresults.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('/css/additional.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
+    <!-- START SECTION PHOTO -->
+    <div>
+        <img class="w-100" src="{{ asset("/images/homePhoto.jpg") }}" alt="home photo"/>
+    </div>
+    <!-- END SECTION PHOTO -->
+
     <!-- START SECTION HOW IT WORKS -->
     <section class="how-it-works bg-white">
         <div class="container">
@@ -107,7 +111,7 @@
                                 <!-- homes content -->
                                 <div class="homes-content">
                                     <!-- homes address -->
-                                    <a href="listing-details.html"><h3>{{ $user->firstName }} {{ $user->secondName }}</h3></a>
+                                    <a href="{{ url('trainer', $user->id) }}"><h3>{{ $user->firstName }} {{ $user->secondName }}</h3></a>
                                     <!-- homes List -->
                                     <ul class="homes-list clearfix">
                                         <li>

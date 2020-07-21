@@ -72,12 +72,15 @@ class User extends Authenticatable
     //'nowy' jako jeden z ostatnich, czy wzgledem daty ???
     public function profileFeature()
     {
+        //czas dodania
         $daysAgo = now()->modify('-3 days')->format('Y-m-d');
         // dd($diff);
         return $this['created_at']->format('Y-m-d') >= $daysAgo 
-            ? ['Nowy','f3'] 
+            ? ['Nowy','f3']
+            //srednia wysokosc oceny 
             : ($this->avgStars() > 4.6 
-                ? ['Wysoko oceniany','f1'] 
+                ? ['Wysoko oceniany','f1']
+                //liczba ocen 
                 : (count($this->ratings()->get()) > 0 
                     ? ['Popularny','f2'] 
                     : null));
