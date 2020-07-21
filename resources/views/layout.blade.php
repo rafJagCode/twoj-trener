@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('css/menu.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css')}}">
+    @yield('head')
 </head>
 <div id="wrapper">
 
@@ -38,8 +39,8 @@
                     <div class="top-social hidden-sm-down">
                         <div class="login-wrap">
                             <ul class="d-flex">
-                                <li><a href="login.html"><i class="fa fa-user"></i> Login</a></li>
-                                <li><a href="register.html"><i class="fa fa-sign-in"></i> Register</a></li>
+                                <li><a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a></li>
+                                <li><a href="{{ route('register') }}"><i class="fa fa-sign-in"></i> Register</a></li>
                             </ul>
                         </div>
                         <div class="social-icons-header">
