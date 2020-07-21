@@ -16,8 +16,9 @@
     <link rel="stylesheet" href="{{ URL::asset('css/menu.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css')}}">
 </head>
+<body>
 <div id="wrapper">
-
+   
         <!-- Header Container
         ================================================== -->
         <header id="header-container">
@@ -25,15 +26,6 @@
             <div class="header-top">
                 <div class="container">
                     <div class="top-info hidden-sm-down">
-                        <div class="call-header">
-                            <p><i class="fa fa-phone" aria-hidden="true"></i> (234) 0200 17813</p>
-                        </div>
-                        <div class="address-header">
-                            <p><i class="fa fa-map-marker" aria-hidden="true"></i> 95 South Park Ave, USA</p>
-                        </div>
-                        <div class="mail-header">
-                            <p><i class="fa fa-envelope" aria-hidden="true"></i> info@listifind.com</p>
-                        </div>
                     </div>
                     <div class="top-social hidden-sm-down">
                         <div class="login-wrap">
@@ -61,7 +53,7 @@
                     <div class="left-side">
                         <!-- Logo -->
                         <div id="logo">
-                            <a href="index.html"><img src="images/logo.svg" alt=""></a>
+                            <a href="index.html"><img src="images/logo-blue.svg" alt=""></a>
                         </div>
                         <!-- Mobile Navigation -->
                         <div class="mmenu-trigger">
@@ -117,14 +109,14 @@
 
 
         <!-- START FOOTER -->
-        <footer class="first-footer">
+        <footer class="first-footer stickToBotton">
             <div class="top-footer">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
                             <div class="netabout">
                                 <a href="index.html" class="logo">
-                                    <img src="images/logo-white-blue.svg" alt="netcom">         <!-- miejsce na logo-->
+                                    <img src="images/logo-blue.svg" alt="netcom">         <!-- miejsce na logo-->
                                 </a>
                                 <p>Twoj-trener: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>
                             </div>

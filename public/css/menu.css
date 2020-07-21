@@ -176,7 +176,7 @@ header.fullwidth .container {
     padding-right: 0;
 }
 a.button.border {
-    border: 1px solid #fa2964;
+    border: 1px solid #753cda;
 }
 a.button.border {
     background-color: transparent;
@@ -185,7 +185,7 @@ a.button.border {
     padding: 9px 19px;
 }
 a.button.border, a.button {
-    background-color: #fa2964;
+    background-color: #753cda;
     top: 0;
     padding: 10px 20px;
     color: #fff;
@@ -484,7 +484,7 @@ element.style {
 ------------------------------------- */
 #navigation.style-1 .current {
     background-color: transparent;
-    color: #fa2964;
+    color: #753cda;
     padding: 5px 15px;
     border-radius: 3px;
 }
@@ -511,8 +511,8 @@ element.style {
     border-radius: 3px;
 }
 #navigation.style-1 ul li:hover {
-    background-color: #fa2964;
-    color: #fa2964;
+    background-color: #753cda;
+    color: #753cda;
 }
 #navigation.style-1 ul li:hover a {
     color: #fff;
