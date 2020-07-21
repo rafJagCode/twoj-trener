@@ -8,6 +8,12 @@
 		dots: true,
 		arrows: false,
 		adaptiveHeight: true,
+		autoplay: true,
+		autoplaySpeed: 2500,
+		infinite: true,
+		pauseOnFocus: false,
+    	pauseOnHover: true,
+    	pauseOnDotsHover: false,
 		responsive: [
 		    {
 		      breakpoint: 1292,
