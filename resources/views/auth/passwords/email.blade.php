@@ -5,14 +5,13 @@
 <div class="container">
 
     <section class="headings">
-        <div class="text-heading text-center">
+        <div class="text-heading text-left">
             <div class="container">
-                <h1>Zresetuj hasło</h1>
-                <h2><a style="color: #fa2964ed" href="{{route('home')}}">Home </a> &nbsp;/&nbsp; Reset</h2>
+                <h6><a style="color: #fa2964ed" href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i>  </a> &nbsp;/&nbsp; Reset</h6>
             </div>
         </div>
     </section>
-    
+    <h3 class="text-center">Podaj swój adres email użyty przy rejestracji</h3>
     <div id="login">
         <div class="login">   
             
@@ -26,9 +25,11 @@
                 @csrf
                 <div class="form-group">
                     <div class="cols-sm-10">
+                       
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            
+                            <input placeholder="Wpisz swój adres e-mail" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
                                 <span class="invalid-feedback" role="alert">

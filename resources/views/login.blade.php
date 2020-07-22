@@ -10,10 +10,9 @@
 @section('content')
 
 <section class="headings">
-    <div class="text-heading text-center">
+    <div class="text-heading text-left">
         <div class="container">
-            <h1>Logowanie</h1>
-            <h2><a style="color: #fa2964ed" href="{{route('home')}}">Home </a> &nbsp;/&nbsp; Logowanie</h2>
+            <h6><a style="color: #fa2964ed" href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i>  </a> &nbsp;/&nbsp; Logowanie</h6>
         </div>
     </div>
 </section>
