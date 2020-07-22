@@ -18,7 +18,7 @@
     @yield('additional-css')
 </head>
 <body>
-<div id="wrapper">
+<div id="wrapper" class="homepage-1">
    
         <!-- Header Container
         ================================================== -->

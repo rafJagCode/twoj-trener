@@ -6,11 +6,7 @@
 @endsection
 
 @section('content')
-    <!-- START SECTION PHOTO -->
-    <div>
-        <img class="w-100" src="{{ asset("/images/galery/homePhoto2.jpg") }}" alt="home photo"/>
-    </div>
-    <!-- END SECTION PHOTO -->
+    @yield('searcher')
 
     <!-- START SECTION HOW IT WORKS -->
     <section class="how-it-works bg-white">
@@ -21,18 +17,20 @@
             </div>
             <div class="row service-1">
                 <article class="col-lg-4 col-md-6 col-xs-12 serv">
-                    <div class="serv-flex">
-                        <div class="art-1 img-13">
-                            <img src="css/colors/icons/purple/15.png" alt="">
-                            <h3>Załóż konto</h3>
+                    <a href="{{ url('registration') }}" class="hover-effect">
+                        <div class="serv-flex">
+                            <div class="art-1 img-13">
+                                <img src="css/colors/icons/purple/15.png" alt="">
+                                <h3>Załóż konto</h3>
+                            </div>
+                            <div class="service-text-p">
+                                <p class="text-center">Niezależnie, czy jesteś trenerem, czy planujesz być jego podopiecznym/ą, Twoje konto umożliwi Ci dostęp do wszystkich funkcjonalności.</p>
+                            </div>
                         </div>
-                        <div class="service-text-p">
-                            <p class="text-center">Niezależnie, czy jesteś trenerem, czy planujesz być jego podopiecznym/ą, Twoje konto umożliwi Ci dostęp do wszystkich funkcjonalności.</p>
-                        </div>
-                    </div>
+                    </a>
                 </article>
                 <article class="col-lg-4 col-md-6 col-xs-12 serv">
-                    <div class="serv-flex">
+                    <div class="serv-flex hover-effect">
                         <div class="art-1 img-14">
                             <img src="css/colors/icons/purple/13.png" alt="">
                             <h3>Wyszukaj trenera</h3>
@@ -43,7 +41,7 @@
                     </div>
                 </article>
                 <article class="col-lg-4 col-md-6 col-xs-12 serv mb-0 pt">
-                    <div class="serv-flex arrow">
+                    <div class="serv-flex arrow hover-effect">
                         <div class="art-1 img-15">
                             <img src="css/colors/icons/purple/3.png" alt="">
                             <h3>Zacznij trenować</h3>
