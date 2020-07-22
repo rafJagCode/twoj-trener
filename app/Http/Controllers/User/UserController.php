@@ -71,6 +71,6 @@ class UserController extends Controller
         $user->phoneNumber = $request->input('phoneNumber');
         $user->save();
 
-        return redirect('user.user-dashboard');
+        return redirect('user-dashboard');
     }
 }

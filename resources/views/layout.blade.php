@@ -62,7 +62,7 @@
                     <div class="left-side">
                         <!-- Logo -->
                         <div id="logo">
-                            <a href="index.html"><img src="images/logo.svg" alt=""></a>
+                            <a href="../index.html"><img src="../images/logo.svg" alt=""></a>
                         </div>
                         <!-- Mobile Navigation -->
                         <div class="mmenu-trigger">
@@ -124,8 +124,8 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
                             <div class="netabout">
-                                <a href="index.html" class="logo">
-                                    <img src="images/logo-white-blue.svg" alt="netcom">         <!-- miejsce na logo-->
+                                <a href="/index.html" class="logo">
+                                    <img src="/images/Tw" alt="netcom">         <!-- miejsce na logo-->
                                 </a>
                                 <p>Twoj-trener: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>
                             </div>
@@ -262,11 +262,11 @@
         <!-- END PRELOADER -->
 
         <!-- ARCHIVES JS -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/mmenu.min.js"></script>
-        <script src="js/mmenu.js"></script>
+        <script src="{{ route('home') }}/js/jquery.min.js"></script>
+        <script src="{{ route('home') }}/js/mmenu.min.js"></script>
+        <script src="{{ route('home') }}/js/mmenu.js"></script>
         <!-- MAIN JS -->
-        <script src="js/script.js"></script>
+        <script src="{{ route('home') }}/js/script.js"></script>
 
     </div>
     <!-- Wrapper / End -->

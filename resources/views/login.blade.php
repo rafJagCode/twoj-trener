@@ -48,7 +48,7 @@
             </div>
             <div class="login-register">
                
-            <div class="text-center add_top_10">Nowy w SlimGuru? <strong><a href="{{route('register')}}">Zaloguj się</a></strong></div>
+            <div class="text-center add_top_10">Nowy w SlimGuru? <strong><a href="{{route('register')}}">Zarejestruj się</a></strong></div>
             </div>
         </form>
     </div>

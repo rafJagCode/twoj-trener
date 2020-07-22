@@ -68,19 +68,10 @@ Route::group([
         });
 
 
-
-Route::get('/registration', function () {
-    return view('registration');
-});
-
-
-Route::get('/login', function () {
-    return view('login');
-});
-
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+
+
 
 
  //calendars

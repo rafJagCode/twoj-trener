@@ -1,17 +1,15 @@
-@extends('app')
+@extends('layout')
 
-@section('title', 'user_update')
-
-@section('trainer-dashboard-css')
-
+@section('head')
     <link href="{{ asset('/css/user_show.css') }}" rel="stylesheet">
 @endsection
 
-@section('trainer-dashboard')
+@section('content')
 
     <div class="container">
         <div class="row">
-            <div class="col-md-7 ">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 ">
                 <div class="list-group list-group-flush">
                     <form method="POST" class="form-user row" action="{{ route('user.update', $user->id) }}"
                           enctype="multipart/form-data">
@@ -48,21 +46,23 @@
                             <div class="form-row mb-3">
                                 <div class="col">
                                     <label for="citySelector" class="lab1">Miasto</label>
-                                    <select id="citySelector" class="form-control selectpicker selectpicker1"
+                                    <select id="citySelector" class="form-control"
                                             data-live-search="true"
-                                            data-style="btn-selection" name="city" id="city">
+                                            name="city" id="city">
 
                                         @foreach($cities ?? '' as $city)
-                                            <option class="city-choice"
+                                            <option
                                                     data-tokens="{{ $city['city'] }}" {{$city['city'] == $user->city ? 'selected' : ''}}> {{ $city['city'] }} </option>
                                         @endforeach
 
                                     </select>
+
+                                  
                                 </div>
                             </div>
                         </div>
-                        <a href={{ route('user.dashboard') }} class="btn btn-warning" role="button">Powrot do profilu</a>
-                        <input type="submit" class="btn btn-warning btn-alignr" value="Edytuj" role="button"/> 
+                        <a href={{ route('user.dashboard') }} class="btn_1 rounded" role="button">Powrot do profilu</a>
+                        <input type="submit" class="btn-alignr" value="Edytuj" role="button"/> 
                     </form>
 
 
@@ -70,7 +70,7 @@
                     @include('errors')
                 </div>
             </div>
-
+            <div class="col-md-2"></div>
         </div>
     </div>
 
