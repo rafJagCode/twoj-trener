@@ -99,7 +99,6 @@
 
          <section class="content">
             <div class="container">
-                <h1>Hello world</h1>
                 @yield('content')
             </div>
         </section>

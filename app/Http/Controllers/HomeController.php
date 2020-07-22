@@ -19,7 +19,7 @@ class HomeController extends Controller
         $matchedTrainers = User::whereIn('id',$users)->get()->sortBy(function($value, $key) {
             return $value->avgStars();
             //liczba wyswietlanych rekordow
-        }, SORT_REGULAR, true)->slice(0,6);
+        }, SORT_REGULAR, true)->slice(0,10);
         // dd($matchedTrainers);
         
         return view('index', compact('matchedTrainers','allDisciplines'));
