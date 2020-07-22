@@ -39,10 +39,42 @@
                     <div class="top-social hidden-sm-down">
                         <div class="login-wrap">
                             <ul class="d-flex">
+                            @guest
                                 <li><a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a></li>
                                 <li><a href="{{ route('register') }}"><i class="fa fa-sign-in"></i> Register</a></li>
+                            @else
+                                @if( auth()->user()->isTrainer())
+                                    <li><a href="{{route('trainer-dashboard.index')}}"><i class="fa fa-user"></i> Dashboard</a></li>
+                                    <li><a href="trainer/{{auth()->user()->id}}"><i class="fa fa-sign-in"></i> Profil </a></li>
+                                @else
+                                    <li><a href="{{ route('user.dashboard') }}"><i class="fa fa-user"></i> Profil</a></li> 
+                                @endif
+                                <li>
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                           Hi {{auth()->user()->firstName}}
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="">
+                                            <a class="dropdown item btn_1 blackitems" href="{{ route('user.dashboard') }}"><i class="fa fa-user"></i> Profil</a> 
+                                            <a class="dropdown item btn_1 blackitems" href="{{ route('logout') }}"
+                                                        onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                                                    {{ __('Wyloguj') }} </a>
+                                                        
+                                                    
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                            style="display: none;">
+                                                                @csrf
+                                                        </form>
+                                                
+                                            
+                                        </div>  
+                                    </div>
+                                </li>
+                            @endif
                             </ul>
                         </div>
+                       
                         <div class="social-icons-header">
                             <div class="social-icons">
                                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>

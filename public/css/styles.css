@@ -363,7 +363,7 @@ a, button {
 }
 
 .top-social .login-wrap ul li a {
-  color: #fff;
+  color: black;
   text-decoration: none;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
