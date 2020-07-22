@@ -55,11 +55,10 @@
                                            Hi {{auth()->user()->firstName}}
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="">
-                                            <a class="dropdown item btn_1 blackitems" href="{{ route('user.dashboard') }}"><i class="fa fa-user"></i> Profil</a> 
                                             <a class="dropdown item btn_1 blackitems" href="{{ route('logout') }}"
                                                         onclick="event.preventDefault();
                                                                 document.getElementById('logout-form').submit();">
-                                                    {{ __('Wyloguj') }} </a>
+                                                    {{ __('Wyloguj') }} <i class="fa fa-sign-out"></i> </a>
                                                         
                                                     
                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
