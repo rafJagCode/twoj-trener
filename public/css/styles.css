@@ -14640,7 +14640,7 @@ a.btn_1.full-width {
 #login .btn_1,
 a.btn_1 {
   border: none;
-  background: #fa2964;
+  background: #753cda;
   cursor: pointer;
   display: inline-block;
   padding: 15px 30px;
@@ -18497,7 +18497,7 @@ form label.error {
 }
 
 .stickToBotton{
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;

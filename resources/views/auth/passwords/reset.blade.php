@@ -6,7 +6,7 @@
     <section class="headings">
         <div class="text-heading text-left">
             <div class="container">
-                <h6><a style="color: #fa2964ed" href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i>  </a> &nbsp;/&nbsp; Reset</h6>
+                <h6><a style="color: #753cda" href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i>  </a> &nbsp;/&nbsp; Reset</h6>
             </div>
         </div>
     </section>

@@ -12,7 +12,7 @@
 
 <body>
  
-  <div class="container">
+  <div class="container margbt">
       <div class="response"></div>
       <div id='calendar'></div>  
   </div>
@@ -32,7 +32,7 @@
    
           var calendar = $('#calendar').fullCalendar({
               editable: true,
-              events: SITEURL + "/fullcalendar",
+              events: SITEURL + "/fullcalendar/{id}",
               displayEventTime: true,
               editable: true,
               eventRender: function (event, element, view) {
@@ -52,7 +52,7 @@
                       var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
    
                       $.ajax({
-                          url: SITEURL + "/fullcalendar/create",
+                          url: SITEURL + "/fullcalendar/{id}/create",
                           data: 'title=' + title + '&start=' + start + '&end=' + end,
                           type: "POST",
                           success: function (data) {
@@ -76,7 +76,7 @@
                           var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
                           var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
                           $.ajax({
-                              url: SITEURL + '/fullcalendar/update',
+                              url: SITEURL + '/fullcalendar/{id}/update',
                               data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
                               type: "POST",
                               success: function (response) {
@@ -89,7 +89,7 @@
                   if (deleteMsg) {
                       $.ajax({
                           type: "POST",
-                          url: SITEURL + '/fullcalendar/delete',
+                          url: SITEURL + '/fullcalendar/{id}/delete',
                           data: "&id=" + event.id,
                           success: function (response) {
                               if(parseInt(response) > 0) {

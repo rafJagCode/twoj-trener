@@ -72,10 +72,10 @@ Auth::routes();
 
 
  //calendars
- Route::get('fullcalendar','FullCalendarController@index') ->name('fullcalendar');
- Route::post('fullcalendar/create','FullCalendarController@create');
- Route::post('fullcalendar/update','FullCalendarController@update');
- Route::post('fullcalendar/delete','FullCalendarController@destroy');
+ Route::get('fullcalendar/{id}','FullCalendarController@index') ->name('fullcalendar');
+ Route::post('fullcalendar/{id}/create','FullCalendarController@create');
+ Route::post('fullcalendar/{id}/update','FullCalendarController@update');
+ Route::post('fullcalendar/{id}/delete','FullCalendarController@destroy');
 
 Route::post('/rate/{id}','RateTrainerController@rate')->name('rate');
 Route::get('trainer/{id}','Trainer\PageController@show')->name('trainer.show');

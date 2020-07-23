@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Redirect,Response;
+use Auth;
    
 class FullCalendarController extends Controller
 {
@@ -13,11 +14,11 @@ class FullCalendarController extends Controller
     {
         if(request()->ajax()) 
         {
- 
+         $user = Auth::user();
          $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
          $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
  
-         $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
+         $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->where('user_id' , $user->id)->get(['id','title','start', 'end']);
          return Response::json($data);
         }
         return view('fullcalendar');
@@ -26,16 +27,15 @@ class FullCalendarController extends Controller
    
     public function create(Request $request)
     {  
-        $user = 1;
-
+        $user = Auth::user();
         $insertArr = [ 
-                       'user_id' => $user,
+                       'user_id' => $user->id,
                        'title' => $request->title,
                        'start' => $request->start,
                        'end' => $request->end
                     ];
         $event = Event::insert($insertArr);   
-        return $insertArr;
+        return $user;
         //return Response::json($event);
     }
      
