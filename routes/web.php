@@ -72,7 +72,7 @@ Auth::routes();
 
 
  //calendars
- Route::get('fullcalendar','FullCalendarController@index');
+ Route::get('fullcalendar','FullCalendarController@index') ->name('fullcalendar');
  Route::post('fullcalendar/create','FullCalendarController@create');
  Route::post('fullcalendar/update','FullCalendarController@update');
  Route::post('fullcalendar/delete','FullCalendarController@destroy');

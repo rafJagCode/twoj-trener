@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <a href="#" class="no-underline">
+                <a href="{{ route('fullcalendar')}}" class="no-underline">
                         <div class="div-square py-3">
                             <i class="fa fa-calendar fa-5x"></i>
                             <h4>Kalendarz</h4>
