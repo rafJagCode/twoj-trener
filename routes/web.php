@@ -28,7 +28,7 @@ use Symfony\Component\HttpFoundation\Request;
 //     return view('index');
 // });
 Route::get('/', 'HomeController@index')->name('home');
-
+Route::get('/trainers', 'SearchController@search')->name('user.search');;
 
 
 //Middleware dla trenera--------------------------------------------------------------------------------------------------
@@ -94,7 +94,7 @@ Route::get('trainer/{id}','Trainer\PageController@show')->name('trainer.show');
 
 
 
-Route::post("/",'SearchController@search')->name('user.search');
+Route::post("/trainers",'SearchController@search')->name('user.search');
 //Route::get("/",'WelcomeController@show')->name('welcome.show');
 
 

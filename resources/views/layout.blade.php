@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css')}}">
     @yield('additional-css')
 </head>
-<body>
+<body class="inner-pages">
 <div id="wrapper" class="homepage-1">
    
         <!-- Header Container
@@ -67,8 +67,8 @@
                         <!-- Main Navigation -->
                         <nav id="navigation" class="style-1">
                             <ul id="responsive">
-                                <li><a class="current" href="#">Home</a></li>
-                                <li><a href="#">About us</a></li>
+                                <li><a href="{{ url('') }}">Strona główna</a></li>
+                                <li><a href="{{ url('trainers') }}">Trenerzy</a></li>
                                 <li><a href="contact-us.html">Contact</a></li>
                             </ul>
                         </nav>

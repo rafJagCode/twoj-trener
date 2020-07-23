@@ -46,7 +46,7 @@ class SearchController extends Controller
             }
                 
         }
-        $matchedTrainers = Collection::make();
+        $matchedTrainersCol = collect();
         #sprawdzanie zaznaczonych dyscyplin
         if ($checkedDisciplines != null)
         {
@@ -65,7 +65,7 @@ class SearchController extends Controller
                 }
                 if ($result>0)
                {
-                    $matchedTrainers->push($trainer);
+                    $matchedTrainersCol->push($trainer->id);
                }
                #przypisywanie czym zajmuje się dany trener
                foreach ($user_conection_disciplin as $ste)
@@ -150,9 +150,12 @@ class SearchController extends Controller
                         $trenerDisciplines->push($ste->users_id,$ste->dysciplines_id);
                     }   
                 }
+                $matchedTrainersCol->push($trainer->id);
             }
-            $matchedTrainers=$trainers;
+            // $matchedTrainersCol=$trainers;
         }
-        return view('welcome', compact('matchedTrainers', 'allDisciplines','city','trenerDisciplines','mesage'));
+        // dd($matchedTrainersCol);
+        $matchedTrainers = User::whereIn('id',$matchedTrainersCol)->orderBy('secondName','asc')->orderBy('firstName','asc')->get();//->paginate(3);
+        return view('trainers', compact('matchedTrainers', 'allDisciplines','city','trenerDisciplines','mesage'));
     }
 }
