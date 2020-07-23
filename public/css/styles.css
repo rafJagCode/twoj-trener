@@ -14640,7 +14640,20 @@ a.btn_1.full-width {
 #login .btn_1,
 a.btn_1 {
   border: none;
-  background: #EEEEEE;
+  background: #fa2964;
+  cursor: pointer;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  border-radius: 3px;
+}
+
+a.btn_2 {
+  border: none;
+  background: #AAAAAA;
   cursor: pointer;
   display: inline-block;
   padding: 15px 30px;
