@@ -1,8 +1,7 @@
 #wrapper {
     width: 100%;
-    margin-top: 15px;
     margin-bottom: 15px;
-    padding: 15px;
+ 
 }
 
 .container{
@@ -44,4 +43,14 @@ a.no-underline:hover {
 .btn-alignr {
     left: 65%;
     position: relative;
+    background-color: #fa2964;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    padding: 15px 30px;
+    text-align: center;
+}
+
+.margindol {
+    margin-bottom: 50px;
 }

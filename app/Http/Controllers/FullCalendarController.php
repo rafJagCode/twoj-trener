@@ -26,10 +26,10 @@ class FullCalendarController extends Controller
    
     public function create(Request $request)
     {  
-        $user = auth()->user();
+        $user = 1;
 
         $insertArr = [ 
-                       'user_id' => $user->id,
+                       'user_id' => $user,
                        'title' => $request->title,
                        'start' => $request->start,
                        'end' => $request->end
