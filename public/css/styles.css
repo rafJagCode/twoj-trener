@@ -363,7 +363,7 @@ a, button {
 }
 
 .top-social .login-wrap ul li a {
-  color: black;
+  color: white;
   text-decoration: none;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
@@ -372,6 +372,7 @@ a, button {
 .top-social .login-wrap ul li a:hover {
   color: #fa2964;
 }
+
 
 .top-social .login-wrap ul li a i {
   margin-right: 5px;
