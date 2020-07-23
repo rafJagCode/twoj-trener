@@ -71,9 +71,6 @@ Route::group([
 Auth::routes();
 
 
-
-
-
  //calendars
  Route::get('fullcalendar','FullCalendarController@index');
  Route::post('fullcalendar/create','FullCalendarController@create');

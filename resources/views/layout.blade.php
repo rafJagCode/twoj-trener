@@ -292,8 +292,11 @@
         </div>
         <!-- END PRELOADER -->
 
-        <!-- ARCHIVES JS -->
+        <!-- ARCHIVES JS 
         <script src="{{ route('home') }}/js/jquery.min.js"></script>
+        -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
         <script src="{{ route('home') }}/js/mmenu.min.js"></script>
         <script src="{{ route('home') }}/js/mmenu.js"></script>
         <!-- MAIN JS -->
