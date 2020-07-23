@@ -362,7 +362,7 @@ a, button {
   position: relative;
 }
 
-.top-social .login-wrap ul li a {
+.top-social .login-wrap ul li a{
   color: white;
   text-decoration: none;
   -webkit-transition: all .5s ease;
@@ -370,7 +370,7 @@ a, button {
 }
 
 .top-social .login-wrap ul li a:hover {
-  color: #fa2964;
+  color: black;
 }
 
 
@@ -14640,7 +14640,7 @@ a.btn_1.full-width {
 #login .btn_1,
 a.btn_1 {
   border: none;
-  background: #fa2964;
+  background: #EEEEEE;
   cursor: pointer;
   display: inline-block;
   padding: 15px 30px;

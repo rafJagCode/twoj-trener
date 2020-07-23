@@ -55,7 +55,7 @@
                                            Hi {{auth()->user()->firstName}}
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="">
-                                            <a class="dropdown item btn_1 blackitems" href="{{ route('logout') }}"
+                                            <a class="item btn_1 blackitems" href="{{ route('logout') }}"
                                                         onclick="event.preventDefault();
                                                                 document.getElementById('logout-form').submit();">
                                                     {{ __('Wyloguj') }} <i class="fa fa-sign-out"></i> </a>
