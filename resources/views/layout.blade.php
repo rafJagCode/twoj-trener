@@ -261,7 +261,8 @@
         <!-- SLICK -->
         <script src="{{ asset('js/slick.min.js') }}"></script>
         <script src="{{ asset('js/slick1.js') }}"></script>
-
+        <!-- GRID/LIST -->
+        <script src="{{ asset('js/gridList.js') }}"></script>
     </div>
     <!-- Wrapper / End -->
 </body>
