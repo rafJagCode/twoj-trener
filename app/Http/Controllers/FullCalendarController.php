@@ -12,16 +12,18 @@ class FullCalendarController extends Controller
  
     public function index()
     {
+        $user = Auth::user();
         if(request()->ajax()) 
         {
-         $user = Auth::user();
+         
          $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
          $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
  
          $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->where('user_id' , $user->id)->get(['id','title','start', 'end']);
          return Response::json($data);
         }
-        return view('fullcalendar');
+         
+          return view('fullcalendar')->with('user', $user);
     }
     
    
@@ -35,8 +37,9 @@ class FullCalendarController extends Controller
                        'end' => $request->end
                     ];
         $event = Event::insert($insertArr);   
-        return $user;
-        //return Response::json($event);
+        return Response::json($event);
+        //return back()->withInput();
+        //return view('fullcalendar')->with('user', $user);
     }
      
  

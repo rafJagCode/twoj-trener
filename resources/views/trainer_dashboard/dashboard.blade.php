@@ -52,7 +52,7 @@
             </a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <a href="#" class="no-underline">
+            <a href="{{ route('fullcalendar.index' , $user->id)}}" class="no-underline">
                 <div class="div-square py-3">
                     <i class="far fa-calendar-times fa-5x"></i>
                     <h4>Kalendarz</h4>

@@ -50,7 +50,7 @@
                   if (title) {
                       var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
                       var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
-   
+                    
                       $.ajax({
                           url: SITEURL + "/fullcalendar/{id}/create",
                           data: 'title=' + title + '&start=' + start + '&end=' + end,
