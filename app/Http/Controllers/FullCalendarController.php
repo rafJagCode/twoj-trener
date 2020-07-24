@@ -29,15 +29,22 @@ class FullCalendarController extends Controller
    
     public function create(Request $request)
     {  
+        $events = new Event($request->all());
         $user = Auth::user();
         $insertArr = [ 
                        'user_id' => $user->id,
                        'title' => $request->title,
                        'start' => $request->start,
-                       'end' => $request->end
+                       'end' => $request->end,
+                       'description' => $request->description
                     ];
-        $event = Event::insert($insertArr);   
-        return Response::json($event);
+        //$event = Event::insert($insertArr);   
+        
+       
+        $events->user_id = $user->id;
+        $events->save();
+        $events->users()->attach($user->id);
+        return Response::json($events);
         //return back()->withInput();
         //return view('fullcalendar')->with('user', $user);
     }

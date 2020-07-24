@@ -33,6 +33,7 @@
       <div class="modal-body">
         <form id="modalform" class="form-horizontal" method="POST" action="{{ route('fullcalendar.create' , $user->id) }}">
           @csrf
+            <p> Organizator: {{$user->firstName}} {{$user->secondName}} </p>
             <div class="form-group">
               <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-pencil fa" aria-hidden="true"></i></span>
@@ -50,6 +51,10 @@
                     <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
                     <input type="text" class="form-control" name="end" id="end" placeholder="Data zakończenia" />
                 </div>
+            </div>
+            <div class="form-group">
+              <label for="description">Opis</label>
+              <textarea class="form-control" name="description" id="description" placeholder="opis" rows="3"></textarea>
             </div>
             <div class="modal-footer">
               <button id="closebtn" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
