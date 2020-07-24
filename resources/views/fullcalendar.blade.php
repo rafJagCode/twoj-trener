@@ -39,16 +39,16 @@
                   <input type="text" class="form-control" name="title" id="title" placeholder="Tytuł" />
               </div>
             </div>
-            <div class="form-group date">
+            <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                    <input type="datetime-local" class="form-control" name="start" id="start" placeholder="Data rozpoczęcia" />
+                    <input type="text" class="form-control" name="start" id="start" placeholder="Data rozpoczęcia" />
                 </div>
             </div>
-            <div class="form-group date">
+            <div class="form-group">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
-                    <input type="datetime-local" class="form-control" name="end" id="end" placeholder="Data zakończenia" />
+                    <input type="text" class="form-control" name="end" id="end" placeholder="Data zakończenia" />
                 </div>
             </div>
             <div class="modal-footer">
