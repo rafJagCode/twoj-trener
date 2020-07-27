@@ -15,13 +15,12 @@ class FullCalendarController extends Controller
     {
         $user = Auth::user();
         $users = User::all();
+
         if(request()->ajax()) 
-        {
-         
+        {     
          $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
-         $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
- 
-         $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->where('user_id' , $user->id)->get(['id','title','start', 'end']);
+         $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');    
+         $data = $user->events()->whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['events.id','title','start', 'end']);
          return Response::json($data);
         }
          
