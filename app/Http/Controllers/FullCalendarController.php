@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
    
 use App\Models\Event;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Redirect,Response;
 use Auth;
@@ -13,6 +14,7 @@ class FullCalendarController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $users = User::all();
         if(request()->ajax()) 
         {
          
@@ -23,7 +25,7 @@ class FullCalendarController extends Controller
          return Response::json($data);
         }
          
-          return view('fullcalendar')->with('user', $user);
+          return view('fullcalendar')->with('user', $user)->with('users' , $users);
     }
     
    
@@ -44,6 +46,8 @@ class FullCalendarController extends Controller
         $events->user_id = $user->id;
         $events->save();
         $events->users()->attach($user->id);
+        $events->users()->attach($request->input('users'));
+
         return Response::json($events);
         //return back()->withInput();
         //return view('fullcalendar')->with('user', $user);
@@ -66,6 +70,7 @@ class FullCalendarController extends Controller
    
         return Response::json($event);
     }    
+
  
  
 }
