@@ -10,6 +10,7 @@
     <title>Twoj-trener</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Asap:400,400i%7CMontserrat:600,800" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ec51452c3d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css')}}">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css')}}">
@@ -130,7 +131,7 @@
 
          <section class="content">
             <div class="container">
-                <h1>Hello world</h1>
+              
                 @yield('content')
             </div>
         </section>
@@ -293,6 +294,7 @@
         <script src="{{ route('home') }}/js/mmenu.js"></script>
         <!-- MAIN JS -->
         <script src="{{ route('home') }}/js/script.js"></script>
+        @yield('scripts')
 
     </div>
     <!-- Wrapper / End -->
