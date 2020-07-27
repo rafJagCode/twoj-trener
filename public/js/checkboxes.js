@@ -14,4 +14,15 @@ $(document).ready(function() {
         $(input).parent().css('color', '#666')
       }
     });
+
+    //na razie sztywna ilosc dyscyplin
+    for(var i = 0; i < 9; i++)
+    {
+        // console.log($('.checkboxes-list > label').eq(i).is(':checked'));
+        if($('.checkboxes-list > label').children('input').eq(i).is(':checked'))
+        {
+            $('.checkboxes-list > label').children('input').eq(i).parent().css('background-color', '#753cda');
+            $('.checkboxes-list > label').children('input').eq(i).parent().css('color', 'rgb(255, 255, 255)');
+        }
+    }
 });

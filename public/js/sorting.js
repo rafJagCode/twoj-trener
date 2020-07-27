@@ -7,10 +7,7 @@ $(document).ready(function(){
             url:"/trainers/sort?sortby="+sort_type,
             success:function(matchedTrainers)
             {
-                // $('#grid_view').html('');
-                $("#grid_view").html(matchedTrainers);
-                // $('#list_view').html('');
-                $("#list_view").html(matchedTrainers);
+                $("#grid_list").html(matchedTrainers);
                 console.log(matchedTrainers);
             }
         })

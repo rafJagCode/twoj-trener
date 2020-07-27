@@ -78,10 +78,10 @@
                                         <div class="filter-tags-wrap mt-3 checkboxes-list bg-white">
                                             <label for="{{ $discipline->name }}" class="w-100 p-2">
                                                 <input
-                                                    class="mt-0"
+                                                    class="mt-0 aaa"
                                                     style="display:none;" 
                                                     type="checkbox" 
-                                                    name="disciplines[]" --}}
+                                                    name="disciplines[]"
                                                     id="{{ $discipline->name }}"
                                                     value="{{ $discipline->id }}"
                                                     {{ (is_array(old('disciplines')) && in_array($discipline->id, old('disciplines'))) ? ' checked' : '' }}
