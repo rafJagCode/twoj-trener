@@ -75,21 +75,24 @@
                                 <div class="fl-wrap filter-tags">
                                     <h6>Rodzaje treningów</h6>
                                     @foreach($allDisciplines ?? '' as $discipline)
-                                        <div class="filter-tags-wrap">
-                                            <input 
-                                                class="mt-0" 
-                                                type="checkbox" 
-                                                name="disciplines[]" 
-                                                id="{{ $discipline->name }}" 
-                                                value="{{ $discipline->id }}"
-                                                {{ (is_array(old('disciplines')) && in_array($discipline->id, old('disciplines'))) ? ' checked' : '' }}
-                                            >
-                                            <label for="{{ $discipline->name }}">{{ $discipline->name }}</label>
-                                            <img
-                                                class="discipline-icon"
-                                                src="{{asset("/images/$discipline->name.png")}}"
-                                                alt="{{ $discipline->name }}"
-                                            >
+                                        <div class="filter-tags-wrap mt-3 checkboxes-list bg-white">
+                                            <label for="{{ $discipline->name }}" class="w-100 p-2">
+                                                <input
+                                                    class="mt-0"
+                                                    style="display:none;" 
+                                                    type="checkbox" 
+                                                    name="disciplines[]" --}}
+                                                    id="{{ $discipline->name }}"
+                                                    value="{{ $discipline->id }}"
+                                                    {{ (is_array(old('disciplines')) && in_array($discipline->id, old('disciplines'))) ? ' checked' : '' }}
+                                                >
+                                                <img
+                                                    class="discipline-icon"
+                                                    src="{{asset("/images/$discipline->name.png")}}"
+                                                    alt="{{ $discipline->name }}"
+                                                >
+                                                {{ $discipline->name }}
+                                            </label>
                                         </div>
                                     @endforeach
                                 </div>

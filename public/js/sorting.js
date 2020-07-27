@@ -11,6 +11,7 @@ $(document).ready(function(){
                 $("#grid_view").html(matchedTrainers);
                 // $('#list_view').html('');
                 $("#list_view").html(matchedTrainers);
+                console.log(matchedTrainers);
             }
         })
     }

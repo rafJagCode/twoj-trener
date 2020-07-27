@@ -265,6 +265,8 @@
         <script src="{{ asset('js/sorting.js') }}"></script>
         <!-- GRID/LIST -->
         <script src="{{ asset('js/gridList.js') }}"></script>
+        <!-- CHECKBOXES -->
+        <script src="{{ asset('js/checkboxes.js') }}"></script>
 
     </div>
     <!-- Wrapper / End -->
