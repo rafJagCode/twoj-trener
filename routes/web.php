@@ -92,9 +92,10 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::post('/rate/{id}','RateTrainerController@rate')->name('rate');
 Route::get('trainer/{id}','Trainer\PageController@show')->name('trainer.show');
 
-
-
+Route::get("/trainers",'SearchController@index')->name('user.index');
 Route::post("/trainers",'SearchController@search')->name('user.search');
+Route::get("/trainers/sort",'SearchController@sort')->name('user.sort');
+
 //Route::get("/",'WelcomeController@show')->name('welcome.show');
 
 

@@ -8,9 +8,24 @@ use App\Models\User;
 use App\Models\Roles;
 use App\Models\Dysciplines_has_user;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Session;
 
 class SearchController extends Controller
 {
+    public function index()
+    {
+        $allDisciplines = Dysciplines::all();
+        $trainers = collect();
+        foreach (User::all() as $user)
+            if ($user->isTrainer())
+                $trainers->push($user->id);
+        $matchedTrainers = User::whereIn('id',$trainers)->orderBy('secondName','asc')->orderBy('firstName','asc')->get();
+        // dd($matchedTrainers->get());
+        Session::put('matchedTrainers', $matchedTrainers);
+        // $matchedTrainers = $matchedTrainers->paginate(4);
+        return view('trainers', compact('matchedTrainers', 'allDisciplines'));
+    }
+
     public function search(Request $request)
     {
         $city=null;
@@ -154,8 +169,59 @@ class SearchController extends Controller
             }
             // $matchedTrainersCol=$trainers;
         }
-        // dd($matchedTrainersCol);
-        $matchedTrainers = User::whereIn('id',$matchedTrainersCol)->orderBy('secondName','asc')->orderBy('firstName','asc')->get();//->paginate(3);
+        
+        $matchedTrainers = User::whereIn('id',$matchedTrainersCol)->orderBy('secondName','asc')->orderBy('firstName','asc')->get();
+        $request->flash();
+        // dd($matchedTrainers);
+        $request->session()->put('matchedTrainers', $matchedTrainers);
+        // $matchedTrainers = $matchedTrainers->paginate(4);
+        // session(['matchedTrainers' => $matchedTrainers]);
         return view('trainers', compact('matchedTrainers', 'allDisciplines','city','trenerDisciplines','mesage'));
+    }
+
+    public function sort(Request $request)
+    {
+        // $matchedTrainers = session('matchedTrainers', 'default');
+        $result = $request->session()->get('matchedTrainers');
+        // print_r($result);
+        // dd($result[0]['id']);
+        if($request->ajax())
+        {
+            $ids = collect();
+            foreach($result as $tab)
+            {
+                $ids->add($tab['id']);
+            }
+            $sort_type = $request->get('sortby');
+            switch($sort_type){
+                case 'alphabetAsc':
+                    $matchedTrainers = User::whereIn('id',$ids)->orderBy('secondName','asc')->orderBy('firstName','asc')->get();//->paginate(4);
+                    break;
+                case 'alphabetDesc':
+                    $matchedTrainers = User::whereIn('id',$ids)->orderBy('secondName','desc')->orderBy('firstName','desc')->get();//->paginate(4);
+                    break;
+                case 'quantityAsc':
+                    $matchedTrainers = User::whereIn('id',$ids)->get()->sortBy(function($value, $key) {
+                        return $value->ratings()->count();
+                    }, SORT_REGULAR, false);
+                    break;
+                case 'quantityDesc':
+                    $matchedTrainers = User::whereIn('id',$ids)->get()->sortBy(function($value, $key) {
+                        return $value->ratings()->count();
+                    }, SORT_REGULAR, true);
+                    break;
+                case 'avgAsc':
+                    $matchedTrainers = User::whereIn('id',$ids)->get()->sortBy(function($value, $key) {
+                        return $value->avgStars();
+                    }, SORT_REGULAR, false);
+                    break;
+                case 'avgDesc':
+                    $matchedTrainers = User::whereIn('id',$ids)->get()->sortBy(function($value, $key) {
+                        return $value->avgStars();
+                    }, SORT_REGULAR, true);
+                    break;
+            }
+            return view('trainers_sort',compact('matchedTrainers'))->render();
+        }
     }
 }
