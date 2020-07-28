@@ -4,14 +4,7 @@
     jQuery('#estart').datetimepicker()
     jQuery('#eend').datetimepicker()
 
-    $('#exampleModal').on('hidden.bs.modal', function () {
-        $("#modalform").trigger("reset");
-        $('#select2-users-container').html('');
-    });
-    $('#updatemodal').on('hidden.bs.modal', function () {
-        $("#modalform").trigger("reset");
-        $('#select2-eusers-container').html('');
-    });
+ 
    
     $('.jsmultiple2').select2({
       placeholder: 'Dodaj osoby do eventu',
@@ -49,14 +42,14 @@
              
    
                select: function (start, end, allDay) {
-                   var start = $.fullCalendar.formatDate(start, "Y/MM/DD HH:mm");
-                   var end = $.fullCalendar.formatDate(end, "Y/MM/DD HH:mm");
-                   $("#modalform").trigger("reset");
-                   $('#select2-users-container').html('');
-                   $('#start').val(start);
-                   $('#end').val(end);
-                   $('#title').val("");
-                   $('#imp').click(); 
+                            var start = $.fullCalendar.formatDate(start, "Y/MM/DD HH:mm");
+                            var end = $.fullCalendar.formatDate(end, "Y/MM/DD HH:mm");
+                            $("#modalform").trigger("reset");
+                            $('#select2-users-container').html('');
+                            $('#start').val(start);
+                            $('#end').val(end);
+                            $('#title').val("");
+                            $('#imp').click(); 
                },
                 
                eventDrop: function (event, delta) {
@@ -72,29 +65,29 @@
                            });
                        },
                 eventClick: function (event) {
-                $.ajax({
-                    url: SITEURL + '/fullcalendar/{id}/edit',
-                    data: 'id=' + event.id,
-                    type: "POST",
-                    success: function (response) {}
-               }).done(function(data){
-                    $("#modalform").trigger("reset");
-                    $('#select2-eusers-container').html('');
-                    $('#estart').val(data.event.start);
-                    $('#eventId').val(data.event.id)
-                    $('#eend').val(data.event.end);
-                    $('#etitle').val(data.event.title); 
-                    $('#edescription').val(data.event.description);
-                    $('#deleteEventId').val(data.event.id);
+                        $.ajax({
+                            url: SITEURL + '/fullcalendar/{id}/edit',
+                            data: 'id=' + event.id,
+                            type: "POST",
+                            success: function (response) {}
+                        }).done(function(data){
+                            $("#modalform").trigger("reset");
+                            $('#select2-eusers-container').html('');
+                            $('#estart').val(data.event.start);
+                            $('#eventId').val(data.event.id)
+                            $('#eend').val(data.event.end);
+                            $('#etitle').val(data.event.title); 
+                            $('#edescription').val(data.event.description);
+                            $('#deleteEventId').val(data.event.id);
 
-                    var array = [];
-                    for(i=0; i<data.users.length; i++)
-                    {
-                        array.push(data.users[i].id);
-                    }
+                            var array = [];
+                            for(i=0; i<data.users.length; i++)
+                            {
+                                array.push(data.users[i].id);
+                            }
 
-                    $('#eusers').val(array).trigger('change');
-                    $('#imp2').click();
+                            $('#eusers').val(array).trigger('change');
+                            $('#imp2').click();
 
 
                 });    

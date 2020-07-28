@@ -24,7 +24,7 @@ class FullCalendarController extends Controller
          return Response::json($data);
         }
          
-          return view('fullcalendar')->with('user', $user)->with('users' , $users);
+        return view('fullcalendar')->with('user', $user)->with('users' , $users);
     }
     
    
@@ -32,24 +32,14 @@ class FullCalendarController extends Controller
     {  
         $events = new Event($request->all());
         $user = Auth::user();
-        $insertArr = [ 
-                       'user_id' => $user->id,
-                       'title' => $request->title,
-                       'start' => $request->start,
-                       'end' => $request->end,
-                       'description' => $request->description
-                    ];
-        //$event = Event::insert($insertArr);   
-        
-       
+
+ 
         $events->user_id = $user->id;
         $events->save();
         $events->users()->attach($user->id);
         $events->users()->attach($request->input('users'));
 
         return Response::json($events);
-        //return back()->withInput();
-        //return view('fullcalendar')->with('user', $user);
     }
      
  
@@ -78,8 +68,5 @@ class FullCalendarController extends Controller
         $editevent = Event::findOrFail($request->id);
         $users=$editevent->users()->get(['users.id']);
         return Response::json(array('event'=>$editevent , 'users'=>$users)); 
-    }  
-
- 
- 
+    }   
 }

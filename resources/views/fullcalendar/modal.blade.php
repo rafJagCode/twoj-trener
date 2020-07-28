@@ -37,8 +37,11 @@
   
               <div class="form-group">
               <select class="jsmultiple2" name="users[]" id="users" multiple="multiple" placeholder="Dodaj osoby do eventu">
-                  @foreach($users as $user)
-                  <option value='{{$user->id}}'> {{$user->email}} </option>
+                  
+                  @foreach($users as $usr)
+                  @if($user->id != $usr->id)
+                  <option value='{{$usr->id}}'> {{$usr->email}} </option>
+                  @endif
                   @endforeach
               </select>
             </div>
