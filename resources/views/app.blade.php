@@ -94,8 +94,6 @@
 
     $('#description-form').summernote('code', '{{$user->description ?? ''}}');
 </script>
-
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
    

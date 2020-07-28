@@ -295,6 +295,7 @@
         <!-- MAIN JS -->
         <script src="{{ route('home') }}/js/script.js"></script>
         @yield('scripts')
+        
 
     </div>
     <!-- Wrapper / End -->
