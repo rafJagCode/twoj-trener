@@ -55,20 +55,30 @@ class FullCalendarController extends Controller
  
     public function update(Request $request)
     {   
-        $where = array('id' => $request->id);
-        $updateArr = ['title' => $request->title,'start' => $request->start, 'end' => $request->end];
-        $event  = Event::where($where)->update($updateArr);
- 
-        return Response::json($event);
+        $user = Auth::user();
+        $editevent = Event::findOrFail($request->id);
+        $editevent->update($request->all());
+        $editevent->users()->sync($request->input('users'));
+        $editevent->users()->attach($user->id);
+        return Response::json($editevent);
+
     } 
  
  
+
     public function destroy(Request $request)
     {
-        $event = Event::where('id',$request->id)->delete();
+        $event = Event::where('id',$request->deleteEventId)->delete();
    
         return Response::json($event);
-    }    
+    }
+    
+    public function edit(Request $request)
+    {
+        $editevent = Event::findOrFail($request->id);
+        $users=$editevent->users()->get(['users.id']);
+        return Response::json(array('event'=>$editevent , 'users'=>$users)); 
+    }  
 
  
  
