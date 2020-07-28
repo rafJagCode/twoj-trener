@@ -1,0 +1,97 @@
+$granite: #32373b;
+$light-orange:#FFB300;
+$dark-orange-border: #F17105;
+$very-light-orange: #fff3cd;
+.form-control{
+    background-color: $granite;
+    border:1px solid $light-orange;
+    color: $light-orange;
+    &::placeholder{
+        color:$light-orange;
+    }
+}  
+.form-control:focus {
+    background-color: $granite;
+    color: $light-orange;
+    outline: none !important;
+    border:1px solid $light-orange;
+    box-shadow: 0 0 10px $light-orange;
+}
+.city-choice{
+  color: $light-orange !important;
+  background: $granite !important;
+}
+.btn-selection{
+    color: $light-orange;
+    background-color: $granite;
+    border: 1px solid $light-orange;
+    &:focus{
+        outline: none !important;
+        border:1px solid $light-orange;
+        box-shadow: 0 0 10px $light-orange;
+      }
+      &:hover{
+          color: $light-orange;
+      }
+}
+
+.center{
+    margin: 0 auto;
+}
+  .custom-checkbox .custom-control-input.my-checkbox~.custom-control-label::before{
+    top:0.5rem;
+    border: 2px solid $light-orange;
+    background-color: $granite;
+    outline: none !important;
+    box-shadow: none;
+  }
+  .custom-checkbox .custom-control-input.my-checkbox~.custom-control-label::after{
+    top:0.5rem;
+}
+
+
+  .modal-title{
+      color: $light-orange;
+  }
+  .modal-content{
+      background-color: $granite;
+  }
+  .dropdown-menu.show{
+      max-height: 100px;
+      background-color: $granite;
+      border: 1px solid $light-orange;
+  }
+  .bs-searchbox{
+      background-color: $granite;
+      &:focus{
+        background-color: $granite;
+      }
+  }
+ .dark-bg{
+     background-color: $granite;
+     color:$light-orange;
+ }
+ .my-label{
+     color:$light-orange;
+     font-size: 20px;
+ }
+ .my-label p{
+     display: inline;
+ }
+ .discipline-icon{
+     width: 20px;
+     height: 20px;
+     margin-left: 10px;
+     margin-bottom:5px;
+ }
+ .bootstrap-select .dropdown-toggle .filter-option-inner-inner{
+     color:$light-orange;
+ }
+ .bootstrap-select .dropdown-toggle:focus{
+     outline: none !important;
+ }
+ .orange-text{
+     font-size: 1rem;
+     color:$light-orange;
+ }
+ 
