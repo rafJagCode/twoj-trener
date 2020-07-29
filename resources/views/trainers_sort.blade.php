@@ -162,7 +162,6 @@
                     </ul> --}}
                     <p><b>Rodzaje treningu:</b></p>
                     @foreach ($user->disciplines()->get() as $discipline)
-                    
                         <img
                         class="discipline-icon"
                         src="{{ asset("/images/$discipline->name.png") }}"

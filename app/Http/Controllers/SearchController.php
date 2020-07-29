@@ -231,12 +231,10 @@ class SearchController extends Controller
 
     public function sort(Request $request)
     {
-        
         // $matchedTrainers = session('matchedTrainers', 'default');
         $result = $request->session()->get('matchedTrainers');
         // print_r($result);
         // dd($result[0]['id']);
-        
         if($request->ajax())
         {
             $ids = collect();
