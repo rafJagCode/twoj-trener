@@ -1,11 +1,11 @@
-@extends('app')
+@extends('layout')
 
 @section('title', 'trainer_page')
 
-@section('trainer-page-css')
+@section('head')
     <link href="{{ asset('/css/trainer_page.css') }}" rel="stylesheet">
 @endsection
-@section('closeup-js')
+@section('scripts')
     <script type="text/javascript">
         let bigPhoto = $('#big-photo');
         let src;
@@ -24,7 +24,7 @@
     </script>
 @endsection
 
-@section('trainer-page')
+@section('content')
 <div class="trainer-page-wrapper">
     @include('trainer_page.info')
     @include('trainer_page.message_bar')

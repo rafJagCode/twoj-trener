@@ -274,4 +274,17 @@ class SearchController extends Controller
             return view('trainers_sort',compact('matchedTrainers'))->render();
         }
     }
+    
+    
+    
+    public function show(Request $request)
+    {
+        $user = User::findOrFail(1);
+        $disciplines = $user->disciplines()->get();
+        $photos= $user->images()->get();
+        $ratings= $user->ratings()->get();
+        $certificates= $user->certificates()->get();
+        $avgRating=round($ratings->avg('stars'),2);
+        return view('trainer_page.trainer_page',compact('user', 'disciplines', 'photos','avgRating','certificates','ratings'));
+    }
 }
