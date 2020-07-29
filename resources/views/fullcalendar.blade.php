@@ -30,14 +30,23 @@
     <div class="modal-content">
       <div class="modal-header">
           <h5 class="modal-title" id="editModal">Edytuj event</h5>
+         
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
       </div>
       <div class="modal-body">
+        <div id="eventinfo">
+          <h5> <b>Organizator: </b> <p>{{$user->firstName}} {{$user->secondName}} </p></h5>
+          <b>Nazwa eventu:</b> <p id="ititle"></p>
+          <b>Start eventu:</b><p id="istart"></p>
+          <b>Koniec eventu:</b><p id="iend"></p>
+
+        </div>
+        
         <form id="emodalform" class="form-horizontal" method="POST" action="{{ route('fullcalendar.update' , $user->id) }}">
           @csrf
-            <p> Organizator: {{$user->firstName}} {{$user->secondName}} </p>
+           
             <div class="form-group">
               <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-pencil fa" aria-hidden="true"></i></span>
@@ -74,7 +83,7 @@
           </div>
            
             <div class="modal-footer">
-              <button id="closebtn2" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button id="closebtn2" type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
               <button type="submit" class="btn btn-secondary">Edytuj event</button>
             </div>
         </form>
@@ -82,10 +91,16 @@
           @csrf
           <input style="display:none" type="text" class="form-control" name="deleteEventId" id="deleteEventId" placeholder="deleteEventId" />
           <button style="position: relative; bottom: 50px;" type="submit" id="deletebtn"  type="button" class="btn btn-danger">
-            Delete
+            Usuń event
           </button>
-          </form>
-
+        </form>
+        <form id="lmodalform"  class="form-horizontal" method="POST" action="{{ route('fullcalendar.leave' , $user->id) }}">
+          @csrf
+          <input style="display:none" type="text" class="form-control" name="leaveEventId" id="leaveEventId" placeholder="leaveEventId" />
+          <button style="position: relative;" type="submit" id="leavebtn"  type="button" class="btn btn-danger">
+            Opuść event
+          </button>
+        </form>
       </div>    
       </div>
     </div>

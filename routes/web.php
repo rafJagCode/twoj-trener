@@ -77,6 +77,7 @@ Auth::routes();
  Route::post('fullcalendar/{id}/edit','FullCalendarController@edit');
  Route::post('fullcalendar/{id}/update','FullCalendarController@update')->name('fullcalendar.update');
  Route::post('fullcalendar/{id}/delete','FullCalendarController@destroy')->name('fullcalendar.delete');
+ Route::post('fullcalendar/{id}/leave','FullCalendarController@leave')->name('fullcalendar.leave');
 
 Route::post('/rate/{id}','RateTrainerController@rate')->name('rate');
 Route::get('trainer/{id}','Trainer\PageController@show')->name('trainer.show');

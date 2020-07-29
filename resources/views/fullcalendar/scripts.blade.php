@@ -3,9 +3,7 @@
     jQuery('#end').datetimepicker()
     jQuery('#estart').datetimepicker()
     jQuery('#eend').datetimepicker()
-
- 
-   
+    
     $('.jsmultiple2').select2({
       placeholder: 'Dodaj osoby do eventu',
       width: '450px',
@@ -65,12 +63,21 @@
                            });
                        },
                 eventClick: function (event) {
+                        var user = {!! json_encode($user->id) !!};
                         $.ajax({
                             url: SITEURL + '/fullcalendar/{id}/edit',
                             data: 'id=' + event.id,
                             type: "POST",
                             success: function (response) {}
                         }).done(function(data){
+
+
+                            var test = document.getElementById('ititle');
+                            test.innerHTML = data.event.title;
+                            test = document.getElementById('istart');
+                            test.innerHTML = data.event.start;
+                            test = document.getElementById('iend');
+                            test.innerHTML = data.event.end;
                             $("#modalform").trigger("reset");
                             $('#select2-eusers-container').html('');
                             $('#estart').val(data.event.start);
@@ -79,6 +86,24 @@
                             $('#etitle').val(data.event.title); 
                             $('#edescription').val(data.event.description);
                             $('#deleteEventId').val(data.event.id);
+                            $('#leaveEventId').val(data.event.id);
+                            
+                            if(user==data.event.user_id)
+                            {
+                                document.getElementById("eventinfo").style.display = "none";
+                                document.getElementById("leavebtn").style.display = "none";
+                                document.getElementById("deletebtn").style.display = "block";
+                                document.getElementById("emodalform").style.display = "block";
+                                
+                                
+                            }
+                            else
+                            {
+                                document.getElementById("eventinfo").style.display = "block";
+                                document.getElementById("leavebtn").style.display = "block";
+                                document.getElementById("deletebtn").style.display = "none";
+                                document.getElementById("emodalform").style.display = "none";
+                            }
 
                             var array = [];
                             for(i=0; i<data.users.length; i++)
@@ -147,6 +172,25 @@
                         calendar.fullCalendar('refetchEvents');
                     }
                 });
+            $('#lmodalform').submit(function(e)
+            {
+                e.preventDefault();
+                var deleteMsg = confirm("Do you really want to leave event?");
+                if (deleteMsg) {
+                    $.ajax({
+                        type: "POST",
+                        url: SITEURL + '/fullcalendar/{id}/leave',
+                        data: $("#lmodalform").serialize(),
+                        success: function (response) {
+                            if(parseInt(response) > 0) {
+                                displayMessage("Leaved Successfully");
+                            }
+                        }
+                    });
+                    $('#closebtn2').click(); 
+                    calendar.fullCalendar('refetchEvents');
+                }
+            });
      });
    
      

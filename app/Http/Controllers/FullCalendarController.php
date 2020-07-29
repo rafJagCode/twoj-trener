@@ -62,6 +62,14 @@ class FullCalendarController extends Controller
    
         return Response::json($event);
     }
+    public function leave(Request $request)
+    {
+        $user = Auth::user();
+        $event = Event::findOrFail($request->leaveEventId);
+        $event ->users()->detach($user->id);
+   
+        return Response::json($event);
+    }
     
     public function edit(Request $request)
     {
