@@ -18317,13 +18317,10 @@ form label.error {
     font-size: 1.2rem;
   }
 
-<<<<<<< HEAD
-=======
   .portfolio img.discipline-icon {
     max-width: 20px;
   }
 
->>>>>>> origin/feature/5626fix
   .portfolio img {
     width: 100%;
   }
