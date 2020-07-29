@@ -282,10 +282,10 @@
             </div>
         </div>
         <!-- END PRELOADER -->
+        
+        <!-- ARCHIVES JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
-        <!-- ARCHIVES JS -->
-        <script src="js/jquery.min.js"></script>
         <script src="js/mmenu.min.js"></script>
         <script src="js/mmenu.js"></script>
         <!-- MAIN JS -->
