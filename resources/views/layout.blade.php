@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('css/menu.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css')}}">
+    @yield('head')
     @yield('additional-css')
 </head>
 <body class="inner-pages">
@@ -282,15 +283,17 @@
             </div>
         </div>
         <!-- END PRELOADER -->
-        
-        <!-- ARCHIVES JS -->
+
+        <!-- ARCHIVES JS 
+        <script src="{{ route('home') }}/js/jquery.min.js"></script>
+        -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
-        <script src="js/mmenu.min.js"></script>
-        <script src="js/mmenu.js"></script>
+        <script src="{{ route('home') }}/js/mmenu.min.js"></script>
+        <script src="{{ route('home') }}/js/mmenu.js"></script>
         <!-- MAIN JS -->
-        <script src="js/script.js"></script>
-        <!-- SLICK -->
+        <script src="{{ route('home') }}/js/script.js"></script>
+
         <script src="{{ asset('js/slick.min.js') }}"></script>
         <script src="{{ asset('js/slick1.js') }}"></script>
         <!-- SORT -->
