@@ -370,9 +370,8 @@ a, button {
 }
 
 .top-social .login-wrap ul li a:hover {
-  color: black;
+  color: #9a7dcc;
 }
-
 
 .top-social .login-wrap ul li a i {
   margin-right: 5px;
@@ -726,7 +725,7 @@ a.button,
 }
 
 .homepage-1 .welcome-area {
-  background: rgba(0, 0, 0, 0) url(../images/bg/people.jpg) no-repeat scroll center center/cover;
+  background: rgba(0, 0, 0, 0) url(../images/galery/homePhoto2.jpg) no-repeat scroll center center/cover;
 }
 
 .homepage-1 .welcome-area {
@@ -18318,6 +18317,13 @@ form label.error {
     font-size: 1.2rem;
   }
 
+<<<<<<< HEAD
+=======
+  .portfolio img.discipline-icon {
+    max-width: 20px;
+  }
+
+>>>>>>> origin/feature/5626fix
   .portfolio img {
     width: 100%;
   }
@@ -18497,7 +18503,7 @@ form label.error {
 }
 
 .stickToBotton{
-  position: relative;
+  position: static;
   left: 0;
   bottom: 0;
   width: 100%;

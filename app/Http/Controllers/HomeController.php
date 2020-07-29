@@ -16,9 +16,12 @@ class HomeController extends Controller
             if ($user->isTrainer())
                 $users->push($user->id);
         // dd($users);
-        $matchedTrainers = User::whereIn('id',$users)->latest()->paginate(3);
+        $matchedTrainers = User::whereIn('id',$users)->get()->sortBy(function($value, $key) {
+            return $value->avgStars();
+            //liczba wyswietlanych rekordow
+        }, SORT_REGULAR, true)->slice(0,10);
         // dd($matchedTrainers);
         
-        return view('layout', compact('matchedTrainers','allDisciplines'));
+        return view('index', compact('matchedTrainers','allDisciplines'));
     }
 }

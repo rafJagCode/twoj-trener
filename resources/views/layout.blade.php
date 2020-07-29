@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('css/menu.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css')}}">
-    @yield('head')
+    @yield('additional-css')
 </head>
-<body>
-<div id="wrapper">
+<body class="inner-pages">
+<div id="wrapper" class="homepage-1">
    
         <!-- Header Container
         ================================================== -->
@@ -98,8 +98,8 @@
                         <!-- Main Navigation -->
                         <nav id="navigation" class="style-1">
                             <ul id="responsive">
-                                <li><a class="current" href="#">Home</a></li>
-                                <li><a href="#">About us</a></li>
+                                <li><a href="{{ url('') }}">Strona główna</a></li>
+                                <li><a href="{{ url('trainers') }}">Trenerzy</a></li>
                                 <li><a href="contact-us.html">Contact</a></li>
                             </ul>
                         </nav>
@@ -130,7 +130,6 @@
 
          <section class="content">
             <div class="container">
-                <h1>Hello world</h1>
                 @yield('content')
             </div>
         </section>
@@ -141,7 +140,7 @@
 
 
         <!-- START FOOTER -->
-        <footer class="first-footer stickToBotton">
+        <footer class="first-footer stickToBotton position-static">
             <div class="top-footer">
                 <div class="container">
                     <div class="row">
@@ -283,16 +282,23 @@
             </div>
         </div>
         <!-- END PRELOADER -->
-
-        <!-- ARCHIVES JS 
-        <script src="{{ route('home') }}/js/jquery.min.js"></script>
-        -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
-        <script src="{{ route('home') }}/js/mmenu.min.js"></script>
-        <script src="{{ route('home') }}/js/mmenu.js"></script>
+        <!-- ARCHIVES JS -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/mmenu.min.js"></script>
+        <script src="js/mmenu.js"></script>
         <!-- MAIN JS -->
-        <script src="{{ route('home') }}/js/script.js"></script>
+        <script src="js/script.js"></script>
+        <!-- SLICK -->
+        <script src="{{ asset('js/slick.min.js') }}"></script>
+        <script src="{{ asset('js/slick1.js') }}"></script>
+        <!-- SORT -->
+        <script src="{{ asset('js/sorting.js') }}"></script>
+        <!-- GRID/LIST -->
+        <script src="{{ asset('js/gridList.js') }}"></script>
+        <!-- CHECKBOXES -->
+        <script src="{{ asset('js/checkboxes.js') }}"></script>
 
     </div>
     <!-- Wrapper / End -->

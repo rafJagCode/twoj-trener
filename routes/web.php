@@ -28,7 +28,7 @@ use Symfony\Component\HttpFoundation\Request;
 //     return view('index');
 // });
 Route::get('/', 'HomeController@index')->name('home');
-
+Route::get('/trainers', 'SearchController@search')->name('user.search');;
 
 
 //Middleware dla trenera--------------------------------------------------------------------------------------------------
@@ -68,22 +68,34 @@ Route::group([
         });
 
 
+
+Route::get('/registration', function () {
+    return view('registration');
+});
+
+
+Route::get('/login', function () {
+    return view('login');
+});
+
 Auth::routes();
 
+Route::get('/', 'HomeController@index')->name('home');
 
- //calendars
- Route::get('fullcalendar/{id}','FullCalendarController@index')->name('fullcalendar.index');
- Route::post('fullcalendar/{id}/create','FullCalendarController@create')->name('fullcalendar.create');
- Route::post('fullcalendar/{id}/edit','FullCalendarController@edit');
- Route::post('fullcalendar/{id}/update','FullCalendarController@update')->name('fullcalendar.update');
- Route::post('fullcalendar/{id}/delete','FullCalendarController@destroy')->name('fullcalendar.delete');
+//calendars
+Route::get('fullcalendar/{id}','FullCalendarController@index')->name('fullcalendar.index');
+Route::post('fullcalendar/{id}/create','FullCalendarController@create')->name('fullcalendar.create');
+Route::post('fullcalendar/{id}/edit','FullCalendarController@edit');
+Route::post('fullcalendar/{id}/update','FullCalendarController@update')->name('fullcalendar.update');
+Route::post('fullcalendar/{id}/delete','FullCalendarController@destroy')->name('fullcalendar.delete');
 
 Route::post('/rate/{id}','RateTrainerController@rate')->name('rate');
 Route::get('trainer/{id}','Trainer\PageController@show')->name('trainer.show');
 
+Route::get("/trainers",'SearchController@index')->name('user.index');
+Route::post("/trainers",'SearchController@search')->name('user.search');
+Route::get("/trainers/sort",'SearchController@sort')->name('user.sort');
 
-
-Route::post("/",'SearchController@search')->name('user.search');
 //Route::get("/",'WelcomeController@show')->name('welcome.show');
 
 

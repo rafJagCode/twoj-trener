@@ -64,21 +64,23 @@ class User extends Authenticatable
         return false;
     }
 
-    // na razie na sztywno, po umozliwieniu zapisu zdjec w profilu zostanie zmienione
     public function profilePicture()
     {
-        return ($this->profilePicture != 'profile.jpg') ? 'images/' . $this->profilePicture : 'images/profile.jpg';
+        return ($this->profilePicture != 'profile.jpg') ? 'images/avatars/' . $this->profilePicture : 'images/profile.jpg';
     }
 
     //'nowy' jako jeden z ostatnich, czy wzgledem daty ???
     public function profileFeature()
     {
+        //czas dodania
         $daysAgo = now()->modify('-3 days')->format('Y-m-d');
         // dd($diff);
         return $this['created_at']->format('Y-m-d') >= $daysAgo 
-            ? ['Nowy','f3'] 
+            ? ['Nowy','f3']
+            //srednia wysokosc oceny 
             : ($this->avgStars() > 4.6 
-                ? ['Wysoko oceniany','f1'] 
+                ? ['Wysoko oceniany','f1']
+                //liczba ocen 
                 : (count($this->ratings()->get()) > 0 
                     ? ['Popularny','f2'] 
                     : null));

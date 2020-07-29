@@ -8,9 +8,24 @@ use App\Models\User;
 use App\Models\Roles;
 use App\Models\Dysciplines_has_user;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Session;
 
 class SearchController extends Controller
 {
+    public function index()
+    {
+        $allDisciplines = Dysciplines::all();
+        $trainers = collect();
+        foreach (User::all() as $user)
+            if ($user->isTrainer())
+                $trainers->push($user->id);
+        $matchedTrainers = User::whereIn('id',$trainers)->orderBy('secondName','asc')->orderBy('firstName','asc')->get();
+        // dd($matchedTrainers->get());
+        Session::put('matchedTrainers', $matchedTrainers);
+        // $matchedTrainers = $matchedTrainers->paginate(4);
+        return view('trainers', compact('matchedTrainers', 'allDisciplines'));
+    }
+
     public function search(Request $request)
     {
         $city=null;
@@ -21,7 +36,10 @@ class SearchController extends Controller
         $hom_meny_disciplin_corekt=0;
         $didynt_have_disciplin=collect();
         $can_learn=collect();
+        $findCheck=null;
+        $ocena=$request->input('ocena');
         $mesage=null;
+        $matchedTrainers = Collection::make();
         #Pobieranie wszystkich dyscyplin
         $checkedDisciplines = $request->input('disciplines');
         #Pobieranie wszystkich użytkowników trenerów
@@ -29,6 +47,50 @@ class SearchController extends Controller
         #kożystanie z funkcji pomocniczej
         $trainers = Collection::make();
         #sprawdzanie czy wprowadzono miasto
+        #wyświetlanie wyników po wcisniecu guzika z jedną dyscypliną
+        if($request->input('findCheck') != null)
+        {
+            $findCheck=$request->input('findCheck');
+            
+            $tmp = User::all();
+            #wprowadzanie każdego trenera
+            foreach ($tmp as $tm)
+            {
+                if ($tm->roles()->get()->contains($role))
+                {
+                    $trainers->push($tm);
+                }
+                    
+            }
+                #przechodzenie pojedynczo po każdym trenerze
+                foreach ($trainers as $trainer) {
+                    $result = 0;
+                        #jesili posiada choć jeden pasujący  trening dodaj i 
+                        if ($trainer->disciplines()->get()->contains( $findCheck))
+                        {
+                            $result ++;
+                        }
+                    if ($result>0)
+                {
+                        $matchedTrainers->push($trainer);
+                }
+                #przypisywanie czym zajmuje się dany trener
+                foreach ($user_conection_disciplin as $ste)
+                {
+                    if ($ste->users_id==$trainer->id)
+                    {
+                        $trenerDisciplines->push($ste->users_id,$ste->dysciplines_id);
+                    }
+                        
+                }
+                }
+                $city=1;
+                if($matchedTrainers->count()==0)
+                {
+                    Session()->flash('brak_trenera','Zaden trener się tym nie zajmuje');
+                }
+                return view('trainers', compact('matchedTrainers', 'allDisciplines','city','trenerDisciplines','mesage'));
+        }
         if ($request->input('city') != null) {
             $city = $request->input('city');
             $tmp = User::where('city', $city)->get();
@@ -42,11 +104,14 @@ class SearchController extends Controller
         {
             if ($tm->roles()->get()->contains($role))
             {
-                $trainers->push($tm);
+                if($tm->avgStars()>=$ocena)
+                {
+                    $trainers->push($tm);
+                }
             }
                 
         }
-        $matchedTrainers = Collection::make();
+        $matchedTrainersCol = collect();
         #sprawdzanie zaznaczonych dyscyplin
         if ($checkedDisciplines != null)
         {
@@ -65,7 +130,7 @@ class SearchController extends Controller
                 }
                 if ($result>0)
                {
-                    $matchedTrainers->push($trainer);
+                    $matchedTrainersCol->push($trainer->id);
                }
                #przypisywanie czym zajmuje się dany trener
                foreach ($user_conection_disciplin as $ste)
@@ -150,9 +215,65 @@ class SearchController extends Controller
                         $trenerDisciplines->push($ste->users_id,$ste->dysciplines_id);
                     }   
                 }
+                $matchedTrainersCol->push($trainer->id);
             }
-            $matchedTrainers=$trainers;
+            // $matchedTrainersCol=$trainers;
         }
-        return view('welcome', compact('matchedTrainers', 'allDisciplines','city','trenerDisciplines','mesage'));
+        
+        $matchedTrainers = User::whereIn('id',$matchedTrainersCol)->orderBy('secondName','asc')->orderBy('firstName','asc')->get();
+        $request->flash();
+        // dd($matchedTrainers);
+        $request->session()->put('matchedTrainers', $matchedTrainers);
+        // $matchedTrainers = $matchedTrainers->paginate(4);
+        // session(['matchedTrainers' => $matchedTrainers]);
+        return view('trainers', compact('matchedTrainers', 'allDisciplines','city','trenerDisciplines','mesage'));
+    }
+
+    public function sort(Request $request)
+    {
+        
+        // $matchedTrainers = session('matchedTrainers', 'default');
+        $result = $request->session()->get('matchedTrainers');
+        // print_r($result);
+        // dd($result[0]['id']);
+        
+        if($request->ajax())
+        {
+            $ids = collect();
+            foreach($result as $tab)
+            {
+                $ids->add($tab['id']);
+            }
+            $sort_type = $request->get('sortby');
+            switch($sort_type){
+                case 'alphabetAsc':
+                    $matchedTrainers = User::whereIn('id',$ids)->orderBy('secondName','asc')->orderBy('firstName','asc')->get();//->paginate(4);
+                    break;
+                case 'alphabetDesc':
+                    $matchedTrainers = User::whereIn('id',$ids)->orderBy('secondName','desc')->orderBy('firstName','desc')->get();//->paginate(4);
+                    break;
+                case 'quantityAsc':
+                    $matchedTrainers = User::whereIn('id',$ids)->get()->sortBy(function($value, $key) {
+                        return $value->ratings()->count();
+                    }, SORT_REGULAR, false);
+                    break;
+                case 'quantityDesc':
+                    $matchedTrainers = User::whereIn('id',$ids)->get()->sortBy(function($value, $key) {
+                        return $value->ratings()->count();
+                    }, SORT_REGULAR, true);
+                    break;
+                case 'avgAsc':
+                    $matchedTrainers = User::whereIn('id',$ids)->get()->sortBy(function($value, $key) {
+                        return $value->avgStars();
+                    }, SORT_REGULAR, false);
+                    break;
+                case 'avgDesc':
+                    $matchedTrainers = User::whereIn('id',$ids)->get()->sortBy(function($value, $key) {
+                        return $value->avgStars();
+                    }, SORT_REGULAR, true);
+                    break;
+            }
+            return view('trainers_sort',compact('matchedTrainers'))->render();
+        }
     }
 }
