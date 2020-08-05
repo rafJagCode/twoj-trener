@@ -13,7 +13,7 @@
                                 @endif
                                 <div class="homes-tag button sale rent"><i class="fa fa-heart-o"></i>
                                     <p>106</p>
-                                </div>                                                
+                                </div>
                                 <div class="homes-price">
                                     <ul class="starts text-left mb-0">
                                         @for ($i = 0; $i < floor($user->avgStars()); $i++)
@@ -28,12 +28,12 @@
                                         @endif
                                         <li class="ml-1">{{ $user->avgStars() }}</li>
                                         <li class="ml-1">
-                                            ({{ count($user->ratings()->get()) }} {{ count($user->ratings()->get()) == 1 
-                                            ? 'ocena' 
+                                            ({{ count($user->ratings()->get()) }} {{ count($user->ratings()->get()) == 1
+                                            ? 'ocena'
                                             : (((count($user->ratings()->get()) % 10 == 2 && count($user->ratings()->get()) != 12 && count($user->ratings()->get()) != 112)
                                             || (count($user->ratings()->get()) % 10 == 3 && count($user->ratings()->get()) != 13 && count($user->ratings()->get()) != 113)
                                             || (count($user->ratings()->get()) % 10 == 4 && count($user->ratings()->get()) != 14 && count($user->ratings()->get()) != 114))
-                                            ? 'oceny' : 'ocen') 
+                                            ? 'oceny' : 'ocen')
                                             }})
                                         </li>
                                     </ul>
@@ -63,7 +63,7 @@
                             </li>
                         </ul>
                         <div class="footer">
-                        </div>   
+                        </div>
                         <span>
                             @foreach ($user->disciplines()->get() as $discipline)
                                     <img
@@ -85,10 +85,10 @@
 
     <!-- Start list view content -->
     <div class="row featured portfolio-items" id="list_view">
-        @if ($matchedTrainers->count()!=0 && $mesage ?? ''!=null )
-                        <div class="alert alert-success card  mb-3 col-lg-12">
-                            {!! $mesage !!}
-                        </div>
+        @if ($matchedTrainers->count()!=0 && $mesage ?? '' != null )
+            <div class="alert alert-success card  mb-3 col-lg-12">
+                {!! $mesage !!}
+            </div>
         @endif
         @if($matchedTrainers->count()!=0 && $city!=null)
         @foreach($matchedTrainers as $user)
@@ -103,7 +103,7 @@
                                 @endif
                                 <div class="homes-tag button sale rent"><i class="fa fa-heart-o"></i>
                                     <p>106</p>
-                                </div>                                                
+                                </div>
                                 <div class="homes-price">
                                     <ul class="starts text-left mb-0">
                                         @for ($i = 0; $i < floor($user->avgStars()); $i++)
@@ -118,12 +118,12 @@
                                         @endif
                                         <li class="ml-1">{{ $user->avgStars() }}</li>
                                         <li class="ml-1">
-                                            ({{ count($user->ratings()->get()) }} {{ count($user->ratings()->get()) == 1 
-                                            ? 'ocena' 
+                                            ({{ count($user->ratings()->get()) }} {{ count($user->ratings()->get()) == 1
+                                            ? 'ocena'
                                             : (((count($user->ratings()->get()) % 10 == 2 && count($user->ratings()->get()) != 12 && count($user->ratings()->get()) != 112)
                                             || (count($user->ratings()->get()) % 10 == 3 && count($user->ratings()->get()) != 13 && count($user->ratings()->get()) != 113)
                                             || (count($user->ratings()->get()) % 10 == 4 && count($user->ratings()->get()) != 14 && count($user->ratings()->get()) != 114))
-                                            ? 'oceny' : 'ocen') 
+                                            ? 'oceny' : 'ocen')
                                             }})
                                         </li>
                                     </ul>

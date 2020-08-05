@@ -21,7 +21,7 @@ class HomeController extends Controller
             //liczba wyswietlanych rekordow
         }, SORT_REGULAR, true)->slice(0,10);
         // dd($matchedTrainers);
-        
+
         return view('index', compact('matchedTrainers','allDisciplines'));
     }
 }
