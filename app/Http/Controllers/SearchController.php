@@ -38,7 +38,7 @@ class SearchController extends Controller
         $can_learn=collect();
         $findCheck=null;
         $ocena=$request->input('ocena');
-        $mesage=null;
+        $message=null;
         $matchedTrainers = Collection::make();
         #Pobieranie wszystkich dyscyplin
         $checkedDisciplines = $request->input('disciplines');
@@ -51,7 +51,7 @@ class SearchController extends Controller
         if($request->input('findCheck') != null)
         {
             $findCheck=$request->input('findCheck');
-            
+
             $tmp = User::all();
             #wprowadzanie każdego trenera
             foreach ($tmp as $tm)
@@ -60,12 +60,12 @@ class SearchController extends Controller
                 {
                     $trainers->push($tm);
                 }
-                    
+
             }
                 #przechodzenie pojedynczo po każdym trenerze
                 foreach ($trainers as $trainer) {
                     $result = 0;
-                        #jesili posiada choć jeden pasujący  trening dodaj i 
+                        #jesili posiada choć jeden pasujący  trening dodaj i
                         if ($trainer->disciplines()->get()->contains( $findCheck))
                         {
                             $result ++;
@@ -81,7 +81,7 @@ class SearchController extends Controller
                     {
                         $trenerDisciplines->push($ste->users_id,$ste->dysciplines_id);
                     }
-                        
+
                 }
                 }
                 $city=1;
@@ -89,12 +89,12 @@ class SearchController extends Controller
                 {
                     Session()->flash('brak_trenera','Zaden trener się tym nie zajmuje');
                 }
-                return view('trainers', compact('matchedTrainers', 'allDisciplines','city','trenerDisciplines','mesage'));
+                return view('trainers', compact('matchedTrainers', 'allDisciplines','city','trenerDisciplines','message'));
         }
         if ($request->input('city') != null) {
             $city = $request->input('city');
             $tmp = User::where('city', $city)->get();
-        } 
+        }
         else
         {
             $tmp = User::all();
@@ -109,7 +109,7 @@ class SearchController extends Controller
                     $trainers->push($tm);
                 }
             }
-                
+
         }
         $matchedTrainersCol = collect();
         #sprawdzanie zaznaczonych dyscyplin
@@ -120,13 +120,13 @@ class SearchController extends Controller
                 $result = 0;
                 #sprawdzanie czy ma konkretny rodzaj treningu
                 foreach ($checkedDisciplines as $dis) {
-                    #jesili posiada choć jeden pasujący  trening dodaj i 
-                    
+                    #jesili posiada choć jeden pasujący  trening dodaj i
+
                     if ($trainer->disciplines()->get()->contains($dis))
                     {
                         $result ++;
                     }
-                    
+
                 }
                 if ($result>0)
                {
@@ -139,17 +139,17 @@ class SearchController extends Controller
                    {
                        $trenerDisciplines->push($ste->users_id,$ste->dysciplines_id);
                    }
-                       
+
                }
             }
             #sprawdzanie czy wszystkie wybrnę  dyscypliny mają trenera
             foreach($checkedDisciplines as $dis)
             {
                 $result=false;
-                for ($i=1; $i <$trenerDisciplines->count() ; $i+=2) { 
+                for ($i=1; $i <$trenerDisciplines->count() ; $i+=2) {
                     if($dis==$trenerDisciplines[$i])
                     {
-                        $result=true; 
+                        $result=true;
                     }
                 }
                 if($result==false)
@@ -163,11 +163,11 @@ class SearchController extends Controller
                     foreach($checkedDisciplines as $dis)
                     {
                         $result=false;
-                        for ($i=0; $i <$didynt_have_disciplin->count() ; $i++) 
-                        { 
+                        for ($i=0; $i <$didynt_have_disciplin->count() ; $i++)
+                        {
                             if($dis==$didynt_have_disciplin[$i])
                             {
-                                $result=true;    
+                                $result=true;
                             }
                         }
                     if($result==false)
@@ -177,26 +177,26 @@ class SearchController extends Controller
                 }
                 #przygotowywanie wiadomości w czym możemy i w czym nie
                 $p=0;
-                $mesage= "Nie możemy cię wyszkolić w:" ;
+                $message= "Nie możemy cię wyszkolić w:" ;
                 foreach($allDisciplines as $discyplin)
                 {
                     if($p<$didynt_have_disciplin->count() && $discyplin->id==$didynt_have_disciplin[$p])
                     {
-                        
-                        $mesage .="</br>";
-                        $mesage .=$discyplin->name;
+
+                        $message .="</br>";
+                        $message .=$discyplin->name;
                         $p++;
                     }
                 }
-                $mesage .= "</br>Możemy zoferować trenig:" ;
+                $message .= "</br>Możemy zoferować trenig:" ;
                 $p=0;
                 foreach($allDisciplines as $discyplin)
                 {
                     if($p<$can_learn->count() && $discyplin->id==$can_learn[$p])
                     {
-                        
-                        $mesage .="</br>";
-                        $mesage .=$discyplin->name;
+
+                        $message .="</br>";
+                        $message .=$discyplin->name;
                         $p++;
                     }
                 }
@@ -205,7 +205,7 @@ class SearchController extends Controller
         else
         {
             #przechodzenie pojedynczo po każdym trenerze
-            foreach ($trainers as $trainer) 
+            foreach ($trainers as $trainer)
             {
                 #przypisywanie czym zajmuje się dany trener
                 foreach ($user_conection_disciplin as $ste)
@@ -213,20 +213,20 @@ class SearchController extends Controller
                     if ($ste->users_id==$trainer->id)
                     {
                         $trenerDisciplines->push($ste->users_id,$ste->dysciplines_id);
-                    }   
+                    }
                 }
                 $matchedTrainersCol->push($trainer->id);
             }
             // $matchedTrainersCol=$trainers;
         }
-        
+
         $matchedTrainers = User::whereIn('id',$matchedTrainersCol)->orderBy('secondName','asc')->orderBy('firstName','asc')->get();
         $request->flash();
         // dd($matchedTrainers);
         $request->session()->put('matchedTrainers', $matchedTrainers);
         // $matchedTrainers = $matchedTrainers->paginate(4);
         // session(['matchedTrainers' => $matchedTrainers]);
-        return view('trainers', compact('matchedTrainers', 'allDisciplines','city','trenerDisciplines','mesage'));
+        return view('trainers', compact('matchedTrainers', 'allDisciplines','city','trenerDisciplines','message'));
     }
 
     public function sort(Request $request)
@@ -274,9 +274,9 @@ class SearchController extends Controller
             return view('trainers_sort',compact('matchedTrainers'))->render();
         }
     }
-    
-    
-    
+
+
+
     public function show(Request $request)
     {
         $user = User::findOrFail(1);

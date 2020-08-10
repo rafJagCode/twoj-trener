@@ -8,17 +8,17 @@
 @endsection
 
 @section('content')
-
+{{--
 <section class="headings">
     <div class="text-heading text-left">
         <div class="container">
             <h6><a style="color: #753cda" href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i>  </a> &nbsp;/&nbsp; Logowanie</h6>
         </div>
     </div>
-</section>
+</section> --}}
 
 <div id="login">
-    <div class="login">                    
+    <div class="login">
         <form class="form-horizontal" method="POST" action="{{ route('login') }}">
             @csrf
             <div class="form-group">
@@ -46,7 +46,7 @@
             <div class="form-group ">
             </div>
             <div class="login-register">
-               
+
             <div class="text-center add_top_10">Nowy w SlimGuru? <strong><a href="{{route('register')}}">Zarejestruj się</a></strong></div>
             </div>
         </form>

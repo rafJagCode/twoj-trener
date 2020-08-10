@@ -1,7 +1,7 @@
 
-<header id="header-container">
+<header id="header-container" class="header head-tr">
     <!-- Topbar -->
-    <div class="header-top">
+    <div class="header-top head-tr">
         <div class="container">
             <div class="top-info hidden-sm-down">
             </div>
@@ -51,24 +51,63 @@
     <div class="clearfix"></div>
     <!-- Topbar / End -->
     <!-- Header -->
-    <div id="header">
+    <div id="header" class="head-tr bottom">
         <div class="container">
             <!-- Left Side Content -->
             <div class="left-side">
                 <!-- Logo -->
                 <div id="logo">
-                    <a href="index.html"><img src="images/logo-blue.svg" alt=""></a>
+                    <a href="/"><img src="{{ asset('/images/TwójTrenerLogo.png') }}" alt=""></a>
                 </div>
                 <!-- Mobile Navigation -->
                 <div class="mmenu-trigger">
                     <button class="hamburger hamburger--collapse" type="button">
                         <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
+                            <span class="hamburger-inner"></span>
                         </span>
                     </button>
                 </div>
                 <!-- Main Navigation -->
-                <nav id="navigation" class="style-1">
+                <nav id="navigation" class="style-1 head-tr">
+                    <ul id="responsive">
+                        <li><a href="{{ url('') }}">Strona główna</a></li>
+                        <li><a href="{{ route('user.search') }}">Trenerzy</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="clearfix"></div>
+                <!-- Main Navigation / End -->
+            </div>
+            <!-- Left Side Content / End -->
+            <!-- Right Side Content / End -->
+            <div class="right-side hidden-lg-down">
+                <!-- Header Widget -->
+                <div class="header-widget">
+                    <a href="add-listing.html" class="button border">Add Listing</a>
+                </div>
+                <!-- Header Widget / End -->
+            </div>
+            <!-- Right Side Content / End -->
+        </div>
+    </div>
+    <div id="header" class="head-tr bottom cloned unsticky">
+        <div class="container">
+            <!-- Left Side Content -->
+            <div class="left-side">
+                <!-- Logo -->
+                <div id="logo">
+                    <a href="/"><img src="{{ asset('/images/TwójTrenerLogo.png') }}" alt=""></a>
+                </div>
+                <!-- Mobile Navigation -->
+                <div class="mmenu-trigger">
+                    <button class="hamburger hamburger--collapse" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </button>
+                </div>
+                <!-- Main Navigation -->
+                <nav id="navigation" class="style-1 head-tr">
                     <ul id="responsive">
                         <li><a href="{{ url('') }}">Strona główna</a></li>
                         <li><a href="{{ url('trainers') }}">Trenerzy</a></li>

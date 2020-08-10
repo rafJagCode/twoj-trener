@@ -79,8 +79,8 @@
                                             <label for="{{ $discipline->name }}" class="w-100 p-2">
                                                 <input
                                                     class="mt-0 aaa"
-                                                    style="display:none;" 
-                                                    type="checkbox" 
+                                                    style="display:none;"
+                                                    type="checkbox"
                                                     name="disciplines[]"
                                                     id="{{ $discipline->name }}"
                                                     value="{{ $discipline->id }}"
@@ -102,16 +102,16 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>   
+                        </div>
                     </aside>
-                </div>  
+                </div>
 
                 {{-- <div class="row">
                     <div class="col-12 d-flex justify-content-left">
-                        {{ $matchedTrainers->links() }} 
+                        {{ $matchedTrainers->links() }}
                     </div>
                 </div> --}}
-            
+
             </div>
         </section>
     {{-- @endif --}}

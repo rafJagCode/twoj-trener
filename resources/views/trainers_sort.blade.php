@@ -85,12 +85,12 @@
 
     <!-- Start list view content -->
     <div class="row featured portfolio-items" id="list_view">
-        @if ($matchedTrainers->count()!=0 && $mesage ?? '' != null )
+        @if ($matchedTrainers->count() != 0)
             <div class="alert alert-success card  mb-3 col-lg-12">
-                {!! $mesage !!}
+                {!! $message ?? '' !!}
             </div>
         @endif
-        @if($matchedTrainers->count()!=0 && $city!=null)
+        @if($matchedTrainers->count() != 0 && $city = '')
         @foreach($matchedTrainers as $user)
             <div class="item col-lg-5 col-md-12 col-xs-12 landscapes sale pr-0 pb-0 mb-5">
                 <div class="project-single mb-0 bb-0">

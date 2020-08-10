@@ -46,7 +46,7 @@
                                             </select>
                                         </div>
                                     </div>
- 
+
                                     <div class="col-xl-2 col-lg-4 col-md-4">
                                         <button class="btn btn-yellow" type="submit" >
                                             <i class="text">Znajdż</i>
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>  
+                    </div>
                 <div class="row text-center disciplines">
                     @foreach($allDisciplines ?? '' as $discipline)
                     <button  type="submit" class=" box" name="findCheck" value="{{$discipline->id}}">
@@ -65,16 +65,13 @@
                             src="{{asset("/images/$discipline->name.png")}}"
                             alt="{{ $discipline->name }}">
                             </div>
-                        
+
                                 <p class="">{{ $discipline->name }}</p>
                         </label>
-
                         </button>
                     @endforeach
                 </div>
-                    
-        
-        </div>    
+        </div>
     </div>
 </div>
 </form>

@@ -18,11 +18,17 @@
     @yield('head')
     @yield('additional-css')
 </head>
-<body class="inner-pages">
-    <div id="wrapper" class="homepage-1">
+<body class="inner-pages homepage-1">
+    <div id="wrapper" class="mm-page mm-slideout">
         @include('header')
         <div class="clearfix"></div>
-
+        <section class="headings">
+            <div class="text-heading text-center">
+                <div class="container">
+                <h1>{{ \Request::route()->getName() }}</h1>
+                </div>
+            </div>
+        </section>
         <section class="content">
             <div class="container">
                 @yield('content')

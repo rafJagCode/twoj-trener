@@ -1,14 +1,13 @@
-<!-- START FOOTER -->
-<footer class="first-footer stickToBotton position-static">
+<footer class="first-footer">
     <div class="top-footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="netabout">
-                        <a href="index.html" class="logo">
-                            <img src="images/logo-blue.svg" alt="netcom">         <!-- miejsce na logo-->
+                        <a href="/" class="logo">
+                            <img src="{{ asset('/images/TwójTrenerLogo.png') }}" alt="netcom">
                         </a>
-                        <p>Twoj-trener: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt architecto soluta laboriosam, perspiciatis, aspernatur officiis esse.</p>
                     </div>
                     <div class="contactus">
                         <ul>
@@ -27,7 +26,7 @@
                             <li>
                                 <div class="info">
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    <p class="in-p ti">support@directoryplus.com</p>
+                                    <p class="in-p ti">support@listifind.com</p>
                                 </div>
                             </li>
                         </ul>
@@ -40,37 +39,44 @@
                             <ul class="one-half mr-5">
                                 <li><a href="index.html">Home</a></li>
                                 <li><a href="about.html">About Us</a></li>
-                                <li><a href="listing-details.html">Contact</a></li>
+                                <li><a href="listing-details.html">Listing Details</a></li>
+                                <li><a href="dashboard.html">Dashboard</a></li>
+                                <li><a href="register.html">Register</a></li>
+                                <li class="no-pb"><a href="blog-list.html">Blog List</a></li>
                             </ul>
                             <ul class="one-half">
-                                <li><a href="blog-grid.html">Login</a></li>
-                                <li><a href="pricing-table.html">Register</a></li>
+                                <li><a href="blog-grid.html">Blog</a></li>
+                                <li><a href="pricing-table.html">Pricing</a></li>
+                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="faq.html">Our Faq</a></li>
+                                <li class="no-pb"><a href="listings-full-grid.html">Listings</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="widget">
-                        <h3>Instagram</h3>              <!-- Tu powinny byc podpiete zdjecia, zadnych nie dodawalem dlatego nic nie ma -->
+                        <h3>Instagram</h3>
                         <ul class="photo">
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-1.jpg" alt=""></a>
+                                    <a href="#"><img src="images/instagram/inst-1.jpeg" alt=""></a>
                                 </figure>
                             </li>
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-2.jpg" alt=""></a>
+                                    <a href="#"><img src="images/instagram/inst-2.jpeg" alt=""></a>
                                 </figure>
                             </li>
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-3.jpg" alt=""></a>
+                                    <a href="#"><img src="images/instagram/inst-3.jpeg" alt=""></a>
                                 </figure>
                             </li>
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-4.jpg" alt=""></a>
+                                    <a href="#"><img src="images/instagram/inst-4.jpeg" alt=""></a>
                                 </figure>
                             </li>
                             <li class="hover-effect">
@@ -80,22 +86,22 @@
                             </li>
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-6.jpg" alt=""></a>
+                                    <a href="#"><img src="images/instagram/inst-6.jpeg" alt=""></a>
                                 </figure>
                             </li>
-                            <li class="hover-effect mb-0">
+                            <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-7.jpg" alt=""></a>
+                                    <a href="#"><img src="images/instagram/inst-7.jpeg" alt=""></a>
                                 </figure>
                             </li>
-                            <li class="hover-effect mb-0">
+                            <li class="hover-effect">
                                 <figure>
                                     <a href="#"><img src="images/instagram/inst-8.jpg" alt=""></a>
                                 </figure>
                             </li>
-                            <li class="hover-effect mb-0">
+                            <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-9.jpg" alt=""></a>
+                                    <a href="#"><img src="images/instagram/inst-9.jpeg" alt=""></a>
                                 </figure>
                             </li>
                         </ul>
@@ -120,7 +126,7 @@
     </div>
     <div class="second-footer">
         <div class="container">
-            <p>LastLevel. ©2020 All rights reserved. </p>
+            <p>Code-Theme. ©2020 All rights reserved. </p>
             <ul class="netsocials">
                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

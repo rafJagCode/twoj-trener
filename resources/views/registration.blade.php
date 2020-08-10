@@ -19,13 +19,13 @@
 
 @section('content')
 
-<section class="headings">
+{{-- <section class="headings">
     <div class="text-heading text-left">
         <div class="container">
             <h6><a style="color: #753cda" href="{{route('home')}}"> <i class="fa fa-home" aria-hidden="true"></i>  </a> &nbsp;/&nbsp; Rejestracja</h6>
         </div>
     </div>
-</section>
+</section> --}}
 
 <div id="login">
     <div class="login">
@@ -34,8 +34,8 @@
             <div class="imput-group">
                 <input type="checkbox"  class="regular-checkbox" name="role">
                                     <label for="role" class="cols-sm-2 control-label">Konto trenera</label>
-            </div>    
-            <div class="form-group">               
+            </div>
+            <div class="form-group">
                 <label for="firstName">Imię</label>
                 <input type="text" class="form-control  @error('firstName') is-invalid @enderror"
                 name="firstName" id="firstName" placeholder="Imię"/>
