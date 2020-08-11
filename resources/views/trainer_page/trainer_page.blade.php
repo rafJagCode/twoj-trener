@@ -2,9 +2,9 @@
 
 @section('title', 'trainer_page')
 
-@section('head')
+{{-- @section('head')
     <link href="{{ asset('/css/trainer_page.css') }}" rel="stylesheet">
-@endsection
+@endsection --}}
 @section('scripts')
     <script type="text/javascript">
         let bigPhoto = $('#big-photo');
@@ -25,9 +25,9 @@
 @endsection
 
 @section('content')
-<div class="trainer-page-wrapper">
-    @include('trainer_page.info')
-    @include('trainer_page.message_bar')
+{{-- <div class="trainer-page-wrapper"> --}}
+    {{-- @include('trainer_page.info') --}}
+    {{-- @include('trainer_page.message_bar')
     @include('trainer_page.description')
     @if(count($photos)>0)
         @include('trainer_page.gallery')
@@ -39,7 +39,48 @@
     @endforeach
     @include('trainer_page.modals.closeup')
     @include('trainer_page.modals.message')
-    @include('trainer_page.modals.rate')
+    @include('trainer_page.modals.rate') --}}
 
-</div>
+{{-- </div> --}}
+
+<!-- START SECTION LISTING DETAIL-->
+    <section class="listing blog details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 blog-pots">
+                    <!-- Block heading end -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            @include('trainer_page.introduction')
+                            <!-- main slider carousel items -->
+                            @include('trainer_page.gallery')
+                            @include('trainer_page.description')
+                        </div>
+                    </div>
+                    <!-- cars content -->
+                    @include('trainer_page.disciplines')
+                    @include('trainer_page.ratings')
+                    <!-- START SECTION ASSIGNED AGENTS -->
+
+                        @include('trainer_page.reviews')
+
+                    <!-- END SECTION ASSIGNED AGENTS -->
+                </div>
+                <aside class="col-lg-4 col-md-12 car">
+                    <div class="widget">
+                        <!-- Start Agent Information -->
+                        @include('trainer_page.seller_info')
+                        <!-- End Agent Information -->
+                        <!-- Start: Opening hour -->
+                        @include('trainer_page.timetable')
+                        @include('trainer_page.leave_review')
+                        <!-- End: Opening hour -->
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+    <!-- END SECTION LISTING DETAIL -->
+
+
 @endsection

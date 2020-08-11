@@ -1,4 +1,4 @@
-@section('trainer-page-gallery-js')
+{{-- @section('trainer-page-gallery-js')
     <script type="text/javascript">
         let photos = @json($photos);
         let srcArray = [];
@@ -84,35 +84,111 @@
         });
     </script>
 @endsection
-<section class="gallery trainer-page-section">
-    <p class="gallery-title title">Galeria</p>
-    <div class="images">
-        <a type="button" class="trainer-page-arrow arrow-left"><i class="fas fa-chevron-left fa-4x"></i></a>
-
-        <div class="img-container left-img" type="button" data-toggle="modal" data-target="#closeup">
-            <img class="trainer-page-img side-img" src="">
-            <div class="image-controls">
-                <a href="" class="show-photo" data-dismiss="modal" data-toggle="modal" data-target="closeup"><i class="fas fa-search-plus fa-4x modal-icon"></i></a>
-            </div>
+<div id="listingDetailsSlider" class="carousel listing-details-sliders slide mb-30">
+    <h5 class="mb-4">Gallery</h5>
+    <div class="carousel-inner">
+        <div class="active item carousel-item" data-slide-number="0">
+            <img src="images/hotels/5.jpg" class="img-fluid" alt="slider-listing">
         </div>
-        <div class="img-container main-img mx-2" type="button" data-toggle="modal" data-target="#closeup">
-            <img class="trainer-page-img central-img" src="" >
-            <div class="image-controls">
-                <a href="" class="show-photo" data-dismiss="modal" data-toggle="modal" data-target="closeup"><i class="fas fa-search-plus fa-4x modal-icon"></i></a>
-            </div>
+        <div class="item carousel-item" data-slide-number="1">
+            <img src="images/hotels/2.jpeg" class="img-fluid" alt="slider-listing">
         </div>
-        <div class="img-container right-img" type="button" data-toggle="modal" data-target="#closeup">
-            <img class="trainer-page-img side-img" src="">
-            <div class="image-controls">
-                <a href="" class="show-photo" data-dismiss="modal" data-toggle="modal" data-target="closeup"><i class="fas fa-search-plus fa-4x modal-icon"></i></a>
-            </div>
+        <div class="item carousel-item" data-slide-number="2">
+            <img src="images/hotels/3.jpeg" class="img-fluid" alt="slider-listing">
+        </div>
+        <div class="item carousel-item" data-slide-number="4">
+            <img src="images/hotels/4.jpeg" class="img-fluid" alt="slider-listing">
+        </div>
+        <div class="item carousel-item" data-slide-number="5">
+            <img src="images/hotels/1.jpeg" class="img-fluid" alt="slider-listing">
         </div>
 
-        <a type="button" class="trainer-page-arrow arrow-right"><i class="fas fa-chevron-right fa-4x"></i></a>
+        <a class="carousel-control left" href="#listingDetailsSlider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+        <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+
     </div>
-    <div class="photo-indicators">
-        @foreach ($photos as $photo)
-            <i class="fas fa-circle photo-indicator"></i>
-        @endforeach
+    <!-- main slider carousel nav controls -->
+    <ul class="carousel-indicators smail-listing list-inline nav nav-justified mr-0">
+        <li class="list-inline-item active">
+            <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#listingDetailsSlider">
+                <img src="images/hotels/5.jpg" class="img-fluid" alt="listing-small">
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a id="carousel-selector-1" data-slide-to="1" data-target="#listingDetailsSlider">
+                <img src="images/hotels/2.jpeg" class="img-fluid" alt="listing-small">
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a id="carousel-selector-2" data-slide-to="2" data-target="#listingDetailsSlider">
+                <img src="images/hotels/3.jpeg" class="img-fluid" alt="listing-small">
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a id="carousel-selector-3" data-slide-to="3" data-target="#listingDetailsSlider">
+                <img src="images/hotels/4.jpeg" class="img-fluid" alt="listing-small">
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a id="carousel-selector-4" data-slide-to="4" data-target="#listingDetailsSlider">
+                <img src="images/hotels/1.jpeg" class="img-fluid" alt="listing-small">
+            </a>
+        </li>
+    </ul>
+    <!-- main slider carousel items -->
+</div> --}}
+
+
+<div id="listingDetailsSlider" class="carousel listing-details-sliders slide mb-30">
+    <h5 class="mb-4">Gallery</h5>
+    <div class="carousel-inner">
+        <div class="active item carousel-item" data-slide-number="0">
+            <img src="images/hotels/5.jpg" class="img-fluid" alt="slider-listing">
+        </div>
+        <div class="item carousel-item" data-slide-number="1">
+            <img src="images/hotels/2.jpeg" class="img-fluid" alt="slider-listing">
+        </div>
+        <div class="item carousel-item" data-slide-number="2">
+            <img src="images/hotels/3.jpeg" class="img-fluid" alt="slider-listing">
+        </div>
+        <div class="item carousel-item" data-slide-number="4">
+            <img src="images/hotels/4.jpeg" class="img-fluid" alt="slider-listing">
+        </div>
+        <div class="item carousel-item" data-slide-number="5">
+            <img src="images/hotels/1.jpeg" class="img-fluid" alt="slider-listing">
+        </div>
+
+        <a class="carousel-control left" href="#listingDetailsSlider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+        <a class="carousel-control right" href="#listingDetailsSlider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+
     </div>
-</section>
+    <!-- main slider carousel nav controls -->
+    <ul class="carousel-indicators smail-listing list-inline nav nav-justified mr-0">
+        <li class="list-inline-item active">
+            <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#listingDetailsSlider">
+                <img src="images/hotels/5.jpg" class="img-fluid" alt="listing-small">
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a id="carousel-selector-1" data-slide-to="1" data-target="#listingDetailsSlider">
+                <img src="images/hotels/2.jpeg" class="img-fluid" alt="listing-small">
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a id="carousel-selector-2" data-slide-to="2" data-target="#listingDetailsSlider">
+                <img src="images/hotels/3.jpeg" class="img-fluid" alt="listing-small">
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a id="carousel-selector-3" data-slide-to="3" data-target="#listingDetailsSlider">
+                <img src="images/hotels/4.jpeg" class="img-fluid" alt="listing-small">
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a id="carousel-selector-4" data-slide-to="4" data-target="#listingDetailsSlider">
+                <img src="images/hotels/1.jpeg" class="img-fluid" alt="listing-small">
+            </a>
+        </li>
+    </ul>
+    <!-- main slider carousel items -->
+</div>

@@ -75,14 +75,14 @@ class User extends Authenticatable
         //czas dodania
         $daysAgo = now()->modify('-3 days')->format('Y-m-d');
         // dd($diff);
-        return $this['created_at']->format('Y-m-d') >= $daysAgo 
+        return $this['created_at']->format('Y-m-d') >= $daysAgo
             ? ['Nowy','f3']
-            //srednia wysokosc oceny 
-            : ($this->avgStars() > 4.6 
+            //srednia wysokosc oceny
+            : ($this->avgStars() > 4.6
                 ? ['Wysoko oceniany','f1']
-                //liczba ocen 
-                : (count($this->ratings()->get()) > 0 
-                    ? ['Popularny','f2'] 
+                //liczba ocen
+                : (count($this->ratings()->get()) > 0
+                    ? ['Popularny','f2']
                     : null));
     }
 
@@ -104,7 +104,7 @@ class User extends Authenticatable
 
     public function ratings()
     {
-        return $this->belongsToMany(Ratings::class, 'ratings_has_users', 'users_id', 'ratings_id')->withTimestamps();
+        return $this->belongsToMany(Ratings::class, 'ratings_has_users', 'users_id', 'ratings_id')->withPivot('id', 'users_id')->withTimestamps();
     }
 
     public function gyms()
