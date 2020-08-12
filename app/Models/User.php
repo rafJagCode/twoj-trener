@@ -104,7 +104,7 @@ class User extends Authenticatable
 
     public function ratings()
     {
-        return $this->belongsToMany(Ratings::class, 'ratings_has_users', 'users_id', 'ratings_id')->withPivot('id', 'users_id')->withTimestamps();
+        return $this->belongsToMany(Ratings::class, 'ratings_has_users', 'users_id', 'ratings_id')->withTimestamps();
     }
 
     public function gyms()

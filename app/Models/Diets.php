@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Diets extends Model
 {
-    public function user(){
+    public function users(){
 
         return $this->belongsToMany(User::class, 'diets_has_users', 'users_id', 'diets_id')->withTimestamps();
     }

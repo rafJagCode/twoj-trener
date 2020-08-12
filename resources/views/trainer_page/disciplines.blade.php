@@ -4,10 +4,10 @@
     <!-- cars List -->
     <div class="ameneniti">
         <ul class="homes-list amen clearfix">
-            @foreach ($user->disciplines() as $item)
+            @foreach ($user->disciplines() as $discipline)
                 <li>
                     <i class="fa fa-check-square mr-2" aria-hidden="true"></i>
-                    <span>{{ $item }}</span>
+                    <span>{{ $discipline }}</span>
                 </li>
             @endforeach
         </ul>

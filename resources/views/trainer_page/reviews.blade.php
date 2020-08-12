@@ -2,8 +2,18 @@
     <h3 class="mb-5">Opinie: {{ $ratings->count() }}</h3>
     <div class="row mb-5">
         <ul class="col-12 commented pl-0">
+            @if ($ratings->count() == null)
+                <h4 class="alert alert-danger text-center">Brak opinii, dla tego trenera!</h4>
+            @endif
+        </ul>
+        <ul class="col-12 commented pl-0">
             @foreach($ratings as $rating)
-                {{-- <p>{{ $rating->pivot }}</p> --}}
+
+            {{ $rating->users }}
+
+
+
+
                 <li class="comm-inf">
                     <div class="col-md-2">
                         <img src="{{ $user->profilePicture() }}" class="img-fluid" alt="">
@@ -14,7 +24,7 @@
                             <div class="rating-box">
                                 <div class="detail-list-rating">
                                     @for ($i = 0; $i < floor($rating->stars); $i++)
-                                            <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
                                     @endfor
                                 </div>
                             </div>

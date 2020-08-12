@@ -16,6 +16,10 @@ class RateTrainerController extends Controller
         $rating->save();
         $trainer->ratings()->attach($rating->id);
 
+        // Pobranie danych użytkownika, który zamieścił opinie
+
+
+
         return back();
     }
 }
