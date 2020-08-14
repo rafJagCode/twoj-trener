@@ -5,7 +5,7 @@
     <div class="widget-boxed-body">
         <div class="sidebar-widget author-widget2">
             <div class="author-box clearfix">
-                <img src="{{ $user->profilePicture() }}" alt="author-image" class="author__img">
+                <img src="{{url('/images/avatars/'.$user->profilePicture)}}" alt="author-image" class="author__img">
                 <h4 class="author__title">{{ $user->firstName }} {{ $user->secondName }}</h4>
                 <p class="author__meta">Dołączono: {{ $user->created_at->format('d-m-Y') }}</p>
             </div>

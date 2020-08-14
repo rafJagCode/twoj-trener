@@ -114,7 +114,7 @@ class User extends Authenticatable
 
     public function  disciplines()
     {
-        return $this->belongsToMany(Dysciplines::class, 'dysciplines_has_users', 'users_id')->withTimestamps();
+        return $this->belongsToMany(Dysciplines::class, 'dysciplines_has_users', 'users_id', 'dysciplines_id')->withTimestamps();
     }
 
     public function images(){

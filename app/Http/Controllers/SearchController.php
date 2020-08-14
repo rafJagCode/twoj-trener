@@ -275,11 +275,9 @@ class SearchController extends Controller
         }
     }
 
-
-
-    public function show(Request $request)
+    public function show(Request $request, $id)
     {
-        $user = User::findOrFail(1);
+        $user = User::findOrFail($id);
         $disciplines = $user->disciplines()->get();
         $photos= $user->images()->get();
         $ratings= $user->ratings()->get();

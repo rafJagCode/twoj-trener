@@ -62,20 +62,6 @@
                                 <span>{{ $user->email }}</span>
                             </li>
                         </ul>
-                        <div class="footer">
-                        </div>
-                        <span>
-                            @foreach ($user->disciplines()->get() as $discipline)
-                                    <img
-                                    class="discipline-icon"
-                                    src="{{ asset("/images/$discipline->name.png") }}"
-                                    alt="{{ $discipline->name }}"
-                                    data-toggle="popover"
-                                    data-trigger="hover"
-                                    title="{{ $discipline->name }}"
-                                    >
-                            @endforeach
-                        </span>
                     </div>
                 </div>
             </div>

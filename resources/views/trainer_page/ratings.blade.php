@@ -1,33 +1,29 @@
-{{-- <section class="description trainer-page-section">
-    <p class="description-title title">Ocena: {{$rating->stars}}</p>
-   <p class="description-text">{{$rating->note}}</p>
-</section> --}}
-
 <div class="property-location mp">
-    <h5>Customer feedback</h5>
+    <h5>Statystyki opini trenera:</h5>
     <div class="review-content-wrap">
         <div class="review-content">
             <div class="review-rating-summary">
                 <div class="review-rating-summary-inner">
                     <div class="stats-average__count">
-                        <span class="stats-average__count-count">4.6</span>
+                        <span class="stats-average__count-count">{{ $user->avgStars() }}</span>
                     </div>
                     <!-- end stats-average__count -->
                     <div class="stats-average__rating p-0">
-                        <ul class="p-0 m-0">
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star-o"></i></li>
+                        <ul class="p-0 m-0 detail-list-rating">
+                            @for ($i = 0; $i < floor($user->avgStars()); $i++)
+                                <i class="fa fa-star"></i>
+                            @endfor
+                            @if ($user->avgStars() - floor($user->avgStars()) >= 0.5)
+                                <i class="fa fa-star-half"></i>
+                            @endif
                         </ul>
                     </div>
-                    <p class="text-center mb-2">out of 5.0</p>
+                    <p class="text-center mb-2">na 5</p>
                     <!-- end stats-average__rating -->
                 </div>
                 <!-- end review-rating-summary-inner -->
                 <div class="course-rating-text">
-                    <p class="course-rating-text__text">Hotel Rating</p>
+                    <p class="course-rating-text__text">Ocena trenera.</p>
                 </div>
                 <!-- end course-rating-text -->
             </div>

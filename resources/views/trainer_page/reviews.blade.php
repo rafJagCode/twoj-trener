@@ -8,19 +8,13 @@
         </ul>
         <ul class="col-12 commented pl-0">
             @foreach($ratings as $rating)
-
-            {{ $rating->users }}
-
-
-
-
                 <li class="comm-inf">
                     <div class="col-md-2">
-                        <img src="{{ $user->profilePicture() }}" class="img-fluid" alt="">
+                        <img src="{{ url('/images/avatars/'.$user->profilePicture) }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-10 comments-info">
                         <div class="conra">
-                            <h5 class="mb-2">{{ $rating->pivot->users_id }}</h5>
+                            <h5 class="mb-2"></h5>
                             <div class="rating-box">
                                 <div class="detail-list-rating">
                                     @for ($i = 0; $i < floor($rating->stars); $i++)

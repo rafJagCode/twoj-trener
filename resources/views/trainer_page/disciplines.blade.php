@@ -4,12 +4,16 @@
     <!-- cars List -->
     <div class="ameneniti">
         <ul class="homes-list amen clearfix">
-            @foreach ($user->disciplines() as $discipline)
-                <li>
-                    <i class="fa fa-check-square mr-2" aria-hidden="true"></i>
-                    <span>{{ $discipline }}</span>
-                </li>
-            @endforeach
+            @if ($disciplines->count() != null)
+                @foreach ($disciplines as $item)
+                    <li>
+                        <i class="fa fa-check-square mr-2" aria-hidden="true"></i>
+                        <span>{{ $item->name }}</span>
+                    </li>
+                @endforeach
+            @else
+                <span>Brak wybranych dyscyplin.</span>
+            @endif
         </ul>
     </div>
 </div>
