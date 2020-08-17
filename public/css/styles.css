@@ -11998,6 +11998,10 @@ h3.listing-desc-headline.margin-bottom-20,
   height: 100%;
 }
 
+.review-content-wrap .review-content .review-rating-widget .review-rating-rate ul .review-rating-rate__items .review-rating-inner__item .review-rating-rate__item-fill .rating-fill-widthMYOWN {
+    width: 100%;
+}
+
 .review-content-wrap .review-content .review-rating-widget .review-rating-rate ul .review-rating-rate__items .review-rating-inner__item .review-rating-rate__item-fill .rating-fill-width2 {
   width: 54%;
 }

@@ -21,16 +21,22 @@
                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                 <li><a href="#"><i class="fa fa-behance"></i></a></li>
             </ul>
-            <div class="agent-contact-form-sidebar">
-                <h4><i class="far fa-envelope pr-3"></i>Kontakt</h4>
-                <form name="contact_form" method="post" action="functions.php">
-                    <input type="text" id="fname" name="full_name" placeholder="Imię i nazwisko" required />
-                    <input type="number" id="pnumber" name="phone_number" placeholder="Numer telefonu" required />
-                    <input type="email" id="emailid" name="email_address" placeholder="Adres email" required />
-                    <textarea placeholder="Wiadomość" name="message" required></textarea>
-                    <input type="submit" name="sendmessage" class="multiple-send-message" value="Wyślij wiadomość" />
-                </form>
-            </div>
+            @guest
+                <div class="agent-contact-form-sidebar">
+                    <h4>Zaloguj się, aby skontaktować z trenerem.</h4>
+                </div>
+                @else
+                <div class="agent-contact-form-sidebar">
+                    <h4><i class="far fa-envelope pr-3"></i>Kontakt</h4>
+                    <form name="contact_form" method="post" action="functions.php">
+                        <input type="text" id="fname" name="full_name" placeholder="Imię i nazwisko" required />
+                        <input type="number" id="pnumber" name="phone_number" placeholder="Numer telefonu" required />
+                        <input type="email" id="emailid" name="email_address" placeholder="Adres email" required />
+                        <textarea placeholder="Wiadomość" name="message" required></textarea>
+                        <input type="submit" name="sendmessage" class="multiple-send-message" value="Wyślij wiadomość" />
+                    </form>
+                </div>
+            @endguest
         </div>
     </div>
 </div>

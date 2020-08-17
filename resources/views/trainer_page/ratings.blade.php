@@ -31,51 +31,21 @@
             <div class="review-rating-widget">
                 <div class="review-rating-rate">
                     <ul class="rate pl-00">
+                        @foreach ($user->countStars()['ratings'] as $key => $item)
                         <li class="review-rating-rate__items">
                             <div class="review-rating-inner__item">
-                                <div class="review-rating-rate__item-text">5 stars</div>
-                                <div class="review-rating-rate__item-fill">
-                                    <span class="review-rating-rate__item-fill__fill rating-fill-width1"></span>
+                                <div class="review-rating-rate__item-text detail-list-rating">
+                                {{$item->stars}}<i class="fa fa-star"></i>
                                 </div>
-                                <div class="review-rating-rate__item-percent-text">77 %</div>
+                                <div class="review-rating-rate__item-fill">
+                                    <span class="review-rating-rate__item-fill__fill rating-fill-widthMYOWN" style="width: {{round(($item['amount'] / $user->countStars()['total']) * 100, 0)}}%;"></span>
+                                </div>
+                                <div class="review-rating-rate__item-percent-text">
+                                    {{  round(($item['amount'] / $user->countStars()['total']) * 100, 0) . '%' }}
+                                </div>
                             </div>
                         </li>
-                        <li class="review-rating-rate__items">
-                            <div class="review-rating-inner__item">
-                                <div class="review-rating-rate__item-text">4 stars</div>
-                                <div class="review-rating-rate__item-fill">
-                                    <span class="review-rating-rate__item-fill__fill rating-fill-width2"></span>
-                                </div>
-                                <div class="review-rating-rate__item-percent-text">54 %</div>
-                            </div>
-                        </li>
-                        <li class="review-rating-rate__items">
-                            <div class="review-rating-inner__item">
-                                <div class="review-rating-rate__item-text">3 stars</div>
-                                <div class="review-rating-rate__item-fill">
-                                    <span class="review-rating-rate__item-fill__fill rating-fill-width3"></span>
-                                </div>
-                                <div class="review-rating-rate__item-percent-text">14 %</div>
-                            </div>
-                        </li>
-                        <li class="review-rating-rate__items">
-                            <div class="review-rating-inner__item">
-                                <div class="review-rating-rate__item-text">2 stars</div>
-                                <div class="review-rating-rate__item-fill">
-                                    <span class="review-rating-rate__item-fill__fill rating-fill-width4"></span>
-                                </div>
-                                <div class="review-rating-rate__item-percent-text">5 %</div>
-                            </div>
-                        </li>
-                        <li class="review-rating-rate__items">
-                            <div class="review-rating-inner__item">
-                                <div class="review-rating-rate__item-text">1 stars</div>
-                                <div class="review-rating-rate__item-fill">
-                                    <span class="review-rating-rate__item-fill__fill rating-fill-width5"></span>
-                                </div>
-                                <div class="review-rating-rate__item-percent-text">2 %</div>
-                            </div>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
                 <!-- end review-rating-rate -->

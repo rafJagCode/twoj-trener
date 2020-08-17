@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -136,5 +138,18 @@ class User extends Authenticatable
 
     public function avgStars(){
         return number_format($this->ratings()->get()->avg('stars'), 1);
+    }
+
+    /**
+     * Zliczanie każdej oceny
+     */
+    public function countStars()
+    {
+        $ratings = $this->ratings()->select('stars', DB::raw('count(ratings_id) as amount'))
+            ->groupBy('stars')
+            ->get();
+        $total = $ratings->sum('amount');
+        $out = compact('ratings', 'total');
+        return $out;
     }
 }

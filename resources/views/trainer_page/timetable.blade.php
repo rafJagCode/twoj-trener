@@ -1,6 +1,6 @@
 <div class="widget-boxed mt-5">
     <div class="widget-boxed-header">
-        <h4><i class="fa fa-clock-o pr-3 padd-r-10"></i>Opening Hours</h4>
+        <h4><i class="fa fa-clock-o pr-3 padd-r-10"></i>Godziny pracy</h4>
     </div>
     <div class="widget-boxed-body">
         <div class="side-list">

@@ -9,8 +9,8 @@
                 <div class="login-wrap">
                     <ul class="d-flex">
                     @guest
-                        <li><a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a></li>
-                        <li><a href="{{ route('register') }}"><i class="fa fa-sign-in"></i> Register</a></li>
+                        <li><a href="{{ route('login') }}"><i class="fa fa-user"></i> Logowanie</a></li>
+                        <li><a href="{{ route('register') }}"><i class="fa fa-sign-in"></i> Rejestracja</a></li>
                     @else
                         @if( auth()->user()->isTrainer())
                             <li><a href="{{route('trainer-dashboard.index')}}"><i class="fa fa-user"></i> Dashboard</a></li>

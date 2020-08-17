@@ -23,8 +23,8 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="mb-4 rest">{{ $rating->created_at->format('d-m-Y') }}</p>
                         <p>{{ $rating->note }}</p>
+                        <p class="mb-4 rest">{{ $rating->created_at->format('d-m-Y') }}</p>
                     </div>
                 </li>
             @endforeach

@@ -43,11 +43,11 @@ class UsersTableSeeder extends Seeder
         $user->password = bcrypt('user');
         $user->save();
         $user->roles()->attach($trainerRole);
-        for ($i = 1; $i < 4; $i++)
+        for ($i = 1; $i <= 4; $i++)
             $user->ratings()->attach($i);
             // $user->ratings()->attach(2);
         $user->gyms()->attach($justGym);
-        for ($j = 1; $j < 5; $j++)
+        for ($j = 1; $j <= 5; $j++)
             $user->disciplines()->attach($j);
 
         $user = new User();
@@ -60,11 +60,11 @@ class UsersTableSeeder extends Seeder
         $user->password = bcrypt('user');
         $user->save();
         $user->roles()->attach($trainerRole);
-        for ($i = 1; $i < 4; $i++)
+        for ($i = 1; $i <= 6; $i++)
             $user->ratings()->attach($i);
         // $user->ratings()->attach($rating1);
         $user->gyms()->attach($justGym);
-        for ($j = 1; $j < 7; $j++)
+        for ($j = 1; $j <= 7; $j++)
             $user->disciplines()->attach($j);
 
         $user = new User();
@@ -76,11 +76,11 @@ class UsersTableSeeder extends Seeder
         $user->password = bcrypt('user');
         $user->save();
         $user->roles()->attach($trainerRole);
-        for ($i = 1; $i < 4; $i++)
+        for ($i = 1; $i <= 2; $i++)
             $user->ratings()->attach($i);
         // $user->ratings()->attach($rating1);
         $user->gyms()->attach($justGym);
-        for ($j = 1; $j < 6; $j++)
+        for ($j = 1; $j <= 6; $j++)
             $user->disciplines()->attach($j);
 
         $user = new User();
@@ -93,7 +93,7 @@ class UsersTableSeeder extends Seeder
         $user->password = bcrypt('user');
         $user->save();
         $user->roles()->attach($trainerRole);
-        for ($i = 1; $i < 4; $i++)
+        for ($i = 1; $i <= 7; $i++)
             $user->ratings()->attach($i);
         // $user->ratings()->attach($rating3);
         $user->gyms()->attach($justGym);
@@ -119,7 +119,7 @@ class UsersTableSeeder extends Seeder
         $user->password = bcrypt('user');
         $user->save();
         $user->roles()->attach($trainerRole);
-        for ($i = 1; $i < 4; $i++)
+        for ($i = 1; $i <= 4; $i++)
             $user->ratings()->attach($i);
         // $user->ratings()->attach($rating3);
         $user->gyms()->attach($justGym);
@@ -134,7 +134,7 @@ class UsersTableSeeder extends Seeder
         $user->save();
         $user->roles()->attach($trainerRole);
         $user->gyms()->attach($justGym);
-        for ($j = 1; $j < 4; $j++)
+        for ($j = 1; $j <= 5; $j++)
             $user->disciplines()->attach($j);
 
         $user = new User();
