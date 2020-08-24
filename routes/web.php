@@ -37,6 +37,7 @@ Route::group([
     'roles'=>'Trainer'
 ], function () {
 
+    Route::get('/message', 'MessageController@index');
     Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('trainer-dashboard.index');
     Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
     Route::post('/trainer-dashboard', 'ImageController@save')->name('save.image');
