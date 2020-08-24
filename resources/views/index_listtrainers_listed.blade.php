@@ -19,11 +19,11 @@
                             <option>Sells: High to low</option>
                             <option>Sells: Low to high</option>
                         </select>
-                        <a href="#" class="change-view-btn lde">
+                        <a href="#" class="change-view-btn active-view-btn">
                             {{-- @include('index_listtrainers') --}}
                             <i class="fa fa-th-list"></i>
                         </a>
-                        <a href="#" class="change-view-btn active-view-btn">
+                        <a href="#" class="change-view-btn lde">
                             {{-- @include('index_listtrainers_listed') --}}
                             <i class="fa fa-th-large"></i>
                         </a>
@@ -35,14 +35,14 @@
         <!-- Block heading end -->
         <div class="row popular featured portfolio-items">
             @foreach ($matchedTrainers as $user)
-            <div class="item col-lg-4 col-md-6 col-xs-12 landscapes">
-                <div class="project-single">
+            <div class="item col-lg-4 col-md-12 col-xs-12 landscapes sale pr-0 pb-0">
+                <div class="project-single mb-0 bb-0">
                     <div class="project-inner project-head">
                         <div class="homes">
                             <!-- homes img -->
                             <a href="{{ url('trainer', $user->id) }}" class="homes-img hover-effect">
                                 @if($user->profileFeature() !== null)
-                                    <div class="homes-tag button alt featured {{ $user->profileFeature()[1] }}">{{ $user->profileFeature()[0] }}</div>
+                                    <div class="homes-tag button alt featured f1 {{ $user->profileFeature()[1] }}">{{ $user->profileFeature()[0] }}</div>
                                 @endif
                                 <div class="homes-price">
                                     <ul class="starts text-left mb-0">
@@ -72,39 +72,41 @@
                                 <div class="overlay"></div>
                             </a>
                         </div>
-                        <div class="fr-grid-thumb">
-                            <a href="candidate-profile.html">
-                                <div class="overall-rate"><i class="fas fa-check"></i></div>
-                                <img src="{{ $user->profilePicture() }}" class="img-fluid mx-auto" alt="" />
-                            </a>
-                        </div>
                     </div>
-                    <!-- homes content -->
-                    <div class="homes-content">
-                        <!-- homes address -->
-                        <a href="{{ url('trainer', $user->id) }}"><h3>{{ $user->firstName }} {{ $user->secondName }}</h3></a>
-                        <!-- homes List -->
-                        <ul class="homes-list clearfix">
-                            <li>
-                                <i class="fa fa-map-marker"></i>
-                                <span>{{ $user->city }}</span>
-                            </li>
-                            <li>
-                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                <span>{{ $user->phoneNumber }}</span>
-                            </li>
-                            <li>
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <span>{{ $user->created_at->format('d-m-Y') }}</span>
-                            </li>
-                        </ul>
-                    </div>
+                </div>
+            </div>
+            <!-- homes content -->
+            <div class="col-lg-8 col-md-12 homes-content pb-0 mb-44">
+                <div class="enty">
+                    <!-- homes address -->
+                    <a href="{{ url('trainer', $user->id) }}"><h3 class="mb-4">{{ $user->firstName }} {{ $user->secondName }}</h3></a>
+                    <!-- homes List -->
+                    <ul class="homes-list clearfix">
+                        <li>
+                            <i class="fa fa-map-marker"></i>
+                            <span>{{ $user->city }}</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <span>{{ $user->phoneNumber }}</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <span>{{ $user->created_at->format('d-m-Y') }}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="fr-grid-thumb">
+                    <a href="candidate-profile.html">
+                        <div class="overall-rate"><i class="fas fa-check"></i></div>
+                        <img src="{{ $user->profilePicture() }}" class="img-fluid mx-auto" alt="" />
+                    </a>
                 </div>
             </div>
             @endforeach
         </div>
 
-        <nav aria-label="..." class="pt-2">
+        <nav aria-label="..." class="pt-3">
             <ul class="pagination mt-0">
                 <li class="page-item disabled">
                     <a class="page-link" href="#" tabindex="-1">Previous</a>

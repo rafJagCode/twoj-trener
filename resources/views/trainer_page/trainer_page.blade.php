@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('title', 'trainer_page')
-
-{{-- @section('head')
+{{--
+@section('head')
     <link href="{{ asset('/css/trainer_page.css') }}" rel="stylesheet">
 @endsection --}}
 @section('scripts')
@@ -25,25 +25,6 @@
 @endsection
 
 @section('content')
-{{-- <div class="trainer-page-wrapper"> --}}
-    {{-- @include('trainer_page.info') --}}
-    {{-- @include('trainer_page.message_bar')
-    @include('trainer_page.description')
-    @if(count($photos)>0)
-        @include('trainer_page.gallery')
-    @endif
-    @include('trainer_page.certyficates')
-    @include('trainer_page.calendar')
-    @foreach($ratings as $rating)
-        @include('trainer_page.ratings')
-    @endforeach
-    @include('trainer_page.modals.closeup')
-    @include('trainer_page.modals.message')
-    @include('trainer_page.modals.rate') --}}
-
-{{-- </div> --}}
-
-<!-- START SECTION LISTING DETAIL-->
     <section class="listing blog details">
         <div class="container">
             <div class="row">
@@ -61,9 +42,7 @@
                     @include('trainer_page.disciplines')
                     @include('trainer_page.ratings')
                     <!-- START SECTION ASSIGNED AGENTS -->
-
-                        @include('trainer_page.reviews')
-
+                    @include('trainer_page.reviews')
                     <!-- END SECTION ASSIGNED AGENTS -->
                 </div>
                 <aside class="col-lg-4 col-md-12 car">
@@ -73,7 +52,6 @@
                         <!-- End Agent Information -->
                         <!-- Start: Opening hour -->
                         @include('trainer_page.timetable')
-                        @include('trainer_page.leave_review')
                         <!-- End: Opening hour -->
                     </div>
                 </aside>
@@ -81,6 +59,4 @@
         </div>
     </section>
     <!-- END SECTION LISTING DETAIL -->
-
-
 @endsection

@@ -1,5 +1,16 @@
 <section class="reviews comments">
-    <h3 class="mb-5">Opinie: {{ $ratings->count() }}</h3>
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="mb-5">Opinie: {{ $ratings->count() }}</h3>
+        </div>
+        <div class="col-md-6">
+            @guest
+            @else
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#reviewModal">Dodaj opinie</a>
+            @endguest
+        </div>
+    </div>
+    <div class="clearfix"></div>
     <div class="row mb-5">
         <ul class="col-12 commented pl-0">
             @if ($ratings->count() == null)
@@ -29,5 +40,20 @@
                 </li>
             @endforeach
         </ul>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" id="reviewModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="reviewModal">Dodaj opinię</h4>
+                    <button type="button" name="button" class="close" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @include('trainer_page.modals.leave_review')
+                </div>
+            </div>
+        </div>
     </div>
 </section>

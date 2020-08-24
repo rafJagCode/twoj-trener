@@ -4,6 +4,15 @@
     <div class="header-top head-tr">
         <div class="container">
             <div class="top-info hidden-sm-down">
+                <div class="call-header">
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> (234) 0200 17813</p>
+                </div>
+                <div class="address-header">
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> 95 South Park Ave, USA</p>
+                </div>
+                <div class="mail-header">
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i> info@listifind.com</p>
+                </div>
             </div>
             <div class="top-social hidden-sm-down">
                 <div class="login-wrap">
@@ -51,7 +60,7 @@
     <div class="clearfix"></div>
     <!-- Topbar / End -->
     <!-- Header -->
-    <div id="header" class="head-tr bottom">
+    <div id="header" class="head-tr bottom" style="background-color: rgba(255, 255, 255, 0.2);">
         <div class="container">
             <!-- Left Side Content -->
             <div class="left-side">
@@ -90,7 +99,7 @@
             <!-- Right Side Content / End -->
         </div>
     </div>
-    <div id="header" class="head-tr bottom cloned unsticky">
+    <div id="header" class="head-tr bottom cloned unsticky" style="background: rgb(246, 246, 246);">
         <div class="container">
             <!-- Left Side Content -->
             <div class="left-side">
