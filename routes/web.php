@@ -101,6 +101,10 @@ Route::get("/trainers/sort",'SearchController@sort')->name('user.sort');
 //Route::get("/",'WelcomeController@show')->name('welcome.show');
 
 
+//Routes for Message--------------------------------------------------------------------------------------------------------
+Route::get('/message', 'MessageController@index')->name('message');
+Route::get('/message/{id}', 'MessageController@getMessage')->name('message');
+Route::post('message', 'MessageController@sendMessage');
 
 
 

@@ -120,7 +120,7 @@
         border: 1px solid #aaaaaa;
     }
 </style>
-
+ 
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -130,168 +130,101 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 @endsection
 @section('content')
-
+ 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">  
             <div class="user-wrapper">
                 <ul class="users">
-                    {{--@foreach (users as $user)--}}
-                        <li class="user" {{-- id=" {{ $user->id }}"--}}>
-                            {{-- pokaże powiadomienie o liczbie nieprzeczytanych --}}
-                            {{--@if($user->unread)--}}
-                                <span class="pending">1{{--{{ $user->unread }}--}}</span>
-                            {{--@endif--}}
-
+                    @foreach($users as $user)
+                        <li class="user" id="{{$user->id}}">
+                                @if($user->unread)
+                                <span class="pending">{{$user->unread}}</span>
+                                @endif
                             <div class="media">
-                                
+ 
                                 <div class="media-left">
-                                    <img src="https://via.placeholder.com/150{{--{{ $user->avatar }}--}}" alt="" class="media-object">
+                                    <img src="{{$user->avatar}}" alt="" class="media-object">
                                 </div>
-
+ 
                                 <div class="media-body">
-                                    <p class="name">John Doe{{--{{ $user->firstName }}--}}</p>
-                                    <p class="email">john@email.com{{--{{ $user->email }}--}}</p>
+                                    <p class="name">{{$user->firstName}}</p>
+                                    <p class="email">{{$user->email}}</p>
                                 </div>
-
+ 
                             </div>
                         </li>
-                    {{--@endforeach--}}
+                    @endforeach
                 </ul>
             </div>
         </div>
-        
+ 
         <div class="col-md-8" id="messages">
-            <div class="message-wrapper">
-                <ul class="messages">
-                    <li class="message clearfix">
-                        <div class="sent">
-                            <p>Lorem ipsum dolor.</p>
-                            <p class="date">1 Sep, 2020</p>
-                        </div>
-                    </li>
-                    <li class="message clearfix">
-                        <div class="received">
-                            <p>Lorem ipsum dolor.</p>
-                            <p class="date">1 Sep, 2020</p>
-                        </div>
-                    </li>
-
-                    <li class="message clearfix">
-                        <div class="sent">
-                            <p>Lorem ipsum dolor.</p>
-                            <p class="date">1 Sep, 2020</p>
-                        </div>
-                    </li>
-                    <li class="message clearfix">
-                        <div class="received">
-                            <p>Lorem ipsum dolor.</p>
-                            <p class="date">1 Sep, 2020</p>
-                        </div>
-                    </li>
-
-                    <li class="message clearfix">
-                        <div class="sent">
-                            <p>Lorem ipsum dolor.</p>
-                            <p class="date">1 Sep, 2020</p>
-                        </div>
-                    </li>
-                    <li class="message clearfix">
-                        <div class="received">
-                            <p>Lorem ipsum dolor.</p>
-                            <p class="date">1 Sep, 2020</p>
-                        </div>
-                    </li>
-
-                    <li class="message clearfix">
-                        <div class="sent">
-                            <p>Lorem ipsum dolor.</p>
-                            <p class="date">1 Sep, 2020</p>
-                        </div>
-                    </li>
-                    <li class="message clearfix">
-                        <div class="received">
-                            <p>Lorem ipsum dolor.</p>
-                            <p class="date">1 Sep, 2020</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="input-text">
-                <input type="text" name="message" class="submit">
-            </div>
-
+           
+ 
         </div>
-
+ 
     </div>
 </div>
-
-{{-- 
-<script src="https://js.pusher.com/5.0/pusher.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     var receiver_id = '';
-    var my_id = "{{ Auth::id() }}";
-    $(document).ready(function () {
-        // formularz konfiguracji AJAX token csrf
+    var my_id = "{{Auth::id()}}";
+    $(document).ready(function(){
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        // Włącz logowanie pushera nie uwzględniaj tego w produkcji
+        // Enable pusher logging - don't include this in production
         Pusher.logToConsole = true;
-        var pusher = new Pusher('49f3ba8c9d3adab2613e', {
-            cluster: 'ap2',
-            forceTLS: true
+
+        var pusher = new Pusher('303fe3582f568f111ddf', {
+            cluster: 'eu'
         });
+
         var channel = pusher.subscribe('my-channel');
-        channel.bind('my-event', function (data) {
-            // alert(JSON.stringify(data));
-            if (my_id == data.from) {
-                $('#' + data.to).click();
+        channel.bind('my-event', function(data) {
+            alert(JSON.stringify(data));
+            if (my_id == data.to) {
+                $('#' + data.from).click();
             } else if (my_id == data.to) {
-                if (receiver_id == data.from) {
-                    //jeśli wybrany jest odbiorca, załaduj ponownie wybranego użytkownika
+                if(receiver_id == data.from) {
                     $('#' + data.from).click();
                 } else {
-                    // if receiver is not seleted, add notification for that user
-                    var pending = parseInt($('#' + data.from).find('.pending').html());
-                    if (pending) {
-                        $('#' + data.from).find('.pending').html(pending + 1);
-                    } else {
-                        $('#' + data.from).append('<span class="pending">1</span>');
-                    }
+                    $('#' + data.from).append('<span class="pending">1</span>');
                 }
             }
         });
-        $('.user').click(function () {
+
+
+        $('.user').click(function(){
             $('.user').removeClass('active');
             $(this).addClass('active');
             $(this).find('.pending').remove();
+
             receiver_id = $(this).attr('id');
             $.ajax({
                 type: "get",
-                url: "message/" + receiver_id, //trzeba stworzyc ten route
+                url: "message/" + receiver_id,
                 data: "",
                 cache: false,
-                success: function (data) {
+                success: function (data){
                     $('#messages').html(data);
-                    scrollToBottomFunc();
+                    scrollToBottom();
                 }
             });
         });
+        
         $(document).on('keyup', '.input-text input', function (e) {
             var message = $(this).val();
-            //sprawdź, czy naciśnięto klawisz Enter i wiadomość nie jest zerowa wybrany jest odbiorca
             if (e.keyCode == 13 && message != '' && receiver_id != '') {
-                $(this).val(''); //podczas naciskania enter pole tekstowe będzie puste
+                $(this).val(''); // while pressed enter text box will be empty
                 var datastr = "receiver_id=" + receiver_id + "&message=" + message;
                 $.ajax({
                     type: "post",
-                    url: "message", //trzeba utworzyć ten post route
+                    url: "message", // need to create this post route
                     data: datastr,
                     cache: false,
                     success: function (data) {
@@ -299,18 +232,17 @@
                     error: function (jqXHR, status, err) {
                     },
                     complete: function () {
-                        scrollToBottomFunc();
+                        scrollToBottom();
                     }
                 })
             }
         });
+
+        function scrollToBottom(){
+            $('.message-wrapper').animate({
+                scrollTop: $('.message-wrapper').get(0).scrollHeight
+            }, 50);
+        }
     });
-    // make a function to scroll down auto
-    function scrollToBottomFunc() {
-        $('.message-wrapper').animate({
-            scrollTop: $('.message-wrapper').get(0).scrollHeight
-        }, 50);
-    }
-</script>    
---}}
+</script>
 @endsection
