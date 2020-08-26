@@ -37,6 +37,7 @@ Route::group([
     'roles'=>'Trainer'
 ], function () {
 
+    Route::get('/message', 'MessageController@index');
     Route::get('/trainer-dashboard', 'Trainer\DashboardController@index')->name('trainer-dashboard.index');
     Route::patch('/trainer-dashboard', 'Trainer\DashboardController@update')->name('trainer-dashboard.update');
     Route::post('/trainer-dashboard', 'ImageController@save')->name('save.image');
@@ -100,6 +101,10 @@ Route::get("/trainers/sort",'SearchController@sort')->name('user.sort');
 //Route::get("/",'WelcomeController@show')->name('welcome.show');
 
 
+//Routes for Message--------------------------------------------------------------------------------------------------------
+Route::get('/message', 'MessageController@index')->name('message');
+Route::get('/message/{id}', 'MessageController@getMessage')->name('message');
+Route::post('message', 'MessageController@sendMessage');
 
 
 

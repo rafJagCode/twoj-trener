@@ -11,7 +11,7 @@
     <div class="row text-center">
         <div class="col-lg-12 ">
             <div class="alert alert-warning">
-                <strong>Witaj {{$user->firstName}} ! </strong> Nie masz nowych wiadomości.
+                <strong>Witaj {{$user->firstName}} ! </strong> Twoje nowe wiadomości: {{$user->unread}}
             </div>
         </div>
     </div>
@@ -60,10 +60,10 @@
             </a>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <a href="#" class="no-underline">
+            <a href="{{'message'}}" class="no-underline">
                 <div class="div-square py-3">
                     <i class="fas fa-comments fa-5x"></i>
-                    <h4>Wiadmomości</h4>
+                    <h4>Wiadomości</h4>
                 </div>
             </a>
         </div>
