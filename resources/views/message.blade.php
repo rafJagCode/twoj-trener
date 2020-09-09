@@ -160,7 +160,9 @@
         </div>
  
         <div class="col-md-8" id="messages">
-           
+           <div id="app">
+               <example-component></example-component>
+           </div>
  
         </div>
  
