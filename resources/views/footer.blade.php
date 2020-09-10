@@ -61,47 +61,48 @@
                         <ul class="photo">
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-1.jpeg" alt=""></a>
+                                    <!-- Docelowo images/instagram/inst-1.jpeg" -->
+                                    <a href="#"><img src="https://via.placeholder.com/150" alt=""></a>
                                 </figure>
                             </li>
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-2.jpeg" alt=""></a>
+                                    <a href="#"><img src="https://via.placeholder.com/150" alt=""></a>
                                 </figure>
                             </li>
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-3.jpeg" alt=""></a>
+                                    <a href="#"><img src="https://via.placeholder.com/150" alt=""></a>
                                 </figure>
                             </li>
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-4.jpeg" alt=""></a>
+                                    <a href="#"><img src="https://via.placeholder.com/150" alt=""></a>
                                 </figure>
                             </li>
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-5.jpg" alt=""></a>
+                                    <a href="#"><img src="https://via.placeholder.com/150" alt=""></a>
                                 </figure>
                             </li>
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-6.jpeg" alt=""></a>
+                                    <a href="#"><img src="https://via.placeholder.com/150" alt=""></a>
                                 </figure>
                             </li>
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-7.jpeg" alt=""></a>
+                                    <a href="#"><img src="https://via.placeholder.com/150" alt=""></a>
                                 </figure>
                             </li>
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-8.jpg" alt=""></a>
+                                    <a href="#"><img src="https://via.placeholder.com/150" alt=""></a>
                                 </figure>
                             </li>
                             <li class="hover-effect">
                                 <figure>
-                                    <a href="#"><img src="images/instagram/inst-9.jpeg" alt=""></a>
+                                    <a href="#"><img src="https://via.placeholder.com/150" alt=""></a>
                                 </figure>
                             </li>
                         </ul>
