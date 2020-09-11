@@ -258,7 +258,7 @@ a.button.border, a.button {
         margin-bottom: 0px;
     }
     #header-container.header-style-2 .header-widget {
-        zoom: 0.7;
+        /* zoom: 0.7; */
     }
 }
 @media (max-width: 991px) { 
