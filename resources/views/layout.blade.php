@@ -21,60 +21,61 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     @yield('head')
     @yield('additional-css')
 </head>
 <body class="inner-pages homepage-1">
-    <div id="wrapper" class="mm-page mm-slideout">
-        @include('header')
-        <div class="clearfix"></div>
-        <section class="headings">
-            <div class="text-heading text-center">
-                <div class="container">
-                <h1>{{ \Request::route()->getName() }}</h1>
+    <div id="app">
+        <div id="wrapper" class="mm-page mm-slideout">
+            @include('header')
+            <div class="clearfix"></div>
+            <section class="headings">
+                <div class="text-heading text-center">
+                    <div class="container">
+                    <h1>{{ \Request::route()->getName() }}</h1>
+                    </div>
                 </div>
-            </div>
-        </section>
-        <section class="content">
-            <div class="container">
-                @yield('content')
-            </div>
-        </section>
+            </section>
+            <section class="content">
+                <div class="container">
+                    @yield('content')
+                </div>
+            </section>
 
-        @include('footer')
+            @include('footer')
 
-        <!-- START PRELOADER -->
-        <div id="preloader">
-            <div id="status">
-                <div class="status-mes"></div>
-            </div>
         </div>
-        <!-- END PRELOADER -->
-
-        <!-- ARCHIVES JS
-        <script src="{{ route('home') }}/js/jquery.min.js"></script>
-        -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-        <script>
-            moment().format();
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
-        <script src="{{ route('home') }}/js/mmenu.min.js"></script>
-        <script src="{{ route('home') }}/js/mmenu.js"></script>
-        <!-- MAIN JS -->
-        @yield('scripts')
-        <script src="{{ asset('js/slick.min.js') }}"></script>
-        <script src="{{ asset('js/slick1.js') }}"></script>
-        <!-- SORT -->
-        <script src="{{ asset('js/sorting.js') }}"></script>
-        <!-- GRID/LIST -->
-        <script src="{{ asset('js/gridList.js') }}"></script>
-        <!-- CHECKBOXES -->
-        <script src="{{ asset('js/checkboxes.js') }}"></script>
-        <script src="{{ route('home') }}/js/script.js"></script>
     </div>
-<!-- Wrapper / End -->
+    <!-- START PRELOADER -->
+    <div id="preloader">
+        <div id="status">
+            <div class="status-mes"></div>
+        </div>
+    </div>
+    <!-- END PRELOADER -->
+<!-- ARCHIVES JS
+<script src="{{ route('home') }}/js/jquery.min.js"></script>
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+<script>
+    moment().format();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
+<script src="{{ route('home') }}/js/mmenu.min.js"></script>
+<script src="{{ route('home') }}/js/mmenu.js"></script>
+<!-- MAIN JS -->
+@yield('scripts')
+<script src="{{ asset('js/slick.min.js') }}"></script>
+<script src="{{ asset('js/slick1.js') }}"></script>
+<!-- SORT -->
+<script src="{{ asset('js/sorting.js') }}"></script>
+<!-- GRID/LIST -->
+<script src="{{ asset('js/gridList.js') }}"></script>
+<!-- CHECKBOXES -->
+<script src="{{ asset('js/checkboxes.js') }}"></script>
+<script src="{{ route('home') }}/js/script.js"></script>
 </body>
 </html>
 
