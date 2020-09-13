@@ -105,6 +105,9 @@ Route::get("/trainers/sort",'SearchController@sort')->name('user.sort');
 Route::get('/message', 'MessageController@index')->name('message');
 Route::get('/message/{id}', 'MessageController@getMessage')->name('message');
 Route::post('message', 'MessageController@sendMessage');
+Route::get('/contacts', 'ContactsController@get');
+Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
+Route::post('/conversation/send', 'ContactsController@send');
 
 
 
