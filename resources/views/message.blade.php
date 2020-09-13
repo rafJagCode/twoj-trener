@@ -1,5 +1,44 @@
 @extends('layout')
 @section('head')
+    <!-- App.js -->
+    
+@endsection
+@section('content')
+    <div class="container my-3">
+        <div class="row-justify-content-center">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">Chat App</div>
+
+                    <div class="card-body" style="padding: 0">
+                        <chat-app :user="{{auth()->user()}}"></chat-app>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- @section('head')
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -160,9 +199,6 @@
         </div>
  
         <div class="col-md-8" id="messages">
-           <div id="app">
-               <example-component></example-component>
-           </div>
  
         </div>
  
@@ -247,4 +283,4 @@
         }
     });
 </script>
-@endsection
+@endsection --}}
