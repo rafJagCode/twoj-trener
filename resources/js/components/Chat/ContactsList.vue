@@ -1,7 +1,10 @@
 <template>
     <div class="contacts-list">
+        <div class="search-container">
+            <input class="search-contact-input form-control" type="text" v-model="searchedContact" placeholder="Wyszukaj kontakt" aria-label="Wyszukaj kontakt">
+        </div>
         <ul>
-            <li v-for="contact in sortedContacts" :key="contact.id" @click="selectContact(contact)" :class="{'selected' : contact===selected}">
+            <li v-for="contact in filteredConstacts" :key="contact.id" @click="selectContact(contact)" :class="{'selected' : contact===selected}">
                 <div class="avatar">
                     <img :src="/images/ + contact.profilePicture" :alt="contact.name" class="avatar-img">
                 </div>
@@ -21,7 +24,8 @@
     export default{
         data(){
             return{
-                selected: null
+                selected: null,
+                searchedContact: ''
             }
         },
         props: {
@@ -45,6 +49,15 @@
                     }
                     return contact.unread;
                 }]).reverse();
+            },
+            filteredConstacts(){
+                if(this.searchedContact===''){
+                    return this.sortedContacts;
+                }
+                return this.sortedContacts.filter((contact)=>{
+                    return contact.firstName.toLowerCase().match(this.searchedContact.toLowerCase())
+                        || contact.secondName.toLowerCase().match(this.searchedContact.toLowerCase());
+                })
             }
         }
     }
@@ -122,5 +135,11 @@
     }
     .unread-icon{
         padding-right: 10px;
+    }
+    .search-container{
+        padding:10px;
+    }
+    .search-contact-input{
+        margin: auto;
     }
 </style>
