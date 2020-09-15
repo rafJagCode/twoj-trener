@@ -11,11 +11,26 @@ use Illuminate\Support\Facades\Log;
 class ContactsController extends Controller
 {
     public function get(){
-        $contacts = User::where('id', '<', 4)->where('id', '!=', auth()->id())->get();
+        $contacts = User::where('id', '!=', auth()->id())->get();
+        Log::debug($contacts);
+        $unreadIds = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))
+            ->where('to', auth()->id())
+            ->where('is_read', 0)
+            ->groupBy('from')
+            ->get();
+
+        $contact = $contacts->map(function($contact) use ($unreadIds){
+            $contactUnread = $unreadIds->where('sender_id', $contact->id)->first();
+
+            $contact->unread = $contactUnread ? $contactUnread->messages_count : 0;
+            return $contact;
+        });
+        Log::debug($contacts);
         return response()->json($contacts);
     }
     public function getMessagesFor($id)
     {
+        Message::where('from', $id)->where('to', auth()->id())->update(['is_read'=>1]);
         $messages = Message::where(function($q) use ($id) {
             $q->where('from', auth()->id());
             $q->where('to', $id);

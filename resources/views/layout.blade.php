@@ -10,8 +10,7 @@
     <title>Twoj-trener</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Asap:400,400i%7CMontserrat:600,800" rel="stylesheet">
-    {{-- <script src="https://kit.fontawesome.com/ec51452c3d.js" crossorigin="anonymous"></script> --}}
-    <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css')}}"> --}}
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{ asset('css/menu.css')}}">
@@ -23,6 +22,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- Font Awesome --}}
+    <script src="https://kit.fontawesome.com/0d7abf7cdc.js" crossorigin="anonymous"></script>
     @yield('head')
     @yield('additional-css')
 </head>

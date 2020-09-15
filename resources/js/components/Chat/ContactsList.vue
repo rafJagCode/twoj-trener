@@ -1,13 +1,17 @@
 <template>
     <div class="contacts-list">
         <ul>
-            <li v-for="(contact, index) in contacts" :key="contact.id" @click="selectContact(index, contact)" :class="{'selected' : index===selected}">
+            <li v-for="contact in sortedContacts" :key="contact.id" @click="selectContact(contact)" :class="{'selected' : contact===selected}">
                 <div class="avatar">
                     <img :src="/images/ + contact.profilePicture" :alt="contact.name" class="avatar-img">
                 </div>
                 <div class="contact">
                     <p class="name">{{contact.firstName}} {{contact.secondName}}</p>
                     <p class="email">{{contact.email}}</p>
+                </div>
+                <div class="message-notification" v-if="contact.unread">
+                    <span class="unread-count">{{contact.unread}}</span>
+                    <i class="unread-icon fas fa-envelope fa-2x"></i>
                 </div>
             </li>
         </ul>
@@ -17,7 +21,7 @@
     export default{
         data(){
             return{
-                selected: 0
+                selected: null
             }
         },
         props: {
@@ -27,10 +31,20 @@
             }
         },
         methods:{
-            selectContact(index, contact){
-                this.selected = index;
+            selectContact(contact){
+                this.selected = contact;
                 
                 this.$emit('selected', contact);
+            }
+        },
+        computed:{
+            sortedContacts(){
+                return _.sortBy(this.contacts, [(contact)=>{
+                    if(contact === this.selected){
+                        return Infinity;
+                    }
+                    return contact.unread;
+                }]).reverse();
             }
         }
     }
@@ -86,5 +100,27 @@
     }
     .name{
         font-weight: bold;
+    }
+    .message-notification{
+        display: flex;
+        flex-direction: column;
+        margin:10px 0;
+        position: relative;
+        right:10px;
+    }
+    .unread-count{
+        align-self: flex-end;
+        font-size: 11px;
+        font-weight: 700;
+        border-radius: 20%;
+        background: red;
+        padding: 3px;
+        position: relative;
+        line-height: 11px;
+        top: 10px;
+        right: 2px;
+    }
+    .unread-icon{
+        padding-right: 10px;
     }
 </style>
