@@ -8,7 +8,7 @@
                     <span class="heading-icon">
                         <i class="fa fa-th-list"></i>
                         </span>
-                        <span class="hidden-sm-down">Lisa trenerów</span>
+                        <span class="hidden-sm-down">Lista trenerów</span>
                     </h4>
                 </div>
                 <div class="col-lg-6 col-md-7 col-10 cod-pad mt-22">

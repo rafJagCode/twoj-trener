@@ -7,9 +7,11 @@
 
 @section('content')
     @yield('searcher')
-    <!-- START SECTION HOW IT WORKS -->
-    @include('index_howitworks')
-    <!-- END SECTION HOW IT WORKS -->
+    <!-- START SECTION LIST TRAINERS -->
+    <div class="container">
+        @include('index_listtrainers')
+    </div>
+    <!-- END SECTION LIST TRAINERS -->
     <!-- START SECTION TRAINERS SLIDER -->
     {{-- <section class="featured popular portfolio freelancers rec-pro-1">
         <div class="container-fluid">
