@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title');
             $table->text('description');
+            $table->enum('kind', ['trening', 'rozmowa']);
             $table->dateTime('start');
             $table->dateTime('end');
             $table->timestamps();

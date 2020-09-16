@@ -1,3 +1,4 @@
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -31,10 +32,21 @@
                   </div>
               </div>
               <div class="form-group">
+                <label>Wybierz:</label>
+
+                <select name="kind" id="kind">
+                  <option value="trening">trening</option>
+                  <option value="rozmowa">rozmowa</option>
+                </select> 
+              </div>
+              <div class="form-group">
                 <label for="description">Opis</label>
                 <textarea class="form-control" name="description" id="description" placeholder="opis" rows="3"></textarea>
               </div>
-  
+              <div class="form-group">
+                <div id="map"></div>
+                
+              </div>
               <div class="form-group">
               <select class="jsmultiple2" name="users[]" id="users" multiple="multiple" placeholder="Dodaj osoby do eventu">
                   
