@@ -1,10 +1,15 @@
 @extends('layout')
 
 @section('title', 'trainer_page')
-{{--
+
 @section('head')
     <link href="{{ asset('/css/trainer_page.css') }}" rel="stylesheet">
-@endsection --}}
+    <link href="{{ asset('/css/leaflet.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/leaflet-gesture-handling.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/leaflet.markercluster.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/leaflet.markercluster.default.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/maps.css') }}" rel="stylesheet">
+@endsection 
 @section('scripts')
     <script type="text/javascript">
         let bigPhoto = $('#big-photo');
@@ -22,6 +27,12 @@
             bigPhoto.attr('src', src);
         });
     </script>
+
+        <script src="{{ asset('/js/leaflet.js') }}"></script>
+        <script src="{{ asset('/js/leaflet-gesture-handling.min.js') }}"></script>
+        <script src="{{ asset('/js/leaflet-providers.js') }}"></script>
+        <script src="{{ asset('/js/leaflet.markercluster.js') }}"></script>
+        <script src="{{ asset('/js/map-style3.js') }}"></script>
 @endsection
 
 @section('content')
@@ -36,6 +47,7 @@
                             <!-- main slider carousel items -->
                             @include('trainer_page.gallery')
                             @include('trainer_page.description')
+                            @include('trainer_page.location')
                         </div>
                     </div>
                     <!-- cars content -->

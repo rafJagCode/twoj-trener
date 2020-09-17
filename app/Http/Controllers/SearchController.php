@@ -17,9 +17,14 @@ class SearchController extends Controller
         $allDisciplines = Dysciplines::all();
         $trainers = collect();
         foreach (User::all() as $user)
-            if ($user->isTrainer())
+            if ($user->hasRole('Trainer'))
+            {
                 $trainers->push($user->id);
+                var_dump($trainers);
+            }
+        //
         $matchedTrainers = User::whereIn('id',$trainers)->orderBy('secondName','asc')->orderBy('firstName','asc')->get();
+        //var_dump($matchedTrainers);
         // dd($matchedTrainers->get());
         Session::put('matchedTrainers', $matchedTrainers);
         // $matchedTrainers = $matchedTrainers->paginate(4);
@@ -283,6 +288,15 @@ class SearchController extends Controller
         $ratings= $user->ratings()->get();
         $certificates= $user->certificates()->get();
         $avgRating=round($ratings->avg('stars'),2);
-        return view('trainer_page.trainer_page',compact('user', 'disciplines', 'photos','avgRating','certificates','ratings'));
+
+        $users = User::all();
+        $cities = collect();
+
+        foreach ($users as $us)
+        {
+            if ($us['city'] != null)
+                $cities->add($us['city']);
+        }
+        return view('trainer_page.trainer_page',compact('user', 'disciplines', 'photos','avgRating','certificates','ratings', 'cities'));
     }
 }
