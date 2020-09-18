@@ -5,12 +5,10 @@
 @section('head')
     <link href="{{ asset('/css/trainer_page.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/leaflet.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/leaflet-gesture-handling.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/leaflet.markercluster.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/leaflet.markercluster.default.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/maps.css') }}" rel="stylesheet">
 @endsection 
 @section('scripts')
+    <script src="{{ asset('/js/leaflet.js') }}"></script>
+
     <script type="text/javascript">
         let bigPhoto = $('#big-photo');
         let src;
@@ -28,11 +26,20 @@
         });
     </script>
 
-        <script src="{{ asset('/js/leaflet.js') }}"></script>
-        <script src="{{ asset('/js/leaflet-gesture-handling.min.js') }}"></script>
-        <script src="{{ asset('/js/leaflet-providers.js') }}"></script>
-        <script src="{{ asset('/js/leaflet.markercluster.js') }}"></script>
-        <script src="{{ asset('/js/map-style3.js') }}"></script>
+    <script type="text/javascript">
+        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'your.mapbox.access.token'
+        }).addTo(mymap);
+    </script>
+
+    
 @endsection
 
 @section('content')
