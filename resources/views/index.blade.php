@@ -13,7 +13,7 @@
     </div>
     <!-- END SECTION LIST TRAINERS -->
     <!-- START SECTION TRAINERS SLIDER -->
-    {{-- <section class="featured popular portfolio freelancers rec-pro-1">
+    <section class="featured popular portfolio freelancers rec-pro-1">
         <div class="container-fluid">
             <div class="sec-title">
                 <h2><span>Najlepsi </span>trenerzy</h2>
@@ -95,7 +95,6 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
                 </div>
             </div>
         </div>
@@ -160,6 +159,6 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <!-- END SECTION TRAINERS SLIDER -->
 @endsection
