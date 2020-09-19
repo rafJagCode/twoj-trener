@@ -1,25 +1,24 @@
-@extends('app')
-
-@section('title', 'trainer_dashboard')
-
-@section('trainer-dashboard-css')
-<link href="{{ asset('/css/trainer_dashboard.css') }}" rel="stylesheet">
+@extends('layout')
+@section('additional-css')
+    <link href="{{ asset('/css/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/additional.css') }}" rel="stylesheet">
 @endsection
 
-@section('trainer-dashboard')
-<div id="wrapper">
-    <div class="row text-center">
-        <div class="col-lg-12 ">
-            <div class="alert alert-warning">
-                <strong>Witaj {{$user->firstName}} ! </strong> Twoje nowe wiadomości: {{$user->unread}}
+@section('content')
+    <section class="featured popular portfolio freelancers rec-pro-1">
+        <div class="container-fluid">
+            <div id="wrapper">
+            
+            <div class="row text-center">
+                <div class="col-lg-12 ">
+                    <div class="alert alert-warning">
+                        <strong>Witaj {{$user->firstName}}! </strong> Twoje nowe wiadomości: {{$user->unread}}
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    @include('errors')
-    <div class="row text-center">
-
-        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="row text-center">
+            <div class="col-lg-4 col-md-6 col-sm-12">
             <a href="#" class="no-underline" data-toggle="modal" data-target="#business-card-modal">
                 <div class="div-square py-3">
                     <i class="fas fa-user fa-5x"></i>
@@ -67,16 +66,20 @@
                 </div>
             </a>
         </div>
+        </div>
 
         @if(session('success'))
             <h4>{{session('success')}}</h4>
         @endif
-
-    </div>
-</div>
+            </div>
+        </div>
+    </section>
 
 @include("trainer_dashboard.modals.business_card")
 @include("trainer_dashboard.modals.description")
 @include("trainer_dashboard.modals.gallery")
 @include("trainer_dashboard.modals.certificates")
+
 @endsection
+
+
