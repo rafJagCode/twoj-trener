@@ -20,15 +20,25 @@ class SearchController extends Controller
             if ($user->hasRole('Trainer'))
             {
                 $trainers->push($user->id);
-                var_dump($trainers);
             }
-        //
         $matchedTrainers = User::whereIn('id',$trainers)->orderBy('secondName','asc')->orderBy('firstName','asc')->get();
-        //var_dump($matchedTrainers);
         // dd($matchedTrainers->get());
         Session::put('matchedTrainers', $matchedTrainers);
         // $matchedTrainers = $matchedTrainers->paginate(4);
         return view('trainers', compact('matchedTrainers', 'allDisciplines'));
+    }
+
+    public function search_userdashboard()
+    {
+        $trainers = collect();
+        foreach (User::all() as $user)
+            if ($user->hasRole('Trainer'))
+                $trainers->push($user->id);
+
+        $matchedTrainers = User::whereIn('id', $trainers)->orderBy('secondName', 'asc')->get();
+        Session::put('matchedTrainers', $matchedTrainers);
+
+        return view('search', compact('matchedTrainers'));
     }
 
     public function search(Request $request)

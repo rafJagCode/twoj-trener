@@ -81,7 +81,7 @@
                     <ul id="responsive">
                         <li><a href="{{ url('') }}">Strona główna</a></li>
                         <li><a href="{{ route('user.search') }}">Trenerzy</a></li>
-                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="{{ route('contact') }}">Kontakt</a></li>
                     </ul>
                 </nav>
                 <div class="clearfix"></div>
