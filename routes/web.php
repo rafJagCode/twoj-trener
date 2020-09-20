@@ -30,6 +30,7 @@ use Symfony\Component\HttpFoundation\Request;
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/trainers', 'SearchController@search')->name('user.search');
 Route::get('/contact', 'ContactController@index')->name('contact');
+Route::get('/location', 'LocationController@index')->name('location');
 
 
 //Middleware dla trenera--------------------------------------------------------------------------------------------------
