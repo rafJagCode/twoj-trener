@@ -108,6 +108,8 @@ Route::post('message', 'MessageController@sendMessage');
 Route::get('/contacts', 'ContactsController@get');
 Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
 Route::post('/conversation/send', 'ContactsController@send');
+Route::post('/conversation/addContact', 'ContactsController@addContact');
+Route::get('/conversation/searchNewContact', 'ContactsController@searchNewContact');
 
 
 

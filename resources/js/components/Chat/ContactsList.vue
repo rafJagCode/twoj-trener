@@ -1,5 +1,6 @@
 <template>
     <div class="contacts-list">
+        <button class="btn btn-primary" @click="addContact()">Dodaj kontakt</button>
         <div class="search-container">
             <input class="search-contact-input form-control" type="text" v-model="searchedContact" placeholder="Wyszukaj kontakt" aria-label="Wyszukaj kontakt">
         </div>
@@ -39,6 +40,16 @@
                 this.selected = contact;
                 
                 this.$emit('selected', contact);
+            },
+            addContact(){
+                axios.post('/conversation/addContact', {
+                    contact_id: 5,
+                }).then((response)=>{
+                    if(response.data.already_added){
+                        return;
+                    };
+                    this.$emit('contactAdded', response.data);
+                })
             }
         },
         computed:{

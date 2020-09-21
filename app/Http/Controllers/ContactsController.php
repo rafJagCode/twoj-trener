@@ -4,15 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Contact;
 use App\Models\Message;
 use App\Events\NewMessage;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class ContactsController extends Controller
 {
     public function get(){
-        $contacts = User::where('id', '!=', auth()->id())->get();
-        Log::debug($contacts);
+        // $contacts = User::where('id', '!=', auth()->id())->get();
+        $contactsIds = Auth::user()->contacts->pluck('contact_id')->all();
+        $contacts = User::whereIn('id', $contactsIds)->get();
+
+        
         $unreadIds = Message::select(\DB::raw('`from` as sender_id, count(`from`) as messages_count'))
             ->where('to', auth()->id())
             ->where('is_read', 0)
@@ -25,7 +30,6 @@ class ContactsController extends Controller
             $contact->unread = $contactUnread ? $contactUnread->messages_count : 0;
             return $contact;
         });
-        Log::debug($contacts);
         return response()->json($contacts);
     }
     public function getMessagesFor($id)
@@ -52,5 +56,28 @@ class ContactsController extends Controller
         broadcast(new NewMessage($message));
 
         return response()->json($message);
+    }
+    public function addContact(Request $request)
+    {
+        $contact = Contact::where('contact_id', $request->contact_id)->where('user_id', auth()->id())->get();
+        if($contact->isNotEmpty()){
+            $data = ['already_added'=>true];
+            return response()->json($data);
+        }
+
+        $contact = new Contact();
+        $contact->contact_id=$request->contact_id;
+        Auth::user()->contacts()->save($contact);
+
+        $addedUser=User::where('id', $request->contact_id)->get()->first();
+        return response()->json($addedUser);
+    }
+    public function searchNewContact($searchedTerm)
+    {
+        $searchingResults = User::query()
+            ->where('name', 'LIKE', "%{$searchedTerm}%") 
+            ->orWhere('email', 'LIKE', "%{$searchedTerm}%") 
+            ->get();
+        return response()->json($searchingResults);
     }
 }

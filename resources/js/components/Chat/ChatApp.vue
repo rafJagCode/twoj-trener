@@ -1,6 +1,6 @@
 <template>
     <div class="chat-app">
-        <ContactsList :contacts="contacts" @selected="startConversationWith"/>
+        <ContactsList :contacts="contacts" @selected="startConversationWith" @contactAdded="addContact"/>
         <Conversation :contact="selectedContact" :messages="messages" @new="saveNewMessage"/>
     </div>
 </template>
@@ -60,6 +60,9 @@
                     else single.unread += 1;
                     return single;
                 })
+            },
+            addContact(contact){
+                this.contacts.push(contact);
             }
         },
         components: {Conversation, ContactsList}
@@ -69,5 +72,6 @@
 <style lang="css" scoped>
     .chat-app{
         display:flex;
+        min-height: 400px;
     }
 </style>

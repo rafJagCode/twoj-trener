@@ -135,7 +135,10 @@ class User extends Authenticatable
 
         return false;
     }
-
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
     public function avgStars(){
         return number_format($this->ratings()->get()->avg('stars'), 1);
     }
