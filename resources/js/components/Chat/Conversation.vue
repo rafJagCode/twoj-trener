@@ -41,11 +41,13 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        margin:2px;
+        min-width:750px;
     }
     h1{
-        font-size: 15px;
+        font-size: 10px;
         padding: 10px;
-        margin: 0;
-        border-bottom: 1px dashed black;
+        margin: auto;
+        border-bottom: 1px dashed #8731E8;
     }
 </style>

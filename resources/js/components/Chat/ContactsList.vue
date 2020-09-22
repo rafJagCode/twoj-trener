@@ -1,21 +1,21 @@
 <template>
     <div class="contacts-list">
-        <button class="btn btn-primary" @click="addContact()">Dodaj kontakt</button>
-        <div class="search-container">
-            <input class="search-contact-input form-control" type="text" v-model="searchedContact" placeholder="Wyszukaj kontakt" aria-label="Wyszukaj kontakt">
+        <div class="contacts-list__interface-container">
+            <i class="contacts-list__option-btn fas fa-user" @click="changeComponent"></i>
+            <input class="contacts-list__search-contact-input" type="text" v-model="searchedContact" placeholder="Wyszukaj kontakt" aria-label="Wyszukaj kontakt">
         </div>
-        <ul>
-            <li v-for="contact in filteredConstacts" :key="contact.id" @click="selectContact(contact)" :class="{'selected' : contact===selected}">
-                <div class="avatar">
-                    <img :src="/images/ + contact.profilePicture" :alt="contact.name" class="avatar-img">
+        <ul class="contacts-list__contacts-list">
+            <li class="contacts-list__contact-item" v-for="contact in filteredConstacts" :key="contact.id" @click="selectContact(contact)" :class="{'contacts-list__contact-item--selected' : contact===selected}">
+                <div class="contacts-list__contact-avatar">
+                    <img class="contacts-list__contact-avatar-img" :src="/images/ + contact.profilePicture" :alt="contact.name">
                 </div>
-                <div class="contact">
-                    <p class="name">{{contact.firstName}} {{contact.secondName}}</p>
-                    <p class="email">{{contact.email}}</p>
+                <div class="contacts-list__contact-details">
+                    <p class="contacts-list__contact-name">{{contact.firstName}} {{contact.secondName}}</p>
+                    <p class="contacts-list__contact-email">{{contact.email}}</p>
                 </div>
-                <div class="message-notification" v-if="contact.unread">
-                    <span class="unread-count">{{contact.unread}}</span>
-                    <i class="unread-icon fas fa-envelope fa-2x"></i>
+                <div class="contacts-list__message-notification" v-if="contact.unread">
+                    <i class="contacts-list__unread-icon fas fa-envelope"></i>
+                    <span class="contacts-list__unread-count">{{contact.unread}}</span>
                 </div>
             </li>
         </ul>
@@ -26,7 +26,7 @@
         data(){
             return{
                 selected: null,
-                searchedContact: ''
+                searchedContact: '',
             }
         },
         props: {
@@ -41,23 +41,13 @@
                 
                 this.$emit('selected', contact);
             },
-            addContact(){
-                axios.post('/conversation/addContact', {
-                    contact_id: 5,
-                }).then((response)=>{
-                    if(response.data.already_added){
-                        return;
-                    };
-                    this.$emit('contactAdded', response.data);
-                })
+            changeComponent(){
+                this.$emit('changeComponent', 'ContactsManager');
             }
         },
         computed:{
             sortedContacts(){
                 return _.sortBy(this.contacts, [(contact)=>{
-                    if(contact === this.selected){
-                        return Infinity;
-                    }
                     return contact.unread;
                 }]).reverse();
             },
@@ -75,82 +65,113 @@
 </script>
 <style lang="css" scoped>
     .contacts-list{
-        flex: 2;
-        max-height: 400px;
-        overflow-y: scroll;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        border-right: 1px solid black;
+        display:flex;
+        flex:2;
+        flex-direction: column;
     }
-    .contacts-list::-webkit-scrollbar{
-        width: 0;
-        height: 0;
-    }
-    ul{
-        padding:0;
-    }
-    li{
-        display: flex;
-        padding: 2px;
-        border-bottom: 1px solid black;
-        height: 80px;
-        position: relative;
-        cursor: pointer;
-    }
-    li.selected{
-        background: lightblue;
-    }
-    .avatar{
-        display: flex;
-        flex: 1;
+    .contacts-list__interface-container{
+        display:flex;
+        width: 94%;
         align-items: center;
-    }
-    .avatar-img{
-        width: 35px;
-        border-radius: 50%;
         margin: 0 auto;
     }
-    .contact{
-        display: flex;
-        flex: 3;
-        font-size: 10px;
-        overflow: hidden;
-        flex-direction: column;
-        justify-content: center;
+    .contacts-list__option-btn{
+        color: #8731E8;
+        cursor: pointer;
+        border: 1px solid #8731E8;
+        padding: 5px;
+        font-size: 20px;
+        border-radius: 20%;
+        margin: auto;
+    }
+    .contacts-list__search-contact-input{
+        margin: 10px 0 10px auto;
+        width:85%;
+        border:none;
+        border-bottom: 1px solid #8731E8;
+    }
+    .contacts-list__search-contact-input:focus{
+        outline:none;
+        border:none;
+        border-bottom: 1px solid #8731E8;
+    }
+    .contacts-list__contacts-list{
+        padding:0;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+    .contacts-list__contacts-list::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        background-color: #F5F5F5;
+        border-radius: 10px;
+    }
 
+    .contacts-list__contacts-list::-webkit-scrollbar
+    {
+        width: 5px;
+        background-color: #F5F5F5;
     }
-    p{
-        margin: 0;
+
+    .contacts-list__contacts-list::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        background-image: -webkit-gradient(linear,
+                                        left bottom,
+                                        left top,
+                                        color-stop(0.44, rgb(180, 128, 240)),
+                                        color-stop(0.72, rgb(158, 98, 226)),
+                                        color-stop(0.86, rgb(135, 49, 232)));
     }
-    .name{
+    .contacts-list__contact-item{
+        height: 50px;
+        -webkit-box-shadow: 0px 0px 5px 1px rgb(180, 128, 240);
+        -moz-box-shadow: 0px 0px 5px 1px rgb(180, 128, 240);
+        box-shadow: 0px 0px 5px 1px rgb(180, 128, 240);
+        border-radius: 0px 15px 15px 0px;
+        -moz-border-radius: 0px 15px 15px 0px;
+        -webkit-border-radius: 0px 15px 15px 0px;
+        border: 0px solid #000000;
+        padding: 10px;
+        width: 94%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 7px auto;
+        cursor: pointer;
+    }
+    .contacts-list__contact-item--selected{
+        background: rgb(180, 128, 240);
+    }
+    .contacts-list__contact-avatar{
+        flex:1;
+    }
+    .contacts-list__contact-avatar-img{
+        height:35px;
+        border-radius:50%;
+    }
+    .contacts-list__contact-details{
+        font-size:10px;
+        flex:4;
+    }
+    .contacts-list__contact-name{
+        font-weight: bold;
+        margin:0;
+        line-height: 11px;
+    }
+    .contacts-list__contact-email{
+        margin:0;
+        line-height: 11px;
+    }
+    .contacts-list__unread-count{
+        font-size: 11px;
+        line-height: 11px;
+        color:#8731E8;
         font-weight: bold;
     }
-    .message-notification{
-        display: flex;
-        flex-direction: column;
-        margin:10px 0;
-        position: relative;
-        right:10px;
-    }
-    .unread-count{
-        align-self: flex-end;
+    .contacts-list__unread-icon{
         font-size: 11px;
-        font-weight: 700;
-        border-radius: 20%;
-        background: red;
-        padding: 3px;
-        position: relative;
         line-height: 11px;
-        top: 10px;
-        right: 2px;
-    }
-    .unread-icon{
-        padding-right: 10px;
-    }
-    .search-container{
-        padding:10px;
-    }
-    .search-contact-input{
-        margin: auto;
+        color:#8731E8;
     }
 </style>

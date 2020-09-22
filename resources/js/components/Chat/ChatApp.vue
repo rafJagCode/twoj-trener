@@ -1,12 +1,14 @@
 <template>
     <div class="chat-app">
-        <ContactsList :contacts="contacts" @selected="startConversationWith" @contactAdded="addContact"/>
+        <ContactsManager :contacts="contacts" @contactAdded="addContact" @contactRemoved="removeContact" @changeComponent="changeVisibleComponent" v-show="componentVisible==='ContactsManager'"/>
+        <ContactsList :contacts="contacts" @selected="startConversationWith" @changeComponent="changeVisibleComponent" v-show="componentVisible==='ContactsList'"/>
         <Conversation :contact="selectedContact" :messages="messages" @new="saveNewMessage"/>
     </div>
 </template>
 <script>
     import Conversation from './Conversation';
     import ContactsList from './ContactsList';
+    import ContactsManager from './ContactsManager'
     export default{
         props:{
             user:{
@@ -18,7 +20,8 @@
             return{
                 selectedContact: null,
                 messages: [],
-                contacts: []
+                contacts: [],
+                componentVisible: 'ContactsList'
             }
         },
         mounted(){
@@ -63,15 +66,22 @@
             },
             addContact(contact){
                 this.contacts.push(contact);
+            },
+            removeContact(contact){
+                let indexOfContactToRemove = this.contacts.findIndex(singleContact=>singleContact.id===contact.id);
+                Vue.delete(this.contacts, indexOfContactToRemove);
+            },
+            changeVisibleComponent(name){
+                this.componentVisible = name;
             }
         },
-        components: {Conversation, ContactsList}
+        components: {Conversation, ContactsList, ContactsManager}
     }
 
 </script>
 <style lang="css" scoped>
     .chat-app{
         display:flex;
-        min-height: 400px;
+        height: 400px;
     }
 </style>

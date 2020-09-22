@@ -7,8 +7,8 @@
     <div class="container my-3">
         <div class="row-justify-content-center">
             <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">Chat App</div>
+                <div class="card" style="border: 1px solid #8731E8; border-radius: 5px;">
+                    <div class="card-header" style="background: rgb(180, 128, 240)">Chat App</div>
 
                     <div class="card-body" style="padding: 0">
                         <chat-app :user="{{auth()->user()}}"></chat-app>

@@ -72,11 +72,18 @@ class ContactsController extends Controller
         $addedUser=User::where('id', $request->contact_id)->get()->first();
         return response()->json($addedUser);
     }
+    public function removeContact(Request $request)
+    {
+        $contact = Contact::where('contact_id', $request->contact_id)->where('user_id', auth()->id())->delete();
+        $removedUser=User::where('id', $request->contact_id)->get()->first();
+        return response()->json($removedUser);
+    }
     public function searchNewContact($searchedTerm)
     {
         $searchingResults = User::query()
-            ->where('name', 'LIKE', "%{$searchedTerm}%") 
-            ->orWhere('email', 'LIKE', "%{$searchedTerm}%") 
+            ->where('firstName', 'LIKE', "%{$searchedTerm}%")
+            ->orWhere('secondName', 'LIKE', "%{$searchedTerm}%") 
+            ->orWhere('email', 'LIKE', "%{$searchedTerm}%")
             ->get();
         return response()->json($searchingResults);
     }
