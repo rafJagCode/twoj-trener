@@ -143,19 +143,19 @@
     <h5 class="mb-4">Gallery</h5>
     <div class="carousel-inner">
         <div class="active item carousel-item" data-slide-number="0">
-            <img src="images/hotels/5.jpg" class="img-fluid" alt="slider-listing">
+            <img src="https://picsum.photos/100" class="img-fluid" alt="slider-listing">
         </div>
         <div class="item carousel-item" data-slide-number="1">
-            <img src="images/hotels/2.jpeg" class="img-fluid" alt="slider-listing">
+            <img src="https://picsum.photos/100" class="img-fluid" alt="slider-listing">
         </div>
         <div class="item carousel-item" data-slide-number="2">
-            <img src="images/hotels/3.jpeg" class="img-fluid" alt="slider-listing">
+            <img src="https://picsum.photos/100" class="img-fluid" alt="slider-listing">
         </div>
         <div class="item carousel-item" data-slide-number="4">
-            <img src="images/hotels/4.jpeg" class="img-fluid" alt="slider-listing">
+            <img src="https://picsum.photos/100" class="img-fluid" alt="slider-listing">
         </div>
         <div class="item carousel-item" data-slide-number="5">
-            <img src="images/hotels/1.jpeg" class="img-fluid" alt="slider-listing">
+            <img src="https://picsum.photos/100" class="img-fluid" alt="slider-listing">
         </div>
 
         <a class="carousel-control left" href="#listingDetailsSlider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
@@ -166,27 +166,27 @@
     <ul class="carousel-indicators smail-listing list-inline nav nav-justified mr-0">
         <li class="list-inline-item active">
             <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#listingDetailsSlider">
-                <img src="images/hotels/5.jpg" class="img-fluid" alt="listing-small">
+                <img src="https://picsum.photos/100" class="img-fluid" alt="listing-small">
             </a>
         </li>
         <li class="list-inline-item">
             <a id="carousel-selector-1" data-slide-to="1" data-target="#listingDetailsSlider">
-                <img src="images/hotels/2.jpeg" class="img-fluid" alt="listing-small">
+                <img src="https://picsum.photos/100" class="img-fluid" alt="listing-small">
             </a>
         </li>
         <li class="list-inline-item">
             <a id="carousel-selector-2" data-slide-to="2" data-target="#listingDetailsSlider">
-                <img src="images/hotels/3.jpeg" class="img-fluid" alt="listing-small">
+                <img src="https://picsum.photos/100" class="img-fluid" alt="listing-small">
             </a>
         </li>
         <li class="list-inline-item">
             <a id="carousel-selector-3" data-slide-to="3" data-target="#listingDetailsSlider">
-                <img src="images/hotels/4.jpeg" class="img-fluid" alt="listing-small">
+                <img src="https://picsum.photos/100" class="img-fluid" alt="listing-small">
             </a>
         </li>
         <li class="list-inline-item">
             <a id="carousel-selector-4" data-slide-to="4" data-target="#listingDetailsSlider">
-                <img src="images/hotels/1.jpeg" class="img-fluid" alt="listing-small">
+                <img src="https://picsum.photos/100" class="img-fluid" alt="listing-small">
             </a>
         </li>
     </ul>

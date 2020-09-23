@@ -80,19 +80,26 @@
         display: inline-block;
         max-width: 70%;
         padding: 10px;
-        border-radius: 5px;
         overflow-wrap: break-word;
     }
     .received{
-        text-align: left;
-    }
-    .received .text{
-        background: lightblue;
-    }
-    .sent{
         text-align: right;
     }
+    .received .text{
+        background: #FFEBF5;
+        border-radius: 5px 5px 0px 5px;
+        -moz-border-radius: 5px 5px 0px 5px;
+        -webkit-border-radius: 5px 5px 0px 5px;
+        border: 0px solid #000000;
+    }
+    .sent{
+        text-align: left;
+    }
     .sent .text{
-        background: lightgreen;
+        background: rgb(180, 128, 240);
+        border-radius: 5px 5px 5px 0px;
+        -moz-border-radius: 5px 5px 5px 0px;
+        -webkit-border-radius: 5px 5px 5px 0px;
+        border: 0px solid #000000;
     }
 </style>
