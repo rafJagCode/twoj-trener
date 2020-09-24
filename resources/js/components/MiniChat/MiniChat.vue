@@ -1,6 +1,6 @@
 <template>
     <div class="agent-contact-form-sidebar">
-        <ChatInterface @changeComponent="changeVisibleComponent"/>
+        <ChatInterface @changeComponent="changeVisibleComponent" :auth="auth"/>
         <Email v-if="componentVisible==='Email'"/>
         <Messanger :receiver="this.receiver" :user="this.user" v-if="componentVisible==='Messanger'"/>
     </div>
@@ -12,7 +12,13 @@
     export default{
         data(){
             return{
-                componentVisible: 'Email'
+                componentVisible: 'Email',
+            }
+        },
+        computed:{
+            auth(){
+                if(this.user===undefined) return false;
+                return true;
             }
         },
         props:{
@@ -22,7 +28,7 @@
             },
             user:{
                 type: Object,
-                required: true
+                required: false
             }  
         },
         methods:{
