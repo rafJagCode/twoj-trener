@@ -21,12 +21,7 @@
                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                 <li><a href="#"><i class="fa fa-behance"></i></a></li>
             </ul>
-            @auth
-                <mini-chat :receiver="{{ $user }}" :user="{{auth()->user()}}"/>
-            @endauth
-            @guest
-                <mini-chat :receiver="{{ $user }}"/>
-            @endguest
+            <mini-chat :receiver="{{ $user }}" :user="{{auth()->user() ? auth()->user() : 'undefined'}}"/>
         </div>
     </div>
 </div>
