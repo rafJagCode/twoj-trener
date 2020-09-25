@@ -25,6 +25,9 @@
                 required: true
             }
         },
+        mounted(){
+            console.log(this.receiver);
+        },
         methods:{
             checkValidation(){
                 if (this.$refs.form.checkValidity()) {
@@ -39,7 +42,7 @@
                     number: this.number,
                     email: this.email,
                     message: this.message,
-                    receiver_email: this.receiver.email
+                    receiver: this.receiver
                 }).then(console.log('Wysłano'));
             }
         }

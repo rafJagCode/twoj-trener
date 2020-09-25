@@ -126,3 +126,8 @@ Route::get('/results', function(){
     return view('results');
 });
 Route::get('/trainers-page/{id}', 'SearchController@show')->name('search.show');
+
+
+Route::get('/email', function(){
+    return view('emails.for_trainer');
+});
