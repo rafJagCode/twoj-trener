@@ -112,6 +112,9 @@ Route::post('/conversation/addContact', 'ContactsController@addContact');
 Route::delete('/conversation/removeContact', 'ContactsController@removeContact');
 Route::get('/conversation/searchNewContact/{searchedTerm}', 'ContactsController@searchNewContact');
 
+//Routes for Email
+Route::post('/email/send', 'MailController@sendEmail');
+
 
 
 //Routes for Searchbar------------------------------------------------------------------------------------------------------

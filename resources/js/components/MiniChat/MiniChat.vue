@@ -1,7 +1,7 @@
 <template>
     <div class="agent-contact-form-sidebar">
         <ChatInterface @changeComponent="changeVisibleComponent" :auth="auth"/>
-        <Email v-if="componentVisible==='Email'"/>
+        <Email v-if="componentVisible==='Email'" :receiver="this.receiver"/>
         <Messanger :receiver="this.receiver" :user="this.user" v-if="componentVisible==='Messanger'"/>
     </div>
 </template>
