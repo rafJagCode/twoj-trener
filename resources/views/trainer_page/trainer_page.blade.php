@@ -1,11 +1,14 @@
 @extends('layout')
 
 @section('title', 'trainer_page')
-{{--
+
 @section('head')
     <link href="{{ asset('/css/trainer_page.css') }}" rel="stylesheet">
-@endsection --}}
+    <link href="{{ asset('/css/leaflet.css') }}" rel="stylesheet">
+@endsection 
 @section('scripts')
+    <script src="{{ asset('/js/leaflet.js') }}"></script>
+
     <script type="text/javascript">
         let bigPhoto = $('#big-photo');
         let src;
@@ -22,6 +25,24 @@
             bigPhoto.attr('src', src);
         });
     </script>
+
+    <script type="text/javascript">
+        var tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+    {
+        attribution: false
+    });
+
+        var mymap = L.map('mapid',
+            {
+                zoomControl: true,
+                layers: [tileLayer],
+                maxZoom: 18,
+                minZoom: 6
+            })
+            .setView([53.763914, 20.520403], 15);
+    </script>
+
+    
 @endsection
 
 @section('content')
@@ -36,6 +57,7 @@
                             <!-- main slider carousel items -->
                             @include('trainer_page.gallery')
                             @include('trainer_page.description')
+                            @include('trainer_page.location')
                         </div>
                     </div>
                     <!-- cars content -->

@@ -1,17 +1,16 @@
-@extends('app')
+@extends('layout')
 
 @section('title', 'user_update')
-
-@section('trainer-dashboard-css')
-
-    <link href="{{ asset('/css/user_show.css') }}" rel="stylesheet">
+@section('additional-css')
+    <link href="{{ asset('/css/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/additional.css') }}" rel="stylesheet">
 @endsection
 
-@section('trainer-dashboard')
+@section('content')
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7 ">
+    <section class="featured popular portfolio freelancers rec-pro-1">
+        <div class="container-fluid">
+            <div id="wrapper">
                 <div class="list-group list-group-flush">
                     <form method="POST" class="form-user row" action="{{ route('user.update', $user->id) }}"
                           enctype="multipart/form-data">
@@ -32,7 +31,7 @@
                                    value={{$user->firstName}}>
                         </div>
 
-                        <div class="form-group col-md-12"">
+                        <div class="form-group col-md-12">
                             <label for="secondName" class="lab1">Nazwisko</label>
                             <input type="text" name="secondName" class="form-control" id="secondName"
                                    placeholder="Nazwisko" value={{$user->secondName}}>
@@ -71,7 +70,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 @endsection
 

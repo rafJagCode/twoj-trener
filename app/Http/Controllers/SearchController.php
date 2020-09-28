@@ -17,13 +17,28 @@ class SearchController extends Controller
         $allDisciplines = Dysciplines::all();
         $trainers = collect();
         foreach (User::all() as $user)
-            if ($user->isTrainer())
+            if ($user->hasRole('Trainer'))
+            {
                 $trainers->push($user->id);
+            }
         $matchedTrainers = User::whereIn('id',$trainers)->orderBy('secondName','asc')->orderBy('firstName','asc')->get();
         // dd($matchedTrainers->get());
         Session::put('matchedTrainers', $matchedTrainers);
         // $matchedTrainers = $matchedTrainers->paginate(4);
         return view('trainers', compact('matchedTrainers', 'allDisciplines'));
+    }
+
+    public function search_userdashboard()
+    {
+        $trainers = collect();
+        foreach (User::all() as $user)
+            if ($user->hasRole('Trainer'))
+                $trainers->push($user->id);
+
+        $matchedTrainers = User::whereIn('id', $trainers)->orderBy('secondName', 'asc')->get();
+        Session::put('matchedTrainers', $matchedTrainers);
+
+        return view('search', compact('matchedTrainers'));
     }
 
     public function search(Request $request)
@@ -283,6 +298,15 @@ class SearchController extends Controller
         $ratings= $user->ratings()->get();
         $certificates= $user->certificates()->get();
         $avgRating=round($ratings->avg('stars'),2);
-        return view('trainer_page.trainer_page',compact('user', 'disciplines', 'photos','avgRating','certificates','ratings'));
+
+        $users = User::all();
+        $cities = collect();
+
+        foreach ($users as $us)
+        {
+            if ($us['city'] != null)
+                $cities->add($us['city']);
+        }
+        return view('trainer_page.trainer_page',compact('user', 'disciplines', 'photos','avgRating','certificates','ratings', 'cities'));
     }
 }

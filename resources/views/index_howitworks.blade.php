@@ -43,9 +43,6 @@
         </div>
     </div>
 </section>
-<div class="container">
-    @include('index_listtrainers')
-</div>
 {{-- <div class="container">
     @include('serch_view')
 </div> --}}

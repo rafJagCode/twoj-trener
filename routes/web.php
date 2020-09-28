@@ -28,7 +28,9 @@ use Symfony\Component\HttpFoundation\Request;
 //     return view('index');
 // });
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/trainers', 'SearchController@search')->name('user.search');;
+Route::get('/trainers', 'SearchController@search')->name('user.search');
+Route::get('/contact', 'ContactController@index')->name('contact');
+Route::get('/location', 'LocationController@index')->name('location');
 
 
 //Middleware dla trenera--------------------------------------------------------------------------------------------------
@@ -118,9 +120,9 @@ Route::post('/email/send', 'MailController@sendEmail');
 
 
 //Routes for Searchbar------------------------------------------------------------------------------------------------------
-Route::get('/search', function () {
+Route::get('/search', 'SearchController@search_userdashboard', function () {
     return view('search');
-});
+})->name('search');
 Route::post('/search', 'SearchController@index')->name('search.index');
 Route::get('/results', function(){
     return view('results');
